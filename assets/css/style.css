@@ -1,0 +1,63 @@
+.sf-white{
+  color: #fbf2c0;
+}
+.sf-brown{
+  color: #48392a
+}
+.sf-black{
+  color: #43281c
+}
+.sf-orange{
+  color: #c06e52
+}
+.sf-red{
+  color: #f96f5d
+}
+
+.sb-white{
+  background-color: #fbf2c0;
+}
+.sb-brown{
+  background-color: #48392a
+}
+.sb-black{
+  background-color: #43281c
+}
+.sb-orange{
+  background-color: #c06e52
+}
+.sb-red{
+  background-color: #f96f5d
+}
+
+.font-modern{
+  font-family: 'Odibee Sans', cursive;
+}
+.font-regular{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#landing-text{
+  margin-top: 35vh;
+}
+
+.btn-primary{
+  border-color: #43281c;
+  background-color: #c06e52;
+  color: #fbf2c0;
+}
+
+.btn-primary:hover{
+  border-color: #43281c;
+  background-color: #f96f5d;
+  color: #fbf2c0;
+}
+
+.text-border{
+  border-left: .5rem #f96f5d solid;
+}
+
+.carousel-caption{
+  opacity: 0.5;
+  background-color: #000;
+}
