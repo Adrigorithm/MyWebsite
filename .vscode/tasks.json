@@ -1,0 +1,17 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "web_server",
+            "type": "shell",
+            "command": "python3 -m http.server --bind 127.0.0.1 9000"
+        },
+        {
+            "label": "hot_reload",
+            "type": "shell",
+            "command": "npx tailwindcss -i ./assets/css/style.css -o ./assets/css/final.css --watch"
+        }
+    ]
+}
