@@ -1,12 +1,12 @@
-var motd = ["GNu/Linux > Windows", "I use Arch BTW", "I am docker container", "This uses JavaScript", "Powered by TailwindCSS", "Bootstrap sucks", "JS sucks flaccid c*ck"];
+var motd = ["GNU/Linux > Windows", "I use Arch BTW", "I am docker container", "This uses JavaScript", "Powered by TailwindCSS", "Bootstrap sucks", "JS sucks flaccid c*ck"];
 var timelines = document.getElementsByClassName("timeline");
-var timesCurrent = []
+var timesCurrent = [];
 
 function init() {
     for (let index = 0; index < timelines.length; index++) {
-        timelines[index].children[0].children[1].innerHTML = motd[Math.round(Math.random() * motd.length)];
+        timelines[index].children[0].children[1].innerHTML = motd[Math.floor(Math.random() * motd.length)];
 
-        timesCurrent.push(timelines[index].children.length - 1)
+        timesCurrent.push(timelines[index].children.length - 1);
 
         timelines[index].children[0].children[0].onclick = function () {
             timelineClickEventHandler(index, false);
@@ -27,8 +27,6 @@ function timelineClickEventHandler(timeline, next) {
     }else{
         timesCurrent[timeline] = timesCurrent[timeline] - 1 < 1 ? timelines[timeline].children.length - 1 : timesCurrent[timeline] - 1;
     }
-
-    console.log(timesCurrent[0]);
 
     timelines[timeline].children[timesCurrent[timeline]].classList.remove("hidden");
 }
