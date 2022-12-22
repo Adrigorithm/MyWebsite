@@ -1,9 +1,6 @@
 var navHeight = document.getElementById("mainNav");
 var toTopButton = document.getElementById("toTopButton");
 
-console.log("navHeight: " + navHeight);
-console.log("toTopButton: " + toTopButton);
-
 window.addEventListener("scroll", (e) => {
     onScrollEventHandler(window.scrollY);
 });

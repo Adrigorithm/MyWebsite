@@ -20,7 +20,7 @@ function init() {
 init();
 
 function timelineClickEventHandler(timeline, next) {
-    timelines[timeline].children[timesCurrent[timeline]].classList.add("hidden");
+    timelines[timeline].children[timesCurrent[timeline]].classList.add("!hidden");
 
     if (next) {
         timesCurrent[timeline] = timesCurrent[timeline] + 1 == timelines[timeline].children.length ? 1 : timesCurrent[timeline] + 1;
@@ -28,5 +28,5 @@ function timelineClickEventHandler(timeline, next) {
         timesCurrent[timeline] = timesCurrent[timeline] - 1 < 1 ? timelines[timeline].children.length - 1 : timesCurrent[timeline] - 1;
     }
 
-    timelines[timeline].children[timesCurrent[timeline]].classList.remove("hidden");
+    timelines[timeline].children[timesCurrent[timeline]].classList.remove("!hidden");
 }
