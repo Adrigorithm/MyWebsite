@@ -97,32 +97,45 @@
       <div class="bg-mediumPurple rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
         <h3 class="m-0 py-1 pl-4">Synopsis</h3>
       </div>
-      <ul class="flex flex-col list-none p-0 w-full">
-        <li class="w-full bg-lightSteelBlue text-black">
-          <p class="m-0 p-2">Name*:</p>
-        </li>
-        <li class="text-center">
-          <p class="m-0 p-2">Adri</p>
-        </li>
-        <li class="w-full bg-lightSteelBlue text-black">
-          <p class="m-0 p-2">Nationality:</p>
-        </li>
-        <li class="text-center">
-          <p class="m-0 p-2">Belgian</p>
-        </li>
-        <li class="w-full bg-lightSteelBlue text-black">
-          <p class="m-0 p-2">Date of Birth*:</p>
-        </li>
-        <li class="text-center">
-          <p class="m-0 p-2">xx/xx/1998</p>
-        </li>
-        <li class="w-full bg-lightSteelBlue text-black">
-          <p class="m-0 p-2">Email**:</p>
-        </li>
-        <li class="text-center">
-          <p class="m-0 p-2"><a href="mailto:2ndalgorithm@gmail.com">Read notice below before clicking</a></p>
-        </li>
-      </ul>
+      <div class="flex flex-col p-0 w-full">
+
+        <div class="lg:flex lg:flex-row flex flex-col">
+          <div class="lg:w-1/2 bg-lightSteelBlue text-center text-bold">
+            <p class="m-0 p-2">Name*:</p>
+          </div>
+          <div class="lg:w-1/2 text-center">
+            <p class="m-0 p-2">Adri</p>
+          </div>
+        </div>
+
+        <div class="lg:flex lg:flex-row flex flex-col">
+          <div class="lg:w-1/2 bg-lightSteelBlue text-black text-center text-bold">
+            <p class="m-0 p-2">Nationality:</p>
+          </div>
+          <div class="lg:w-1/2 text-center">
+            <p class="m-0 p-2">Belgian</p>
+          </div>
+        </div>
+
+        <div class="lg:flex lg:flex-row flex flex-col">
+          <div class="lg:w-1/2  bg-lightSteelBlue text-black text-center text-bold">
+            <p class="m-0 p-2">Date of Birth*:</p>
+          </div>
+          <div class="lg:w-1/2 text-center">
+            <p class="m-0 p-2">xx/xx/1998</p>
+          </div>
+        </div>
+
+        <div class="lg:flex lg:flex-row flex flex-col">
+          <div class="lg:w-1/2 bg-lightSteelBlue text-black text-center text-bold">
+            <p class="m-0 p-2">Email**:</p>
+          </div>
+          <div class="lg:w-1/2 text-center">
+            <p class="m-0 p-2"><a href="mailto:2ndalgorithm@gmail.com">Read notice below before clicking</a></p>
+          </div>
+        </div>
+
+      </div>
       <fieldset class="m-2 border-solid border-2 border-zaffre">
         <legend class="text-bold">Notice</legend>
         <p>*: Incomplete/shortened for privacy reasons.<br>
@@ -166,8 +179,9 @@
 
         </div>
 
-        <div  class="!hidden w-full lg:flex lg:flex-row">
-          <div class="flex flex-col w-full h-[426px] lg:min-w-[639px] bg-center bg-lightSteelBlue bg-no-repeat justify-between"
+        <div class="!hidden w-full lg:flex lg:flex-row">
+          <div
+            class="flex flex-col w-full h-[426px] lg:min-w-[639px] bg-center bg-lightSteelBlue bg-no-repeat justify-between"
             style="background-image: url(/assets/img/sjb.png)" alt="Sint-Jan Berchmanscollege Mol">
             <div class="w-full text-center opacity-50 bg-black">
               <p class="text-white p-2 m-0">Sint-Jan Berchmanscollege</p>
@@ -203,7 +217,8 @@
         </div>
 
         <div class="!hidden w-full lg:flex lg:flex-row">
-          <div class="flex flex-col w-full h-[320px] lg:min-w-[639px] bg-center bg-lightSteelBlue bg-no-repeat justify-between"
+          <div
+            class="flex flex-col w-full h-[320px] lg:min-w-[639px] bg-center bg-lightSteelBlue bg-no-repeat justify-between"
             style="background-image: url(/assets/img/uhasselt.png)" alt="Universiteit Hasselt">
             <div class="w-full text-center opacity-50 bg-black">
               <p class="text-white p-2 m-0">Hasselt University</p>
@@ -245,7 +260,8 @@
         </div>
 
         <div class="!hidden w-full lg:flex lg:flex-row">
-          <div class="flex flex-col w-full h-[426px] lg:min-w-[639px] bg-center bg-lightSteelBlue bg-no-repeat justify-between"
+          <div
+            class="flex flex-col w-full h-[426px] lg:min-w-[639px] bg-center bg-lightSteelBlue bg-no-repeat justify-between"
             style="background-image: url(/assets/img/tm.png)" alt="Thomas More Geel">
             <div class="w-full text-center opacity-50 bg-black">
               <p class="text-white p-2 m-0">Thomas More</p>
@@ -284,7 +300,8 @@
         </div>
 
         <div class="w-full lg:flex lg:flex-row">
-          <div class="flex flex-col w-full h-[425px] lg:min-w-[639px] bg-center bg-lightSteelBlue bg-no-repeat justify-between"
+          <div
+            class="flex flex-col w-full h-[425px] lg:min-w-[639px] bg-center bg-lightSteelBlue bg-no-repeat justify-between"
             style="background-image: url(/assets/img/pxl.png)" alt="PXL Hasselt">
             <div class="text-center opacity-50 bg-black">
               <p class="text-white p-2 m-0">PXL</p>
@@ -317,149 +334,137 @@
         </div>
       </div>
 
+      <div class="mt-2 bg-mediumPurple rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+        <h3 class="m-0 py-1 pl-4">Skilltree</h3>
+      </div>
+
       <div class="mx-2">
-        <h4 class="font-md">
-          <span>
-            <svg width="2.5851536mm" height="2.5174201mm" viewBox="0 0 2.5851536 2.5174201" version="1.1" id="svg5"
-              xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-              <defs id="defs2" />
-              <g id="layer1" transform="translate(-58.146739,-81.8011)">
-                <text xml:space="preserve"
-                  style="font-weight:bold;font-size:22.5778px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Bold';fill:#000fb0;stroke-width:2"
-                  x="57.847584" y="84.747498" id="text113">
-                  <tspan id="tspan111"
-                    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#4c5cff;fill-opacity:1;stroke-width:2"
-                    x="57.847584" y="84.747498">&gt;</tspan>
-                </text>
-              </g>
-            </svg>
-          </span>
-          Skilltree
-        </h4>
         <p>You know how everyone adores reading (yes that was sarcasm)? Did you know according to study IQ values of
           humans have declined over the years ever since TV was introduced to the public? Averaging at a staggering 10
           points less since 1962 in fact.</p>
         <p>Luckily for you I have nicely formatted this section in a table for some light reading.</p>
       </div>
 
-      <div class="w-full">
-        <h4 class="mx-2">
-          <span>
-            <svg width="2.5851536mm" height="2.5174201mm" viewBox="0 0 2.5851536 2.5174201" version="1.1" id="svg5"
-              xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-              <defs id="defs2" />
-              <g id="layer1" transform="translate(-58.146739,-81.8011)">
-                <text xml:space="preserve"
-                  style="font-weight:bold;font-size:22.5778px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Bold';fill:#000fb0;stroke-width:2"
-                  x="57.847584" y="84.747498" id="text113">
-                  <tspan id="tspan111"
-                    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#4c5cff;fill-opacity:1;stroke-width:2"
-                    x="57.847584" y="84.747498">&gt;</tspan>
-                </text>
-              </g>
-            </svg>
-          </span>
-          Soft skills
-        </h4>
-        <div class="mx-2">
-          <p class="bg-lightSteelBlue text-black my-1 p-2">
-            Problem solving
-          </p>
-          <p class="w-5/6 bg-lightSteelBlue text-black my-1 p-2">
-            Adaptability
-          </p>
-          <p class="w-4/5 bg-lightSteelBlue text-black my-1 p-2">
-            Curiosity
-          </p>
-          <p class="w-4/5 bg-lightSteelBlue text-black my-1 p-2">
-            Critical Thinking
-          </p>
+      <div class="mx-2 lg:flex lg:flex-row w-full">
+        <div class="w-full mx-2">
+          <h4>
+            <span>
+              <svg width="2.5851536mm" height="2.5174201mm" viewBox="0 0 2.5851536 2.5174201" version="1.1" id="svg5"
+                xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                <defs id="defs2" />
+                <g id="layer1" transform="translate(-58.146739,-81.8011)">
+                  <text xml:space="preserve"
+                    style="font-weight:bold;font-size:22.5778px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Bold';fill:#000fb0;stroke-width:2"
+                    x="57.847584" y="84.747498" id="text113">
+                    <tspan id="tspan111"
+                      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#4c5cff;fill-opacity:1;stroke-width:2"
+                      x="57.847584" y="84.747498">&gt;</tspan>
+                  </text>
+                </g>
+              </svg>
+            </span>
+            Soft skills
+          </h4>
+          <div>
+            <p class="bg-lightSteelBlue text-black my-1 p-2">
+              Problem solving
+            </p>
+            <p class="w-5/6 bg-lightSteelBlue text-black my-1 p-2">
+              Adaptability
+            </p>
+            <p class="w-4/5 bg-lightSteelBlue text-black my-1 p-2">
+              Curiosity
+            </p>
+            <p class="w-4/5 bg-lightSteelBlue text-black my-1 p-2">
+              Critical Thinking
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div class="w-full mb-2">
-        <h4 class="mx-2">
-          <span>
-            <svg width="2.5851536mm" height="2.5174201mm" viewBox="0 0 2.5851536 2.5174201" version="1.1" id="svg5"
-              xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-              <defs id="defs2" />
-              <g id="layer1" transform="translate(-58.146739,-81.8011)">
-                <text xml:space="preserve"
-                  style="font-weight:bold;font-size:22.5778px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Bold';fill:#000fb0;stroke-width:2"
-                  x="57.847584" y="84.747498" id="text113">
-                  <tspan id="tspan111"
-                    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#4c5cff;fill-opacity:1;stroke-width:2"
-                    x="57.847584" y="84.747498">&gt;</tspan>
-                </text>
-              </g>
-            </svg>
-          </span>
-          Hard skills
-        </h4>
-        <div class="mx-2">
-          <p class="bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full">
-            Programming
-          </p>
-          <p class="bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
-            C#
-          </p>
-          <p class="w-5/6 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
-            Python
-          </p>
-          <p class="w-4/5 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
-            Java
-          </p>
-          <p class="w-2/3 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
-            C++
-          </p>
-          <p class="w-2/3 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
-            JavaScript
-          </p>
-          <p class="w-5/6 bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full">
-            UI
-          </p>
-          <p class="bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
-            HTML & CSS
-          </p>
-          <p class="w-2/3 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
-            XAML
-          </p>
-          <p class="w-2/3 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
-            Flutter
-          </p>
-          <p class="w-4/5 bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full"">
-            Operating Systems
-          </p>
-          <p class=" bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
-            Windows
-          </p>
-          <p class=" w-5/6 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
-            GNU / Linux
-          </p>
-          <p class="w-4/5 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
-            Android
-          </p>
-          <p class="w-4/5 bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full"">
-            Data(base)
-          </p>
-          <p class=" bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
-            JSON
-          </p>
-          <p class="bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
-            XML
-          </p>
-          <p class=" w-5/6 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
-            SQL
-          </p>
-          <p class="w-4/5 bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full"">
-            Networks / CS
-          </p>
-          <p class=" bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
-            Networking basics
-          </p>
-          <p class="bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
-            Routing & Switching
-          </p>
+        <div class="w-full mb-2 mx-2">
+          <h4>
+            <span>
+              <svg width="2.5851536mm" height="2.5174201mm" viewBox="0 0 2.5851536 2.5174201" version="1.1" id="svg5"
+                xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                <defs id="defs2" />
+                <g id="layer1" transform="translate(-58.146739,-81.8011)">
+                  <text xml:space="preserve"
+                    style="font-weight:bold;font-size:22.5778px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Bold';fill:#000fb0;stroke-width:2"
+                    x="57.847584" y="84.747498" id="text113">
+                    <tspan id="tspan111"
+                      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#4c5cff;fill-opacity:1;stroke-width:2"
+                      x="57.847584" y="84.747498">&gt;</tspan>
+                  </text>
+                </g>
+              </svg>
+            </span>
+            Hard skills
+          </h4>
+          <div>
+            <p class="bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full">
+              Programming
+            </p>
+            <p class="bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+              C#
+            </p>
+            <p class="w-5/6 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+              Python
+            </p>
+            <p class="w-4/5 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+              Java
+            </p>
+            <p class="w-2/3 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+              C++
+            </p>
+            <p class="w-2/3 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+              JavaScript
+            </p>
+            <p class="w-5/6 bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full">
+              UI
+            </p>
+            <p class="bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+              HTML & CSS
+            </p>
+            <p class="w-2/3 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+              XAML
+            </p>
+            <p class="w-2/3 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+              Flutter
+            </p>
+            <p class="w-4/5 bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full"">
+              Operating Systems
+            </p>
+            <p class=" bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+              Windows
+            </p>
+            <p class=" w-5/6 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+              GNU / Linux
+            </p>
+            <p class="w-4/5 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+              Android
+            </p>
+            <p class="w-4/5 bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full"">
+              Data(base)
+            </p>
+            <p class=" bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+              JSON
+            </p>
+            <p class="bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+              XML
+            </p>
+            <p class=" w-5/6 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+              SQL
+            </p>
+            <p class="w-4/5 bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full"">
+              Networks / CS
+            </p>
+            <p class=" bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+              Networking basics
+            </p>
+            <p class="bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+              Routing & Switching
+            </p>
+          </div>
         </div>
       </div>
 
@@ -498,7 +503,8 @@
 
         </div>
         <div class="w-full lg:flex lg:flex-row">
-          <div class="flex flex-col w-full h-[359px] lg:min-w-[639px] bg-center bg-lightSteelBlue bg-no-repeat justify-between"
+          <div
+            class="flex flex-col w-full h-[359px] lg:min-w-[639px] bg-center bg-lightSteelBlue bg-no-repeat justify-between"
             style="background-image: url(/assets/img/colruyt.png)" alt="Colruyt Lommel">
             <div class="text-center opacity-50 bg-black">
               <p class="text-white p-2 m-0">Colruyt</p>
@@ -527,7 +533,7 @@
               Colruyt Lommel [ 2022 - 202x ]
             </h4>
             <p>I have worked here full-time for a little over four months. Right now I am stationed there as a student,
-              working zero to two days a week, depening on how busy I am with college stuff.</p>
+              working zero to two days a week, depening on how busy I am with college stuff.<span class="text-sm"><br><br>[image may not accurately represent the actual workplace, does not in fact :) ]</span></p>
           </div>
         </div>
       </div>
@@ -546,7 +552,7 @@
       </svg></a>
 
   </main>
-  <footer class="flex flex-col sm:flex-row w-full justify-evenly items-center bg-mediumPurple text-center">
+  <footer class="mt-2 flex flex-col sm:flex-row w-full justify-evenly items-center bg-mediumPurple text-center">
     <h2 class="sm:my-4">Adrigorithm</h2>
     <p class="sm:my-4">Copyright © 2022 - Adrigorithm</p>
   </footer>

@@ -76,6 +76,10 @@
   margin-left: 0.75rem
 }
 
+.mt-2{
+  margin-top: 0.5rem
+}
+
 .block{
   display: block
 }
@@ -88,12 +92,12 @@
   display: table
 }
 
-.hidden{
-  display: none
-}
-
 .\!hidden{
   display: none !important
+}
+
+.hidden{
+  display: none
 }
 
 .h-\[396px\]{
@@ -273,6 +277,11 @@
   line-height: 2rem
 }
 
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem
+}
+
 .text-black{
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity))
@@ -360,6 +369,10 @@
 @media (min-width: 1024px){
   .lg\:flex{
     display: flex
+  }
+
+  .lg\:w-1\/2{
+    width: 50%
   }
 
   .lg\:min-w-\[639px\]{
