@@ -30,14 +30,14 @@
   <title>A3's Den</title>
 </head>
 
-<body class="flex flex-col font-ubuntu dark:text-white m-0">
+<body class="flex flex-col font-ubuntu m-0 bg-white dark:bg-black text-black dark:text-white">
   <nav id="mainNav">
     <ul
-      class="flex flex-col sm:flex-row p-0 sm:py-1 m-0 sm:mb-0 list-none justify-center items-center text-2xl bg-mediumPurple">
+      class="flex flex-col sm:flex-row p-0 sm:py-1 m-0 sm:mb-0 list-none justify-center items-center text-2xl bg-mediumPurple dark:bg-lightSteelBlue">
       <a class="sm:px-2 sm:py-1 sm:order-2" href="/index.html"><img src="/assets/img/logo.svg" alt="logo"
           width="75"></a>
-      <li class="sm:order-1"><a class="block no-underline p-3 text-black" href="#about">About</a></li>
-      <li class="sm:order-3"><a class="block no-underline p-3 text-black" href="#">Projects</a></li>
+      <li class="sm:order-1"><a class="block no-underline text-black p-3" href="#about">About</a></li>
+      <li class="sm:order-3"><a class="block no-underline text-black p-3" href="#projects">Projects</a></li>
     </ul>
   </nav>
   <main>
@@ -45,15 +45,15 @@
       <div>
         <h2 class="p-2 m-0 font-spectral">Home</h2>
       </div>
-      <div class="bg-mediumPurple rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+      <div class="bg-mediumPurple dark:bg-lightSteelBlue dark:text-black rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
         <h3 class="m-0 py-1 pl-4">Welcome</h3>
       </div>
 
       <div class="w-full lg:flex lg:flex-row">
-        <div class="flex flex-column h-[396px] lg:min-w-[639px] items-end bg-no-repeat bg-center bg-lightSteelBlue"
+        <div class="flex flex-column h-[396px] lg:min-w-[639px] items-end bg-no-repeat bg-center bg-lightSteelBlue dark:bg-mediumPurple"
           style="background-image: url(/assets/img/cat.jpg)" alt="my cat">
-          <div class="w-full text-center opacity-50 bg-black">
-            <p class="text-white p-2 m-0">This is my cat</p>
+          <div class="w-full text-center opacity-50 bg-black dark:bg-white">
+            <p class="text-white dark:text-black p-2 m-0">This is my cat</p>
           </div>
         </div>
 
@@ -94,13 +94,13 @@
       <div>
         <h2 class="p-2 m-0 font-spectral">About</h2>
       </div>
-      <div class="bg-mediumPurple rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+      <div class="bg-mediumPurple dark:bg-lightSteelBlue dark:text-black rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
         <h3 class="m-0 py-1 pl-4">Synopsis</h3>
       </div>
       <div class="flex flex-col p-0 w-full">
 
         <div class="lg:flex lg:flex-row flex flex-col">
-          <div class="lg:w-1/2 bg-lightSteelBlue text-center text-bold">
+          <div class="lg:w-1/2 bg-lightSteelBlue dark:bg-mediumPurple text-center text-bold">
             <p class="m-0 p-2">Name*:</p>
           </div>
           <div class="lg:w-1/2 text-center">
@@ -109,7 +109,7 @@
         </div>
 
         <div class="lg:flex lg:flex-row flex flex-col">
-          <div class="lg:w-1/2 bg-lightSteelBlue text-black text-center text-bold">
+          <div class="lg:w-1/2 bg-lightSteelBlue dark:bg-mediumPurple text-center text-bold">
             <p class="m-0 p-2">Nationality:</p>
           </div>
           <div class="lg:w-1/2 text-center">
@@ -118,7 +118,7 @@
         </div>
 
         <div class="lg:flex lg:flex-row flex flex-col">
-          <div class="lg:w-1/2  bg-lightSteelBlue text-black text-center text-bold">
+          <div class="lg:w-1/2  bg-lightSteelBlue dark:bg-mediumPurple text-center text-bold">
             <p class="m-0 p-2">Date of Birth*:</p>
           </div>
           <div class="lg:w-1/2 text-center">
@@ -127,7 +127,7 @@
         </div>
 
         <div class="lg:flex lg:flex-row flex flex-col">
-          <div class="lg:w-1/2 bg-lightSteelBlue text-black text-center text-bold">
+          <div class="lg:w-1/2 bg-lightSteelBlue dark:bg-mediumPurple text-center text-bold">
             <p class="m-0 p-2">Email**:</p>
           </div>
           <div class="lg:w-1/2 text-center">
@@ -142,7 +142,7 @@
           **: Exposed for serious purposes only, abuse may result in IP ban from both website and mailbox.
         </p>
       </fieldset>
-      <div class="bg-mediumPurple rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+      <div class="bg-mediumPurple dark:bg-lightSteelBlue dark:text-black rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
         <h3 class="m-0 py-1 pl-4">Education</h3>
       </div>
 
@@ -154,10 +154,10 @@
               <g data-name="Double left">
                 <path
                   d="M12 17a1 1 0 0 1-.707-.293l-4-4a1 1 0 0 1 0-1.414l4-4a1 1 0 1 1 1.414 1.414L9.414 12l3.293 3.293A1 1 0 0 1 12 17z"
-                  style="fill:#1c1b1e" />
+                  style="fill:#000fb0" />
                 <path
                   d="M16 17a1 1 0 0 1-.707-.293l-4-4a1 1 0 0 1 0-1.414l4-4a1 1 0 1 1 1.414 1.414L13.414 12l3.293 3.293A1 1 0 0 1 16 17z"
-                  style="fill:#1c1b1e" />
+                  style="fill:#000fb0" />
               </g>
             </svg>
           </a>
@@ -169,10 +169,10 @@
               <g data-name="Double Arrow">
                 <path
                   d="M12 17a1 1 0 0 1-.707-1.707L14.586 12l-3.293-3.293a1 1 0 1 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414l-4 4A1 1 0 0 1 12 17z"
-                  style="fill:#1c1b1e" />
+                  style="fill:#000fb0" />
                 <path
                   d="M8 17a1 1 0 0 1-.707-1.707L10.586 12 7.293 8.707a1 1 0 1 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414l-4 4A1 1 0 0 1 8 17z"
-                  style="fill:#1c1b1e" />
+                  style="fill:#000fb0" />
               </g>
             </svg>
           </a>
@@ -181,7 +181,7 @@
 
         <div class="!hidden w-full lg:flex lg:flex-row">
           <div
-            class="flex flex-col w-full h-[426px] lg:min-w-[639px] bg-center bg-lightSteelBlue bg-no-repeat justify-between"
+            class="flex flex-col w-full h-[426px] lg:min-w-[639px] bg-center bg-lightSteelBlue dark:bg-mediumPurple bg-no-repeat justify-between"
             style="background-image: url(/assets/img/sjb.png)" alt="Sint-Jan Berchmanscollege Mol">
             <div class="w-full text-center opacity-50 bg-black">
               <p class="text-white p-2 m-0">Sint-Jan Berchmanscollege</p>
@@ -218,7 +218,7 @@
 
         <div class="!hidden w-full lg:flex lg:flex-row">
           <div
-            class="flex flex-col w-full h-[320px] lg:min-w-[639px] bg-center bg-lightSteelBlue bg-no-repeat justify-between"
+            class="flex flex-col w-full h-[320px] lg:min-w-[639px] bg-center bg-lightSteelBlue dark:bg-mediumPurple bg-no-repeat justify-between"
             style="background-image: url(/assets/img/uhasselt.png)" alt="Universiteit Hasselt">
             <div class="w-full text-center opacity-50 bg-black">
               <p class="text-white p-2 m-0">Hasselt University</p>
@@ -261,7 +261,7 @@
 
         <div class="!hidden w-full lg:flex lg:flex-row">
           <div
-            class="flex flex-col w-full h-[426px] lg:min-w-[639px] bg-center bg-lightSteelBlue bg-no-repeat justify-between"
+            class="flex flex-col w-full h-[426px] lg:min-w-[639px] bg-center bg-lightSteelBlue dark:bg-mediumPurple bg-no-repeat justify-between"
             style="background-image: url(/assets/img/tm.png)" alt="Thomas More Geel">
             <div class="w-full text-center opacity-50 bg-black">
               <p class="text-white p-2 m-0">Thomas More</p>
@@ -292,7 +292,8 @@
             <p>I started on this college studying 'IT-Factory' which went swimmingly. I had to study little and my
               results
               were excellent. Of course this happy experience just isn't the way things tend to go around here. My
-              instutde decided to change the course I followed without warning or alternative. 'Application Development'
+              institute decided to change the course I followed without warning or alternative. 'Application
+              Development'
               became 'Application Development & Business Intelligence' which meant 50% of my courses became
               uninteresting
               and dull to me. Therefore I stopped as well after 1 and a half year in this institute.</p>
@@ -301,7 +302,7 @@
 
         <div class="w-full lg:flex lg:flex-row">
           <div
-            class="flex flex-col w-full h-[425px] lg:min-w-[639px] bg-center bg-lightSteelBlue bg-no-repeat justify-between"
+            class="flex flex-col w-full h-[425px] lg:min-w-[639px] bg-center bg-lightSteelBlue dark:bg-mediumPurple bg-no-repeat justify-between"
             style="background-image: url(/assets/img/pxl.png)" alt="PXL Hasselt">
             <div class="text-center opacity-50 bg-black">
               <p class="text-white p-2 m-0">PXL</p>
@@ -334,7 +335,7 @@
         </div>
       </div>
 
-      <div class="mt-2 bg-mediumPurple rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+      <div class="mt-2 bg-mediumPurple dark:bg-lightSteelBlue dark:text-black rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
         <h3 class="m-0 py-1 pl-4">Skilltree</h3>
       </div>
 
@@ -366,16 +367,16 @@
             Soft skills
           </h4>
           <div>
-            <p class="bg-lightSteelBlue text-black my-1 p-2">
+            <p class="bg-lightSteelBlue dark:bg-mediumPurple my-1 p-2">
               Problem solving
             </p>
-            <p class="w-5/6 bg-lightSteelBlue text-black my-1 p-2">
+            <p class="w-5/6 bg-lightSteelBlue dark:bg-mediumPurple my-1 p-2">
               Adaptability
             </p>
-            <p class="w-4/5 bg-lightSteelBlue text-black my-1 p-2">
+            <p class="w-4/5 bg-lightSteelBlue dark:bg-mediumPurple my-1 p-2">
               Curiosity
             </p>
-            <p class="w-4/5 bg-lightSteelBlue text-black my-1 p-2">
+            <p class="w-4/5 bg-lightSteelBlue dark:bg-mediumPurple my-1 p-2">
               Critical Thinking
             </p>
           </div>
@@ -404,71 +405,71 @@
             <p class="bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full">
               Programming
             </p>
-            <p class="bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+            <p class="bg-lightSteelBlue dark:bg-mediumPurple p-1 m-0 ml-3 p-1 rounded-tr-full">
               C#
             </p>
-            <p class="w-5/6 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+            <p class="w-5/6 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
               Python
             </p>
-            <p class="w-4/5 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+            <p class="w-4/5 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
               Java
             </p>
-            <p class="w-2/3 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+            <p class="w-2/3 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
               C++
             </p>
-            <p class="w-2/3 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+            <p class="w-2/3 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
               JavaScript
             </p>
             <p class="w-5/6 bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full">
               UI
             </p>
-            <p class="bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+            <p class="bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
               HTML & CSS
             </p>
-            <p class="w-2/3 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+            <p class="w-2/3 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
               XAML
             </p>
-            <p class="w-2/3 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+            <p class="w-2/3 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
               Flutter
             </p>
             <p class="w-4/5 bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full"">
               Operating Systems
             </p>
-            <p class=" bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+            <p class=" bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
               Windows
             </p>
-            <p class=" w-5/6 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+            <p class=" w-5/6 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
               GNU / Linux
             </p>
-            <p class="w-4/5 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+            <p class="w-4/5 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
               Android
             </p>
             <p class="w-4/5 bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full"">
               Data(base)
             </p>
-            <p class=" bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+            <p class=" bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
               JSON
             </p>
-            <p class="bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+            <p class="bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
               XML
             </p>
-            <p class=" w-5/6 bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+            <p class=" w-5/6 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
               SQL
             </p>
             <p class="w-4/5 bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full"">
               Networks / CS
             </p>
-            <p class=" bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+            <p class=" bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
               Networking basics
             </p>
-            <p class="bg-lightSteelBlue text-black m-0 ml-3 p-1 rounded-tr-full">
+            <p class="bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
               Routing & Switching
             </p>
           </div>
         </div>
       </div>
 
-      <div class="bg-mediumPurple rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+      <div class="bg-mediumPurple dark:bg-lightSteelBlue dark:text-black rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
         <h3 class="m-0 py-1 pl-4">Experience</h3>
       </div>
 
@@ -479,10 +480,10 @@
               <g data-name="Double left">
                 <path
                   d="M12 17a1 1 0 0 1-.707-.293l-4-4a1 1 0 0 1 0-1.414l4-4a1 1 0 1 1 1.414 1.414L9.414 12l3.293 3.293A1 1 0 0 1 12 17z"
-                  style="fill:#1c1b1e" />
+                  style="fill:#000fb0" />
                 <path
                   d="M16 17a1 1 0 0 1-.707-.293l-4-4a1 1 0 0 1 0-1.414l4-4a1 1 0 1 1 1.414 1.414L13.414 12l3.293 3.293A1 1 0 0 1 16 17z"
-                  style="fill:#1c1b1e" />
+                  style="fill:#000fb0" />
               </g>
             </svg>
           </a>
@@ -493,10 +494,10 @@
               <g data-name="Double Arrow">
                 <path
                   d="M12 17a1 1 0 0 1-.707-1.707L14.586 12l-3.293-3.293a1 1 0 1 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414l-4 4A1 1 0 0 1 12 17z"
-                  style="fill:#1c1b1e" />
+                  style="fill:#000fb0" />
                 <path
                   d="M8 17a1 1 0 0 1-.707-1.707L10.586 12 7.293 8.707a1 1 0 1 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414l-4 4A1 1 0 0 1 8 17z"
-                  style="fill:#1c1b1e" />
+                  style="fill:#000fb0" />
               </g>
             </svg>
           </a>
@@ -504,7 +505,7 @@
         </div>
         <div class="w-full lg:flex lg:flex-row">
           <div
-            class="flex flex-col w-full h-[359px] lg:min-w-[639px] bg-center bg-lightSteelBlue bg-no-repeat justify-between"
+            class="flex flex-col w-full h-[359px] lg:min-w-[639px] bg-center bg-lightSteelBlue dark:bg-mediumPurple bg-no-repeat justify-between"
             style="background-image: url(/assets/img/colruyt.png)" alt="Colruyt Lommel">
             <div class="text-center opacity-50 bg-black">
               <p class="text-white p-2 m-0">Colruyt</p>
@@ -533,9 +534,152 @@
               Colruyt Lommel [ 2022 - 202x ]
             </h4>
             <p>I have worked here full-time for a little over four months. Right now I am stationed there as a student,
-              working zero to two days a week, depening on how busy I am with college stuff.<span class="text-sm"><br><br>[image may not accurately represent the actual workplace, does not in fact :) ]</span></p>
+              working zero to two days a week, depening on how busy I am with college stuff.<span
+                class="text-sm"><br><br>[image may not accurately represent the actual workplace, does not in fact :)
+                ]</span></p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="projects" class="flex flex-col justify-center items-center">
+      <div class="bg-mediumPurple dark:bg-lightSteelBlue dark:text-black rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+        <h3 class="m-0 py-1 pl-4">Projects</h3>
+      </div>
+      <div>
+        <h4 class="mx-2">
+          <span>
+            <svg width="2.5851536mm" height="2.5174201mm" viewBox="0 0 2.5851536 2.5174201" version="1.1" id="svg5"
+              xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+              <defs id="defs2" />
+              <g id="layer1" transform="translate(-58.146739,-81.8011)">
+                <text xml:space="preserve"
+                  style="font-weight:bold;font-size:22.5778px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Bold';fill:#000fb0;stroke-width:2"
+                  x="57.847584" y="84.747498" id="text113">
+                  <tspan id="tspan111"
+                    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#4c5cff;fill-opacity:1;stroke-width:2"
+                    x="57.847584" y="84.747498">&gt;</tspan>
+                </text>
+              </g>
+            </svg>
+          </span>
+          Notice
+        </h4>
+        <p class="mx-2">
+          Allow me this moment to rant about the pointlessness of education in Belgium. It sucks, it really does.
+          Anything that is not self-educted is either outdated crap or a cesspool of subjective/opinion-based teachings.
+          Of course this is also true in IT courses where up-to-datedness (I made that word up) is essential in many
+          places. An example which fits perfectly in both categories is as follows. We were forced to install the ORACLE
+          SQL Server varient (version 11g, one that is from 2011 - more than a decennium old since writing this). This particular
+          piece of garbage is a compatibility nightmare, it doesn't work on anything not called Windows. You can also
+          find numerous unsettling facts about the Oracle foundation all over the internet. The reason for not using a
+          recent version was "it requires an internet connection", which we all know is hogwash of course.
+        </p>
+      </div>
+      <div class="bg-mediumPurple dark:bg-lightSteelBlue dark:text-black rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+        <h3 class="m-0 py-1 pl-4">Backend</h3>
+      </div>
+      <div class="x-2 lg:flex lg:flex-row w-full">
+        <div
+            class="flex flex-col w-full h-[359px] lg:min-w-[639px] bg-center bg-lightSteelBlue dark:bg-mediumPurple bg-no-repeat justify-between"
+            style="background-image: url(/assets/img/placeholder.png)" alt="Oops! There's nothing there!">
+            <div class="text-center opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+            <div class="text-center w-full opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col w-full h-[359px] lg:min-w-[639px] bg-center bg-lightSteelBlue dark:bg-mediumPurple bg-no-repeat justify-between"
+            style="background-image: url(/assets/img/placeholder.png)" alt="Oops! There's nothing there!">
+            <div class="text-center opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+            <div class="text-center w-full opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col w-full h-[359px] lg:min-w-[639px] bg-center bg-lightSteelBlue dark:bg-mediumPurple bg-no-repeat justify-between"
+            style="background-image: url(/assets/img/placeholder.png)" alt="Oops! There's nothing there!">
+            <div class="text-center opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+            <div class="text-center w-full opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+          </div>
+      </div>
+      <div class="bg-mediumPurple dark:bg-lightSteelBlue dark:text-black rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+        <h3 class="m-0 py-1 pl-4">Frontend</h3>
+      </div>
+      <div class="x-2 lg:flex lg:flex-row w-full">
+        <div
+            class="flex flex-col w-full h-[359px] lg:min-w-[639px] bg-center bg-lightSteelBlue dark:bg-mediumPurple bg-no-repeat justify-between"
+            style="background-image: url(/assets/img/placeholder.png)" alt="Oops! There's nothing there!">
+            <div class="text-center opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+            <div class="text-center w-full opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col w-full h-[359px] lg:min-w-[639px] bg-center bg-lightSteelBlue dark:bg-mediumPurple bg-no-repeat justify-between"
+            style="background-image: url(/assets/img/placeholder.png)" alt="Oops! There's nothing there!">
+            <div class="text-center opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+            <div class="text-center w-full opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col w-full h-[359px] lg:min-w-[639px] bg-center bg-lightSteelBlue dark:bg-mediumPurple bg-no-repeat justify-between"
+            style="background-image: url(/assets/img/placeholder.png)" alt="Oops! There's nothing there!">
+            <div class="text-center opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+            <div class="text-center w-full opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+          </div>
+      </div>
+      <div class="bg-mediumPurple dark:bg-lightSteelBlue rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+        <h3 class="m-0 py-1 pl-4">Fullstack</h3>
+      </div>
+      <div class="x-2 lg:flex lg:flex-row w-full">
+        <div
+            class="flex flex-col w-full h-[359px] lg:min-w-[639px] bg-center bg-lightSteelBlue dark:bg-mediumPurple bg-no-repeat justify-between"
+            style="background-image: url(/assets/img/placeholder.png)" alt="Oops! There's nothing there!">
+            <div class="text-center opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+            <div class="text-center w-full opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col w-full h-[359px] lg:min-w-[639px] bg-center bg-lightSteelBlue dark:bg-mediumPurple bg-no-repeat justify-between"
+            style="background-image: url(/assets/img/placeholder.png)" alt="Oops! There's nothing there!">
+            <div class="text-center opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+            <div class="text-center w-full opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col w-full h-[359px] lg:min-w-[639px] bg-center bg-lightSteelBlue dark:bg-mediumPurple bg-no-repeat justify-between"
+            style="background-image: url(/assets/img/placeholder.png)" alt="Oops! There's nothing there!">
+            <div class="text-center opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+            <div class="text-center w-full opacity-50 bg-black">
+              <p class="text-white p-2 m-0">Nothing</p>
+            </div>
+          </div>
       </div>
     </section>
 
@@ -552,9 +696,9 @@
       </svg></a>
 
   </main>
-  <footer class="mt-2 flex flex-col sm:flex-row w-full justify-evenly items-center bg-mediumPurple text-center">
+  <footer class="mt-2 flex flex-col sm:flex-row w-full justify-evenly items-center bg-mediumPurple dark:bg-lightSteelBlue dark:text-black text-center">
     <h2 class="sm:my-4">Adrigorithm</h2>
-    <p class="sm:my-4">Copyright © 2022 - Adrigorithm</p>
+    <p class="sm:my-4">Copyright © 2023 - Adrigorithm</p>
   </footer>
   <script src="/assets/js/timeline.js"></script>
   <script src="/assets/js/scrollEvents.js"></script>

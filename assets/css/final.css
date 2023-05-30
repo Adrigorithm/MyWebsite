@@ -60,6 +60,10 @@
   margin-bottom: 0.25rem
 }
 
+.mt-2{
+  margin-top: 0.5rem
+}
+
 .mb-2{
   margin-bottom: 0.5rem
 }
@@ -74,10 +78,6 @@
 
 .ml-3{
   margin-left: 0.75rem
-}
-
-.mt-2{
-  margin-top: 0.5rem
 }
 
 .block{
@@ -197,6 +197,11 @@
   border-color: rgb(0 15 176 / var(--tw-border-opacity))
 }
 
+.bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+}
+
 .bg-mediumPurple{
   --tw-bg-opacity: 1;
   background-color: rgb(139 128 249 / var(--tw-bg-opacity))
@@ -215,11 +220,6 @@
 .bg-zaffre{
   --tw-bg-opacity: 1;
   background-color: rgb(0 15 176 / var(--tw-bg-opacity))
-}
-
-.bg-white{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity))
 }
 
 .bg-center{
@@ -293,8 +293,7 @@
 }
 
 .no-underline{
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none
+  text-decoration-line: none
 }
 
 .opacity-50{
@@ -306,9 +305,34 @@
 }
 
 @media (prefers-color-scheme: dark){
+  .dark\:bg-black{
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity))
+  }
+
+  .dark\:bg-lightSteelBlue{
+    --tw-bg-opacity: 1;
+    background-color: rgb(184 202 224 / var(--tw-bg-opacity))
+  }
+
+  .dark\:bg-white{
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+  }
+
+  .dark\:bg-mediumPurple{
+    --tw-bg-opacity: 1;
+    background-color: rgb(139 128 249 / var(--tw-bg-opacity))
+  }
+
   .dark\:text-white{
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity))
+  }
+
+  .dark\:text-black{
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity))
   }
 }
 

@@ -13,7 +13,7 @@ module.exports = {
       lightSteelBlue: '#B8CAE0',
       mediumPurple: '#8B80f9',
       black: '#000',
-      white: '#fff',
+      white: '#fff'
     },
     fontFamily: {
       'ubuntu': ['Ubuntu', 'sans-serif'],
