@@ -1,3 +1,23 @@
 @taiwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-\[url\(\'\/assets\/img\/colruyt\.png\'\)\]{
+    background-image: url('/assets/img/colruyt.png')
+}
+
+.bg-\[url\(\'\/assets\/img\/pxl\.png\'\)\]{
+    background-image: url('/assets/img/pxl.png')
+}
+
+.bg-\[url\(\'\/assets\/img\/sjb\.png\'\)\]{
+    background-image: url('/assets/img/sjb.png')
+}
+
+.bg-\[url\(\'\/assets\/img\/tm\.png\'\)\]{
+    background-image: url('/assets/img/tm.png')
+}
+
+.bg-\[url\(\'\/assets\/img\/uhasselt\.png\'\)\]{
+    background-image: url('/assets/img/uhasselt.png')
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="15.142796mm"
+   height="22.248138mm"
+   viewBox="0 0 15.142796 22.248138"
+   version="1.1"
+   id="svg5"
+   inkscape:export-filename="rChevronDouble.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-55.94,-85.797025)">
+    <g
+       id="g408"
+       inkscape:export-filename="rChevronDouble.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       transform="translate(8.9002795)">
+      <rect
+         style="fill:#000fb0;stroke-width:2"
+         id="rect404"
+         width="5.7840381"
+         height="15.675402"
+         x="-29.852493"
+         y="96.942986"
+         transform="rotate(-44.744412)" />
+      <rect
+         style="fill:#000fb0;stroke-width:2"
+         id="rect406"
+         width="5.7840381"
+         height="15.675402"
+         x="106.60186"
+         y="-40.734188"
+         transform="matrix(0.71025403,0.70394546,0.70394546,-0.71025403,0,0)" />
+    </g>
+  </g>
+</svg>
