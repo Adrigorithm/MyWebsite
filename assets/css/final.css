@@ -234,10 +234,6 @@
   background-image: url('${this.#timeLineFrames[index].image}')
 }
 
-.bg-\[url\(\'\/assets\/img\/rChevron\.svg\'\)\]{
-  background-image: url('/assets/img/rChevron.svg')
-}
-
 .bg-center{
   background-position: center
 }

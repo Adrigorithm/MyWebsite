@@ -1,0 +1,148 @@
+{
+    "recipes": [
+        {
+            "name": "Chocolate lava cakes",
+            "ingredients": [
+                {
+                    "name": "dark chocolate",
+                    "quantity": 300,
+                    "unit": "g"
+                },
+                {
+                    "name": "dark chocolate",
+                    "quantity": 12,
+                    "unit": "p"
+                },
+                {
+                    "name": "coconut oil",
+                    "quantity": 120,
+                    "unit": "g",
+                    "alternatives": [
+                        {
+                            "name": "butter (unsalted)",
+                            "quantity": 150,
+                            "unit": "g"
+                        }
+                    ]
+                },
+                {
+                    "name": "icing sugar",
+                    "quantity": 100,
+                    "unit": "g"
+                },
+                {
+                    "name": "all-purpose flour",
+                    "quantity": 120,
+                    "unit": "g"
+                },
+                {
+                    "name": "eggs",
+                    "quantity": 4,
+                    "unit": "p"
+                }
+            ],
+            "image": "",
+            "ovenSettings": {
+                "mode": "f",
+                "degrees": 180,
+                "minutes": 15
+            },
+            "servings": 12,
+            "insctructions": [
+                "Intro",
+                "Centre",
+                "Outro"
+            ],
+            "difficulty": 0
+        },
+        {
+            "name": "Chocolate chip cookies",
+            "ingredients": [
+                {
+                    "name": "dark chocolate chips",
+                    "quantity": 200,
+                    "unit": "g"
+                },
+                {
+                    "name": "cane sugar",
+                    "quantity": 80,
+                    "unit": "g"
+                },
+                {
+                    "name": "rock sugar",
+                    "quantity": 80,
+                    "unit": "g",
+                    "alternatives": [
+                        {
+                            "name": "brown sugar",
+                            "quantity": 80,
+                            "unit": "g"
+                        }
+                    ]
+                },
+                {
+                    "name": "coconut oil",
+                    "quantity": 60,
+                    "unit": "g",
+                    "alternatives": [
+                        {
+                            "name": "butter (unsalted)",
+                            "quantity": 75,
+                            "unit": "g"
+                        }
+                    ]
+                },
+                {
+                    "name": "oatmeal (fine)",
+                    "quantity": 225,
+                    "unit": "g",
+                    "alternatives": [
+                        {
+                            "name": "all-purpose flour",
+                            "quantity": 225,
+                            "unit": "g"
+                        }
+                    ]
+                },
+                {
+                    "name": "coconut milk",
+                    "quantity": 120,
+                    "unit": "g"
+                },
+                {
+                    "name": "eggs",
+                    "quantity": 1,
+                    "unit": "p"
+                },
+                {
+                    "name": "baking soda",
+                    "quantity": 0.5,
+                    "unit": "tsp"
+                },
+                {
+                    "name": "salt",
+                    "quantity": 0.25,
+                    "unit": "tsp"
+                },
+                {
+                    "name": "vanilla essence [optional]",
+                    "quantity": 2,
+                    "unit": "tsp"
+                }
+            ],
+            "image": "",
+            "ovenSettings": {
+                "mode": "f",
+                "degrees": 170,
+                "minutes": 25
+            },
+            "servings": 10,
+            "insctructions": [
+                "Intro",
+                "Centre",
+                "Outro"
+            ],
+            "difficulty": 0
+        }
+    ]
+}
