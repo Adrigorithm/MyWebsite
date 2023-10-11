@@ -22,7 +22,7 @@ class TimeLine {
 
             // Image part of the timeline frame
             let imageContainer = document.createElement("div");
-            imageContainer.classList.add("flex", "flex-col", "w-full", "h-[426px]", "lg:max-w-[639px]", "bg-center", "bg-lightSteelBlue", "dark:bg-mediumPurple", "bg-no-repeat", "justify-between", `bg-[url('${this.#timeLineFrames[index].image}')]`);
+            imageContainer.classList.add("flex", "flex-col", "bg-contain", "basis-full", "lg:basis-1/3", "bg-lightSteelBlue", "dark:bg-mediumPurple", "bg-no-repeat", "bg-cover", "bg-center", "h-80", "justify-between", `bg-[url('${this.#timeLineFrames[index].image}')]`);
             imageContainer.setAttribute("alt", `Image of ${this.#timeLineFrames[index].name}`);
 
             let nameContainer = document.createElement("div");
@@ -46,7 +46,7 @@ class TimeLine {
 
             // Description part of the timeline frame
             let textContainer = document.createElement("div");
-            textContainer.classList.add("mx-2");
+            textContainer.classList.add("mx-2", "lg:basis-2/3");
 
             let titleContainer = document.createElement("h4");
 

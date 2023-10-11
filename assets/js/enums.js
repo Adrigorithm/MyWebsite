@@ -14,4 +14,16 @@ const ContentType = {
     JSON: "application/json"
 };
 
-export {WriteMode, RequestMethod, ContentType};
+const OvenMode = {
+    TRADITIONAL: "/assets/img/ovenTraditional.svg",
+    FAN: "/assets/img/ovenVent.svg",
+    FAN_TRADITIONAL: "/assets/ovenVentTraditional"
+};
+
+const Temperature = {
+    CELCIUS: 'C',
+    FAHRENHEIT: 'F',
+    KELVIN: 'K'
+}
+
+export {WriteMode, RequestMethod, ContentType, OvenMode, Temperature};
