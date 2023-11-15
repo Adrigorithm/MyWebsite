@@ -4,28 +4,28 @@
             "name": "education",
             "details": [
                 {
-                    "image": "/assets/img/sjb.png",
+                    "image": "/assets/img/sjb.webp",
                     "name": "Sint-Jan Berchmanscollege",
                     "place": "Mol",
                     "header": "Sint-Jan Berchmanscollege Mol [ 2011 - 2017 ]",
                     "text": "I started studying 'Modern Sciences' and kept at it until 3rd grade (5th-6th year), at which point a computer science related study field became available. I changed course due to 'Science' lacking in both challenge and motivation (all 'mundane' courses except for Chemistry did not even remotely appeal to my interests). I finished high school 2 years later, in 2017."
                 },
                 {
-                    "image": "/assets/img/uhasselt.png",
+                    "image": "/assets/img/uhasselt.webp",
                     "name": "Hasselt University",
                     "place": "Diepenbeek",
                     "header": "Hasselt University (Diepenbeek) [ 2017 - 2018 ]",
                     "text": "This is a weird one, please bear with me. First semester I decided to give 'Biomedical Sciences' a go. My line of thought here was to get a master degree that would align both my biggest interests: 'Nano Technology'. Unfortunately this didn't go too well as I was expected to study a lot, something I had unironically never done before. Unable to slay this monster, I attempted 'Computer Science' and I hated every minute of it. We weren't actually thaught anything useful. As someone who already spend quite a large amount of their spare time programming I believe I could property assess the value of the course. Two examples include programming on a sheet of paper (yes really) and 'Databases' being a synonym of mathematics (which we had as well funnily enough). Suffice it to say I did my first and last year in University."
                 },
                 {
-                    "image": "/assets/img/tm.png",
+                    "image": "/assets/img/tm.webp",
                     "name": "Thomas More",
                     "place": "Geel",
                     "header": "Thomas More Geel [ 2018 - 2020 ]",
                     "text": "I started on this college studying 'IT-Factory' which went swimmingly. I had to study little and my results were excellent. Of course this happy experience just isn't the way things tend to go around here. My institute decided to change the course I followed without warning or alternative. 'Application Development' became 'Application Development & Business Intelligence' which meant 50% of my courses became uninteresting and dull to me. Therefore I stopped as well after 1 and a half year in this institute."
                 },
                 {
-                    "image": "/assets/img/pxl.png",
+                    "image": "/assets/img/pxl.webp",
                     "name": "PXL",
                     "place": "Hasselt",
                     "header": "PXL Hasselt [ 2022 - 202x ]",
@@ -37,7 +37,7 @@
             "name": "experience",
             "details": [
                 {
-                    "image": "/assets/img/colruyt.png",
+                    "image": "/assets/img/colruyt.webp",
                     "name": "Colruyt",
                     "place": "Lommel",
                     "header": "Colruyt Lommel [ 2022 - 202x ]",

@@ -16,7 +16,7 @@ module.exports = {
     },
     fontFamily: {
       'ubuntu': ['Ubuntu', 'sans-serif'],
-      'spectral': ['Spectral', 'serif'],
+      'youngSerif': ['YoungSerif', 'serif'],
     }
   },
   plugins: [],

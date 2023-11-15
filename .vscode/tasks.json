@@ -6,7 +6,7 @@
         {
             "label": "deploy",
             "type": "shell",
-            "command": "python3 -m http.server --bind 127.0.0.1 9000 | npx tailwindcss -i ./assets/css/style.css -o ./assets/css/final.css --watch",
+            "command": "python -m http.server --bind 127.0.0.1 8080 | npx tailwindcss -i ./assets/css/style.css -o ./assets/css/final.css --watch",
             "problemMatcher": []
         }
     ]

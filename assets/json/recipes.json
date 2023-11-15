@@ -6,12 +6,14 @@
                 {
                     "name": "dark chocolate",
                     "quantity": 300,
-                    "unit": "g"
+                    "unit": "g",
+                    "alternatives": []
                 },
                 {
                     "name": "dark chocolate",
                     "quantity": 12,
-                    "unit": "p"
+                    "unit": "p",
+                    "alternatives": []
                 },
                 {
                     "name": "coconut oil",
@@ -21,27 +23,31 @@
                         {
                             "name": "butter (unsalted)",
                             "quantity": 150,
-                            "unit": "g"
+                            "unit": "g",
+                            "alternatives": []
                         }
                     ]
                 },
                 {
                     "name": "icing sugar",
                     "quantity": 100,
-                    "unit": "g"
+                    "unit": "g",
+                    "alternatives": []
                 },
                 {
                     "name": "all-purpose flour",
                     "quantity": 120,
-                    "unit": "g"
+                    "unit": "g",
+                    "alternatives": []
                 },
                 {
                     "name": "eggs",
                     "quantity": 4,
-                    "unit": "p"
+                    "unit": "p",
+                    "alternatives": []
                 }
             ],
-            "image": "",
+            "image": "./assets/img/lavacake.webp",
             "ovenSettings": {
                 "mode": "f",
                 "degrees": 180,
@@ -49,9 +55,12 @@
             },
             "servings": 12,
             "insctructions": [
-                "Intro",
-                "Centre",
-                "Outro"
+                "Melt the chocolate (not the pieces) combined with the coconut oil. Using a microwave, take it out every 30 seconds and stir well until done to prevent it from overheating the chocolate.",
+                "Add icing sugar and stir until homogeneous. Repeat this process with the flour.",
+                "Add the eggs one after the other, stir well in between.",
+                "Evenly distribute the mixture over about 12 cupcake tins (I have no idea what to call them, look at the picture). When this is done gently push a piece of chocolate in each cake until it is partly covered and just not hitting the bottom.",
+                "Bake. Allow to cool for three to five minutes before eating.",
+                "They can remain in room temperature for up to three days. Heaten for fifteen seconds @ 600W in a microwave."
             ],
             "difficulty": 0
         },
@@ -61,12 +70,14 @@
                 {
                     "name": "dark chocolate chips",
                     "quantity": 200,
-                    "unit": "g"
+                    "unit": "g",
+                    "alternatives": []
                 },
                 {
                     "name": "cane sugar",
                     "quantity": 80,
-                    "unit": "g"
+                    "unit": "g",
+                    "alternatives": []
                 },
                 {
                     "name": "rock sugar",
@@ -76,7 +87,8 @@
                         {
                             "name": "brown sugar",
                             "quantity": 80,
-                            "unit": "g"
+                            "unit": "g",
+                            "alternatives": []
                         }
                     ]
                 },
@@ -88,7 +100,8 @@
                         {
                             "name": "butter (unsalted)",
                             "quantity": 75,
-                            "unit": "g"
+                            "unit": "g",
+                            "alternatives": []
                         }
                     ]
                 },
@@ -100,34 +113,40 @@
                         {
                             "name": "all-purpose flour",
                             "quantity": 225,
-                            "unit": "g"
+                            "unit": "g",
+                            "alternatives": []
                         }
                     ]
                 },
                 {
                     "name": "coconut milk",
                     "quantity": 120,
-                    "unit": "g"
+                    "unit": "g",
+                    "alternatives": []
                 },
                 {
                     "name": "eggs",
                     "quantity": 1,
-                    "unit": "p"
+                    "unit": "p",
+                    "alternatives": []
                 },
                 {
                     "name": "baking soda",
                     "quantity": 0.5,
-                    "unit": "tsp"
+                    "unit": "tsp",
+                    "alternatives": []
                 },
                 {
                     "name": "salt",
                     "quantity": 0.25,
-                    "unit": "tsp"
+                    "unit": "tsp",
+                    "alternatives": []
                 },
                 {
                     "name": "vanilla essence [optional]",
                     "quantity": 2,
-                    "unit": "tsp"
+                    "unit": "tsp",
+                    "alternatives": []
                 }
             ],
             "image": "",
@@ -138,11 +157,14 @@
             },
             "servings": 10,
             "insctructions": [
-                "Intro",
-                "Centre",
-                "Outro"
+                "Make sure you have all ingredients at the ready, as minimal delay should occur between all stages.",
+                "Combine all the sugar and coconut oil (melt if solid). Add the eggs, salt, baking soda and vanilla essence.",
+                "Add the oatmeal and coconut milk (if you used oatmeal, half the amount of milk will suffice) and stir until homogeneous. Lastly add the chocolate chips and combine",
+                "Put a sheet of baking paper on one oven tin (make sure it covers the whole plate). Pour the mixture on it and device evenly over the plate.",
+                "Bake. Allow to cool for ten minutes and cut into cookies of desired size with a sharp knife or pizza cutter",
+                "They can be preserved in room temperatur for up to five days."
             ],
-            "difficulty": 0
+            "difficulty": 1
         }
     ]
 }
