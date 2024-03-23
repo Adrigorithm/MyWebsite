@@ -1,8 +1,8 @@
 "use strict"
 
-import { OvenMode, WriteMode } from "./enums";
-import { NotImplementedException } from "./exceptions";
-import { SetTextContent } from "./utilities";
+import { OvenMode, WriteMode } from "./enums.js";
+import { NotImplementedException } from "./exceptions.js";
+import { SetTextContent } from "./utilities.js";
 
 class RecipeWindow{
     #recipes = [];
@@ -109,7 +109,7 @@ class Recipe{
     }
 }
 
-class Ingedient{
+class Ingredient{
     constructor(name, quantity, unit, alternatives, isAlternative){
         this.name = name;
         this.quantity = quantity;
@@ -122,10 +122,17 @@ class Ingedient{
 class OvenSettings{
     ovenMode = OvenMode.TRADITIONAL;
     degrees = -1;
+    minutes = -1;
 
-    constructor(ovenMode, degrees){
+    /**
+     * Creates a new object representing oven settings
+     * @param ovenMode A string to an image displaying the mode of the oven
+     * @param degrees Degrees in Celcius
+     */
+    constructor(ovenMode, degrees, minutes){
         this.ovenMode = ovenMode;
         this.degrees = degrees;
+        this.minutes = minutes;
     }
 
     ConvertTo(unit){
@@ -141,3 +148,5 @@ class OvenSettings{
         }
     }
 }
+
+export {RecipeWindow, Recipe, Ingredient, OvenSettings}

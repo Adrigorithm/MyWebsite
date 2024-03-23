@@ -1,9 +1,10 @@
 "use strict"
 
 import { DataLoader } from "./jsonFetcher.js";
-import { ContentType, RequestMethod } from "./enums.js";
+import { ContentType, OvenMode, RequestMethod } from "./enums.js";
 import { ScrollButtonController } from "./scrollEvents.js";
 import { TimeLine, TimeLineFrame } from "./timeline.js";
+import { Ingredient, OvenSettings, Recipe, RecipeWindow } from "./recipe.js";
 
 window.addEventListener("load", PageLoaded);
 
@@ -12,6 +13,7 @@ let scrollTopButton;
 function PageLoaded() {
     SetupScrollEvent();
     ConstructTimeLines();
+    ConstructRecipes();
 }
 
 function SetupScrollEvent(){
@@ -26,6 +28,82 @@ function SetupScrollEvent(){
             document.getElementById("mainNav")
         )
     });
+}
+
+function ConstructRecipes() {
+    let timeLinesHtml = document.getElementById("recipes").children[1];
+    let dataLoader = new DataLoader();
+    let recipes = [];
+    let recipeWindow;
+
+    dataLoader.FetchData("/assets/json/recipes.json", RequestMethod.GET, ContentType.JSON).then((data) => {
+        let recipesData = data.recipes;
+
+        if (recipesData.length == 0) {
+            console.log("No recipes found!");
+        };
+
+        for (let index = 0; index < recipesData.length; index++) {
+            let recipe;
+            let ingredients = [];
+            let ovenMode;
+
+            // Ingredients
+            recipesData[index].ingredients.forEach(ingredientData => {
+                let ingredient = new Ingredient(
+                    ingredientData.name,
+                    ingredientData.quantity,
+                    ingredientData.unit,
+                    [],
+                    false
+                );
+
+                ingredientData.alternatives.forEach(altIngredient => {
+                    ingredient.alternatives.push(new Ingredient(
+                        altIngredient.name,
+                        altIngredient.quantity,
+                        altIngredient.unit,
+                        null,
+                        true
+                    ));
+                });
+
+                ingredients.push(ingredient);
+            });
+
+            // Oven settings
+            switch (recipesData[index].ovenSettings.mode.toUpperCase()) {
+                case 'F':
+                    ovenMode = OvenMode.FAN;
+                    break;
+                case 'T':
+                    ovenMode = OvenMode.TRADITIONAL;
+                    break;
+                case 'FT':
+                    ovenMode = OvenMode.FAN_TRADITIONAL;
+                    break;
+                default:
+                    console.log(`Ovenmode ${recipesData[index].ovenSettings.mode} is not supported, defaulting to Traditional Mode`);
+                    ovenMode = OvenMode.TRADITIONAL;
+            }
+
+            // Recipe :)
+            recipe = new Recipe(
+                recipesData[index].name,
+                ingredients,
+                recipesData[index].image,
+                new OvenSettings(ovenMode, Number.parseInt(recipesData[index].ovenSettings.degrees), Number.parseInt(recipesData[index].ovenSettings.minutes)),
+                Number.parseInt(recipesData[index].servings),
+                recipesData[index].instructions,
+                Number.parseInt(recipesData[index].difficulty)
+            );
+
+            recipes.push(recipe);
+        };
+    });
+
+    recipeWindow = new RecipeWindow(recipes);
+    console.log(recipes);
 }
 
 function ConstructTimeLines(){
