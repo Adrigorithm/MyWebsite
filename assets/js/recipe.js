@@ -4,25 +4,40 @@ import { OvenMode, WriteMode } from "./enums.js";
 import { NotImplementedException } from "./exceptions.js";
 import { SetTextContent } from "./utilities.js";
 
-class RecipeWindow{
+class RecipeWindow {
     #recipes = [];
     #activeRecipe = -1;
 
-    constructor(recipes){
+    constructor(recipes) {
         this.#recipes = recipes;
     }
 
-    ToDOMElements(){
-        let recipeContainer = document.createElement("section");
-        recipeContainer.classList.add("flex flex-col inset-[8%] fixed opacity-75 bg-lightSteelBlue dark:bg-zaffre");
-        
+    ToDOMElements() {
+        let recipeSection = document.createElement("section");
+        recipeSection.classList.add("flex", "flex-col", "justify-center", "items-center");
+
+        let recipeSectionHead = document.createElement("h2");
+        recipeSectionHead.classList.add("p-2", "m-0", "font-youngSerif");
+        SetTextContent(recipeSectionHead, WriteMode.SET, document.createTextNode("Recipes"));
+
+        let recipeSectionThumbnail = document.createElement("div");
+        recipeSectionThumbnail.classList.add("flex");
+
+        recipeSection.append(recipeSectionHead, recipeSectionThumbnail);
+
         for (let index = 0; index < this.#recipes.length; index++) {
+            let recipeContainer = document.createElement("section");
+            recipeContainer.classList.add("flex flex-col inset-[8%] fixed opacity-75 bg-lightSteelBlue dark:bg-zaffre hidden");
+
             let headerContainer = document.createElement("div");
-            headerContainer.classList.add("flex", "flex-row", "items-center");
+            headerContainer.classList.add("flex", "flex-row", "items-center", "hidden");
 
             let headerTitle = document.createElement("h3");
             SetTextContent(headerTitle, WriteMode.SET, document.createTextNode(this.#recipes[index].name));
             headerTitle.classList.add("grow", "m-0", "text-center");
+
+            let recipeMain = document.createElement("div");
+            recipeMain.classList.add("flex flex-col lg:flex-row mx-2 hidden");
 
             let closeButtonAnchor = document.createElement("a");
             closeButtonAnchor.setAttribute("href", "javascript: void(0);");
@@ -33,14 +48,26 @@ class RecipeWindow{
             closeButtonImg.setAttribute("alt", "CloseRecipeWindow")
 
             closeButtonAnchor.addEventListener("click", () => {
-                Hide(index);
+                Hide(recipeContainer.classList, headerContainer.classList, recipeMain.classList);
             })
+
+            // Add recipe thumbnails
+            let recipeThumbnailLink = document.createElement("a");
+            recipeThumbnailLink.setAttribute("href", "#!");
+            recipeThumbnailLink.addEventListener("click", () => {
+                Show(recipeContainer.classList, headerContainer.classList, recipeMain.classList);
+            })
+
+            let recipeThumbnailImage = document.createElement("img");
+            recipeThumbnailImage.setAttribute("src", `${this.#recipes[index].image}`);
+            recipeThumbnailImage.setAttribute("alt", `recipe id: ${index}`);
+
+            recipeThumbnailLink.appendChild(recipeThumbnailImage);
+            recipeSectionThumbnail.appendChild(recipeThumbnailLink);
+
 
             closeButtonAnchor.appendChild(closeButtonImg);
             headerContainer.append(headerTitle, closeButtonAnchor);
-
-            let recipeMain = document.createElement("div");
-            recipeMain.classList.add("flex flex-col lg:flex-row mx-2");
 
             let ingredientsContainer = document.createElement("div");
             ingredientsContainer.classList.add("border-r-zaffre dark:border-r-lightSteelBlue");
@@ -77,15 +104,26 @@ class RecipeWindow{
             instructionsContainer.append(instructionsTitle, instructionsList);
             recipeMain.append(recipeContainer, instructionsContainer);
             recipeContainer.append(headerContainer, recipeMain);
+            recipeSection.appendChild(recipeContainer);
         }
+
+        return recipeContainer;
     }
 
-    Hide(){
+    Show(recipeContainerClassList, headerContainerClassList, recipeMainClassList) {
+        recipeContainerClassList.remove("hidden");
+        headerContainerClassList.remove("hidden");
+        recipeMainClassList.remove("hidden");
+    }
 
+    Hide(recipeContainerClassList, headerContainerClassList, recipeMainClassList) {
+        recipeContainerClassList.add("hidden");
+        headerContainerClassList.add("hidden");
+        recipeMainClassList.add("hidden");
     }
 }
 
-class Recipe{
+class Recipe {
     name = "unnamed";
     ingredients = [];
     image = "/assets/img/placeholder.webp";
@@ -94,7 +132,7 @@ class Recipe{
     instructions = [];
     difficulty = -1;
 
-    constructor(name, ingredients, image, ovenSettings, servings, instructions, difficulty){
+    constructor(name, ingredients, image, ovenSettings, servings, instructions, difficulty) {
         this.name = name;
         this.ingredients = ingredients;
         this.image = image;
@@ -104,13 +142,13 @@ class Recipe{
         this.difficulty = difficulty;
     }
 
-    ToDOMElement(){
+    ToDOMElement() {
 
     }
 }
 
-class Ingredient{
-    constructor(name, quantity, unit, alternatives, isAlternative){
+class Ingredient {
+    constructor(name, quantity, unit, alternatives, isAlternative) {
         this.name = name;
         this.quantity = quantity;
         this.unit = unit;
@@ -119,7 +157,7 @@ class Ingredient{
     }
 }
 
-class OvenSettings{
+class OvenSettings {
     ovenMode = OvenMode.TRADITIONAL;
     degrees = -1;
     minutes = -1;
@@ -129,13 +167,13 @@ class OvenSettings{
      * @param ovenMode A string to an image displaying the mode of the oven
      * @param degrees Degrees in Celcius
      */
-    constructor(ovenMode, degrees, minutes){
+    constructor(ovenMode, degrees, minutes) {
         this.ovenMode = ovenMode;
         this.degrees = degrees;
         this.minutes = minutes;
     }
 
-    ConvertTo(unit){
+    ConvertTo(unit) {
         switch (unit) {
             case 'C':
                 return this.degrees;
@@ -149,4 +187,4 @@ class OvenSettings{
     }
 }
 
-export {RecipeWindow, Recipe, Ingredient, OvenSettings}
+export { RecipeWindow, Recipe, Ingredient, OvenSettings }

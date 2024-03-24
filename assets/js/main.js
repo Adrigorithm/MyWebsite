@@ -16,7 +16,7 @@ function PageLoaded() {
     ConstructRecipes();
 }
 
-function SetupScrollEvent(){
+function SetupScrollEvent() {
     scrollTopButton = new ScrollButtonController(
         document.getElementById("mainNav"),
         document.getElementById("toTopButton")
@@ -31,7 +31,7 @@ function SetupScrollEvent(){
 }
 
 function ConstructRecipes() {
-    let timeLinesHtml = document.getElementById("recipes").children[1];
+    let elementBefore = document.getElementById("projects");
     let dataLoader = new DataLoader();
     let recipes = [];
     let recipeWindow;
@@ -57,17 +57,14 @@ function ConstructRecipes() {
                     [],
                     false
                 );
-
-                ingredientData.alternatives.forEach(altIngredient => {
-                    ingredient.alternatives.push(new Ingredient(
-                        altIngredient.name,
-                        altIngredient.quantity,
-                        altIngredient.unit,
-                        null,
-                        true
-                    ));
-                });
-
+                
+                ingredient.alternatives.push(...ingredientData.alternatives.map(altIngredient => new Ingredient(
+                    altIngredient.name,
+                    altIngredient.quantity,
+                    altIngredient.unit,
+                    null,
+                    true
+                )));
                 ingredients.push(ingredient);
             });
 
@@ -103,10 +100,10 @@ function ConstructRecipes() {
     });
 
     recipeWindow = new RecipeWindow(recipes);
-    console.log(recipes);
+    elementBefore.after(recipeWindow.ToDOMElements());
 }
 
-function ConstructTimeLines(){
+function ConstructTimeLines() {
     let timeLinesHtml = document.getElementsByClassName("timeline");
     let dataLoader = new DataLoader();
     let timeLines = [];
