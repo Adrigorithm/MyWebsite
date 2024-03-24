@@ -47,7 +47,7 @@
                     "alternatives": []
                 }
             ],
-            "image": "./assets/img/lavacake.webp",
+            "image": "./assets/img/placeholder.webp",
             "ovenSettings": {
                 "mode": "f",
                 "degrees": 180,
@@ -149,7 +149,7 @@
                     "alternatives": []
                 }
             ],
-            "image": "",
+            "image": "./assets/img/placeholder.webp",
             "ovenSettings": {
                 "mode": "f",
                 "degrees": 170,

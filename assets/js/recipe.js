@@ -27,7 +27,7 @@ class RecipeWindow {
 
         for (let index = 0; index < this.#recipes.length; index++) {
             let recipeContainer = document.createElement("section");
-            recipeContainer.classList.add("flex flex-col inset-[8%] fixed opacity-75 bg-lightSteelBlue dark:bg-zaffre hidden");
+            recipeContainer.classList.add("flex", "flex-col", "inset-[8%]", "fixed", "opacity-75", "bg-lightSteelBlue", "dark:bg-zaffre", "hidden");
 
             let headerContainer = document.createElement("div");
             headerContainer.classList.add("flex", "flex-row", "items-center", "hidden");
@@ -37,25 +37,25 @@ class RecipeWindow {
             headerTitle.classList.add("grow", "m-0", "text-center");
 
             let recipeMain = document.createElement("div");
-            recipeMain.classList.add("flex flex-col lg:flex-row mx-2 hidden");
+            recipeMain.classList.add("flex", "flex-col", "lg:flex-row", "mx-2", "hidden");
 
             let closeButtonAnchor = document.createElement("a");
             closeButtonAnchor.setAttribute("href", "javascript: void(0);");
 
             let closeButtonImg = document.createElement("img");
             closeButtonImg.setAttribute("src", "/assets/img/cross.svg")
-            closeButtonImg.classList.add("h-8 w-8 bg-white p-2");
+            closeButtonImg.classList.add("h-8", "w-8", "bg-white", "p-2");
             closeButtonImg.setAttribute("alt", "CloseRecipeWindow")
 
             closeButtonAnchor.addEventListener("click", () => {
-                Hide(recipeContainer.classList, headerContainer.classList, recipeMain.classList);
+                this.Hide(recipeContainer.classList, headerContainer.classList, recipeMain.classList);
             })
 
             // Add recipe thumbnails
             let recipeThumbnailLink = document.createElement("a");
-            recipeThumbnailLink.setAttribute("href", "#!");
+            recipeThumbnailLink.setAttribute("href", "javascript: void(0);");
             recipeThumbnailLink.addEventListener("click", () => {
-                Show(recipeContainer.classList, headerContainer.classList, recipeMain.classList);
+                this.Show(recipeContainer.classList, headerContainer.classList, recipeMain.classList);
             })
 
             let recipeThumbnailImage = document.createElement("img");
@@ -70,7 +70,7 @@ class RecipeWindow {
             headerContainer.append(headerTitle, closeButtonAnchor);
 
             let ingredientsContainer = document.createElement("div");
-            ingredientsContainer.classList.add("border-r-zaffre dark:border-r-lightSteelBlue");
+            ingredientsContainer.classList.add("border-r-zaffre", "dark:border-r-lightSteelBlue");
 
             let ingredientsTitle = document.createElement("h4");
             ingredientsTitle.classList.add("text-center");
@@ -103,11 +103,11 @@ class RecipeWindow {
 
             instructionsContainer.append(instructionsTitle, instructionsList);
             recipeMain.append(recipeContainer, instructionsContainer);
-            recipeContainer.append(headerContainer, recipeMain);
+            recipeContainer.append(headerContainer, ingredientsContainer);
             recipeSection.appendChild(recipeContainer);
         }
 
-        return recipeContainer;
+        return recipeSection;
     }
 
     Show(recipeContainerClassList, headerContainerClassList, recipeMainClassList) {
