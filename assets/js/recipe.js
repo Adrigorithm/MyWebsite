@@ -6,7 +6,6 @@ import { SetTextContent } from "./utilities.js";
 
 class RecipeWindow {
     #recipes = [];
-    #activeRecipe = -1;
 
     constructor(recipes) {
         this.#recipes = recipes;
@@ -36,41 +35,23 @@ class RecipeWindow {
             SetTextContent(headerTitle, WriteMode.SET, document.createTextNode(this.#recipes[index].name));
             headerTitle.classList.add("grow", "m-0", "text-center");
 
-            let recipeMain = document.createElement("div");
-            recipeMain.classList.add("flex", "flex-col", "lg:flex-row", "mx-2", "hidden");
-
             let closeButtonAnchor = document.createElement("a");
             closeButtonAnchor.setAttribute("href", "javascript: void(0);");
 
             let closeButtonImg = document.createElement("img");
-            closeButtonImg.setAttribute("src", "/assets/img/cross.svg")
+            closeButtonImg.setAttribute("src", "/assets/img/cross.svg");
             closeButtonImg.classList.add("h-8", "w-8", "bg-white", "p-2");
-            closeButtonImg.setAttribute("alt", "CloseRecipeWindow")
-
-            closeButtonAnchor.addEventListener("click", () => {
-                this.Hide(recipeContainer.classList, headerContainer.classList, recipeMain.classList);
-            })
-
-            // Add recipe thumbnails
-            let recipeThumbnailLink = document.createElement("a");
-            recipeThumbnailLink.setAttribute("href", "javascript: void(0);");
-            recipeThumbnailLink.addEventListener("click", () => {
-                this.Show(recipeContainer.classList, headerContainer.classList, recipeMain.classList);
-            })
+            closeButtonImg.setAttribute("alt", "CloseRecipeWindow");
 
             let recipeThumbnailImage = document.createElement("img");
             recipeThumbnailImage.setAttribute("src", `${this.#recipes[index].image}`);
             recipeThumbnailImage.setAttribute("alt", `recipe id: ${index}`);
 
-            recipeThumbnailLink.appendChild(recipeThumbnailImage);
-            recipeSectionThumbnail.appendChild(recipeThumbnailLink);
-
-
             closeButtonAnchor.appendChild(closeButtonImg);
             headerContainer.append(headerTitle, closeButtonAnchor);
 
             let ingredientsContainer = document.createElement("div");
-            ingredientsContainer.classList.add("border-r-zaffre", "dark:border-r-lightSteelBlue");
+            ingredientsContainer.classList.add("flex", "flex-col");
 
             let ingredientsTitle = document.createElement("h4");
             ingredientsTitle.classList.add("text-center");
@@ -87,7 +68,7 @@ class RecipeWindow {
             ingredientsContainer.append(ingredientsTitle, ingredientsList);
 
             let instructionsContainer = document.createElement("div");
-            ingredientsContainer.classList.add("grow");
+            instructionsContainer.classList.add("flex", "flex-col");
 
             let instructionsTitle = document.createElement("h4");
             instructionsTitle.classList.add("text-center");
@@ -102,8 +83,26 @@ class RecipeWindow {
             });
 
             instructionsContainer.append(instructionsTitle, instructionsList);
-            recipeMain.append(recipeContainer, instructionsContainer);
-            recipeContainer.append(headerContainer, ingredientsContainer);
+
+            let recipeWrapper = document.createElement("div");
+            recipeWrapper.classList.add("flex", "flex-col", "lg:flex-row", "mx-2", "hidden");
+
+            // Add recipe thumbnails
+            let recipeThumbnailLink = document.createElement("a");
+            recipeThumbnailLink.setAttribute("href", "javascript: void(0);");
+            
+            recipeThumbnailLink.addEventListener("click", () => {
+                this.Show(recipeContainer.classList, headerContainer.classList, recipeWrapper.classList);
+            });
+
+            closeButtonAnchor.addEventListener("click", () => {
+                this.Hide(recipeContainer.classList, headerContainer.classList, recipeWrapper.classList);
+            })
+
+            recipeThumbnailLink.appendChild(recipeThumbnailImage);
+            recipeSectionThumbnail.appendChild(recipeThumbnailLink);
+            recipeWrapper.append(ingredientsContainer, instructionsContainer);
+            recipeContainer.append(headerContainer, recipeWrapper);
             recipeSection.appendChild(recipeContainer);
         }
 

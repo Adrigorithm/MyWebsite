@@ -39,10 +39,6 @@ function ConstructRecipes() {
     dataLoader.FetchData("/assets/json/recipes.json", RequestMethod.GET, ContentType.JSON).then((data) => {
         let recipesData = data.recipes;
 
-        if (recipesData.length == 0) {
-            console.log("No recipes found!");
-        };
-
         for (let index = 0; index < recipesData.length; index++) {
             let recipe;
             let ingredients = [];
@@ -97,10 +93,10 @@ function ConstructRecipes() {
 
             recipes.push(recipe);
         };
-    });
 
-    recipeWindow = new RecipeWindow(recipes);
-    elementBefore.after(recipeWindow.ToDOMElements());
+        recipeWindow = new RecipeWindow(recipes);
+        elementBefore.after(recipeWindow.ToDOMElements());
+    });    
 }
 
 function ConstructTimeLines() {
