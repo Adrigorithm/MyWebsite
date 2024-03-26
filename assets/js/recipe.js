@@ -13,6 +13,7 @@ class RecipeWindow {
 
     ToDOMElements() {
         let recipeSection = document.createElement("section");
+        recipeSection.setAttribute("id", "recipes");
         recipeSection.classList.add("flex", "flex-col", "justify-center", "items-center");
 
         let recipeSectionHead = document.createElement("h2");
@@ -20,7 +21,7 @@ class RecipeWindow {
         SetTextContent(recipeSectionHead, WriteMode.SET, document.createTextNode("Recipes"));
 
         let recipeSectionThumbnail = document.createElement("div");
-        recipeSectionThumbnail.classList.add("flex");
+        recipeSectionThumbnail.classList.add("flex", "gap-x-2.5");
 
         recipeSection.append(recipeSectionHead, recipeSectionThumbnail);
 
@@ -88,6 +89,10 @@ class RecipeWindow {
             recipeWrapper.classList.add("flex", "flex-col", "lg:flex-row", "mx-2", "hidden");
 
             // Add recipe thumbnails
+            let recipeThumbnailName = document.createElement("p");
+            recipeThumbnailName.classList.add("no-underline", "text-center", "my-2", "text-black", "dark:text-white");
+            SetTextContent(recipeThumbnailName, WriteMode.SET, document.createTextNode(`${this.#recipes[index].name}`));
+
             let recipeThumbnailLink = document.createElement("a");
             recipeThumbnailLink.setAttribute("href", "javascript: void(0);");
             
@@ -99,7 +104,7 @@ class RecipeWindow {
                 this.Hide(recipeContainer.classList, headerContainer.classList, recipeWrapper.classList);
             })
 
-            recipeThumbnailLink.appendChild(recipeThumbnailImage);
+            recipeThumbnailLink.append(recipeThumbnailImage, recipeThumbnailName);
             recipeSectionThumbnail.appendChild(recipeThumbnailLink);
             recipeWrapper.append(ingredientsContainer, instructionsContainer);
             recipeContainer.append(headerContainer, recipeWrapper);
