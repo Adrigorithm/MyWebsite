@@ -5,6 +5,7 @@ import { ContentType, OvenMode, RequestMethod } from "./enums.js";
 import { ScrollButtonController } from "./scrollEvents.js";
 import { TimeLine, TimeLineFrame } from "./timeline.js";
 import { Ingredient, OvenSettings, Recipe, RecipeWindow } from "./recipe.js";
+import { GithubEmbedder } from "./githubEmbedder.js";
 
 window.addEventListener("load", PageLoaded);
 
@@ -14,6 +15,7 @@ function PageLoaded() {
     SetupScrollEvent();
     ConstructTimeLines();
     ConstructRecipes();
+    GenereateGithubEmbeds();
 }
 
 function SetupScrollEvent() {
@@ -30,13 +32,24 @@ function SetupScrollEvent() {
     });
 }
 
+function GenereateGithubEmbeds(...urls) {
+    let dataLoader = new DataLoader();
+    let embeds = {};
+
+    urls.forEach(url => {
+        dataLoader.FetchData("https://api.github.com/repos/Adrigorithm/Adribot", RequestMethod.GET, { "Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28" }).then((data) => {
+            embeds[data.name] = GithubEmbedder.fromPublicRepoJSON(data);
+        })
+    });
+}
+
 function ConstructRecipes() {
     let elementBefore = document.getElementById("projects");
     let dataLoader = new DataLoader();
     let recipes = [];
     let recipeWindow;
 
-    dataLoader.FetchData("/assets/json/recipes.json", RequestMethod.GET, ContentType.JSON).then((data) => {
+    dataLoader.FetchData("/assets/json/recipes.json", RequestMethod.GET, { "Content-Type": ContentType.JSON }).then((data) => {
         let recipesData = data.recipes;
 
         for (let index = 0; index < recipesData.length; index++) {
@@ -53,7 +66,7 @@ function ConstructRecipes() {
                     [],
                     false
                 );
-                
+
                 ingredient.alternatives.push(...ingredientData.alternatives.map(altIngredient => new Ingredient(
                     altIngredient.name,
                     altIngredient.quantity,
@@ -96,7 +109,7 @@ function ConstructRecipes() {
 
         recipeWindow = new RecipeWindow(recipes);
         elementBefore.after(recipeWindow.ToDOMElements());
-    });    
+    });
 }
 
 function ConstructTimeLines() {
@@ -104,7 +117,7 @@ function ConstructTimeLines() {
     let dataLoader = new DataLoader();
     let timeLines = [];
 
-    dataLoader.FetchData("/assets/json/timelines.json", RequestMethod.GET, ContentType.JSON).then((data) => {
+    dataLoader.FetchData("/assets/json/timelines.json", RequestMethod.GET, { "Content-Type": ContentType.JSON }).then((data) => {
         let timeLinesData = data.timelines;
 
         if (timeLinesData.length != timeLinesHtml.length) {

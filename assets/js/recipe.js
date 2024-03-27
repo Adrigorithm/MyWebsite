@@ -27,7 +27,7 @@ class RecipeWindow {
 
         for (let index = 0; index < this.#recipes.length; index++) {
             let recipeContainer = document.createElement("section");
-            recipeContainer.classList.add("flex", "flex-col", "inset-[8%]", "fixed", "opacity-75", "bg-lightSteelBlue", "dark:bg-zaffre", "hidden");
+            recipeContainer.classList.add("flex", "flex-col", "inset-[8%]", "fixed", "opacity-90", "bg-lightSteelBlue", "dark:bg-zaffre", "hidden");
 
             let headerContainer = document.createElement("div");
             headerContainer.classList.add("flex", "flex-row", "items-center", "hidden");

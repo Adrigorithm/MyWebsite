@@ -3,12 +3,10 @@
 import { FetchError } from "./exceptions.js";
 
 class DataLoader{
-    async FetchData(path, requestMethod, contentType, payLoad = null) {
+    async FetchData(path, requestMethod, headers = null, payLoad = null) {
         const response = await fetch(path, {
             method: requestMethod,
-            headers: {
-                "Content-Type": contentType
-            },
+            headers: headers,
             body: payLoad
         });
 

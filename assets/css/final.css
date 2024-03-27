@@ -358,6 +358,14 @@
   opacity: 0.75;
 }
 
+.opacity-25{
+  opacity: 0.25;
+}
+
+.opacity-90{
+  opacity: 0.9;
+}
+
 @font-face {
   font-family: "Ubuntu";
 
