@@ -1,5 +1,5 @@
-import { WriteMode } from "./enums";
-import { DateStringToDate, SetTextContent } from "./utilities";
+import { WriteMode } from "./enums.js";
+import { DateStringToDate, SetTextContent } from "./utilities.js";
 
 class GithubEmbedder{
     static fromPublicRepoJSON(json){

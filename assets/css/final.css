@@ -34,6 +34,10 @@
   }
 }
 
+.static{
+  position: static;
+}
+
 .fixed{
   position: fixed;
 }
@@ -352,14 +356,6 @@
 
 .opacity-60{
   opacity: 0.6;
-}
-
-.opacity-75{
-  opacity: 0.75;
-}
-
-.opacity-25{
-  opacity: 0.25;
 }
 
 .opacity-90{
