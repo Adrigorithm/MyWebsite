@@ -90,10 +90,11 @@ class RecipeWindow {
 
             // Add recipe thumbnails
             let recipeThumbnailName = document.createElement("p");
-            recipeThumbnailName.classList.add("no-underline", "text-center", "my-2", "text-black", "dark:text-white");
+            recipeThumbnailName.classList.add("text-center", "my-2");
             SetTextContent(recipeThumbnailName, WriteMode.SET, document.createTextNode(`${this.#recipes[index].name}`));
 
             let recipeThumbnailLink = document.createElement("a");
+            recipeThumbnailLink.classList.add("no-underline", "text-black", "dark:text-white");
             recipeThumbnailLink.setAttribute("href", "javascript: void(0);");
             
             recipeThumbnailLink.addEventListener("click", () => {
