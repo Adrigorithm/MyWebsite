@@ -15,7 +15,7 @@ function PageLoaded() {
     SetupScrollEvent();
     ConstructTimeLines();
     ConstructRecipes();
-    GenereateGithubEmbeds("https://api.github.com/repos/Adrigorithm/Adribot");
+    GenereateGithubEmbeds("https://api.github.com/repos/Adrigorithm/Adribot", "https://api.github.com/repos/Adrigorithm/Adrigorithm.github.io", "https://api.github.com/repos/Adrigorithm/DeLijn.Net");
 }
 
 function SetupScrollEvent() {

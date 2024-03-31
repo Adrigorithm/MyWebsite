@@ -471,12 +471,16 @@
     min-width: 639px;
   }
 
-  .lg\:max-w-\[639px\]{
-    max-width: 639px;
+  .lg\:max-w-\[523px\]{
+    max-width: 523px;
   }
 
   .lg\:max-w-\[536px\]{
     max-width: 536px;
+  }
+
+  .lg\:max-w-\[743px\]{
+    max-width: 743px;
   }
 
   .lg\:basis-1\/3{
