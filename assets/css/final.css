@@ -358,6 +358,10 @@
   opacity: 0.6;
 }
 
+.opacity-80{
+  opacity: 0.8;
+}
+
 .opacity-90{
   opacity: 0.9;
 }
@@ -469,18 +473,6 @@
 
   .lg\:min-w-\[639px\]{
     min-width: 639px;
-  }
-
-  .lg\:max-w-\[523px\]{
-    max-width: 523px;
-  }
-
-  .lg\:max-w-\[536px\]{
-    max-width: 536px;
-  }
-
-  .lg\:max-w-\[743px\]{
-    max-width: 743px;
   }
 
   .lg\:basis-1\/3{

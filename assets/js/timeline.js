@@ -26,14 +26,14 @@ class TimeLine {
             imageContainer.setAttribute("alt", `Image of ${this.#timeLineFrames[index].name}`);
 
             let nameContainer = document.createElement("div");
-            nameContainer.classList.add("w-full", "text-center", "opacity-50", "bg-black");
+            nameContainer.classList.add("w-full", "text-center", "opacity-80", "bg-black");
 
             let name = document.createElement("p");
             name.classList.add("text-white", "p-2", "m-0");
             name.appendChild(document.createTextNode(`${this.#timeLineFrames[index].name}`));
 
             let placeContainer = document.createElement("div");
-            placeContainer.classList.add("w-full", "text-center", "opacity-50", "bg-black");
+            placeContainer.classList.add("w-full", "text-center", "opacity-80", "bg-black");
 
             let place = document.createElement("p");
             place.classList.add("text-white", "p-2", "m-0")
