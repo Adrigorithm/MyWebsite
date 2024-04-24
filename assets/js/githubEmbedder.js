@@ -7,9 +7,10 @@ class GithubEmbedder{
         let header = document.createElement("legend");
         let titleLink = document.createElement("a");
         let title = document.createElement("h3");
+        let lineBreak = document.createElement("br");
         let ownerLink = document.createElement("a");
         let owner = document.createElement("h4");
-        let ownerPrefix = document.createElement("span");
+        let ownerPrefix = document.createElement("h4");
         let description = document.createElement("p");
         let updated = document.createElement("p");
 
@@ -20,6 +21,9 @@ class GithubEmbedder{
         let descriptionText = document.createTextNode(json.description);
         let updatedText = document.createTextNode(`Last updated at ${DateStringToDate(json.pushed_at)}`);
 
+        title.classList.add("inline");
+        owner.classList.add("inline");
+        ownerPrefix.classList.add("inline");
         container.classList.add("border-solid", "border-2", "border-zaffre", "text-center", "m-2", "lg:w-full");
         titleLink.classList.add("no-underline", "text-black", "dark:text-white");
         ownerLink.classList.add("no-underline", "text-black", "dark:text-white");
@@ -35,12 +39,11 @@ class GithubEmbedder{
         SetTextContent(updated, WriteMode.APPEND, updatedText);
         SetTextContent(title, WriteMode.APPEND, titleText);
         SetTextContent(ownerPrefix, WriteMode.APPEND, ownerPrefixText);
-        owner.appendChild(ownerPrefix);
         SetTextContent(owner, WriteMode.APPEND, ownerText);
 
         titleLink.appendChild(title);
-        ownerLink.appendChild(owner);
-        container.append(header, titleLink, ownerLink, description, updated);
+        ownerLink.append(ownerPrefix, owner);
+        container.append(header, titleLink, lineBreak, ownerLink, description, updated);
 
         return container;
     }
