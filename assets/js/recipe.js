@@ -36,6 +36,20 @@ class RecipeWindow {
             SetTextContent(headerTitle, WriteMode.SET, document.createTextNode(this.#recipes[index].name));
             headerTitle.classList.add("grow", "m-0", "text-center");
 
+            let servingsModifier = document.createElement("input");
+            servingsModifier.addEventListener("input", () => {
+                if (Number.isNaN(servingsModifier.value) || servingsModifier.value <= 0) {
+                    return;
+                }
+
+                this.#recipes[index].ingredients.forEach(ingredient => {
+                    ingredient.UpdateQantities(this.#recipes[index].servings, servingsModifier.value);
+                });
+
+                this.#recipes[index].servings = servingsModifier.value;
+            });
+            servingsModifier.value = this.#recipes[index].servings;
+
             let closeButtonAnchor = document.createElement("a");
             closeButtonAnchor.setAttribute("href", "javascript: void(0);");
 
@@ -49,7 +63,7 @@ class RecipeWindow {
             recipeThumbnailImage.setAttribute("alt", `recipe id: ${index}`);
 
             closeButtonAnchor.appendChild(closeButtonImg);
-            headerContainer.append(headerTitle, closeButtonAnchor);
+            headerContainer.append(headerTitle, servingsModifier, closeButtonAnchor);
 
             let ingredientsContainer = document.createElement("div");
             ingredientsContainer.classList.add("flex", "flex-col");
@@ -159,6 +173,10 @@ class Ingredient {
         this.unit = unit;
         this.alternatives = alternatives;
         this.isAlternative = isAlternative;
+    }
+
+    UpdateQantities(factorOld, factorNew) {
+        this.quantity = this.quantity * factorNew / factorOld;
     }
 }
 
