@@ -37,6 +37,7 @@ class RecipeWindow {
             headerTitle.classList.add("grow", "m-0", "text-center");
 
             let servingsModifier = document.createElement("input");
+            servingsModifier.classList.add("dark:bg-zaffre", "bg-lightSteelBlue", "mr-1", "text-zaffre", "dark:text-lightSteelBlue", "border-2", "border-black", "dark:border-white")
             servingsModifier.addEventListener("input", () => {
                 if (Number.isInteger(Number.parseInt(servingsModifier.value)) && servingsModifier.value > 0) {
                     this.#recipes[index].ingredients.forEach(ingredient => {
