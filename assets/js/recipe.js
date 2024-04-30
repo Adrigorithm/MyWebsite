@@ -38,15 +38,15 @@ class RecipeWindow {
 
             let servingsModifier = document.createElement("input");
             servingsModifier.addEventListener("input", () => {
-                if (Number.isNaN(servingsModifier.value) || servingsModifier.value <= 0) {
-                    return;
+                if (Number.isInteger(Number.parseInt(servingsModifier.value)) && servingsModifier.value > 0) {
+                    this.#recipes[index].ingredients.forEach(ingredient => {
+                        ingredient.UpdateQantities(this.#recipes[index].servings, servingsModifier.value);
+                    });
+
+                    this.#recipes[index].servings = servingsModifier.value;
+                    ingredientsContainer.lastChild.remove();
+                    ingredientsContainer.appendChild(this.GenerateIngredients(index));
                 }
-
-                this.#recipes[index].ingredients.forEach(ingredient => {
-                    ingredient.UpdateQantities(this.#recipes[index].servings, servingsModifier.value);
-                });
-
-                this.#recipes[index].servings = servingsModifier.value;
             });
             servingsModifier.value = this.#recipes[index].servings;
 
@@ -72,15 +72,7 @@ class RecipeWindow {
             ingredientsTitle.classList.add("text-center");
             SetTextContent(ingredientsTitle, WriteMode.SET, document.createTextNode("Ingredients"));
 
-            let ingredientsList = document.createElement("ul");
-
-            this.#recipes[index].ingredients.forEach(ingredient => {
-                let ingredientsListItem = document.createElement("li");
-                SetTextContent(ingredientsListItem, WriteMode.SET, document.createTextNode(`${ingredient.name} ${ingredient.quantity}${ingredient.unit}`));
-                ingredientsList.appendChild(ingredientsListItem);
-            });
-
-            ingredientsContainer.append(ingredientsTitle, ingredientsList);
+            ingredientsContainer.append(ingredientsTitle, this.GenerateIngredients(index));
 
             let instructionsContainer = document.createElement("div");
             instructionsContainer.classList.add("flex", "flex-col");
@@ -110,7 +102,7 @@ class RecipeWindow {
             let recipeThumbnailLink = document.createElement("a");
             recipeThumbnailLink.classList.add("no-underline", "text-black", "dark:text-white");
             recipeThumbnailLink.setAttribute("href", "javascript: void(0);");
-            
+
             recipeThumbnailLink.addEventListener("click", () => {
                 this.Show(recipeContainer.classList, headerContainer.classList, recipeWrapper.classList);
             });
@@ -127,6 +119,18 @@ class RecipeWindow {
         }
 
         return recipeSection;
+    }
+
+    GenerateIngredients(recipeIndex) {
+        let ingredientsList = document.createElement("ul");
+
+        this.#recipes[recipeIndex].ingredients.forEach(ingredient => {
+            let ingredientsListItem = document.createElement("li");
+            SetTextContent(ingredientsListItem, WriteMode.SET, document.createTextNode(`${ingredient.name} ${ingredient.quantity}${ingredient.unit}`));
+            ingredientsList.appendChild(ingredientsListItem);
+        });
+
+        return ingredientsList;
     }
 
     Show(recipeContainerClassList, headerContainerClassList, recipeMainClassList) {
