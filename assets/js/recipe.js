@@ -39,7 +39,7 @@ class RecipeWindow {
             let servingsModifier = document.createElement("input");
             servingsModifier.classList.add("dark:bg-zaffre", "bg-lightSteelBlue", "mr-1", "text-zaffre", "dark:text-lightSteelBlue", "border-2", "border-black", "dark:border-white")
             servingsModifier.addEventListener("input", () => {
-                if (Number.isInteger(Number.parseInt(servingsModifier.value)) && servingsModifier.value > 0) {
+                if (Number.isInteger(Number.parseFloat(servingsModifier.value)) && servingsModifier.value > 0) {
                     this.#recipes[index].ingredients.forEach(ingredient => {
                         ingredient.UpdateQantities(this.#recipes[index].servings, servingsModifier.value);
                     });
@@ -127,7 +127,7 @@ class RecipeWindow {
 
         this.#recipes[recipeIndex].ingredients.forEach(ingredient => {
             let ingredientsListItem = document.createElement("li");
-            SetTextContent(ingredientsListItem, WriteMode.SET, document.createTextNode(`${ingredient.name} ${ingredient.quantity}${ingredient.unit}`));
+            SetTextContent(ingredientsListItem, WriteMode.SET, document.createTextNode(ingredient.ToHumanReadable()));
             ingredientsList.appendChild(ingredientsListItem);
         });
 
@@ -165,10 +165,6 @@ class Recipe {
         this.instructions = instructions;
         this.difficulty = difficulty;
     }
-
-    ToDOMElement() {
-
-    }
 }
 
 class Ingredient {
@@ -182,6 +178,51 @@ class Ingredient {
 
     UpdateQantities(factorOld, factorNew) {
         this.quantity = this.quantity * factorNew / factorOld;
+    }
+
+    ToHumanReadable() {
+        let quantityRounded = this.quantity;
+        let unitFormatted = this.unit;
+
+        switch (this.unit) {
+            case 'p':
+                if (!Number.isInteger(this.quantity)) {
+                    quantityRounded = Math.round(this.quantity);
+                }
+
+                if (quantityRounded == 0) {
+                    unitFormatted = `${unitFormatted} ... really?`;
+                }
+
+                break;
+            case "tsp":
+                if (!Number.isInteger(this.quantity)) {
+                    quantityRounded = this.quantity.toFixed(2);
+                }
+                
+                break;
+            case 'g':
+            case "kg":
+                let thousands = this.quantity / 1000;
+                if (thousands >= 1) {
+                    unitFormatted = "kg";
+                    quantityRounded = quantityRounded / 1000;
+
+                    if (!Number.isInteger(quantityRounded)) {
+                        quantityRounded = quantityRounded.toFixed(3);
+                    }
+                } else {
+                    if (!Number.isInteger(quantityRounded)) {
+                        quantityRounded = Math.round(quantityRounded);
+                    }
+                }
+
+                break;
+            default:
+                break;
+        }
+
+        return `${this.name} ${quantityRounded}${unitFormatted}`;
     }
 }
 
