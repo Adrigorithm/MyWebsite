@@ -302,6 +302,10 @@
   background-repeat: no-repeat;
 }
 
+.fill-lightSteelBlue{
+  fill: #B8CAE0;
+}
+
 .p-0{
   padding: 0px;
 }
@@ -535,6 +539,10 @@
   .dark\:bg-zaffre{
     --tw-bg-opacity: 1;
     background-color: rgb(0 15 176 / var(--tw-bg-opacity));
+  }
+
+  .dark\:fill-mediumPurple{
+    fill: #8B80f9;
   }
 
   .dark\:text-black{
