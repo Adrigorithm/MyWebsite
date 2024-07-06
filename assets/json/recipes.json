@@ -165,6 +165,97 @@
                 "They can be preserved in room temperatur for up to five days."
             ],
             "difficulty": 1
+        },
+        {
+            "name": "Speculoos Cookies",
+            "ingredients": [
+                {
+                    "name": "rock sugar",
+                    "quantity": 200,
+                    "unit": "g",
+                    "alternatives": [
+                        {
+                            "name": "brown sugar",
+                            "quantity": 200,
+                            "unit": "g",
+                            "alternatives": []
+                        }
+                    ]
+                },
+                {
+                    "name": "coconut oil",
+                    "quantity": 160,
+                    "unit": "g",
+                    "alternatives": [
+                        {
+                            "name": "butter (unsalted)",
+                            "quantity": 200,
+                            "unit": "g",
+                            "alternatives": []
+                        }
+                    ]
+                },
+                {
+                    "name": "eggs",
+                    "quantity": 2,
+                    "unit": "p",
+                    "alternatives": []
+                },
+                {
+                    "name": "all-purpose flour",
+                    "quantity": 500,
+                    "unit": "g",
+                    "alternatives": []
+                },
+                {
+                    "name": "baking powder",
+                    "quantity": 1.5,
+                    "unit": "tsp",
+                    "alternatives": []
+                },
+                {
+                    "name": "cinnamon ground",
+                    "quantity": 2,
+                    "unit": "tsp",
+                    "alternatives": []
+                },
+                {
+                    "name": "ginger ground",
+                    "quantity": 0.5,
+                    "unit": "tsp",
+                    "alternatives": []
+                },
+                {
+                    "name": "nutmeg ground",
+                    "quantity": 0.5,
+                    "unit": "tsp",
+                    "alternatives": []
+                },
+                {
+                    "name": "ground cloves",
+                    "quantity": 0.5,
+                    "unit": "tsp",
+                    "alternatives": []
+                }
+            ],
+            "image": "./assets/img/cookiesS.webp",
+            "ovenSettings": {
+                "mode": "f",
+                "degrees": 170,
+                "minutes": 15
+            },
+            "servings": 90,
+            "instructions": [
+                "Melt the coconut oil and stir it with the sugar until combined. Add the eggs one after the other, stir well in between.",
+                "In another bowl, combine the flour, baking powder and all spices.",
+                "Add a third of this mixture to the 'coconut oil and sugar concoction' and stir until homogeneous. Repeat this 2 times (for the remaining thirds).",
+                "Shape the mixture to a ball and put it in the refrigerator encased in plastic foil for at least half an hour (or overnight).",
+                "Roll out a chunk of dough to an even surface of three to five millimetres thick. Use cookie cutters of your choice to cut out shapes.",
+                "They do rise very little so they can almost touch eachother on the baking sheet, preserving space (use baking paper or something similar).",
+                "Repeat steps until the baking sheet is full (you can bake multiple sheets at once).",
+                "Enjoy! (You may need to repeat the 3 previous tasks depending on the amount of dough you have :) ). They can be kept in room temperature for a few days but if you baked many, the freezer is preferable."
+            ],
+            "difficulty": 1
         }
     ]
 }
