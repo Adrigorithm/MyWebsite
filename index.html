@@ -30,21 +30,23 @@
 
   <nav id="mainNav"
     class="flex flex-col sm:flex-row p-2 bg-mediumPurple dark:bg-lightSteelBlue justify-between">
-    <div class="flex flex-col sm:flex-row items-center">
+    <div class="flex flex-col sm:order-1 sm:flex-row items-center justify-items-center">
       <a class="block no-underline text-black" href="#about">
-        <h1>About</h1>
+        <h1 class="m-1 sm:m-3">About</h1>
       </a>
       <a class="block no-underline text-black" href="#projects">
-        <h1>Projects</h1>
+        <h1 class="m-1 sm:m-3">Projects</h1>
       </a>
       <a class="block no-underline text-black" href="#recipes">
-        <h1>Recipes</h1>
+        <h1 class="m-1 sm:m-3">Recipes</h1>
       </a>
     </div>
 
-    <a href="/index.html"><img src="/assets/img/logo.svg" class="w-16" alt="logo"></a>
+    <div class="text-center order-first sm:order-2">
+      <a href="/index.html"><img src="/assets/img/logo.svg" class="w-16" alt="logo"></a>
+    </div>
 
-    <div id="langSelector">
+    <div id="langSelector" class="mt-3 sm:order-3 text-center">
       <img class="mr-2" src="/assets/img/uk.svg" alt="uk">
       <img class="mr-2" src="/assets/img/netherlands.svg" alt="netherlands">
       <img src="/assets/img/senyera.svg" alt="senyera">

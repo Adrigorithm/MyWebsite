@@ -58,12 +58,20 @@
   order: 9999;
 }
 
+.order-first{
+  order: -9999;
+}
+
 .m-0{
   margin: 0px;
 }
 
 .m-2{
   margin: 0.5rem;
+}
+
+.m-1{
+  margin: 0.25rem;
 }
 
 .mx-2{
@@ -107,6 +115,10 @@
 
 .mr-2{
   margin-right: 0.5rem;
+}
+
+.mt-3{
+  margin-top: 0.75rem;
 }
 
 .block{
@@ -231,6 +243,10 @@
 
 .justify-evenly{
   justify-content: space-evenly;
+}
+
+.justify-items-center{
+  justify-items: center;
 }
 
 .gap-x-2\.5{
@@ -454,9 +470,18 @@
     margin: 0px;
   }
 
+  .sm\:m-3{
+    margin: 0.75rem;
+  }
+
   .sm\:my-4{
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+
+  .sm\:my-3{
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
   }
 
   .sm\:mb-0{
