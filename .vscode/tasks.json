@@ -4,9 +4,15 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "deploy",
+            "label": "start server",
             "type": "shell",
-            "command": "python -m http.server --bind 127.0.0.1 8080 | pnpx tailwindcss -i ./assets/css/style.css -o ./assets/css/final.css --watch",
+            "command": "python -m http.server --bind 127.0.0.1 8080",
+            "problemMatcher": []
+        },
+        {
+            "label": "tailwindcss",
+            "type": "shell",
+            "command": "pnpx tailwindcss -i ./assets/css/style.css -o ./assets/css/final.css --watch",
             "problemMatcher": []
         }
     ]

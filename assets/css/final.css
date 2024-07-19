@@ -50,6 +50,14 @@
   bottom: 0px;
 }
 
+.order-5{
+  order: 5;
+}
+
+.order-last{
+  order: 9999;
+}
+
 .m-0{
   margin: 0px;
 }
@@ -95,6 +103,10 @@
 
 .mt-2{
   margin-top: 0.5rem;
+}
+
+.mr-2{
+  margin-right: 0.5rem;
 }
 
 .block{
@@ -175,6 +187,10 @@
 
 .w-full{
   width: 100%;
+}
+
+.flex-initial{
+  flex: 0 1 auto;
 }
 
 .grow{
@@ -434,6 +450,10 @@
     order: 4;
   }
 
+  .sm\:m-0{
+    margin: 0px;
+  }
+
   .sm\:my-4{
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -443,12 +463,38 @@
     margin-bottom: 0px;
   }
 
+  .sm\:mr-0{
+    margin-right: 0px;
+  }
+
+  .sm\:mr-2{
+    margin-right: 0.5rem;
+  }
+
+  .sm\:flex{
+    display: flex;
+  }
+
   .sm\:w-full{
     width: 100%;
   }
 
   .sm\:flex-row{
     flex-direction: row;
+  }
+
+  .sm\:justify-end{
+    justify-content: flex-end;
+  }
+
+  .sm\:gap-x-2\.5{
+    -moz-column-gap: 0.625rem;
+         column-gap: 0.625rem;
+  }
+
+  .sm\:gap-x-2{
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
   }
 
   .sm\:rounded-none{
@@ -476,6 +522,10 @@
 }
 
 @media (min-width: 1024px){
+  .lg\:mr-2{
+    margin-right: 0.5rem;
+  }
+
   .lg\:flex{
     display: flex;
   }

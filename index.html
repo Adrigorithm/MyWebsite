@@ -28,22 +28,27 @@
 
 <body class="flex flex-col font-ubuntu m-0 bg-white dark:bg-black text-black dark:text-white">
 
-  <nav id="mainNav">
-    <ul
-      class="flex flex-col sm:flex-row p-0 sm:py-1 m-0 sm:mb-0 list-none justify-center items-center text-2xl bg-mediumPurple dark:bg-lightSteelBlue">
-      <a class="sm:px-2 sm:py-1 sm:order-2" href="/index.html"><img src="/assets/img/logo.svg" class="w-16"
-          alt="logo"></a>
-      <li class="sm:order-1"><a class="block no-underline text-black p-3" href="#about">About</a></li>
-      <li class="sm:order-3"><a class="block no-underline text-black p-3" href="#projects">Projects</a></li>
-      <li class="sm:order-4"><a class="block no-underline text-black p-3" href="#recipes">Recipes</a></li>
+  <nav id="mainNav"
+    class="flex flex-col sm:flex-row p-2 bg-mediumPurple dark:bg-lightSteelBlue justify-between">
+    <div class="flex flex-col sm:flex-row items-center">
+      <a class="block no-underline text-black" href="#about">
+        <h1>About</h1>
+      </a>
+      <a class="block no-underline text-black" href="#projects">
+        <h1>Projects</h1>
+      </a>
+      <a class="block no-underline text-black" href="#recipes">
+        <h1>Recipes</h1>
+      </a>
+    </div>
 
-      <div id="langSelector">
-        <img src="/assets/img/uk.svg" alt="uk">
-        <img src="/assets/img/netherlands.svg" alt="netherlands">
-        <img src="/assets/img/senyera.svg" alt="senyera">
-      </div>
-      
-    </ul>
+    <a href="/index.html"><img src="/assets/img/logo.svg" class="w-16" alt="logo"></a>
+
+    <div id="langSelector">
+      <img class="mr-2" src="/assets/img/uk.svg" alt="uk">
+      <img class="mr-2" src="/assets/img/netherlands.svg" alt="netherlands">
+      <img src="/assets/img/senyera.svg" alt="senyera">
+    </div>
   </nav>
 
   <main>
@@ -147,9 +152,9 @@
           points less since 1962 in fact.</p>
         <p>Luckily for you I have nicely formatted this section in a table for some light reading.</p>
       </div>
-      <div class="mx-2 lg:flex lg:flex-row w-full">
-        <div class="w-full mx-2">
-          <h4>
+      <div class="mx-2 flex flex-col lg:flex-row w-full">
+        <div class="lg:w-full lg:mr-2">
+          <h4 class="mx-2">
             <span>
               <img src="/assets/img/rChevron.svg" class="h-4" alt="subTitleIndicator">
             </span>
@@ -170,8 +175,8 @@
             </p>
           </div>
         </div>
-        <div class="w-full mb-2 mx-2">
-          <h4>
+        <div class="mb-2 lg:w-full">
+          <h4 class="mx-2">
             <span>
               <img src="/assets/img/rChevron.svg" class="h-4" alt="subTitleIndicator">
             </span>
