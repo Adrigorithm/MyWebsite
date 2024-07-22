@@ -6,16 +6,23 @@ import { ScrollButtonController } from "./scrollEvents.js";
 import { TimeLine, TimeLineFrame } from "./timeline.js";
 import { Ingredient, OvenSettings, Recipe, RecipeWindow } from "./recipe.js";
 import { GithubEmbedder } from "./githubEmbedder.js";
+import { LanguageSwapper } from "./languageSwapper.js";
 
 window.addEventListener("load", PageLoaded);
 
 let scrollTopButton;
+let languageSwapper;
 
 function PageLoaded() {
+    SetupLanguageSwapper();
     SetupScrollEvent();
     ConstructTimeLines();
     ConstructRecipes();
     GenereateGithubEmbeds("https://api.github.com/repos/Adrigorithm/Adribot", "https://api.github.com/repos/Adrigorithm/Adrigorithm.github.io", "https://api.github.com/repos/Adrigorithm/DeLijn.Net");
+}
+
+function SetupLanguageSwapper() {
+    languageSwapper = new LanguageSwapper(document.getElementById("langSelector"));
 }
 
 function SetupScrollEvent() {
