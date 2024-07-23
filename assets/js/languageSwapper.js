@@ -4,26 +4,35 @@ import { Language } from "./enums"
 
 class LanguageSwapper {
     #swapper = undefined;
-    #currentLanguage = Language.NONE;
+    currentLanguage = Language.NONE;
 
     constructor(swapper){
         this.#swapper = swapper;
+
+        swapper.children.forEach(element => {
+            element.addEventListener("click", (e) => {
+                let lang = e.target.alt;
+
+                if (this.ShouldUpdateLanguage(lang))
+                    this.UpdateLanguage(lang);
+            });
+        });
     }
 
-    ShouldUpdateLanguage() {
-        let oldLang = this.#currentLanguage;
+    ShouldUpdateLanguage(lang) {
+        return this.currentLanguage != lang;
+    }
 
-        switch (this.#swapper.alt) {
+    UpdateLanguage(lang) {
+        switch (lang) {
             case "Dutch":
-                this.#currentLanguage = Language.DUTCH;
+                this.currentLanguage = Language.DUTCH;
                 break;
             case "Catalan":
-                this.#currentLanguage = Language.CATALAN;
+                this.currentLanguage = Language.CATALAN;
             default:
-                this.#currentLanguage = Language.ENGLISH;
+                this.currentLanguage = Language.ENGLISH;
         }
-
-        return oldLang != this.#currentLanguage
     }
 }
 

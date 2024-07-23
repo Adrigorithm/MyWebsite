@@ -27,10 +27,10 @@ const Temperature = {
 };
 
 const Language = {
-    ENGLISH,
-    DUTCH,
-    CATALAN,
-    NONE
+    ENGLISH: "English",
+    DUTCH: "Dutch",
+    CATALAN: "Catalan",
+    NONE: "English"
 };
 
 export {WriteMode, RequestMethod, ContentType, OvenMode, Temperature, Language};
