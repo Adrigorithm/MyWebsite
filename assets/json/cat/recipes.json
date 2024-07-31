@@ -1,27 +1,27 @@
 {
     "recipes": [
         {
-            "name": "Chocolate lava cakes",
+            "name": "Pastissos de lava de xocolata",
             "ingredients": [
                 {
-                    "name": "dark chocolate",
+                    "name": "xocolata negra",
                     "quantity": 300,
                     "unit": "g",
                     "alternatives": []
                 },
                 {
-                    "name": "dark chocolate",
+                    "name": "xocolata negra",
                     "quantity": 12,
                     "unit": "p",
                     "alternatives": []
                 },
                 {
-                    "name": "coconut oil",
+                    "name": "oli de coco",
                     "quantity": 120,
                     "unit": "g",
                     "alternatives": [
                         {
-                            "name": "butter (unsalted)",
+                            "name": "mantega (sense sal)",
                             "quantity": 150,
                             "unit": "g",
                             "alternatives": []
@@ -29,19 +29,19 @@
                     ]
                 },
                 {
-                    "name": "icing sugar",
+                    "name": "sucre glaç",
                     "quantity": 100,
                     "unit": "g",
                     "alternatives": []
                 },
                 {
-                    "name": "all-purpose flour",
+                    "name": "farina de tot ús",
                     "quantity": 120,
                     "unit": "g",
                     "alternatives": []
                 },
                 {
-                    "name": "eggs",
+                    "name": "ous",
                     "quantity": 4,
                     "unit": "p",
                     "alternatives": []
@@ -55,37 +55,37 @@
             },
             "servings": 12,
             "instructions": [
-                "Melt the chocolate (not the pieces) combined with the coconut oil. Using a microwave, take it out every 30 seconds and stir well until done to prevent it from overheating the chocolate.",
-                "Add icing sugar and stir until homogeneous. Repeat this process with the flour.",
-                "Add the eggs one after the other, stir well in between.",
-                "Evenly distribute the mixture over about 12 cupcake tins (I have no idea what to call them, look at the picture). When this is done gently push a piece of chocolate in each cake until it is partly covered and just not hitting the bottom.",
-                "Bake. Allow to cool for three to five minutes before eating.",
-                "They can remain in room temperature for up to three days. Heaten for fifteen seconds @ 600W in a microwave."
+                "Foneu la xocolata (no els trossos) combinada amb l'oli de coco. Utilitzeu un microones, traieu-la cada 30 segons i remeneu bé fins que estigui fet per evitar que la xocolata es sobreescalfi.",
+                "Afegiu sucre glaç i remeneu fins que estigui homogeni. Repetiu aquest procés amb la farina.",
+                "Afegiu els ous un rere l'altre, remeneu bé entre mig.",
+                "Distribuïu uniformement la barreja en unes 12 motlles per a magdalenes (no sé com anomenar-les, mireu la imatge). Quan estigui fet, empenyeu suaument un tros de xocolata a cada pastís fins que quedi parcialment cobert i just no toqui el fons.",
+                "Coeu. Deixeu refredar durant tres a cinc minuts abans de menjar.",
+                "Es poden mantenir a temperatura ambient fins a tres dies. Escalfeu durant quinze segons a 600W en un microones."
             ],
             "difficulty": 0
         },
         {
-            "name": "Chocolate chip cookies",
+            "name": "Galetes amb trossets de xocolata",
             "ingredients": [
                 {
-                    "name": "dark chocolate chips",
+                    "name": "xips de xocolata negra",
                     "quantity": 200,
                     "unit": "g",
                     "alternatives": []
                 },
                 {
-                    "name": "cane sugar",
+                    "name": "sucre de canya",
                     "quantity": 80,
                     "unit": "g",
                     "alternatives": []
                 },
                 {
-                    "name": "rock sugar",
+                    "name": "sucre de roca",
                     "quantity": 80,
                     "unit": "g",
                     "alternatives": [
                         {
-                            "name": "brown sugar",
+                            "name": "sucre moreno",
                             "quantity": 80,
                             "unit": "g",
                             "alternatives": []
@@ -93,12 +93,12 @@
                     ]
                 },
                 {
-                    "name": "coconut oil",
+                    "name": "oli de coco",
                     "quantity": 60,
                     "unit": "g",
                     "alternatives": [
                         {
-                            "name": "butter (unsalted)",
+                            "name": "mantega (sense sal)",
                             "quantity": 75,
                             "unit": "g",
                             "alternatives": []
@@ -106,12 +106,12 @@
                     ]
                 },
                 {
-                    "name": "oatmeal (fine)",
+                    "name": "farina de civada (fina)",
                     "quantity": 225,
                     "unit": "g",
                     "alternatives": [
                         {
-                            "name": "all-purpose flour",
+                            "name": "farina de tot ús",
                             "quantity": 225,
                             "unit": "g",
                             "alternatives": []
@@ -119,33 +119,33 @@
                     ]
                 },
                 {
-                    "name": "coconut milk",
+                    "name": "llet de coco",
                     "quantity": 120,
                     "unit": "g",
                     "alternatives": []
                 },
                 {
-                    "name": "eggs",
+                    "name": "ous",
                     "quantity": 1,
                     "unit": "p",
                     "alternatives": []
                 },
                 {
-                    "name": "baking soda",
+                    "name": "bicarbonat de sodi",
                     "quantity": 0.5,
-                    "unit": "tsp",
+                    "unit": "culleradeta",
                     "alternatives": []
                 },
                 {
-                    "name": "salt",
+                    "name": "sal",
                     "quantity": 0.25,
-                    "unit": "tsp",
+                    "unit": "culleradeta",
                     "alternatives": []
                 },
                 {
-                    "name": "vanilla essence [optional]",
+                    "name": "essència de vainilla [opcional]",
                     "quantity": 2,
-                    "unit": "tsp",
+                    "unit": "culleradeta",
                     "alternatives": []
                 }
             ],
@@ -157,25 +157,25 @@
             },
             "servings": 10,
             "instructions": [
-                "Make sure you have all ingredients at the ready, as minimal delay should occur between all stages.",
-                "Combine all the sugar and coconut oil (melt if solid). Add the eggs, salt, baking soda and vanilla essence.",
-                "Add the oatmeal and coconut milk (if you used oatmeal, half the amount of milk will suffice) and stir until homogeneous. Lastly add the chocolate chips and combine",
-                "Put a sheet of baking paper on one oven tin (make sure it covers the whole plate). Pour the mixture on it and device evenly over the plate.",
-                "Bake. Allow to cool for ten minutes and cut into cookies of desired size with a sharp knife or pizza cutter",
-                "They can be preserved in room temperatur for up to five days."
+                "Assegureu-vos de tenir tots els ingredients a punt, ja que hauria d'haver-hi un mínim retard entre totes les etapes.",
+                "Combineu tot el sucre i l'oli de coco (fongueu-lo si és sòlid). Afegiu els ous, la sal, el bicarbonat de sodi i l'essència de vainilla.",
+                "Afegiu la farina de civada i la llet de coco (si heu fet servir farina de civada, la meitat de la quantitat de llet serà suficient) i remeneu fins que quedi homogeni. Finalment, afegiu els xips de xocolata i barregeu.",
+                "Poseu un full de paper de forn en una safata de forn (assegureu-vos que cobreix tota la safata). Aboqueu la barreja a sobre i repartiu-la uniformement per la safata.",
+                "Coeu. Deixeu refredar durant deu minuts i talleu en galetes de la mida desitjada amb un ganivet afilat o un tallador de pizzes.",
+                "Es poden conservar a temperatura ambient fins a cinc dies."
             ],
             "difficulty": 1
         },
         {
-            "name": "Speculoos Cookies",
+            "name": "Galetes Speculoos",
             "ingredients": [
                 {
-                    "name": "rock sugar",
+                    "name": "sucre de roca",
                     "quantity": 200,
                     "unit": "g",
                     "alternatives": [
                         {
-                            "name": "brown sugar",
+                            "name": "sucre moreno",
                             "quantity": 200,
                             "unit": "g",
                             "alternatives": []
@@ -183,12 +183,12 @@
                     ]
                 },
                 {
-                    "name": "coconut oil",
+                    "name": "oli de coco",
                     "quantity": 160,
                     "unit": "g",
                     "alternatives": [
                         {
-                            "name": "butter (unsalted)",
+                            "name": "mantega (sense sal)",
                             "quantity": 200,
                             "unit": "g",
                             "alternatives": []
@@ -196,45 +196,45 @@
                     ]
                 },
                 {
-                    "name": "eggs",
+                    "name": "ous",
                     "quantity": 2,
                     "unit": "p",
                     "alternatives": []
                 },
                 {
-                    "name": "all-purpose flour",
+                    "name": "farina de tot ús",
                     "quantity": 500,
                     "unit": "g",
                     "alternatives": []
                 },
                 {
-                    "name": "baking powder",
+                    "name": "llevat en pols",
                     "quantity": 1.5,
-                    "unit": "tsp",
+                    "unit": "culleradeta",
                     "alternatives": []
                 },
                 {
-                    "name": "cinnamon ground",
+                    "name": "canyella mòlta",
                     "quantity": 2,
-                    "unit": "tsp",
+                    "unit": "culleradeta",
                     "alternatives": []
                 },
                 {
-                    "name": "ginger ground",
+                    "name": "gingebre mòlt",
                     "quantity": 0.5,
-                    "unit": "tsp",
+                    "unit": "culleradeta",
                     "alternatives": []
                 },
                 {
-                    "name": "nutmeg ground",
+                    "name": "nou moscada mòlta",
                     "quantity": 0.5,
-                    "unit": "tsp",
+                    "unit": "culleradeta",
                     "alternatives": []
                 },
                 {
-                    "name": "ground cloves",
+                    "name": "clau d'olor mòlt",
                     "quantity": 0.5,
-                    "unit": "tsp",
+                    "unit": "culleradeta",
                     "alternatives": []
                 }
             ],
@@ -246,14 +246,14 @@
             },
             "servings": 90,
             "instructions": [
-                "Melt the coconut oil and stir it with the sugar until combined. Add the eggs one after the other, stir well in between.",
-                "In another bowl, combine the flour, baking powder and all spices.",
-                "Add a third of this mixture to the 'coconut oil and sugar concoction' and stir until homogeneous. Repeat this 2 times (for the remaining thirds).",
-                "Shape the mixture to a ball and put it in the refrigerator encased in plastic foil for at least half an hour (or overnight).",
-                "Roll out a chunk of dough to an even surface of three to five millimetres thick. Use cookie cutters of your choice to cut out shapes.",
-                "They do rise very little so they can almost touch eachother on the baking sheet, preserving space (use baking paper or something similar).",
-                "Repeat steps until the baking sheet is full (you can bake multiple sheets at once).",
-                "Enjoy! (You may need to repeat the 3 previous tasks depending on the amount of dough you have :) ). They can be kept in room temperature for a few days but if you baked many, the freezer is preferable."
+                "Foneu l'oli de coco i barregeu-lo amb el sucre fins que estigui combinat. Afegiu els ous un darrere l'altre, remeneu bé entre mig.",
+                "En un altre bol, combineu la farina, el llevat en pols i totes les espècies.",
+                "Afegiu un terç d'aquesta barreja a la 'barreja d'oli de coco i sucre' i remeneu fins que estigui homogeni. Repetiu aquest procés 2 vegades (per als terços restants).",
+                "Formeu la barreja en una bola i poseu-la a la nevera embolicada en plàstic durant almenys mitja hora (o durant la nit).",
+                "Estireu un tros de massa fins a una superfície uniforme de tres a cinc mil·límetres de gruix. Utilitzeu talladors de galetes de la vostra elecció per tallar formes.",
+                "Pugen molt poc, així que gairebé es poden tocar a la safata de forn, conservant l'espai (utilitzeu paper de forn o alguna cosa similar).",
+                "Repetiu els passos fins que la safata de forn estigui plena (podeu coure diverses safates alhora).",
+                "Gaudiu! (És possible que hagueu de repetir les 3 tasques anteriors segons la quantitat de massa que tingueu :). Es poden guardar a temperatura ambient durant uns dies, però si n'heu fet moltes, el congelador és preferible."
             ],
             "difficulty": 1
         }

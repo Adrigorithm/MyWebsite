@@ -3,12 +3,9 @@
 import { Language } from "./enums"
 
 class LanguageSwapper {
-    #swapper = undefined;
-    currentLanguage = Language.NONE;
+    currentLanguage = localStorage.getItem("lang") ?? Language.NONE;
 
     constructor(swapper){
-        this.#swapper = swapper;
-
         swapper.children.forEach(element => {
             element.addEventListener("click", (e) => {
                 let lang = e.target.alt;
