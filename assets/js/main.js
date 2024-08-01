@@ -8,10 +8,17 @@ import { Ingredient, OvenSettings, Recipe, RecipeWindow } from "./recipe.js";
 import { GithubEmbedder } from "./githubEmbedder.js";
 import { LanguageSwapper } from "./languageSwapper.js";
 
-window.addEventListener("load", PageLoaded);
-
 let scrollTopButton;
 let languageSwapper;
+
+LanguageRedirect();
+
+window.addEventListener("load", PageLoaded);
+
+function LanguageRedirect() {
+    languageSwapper = new LanguageSwapper();
+    languageSwapper.Navigate();
+}
 
 function PageLoaded() {
     SetupLanguageSwapper();
@@ -22,7 +29,7 @@ function PageLoaded() {
 }
 
 function SetupLanguageSwapper() {
-    languageSwapper = new LanguageSwapper(document.getElementById("langSelector"));
+    languageSwapper.SetupLangSwapper(document.getElementById("langSelector"));
 }
 
 function SetupScrollEvent() {
@@ -61,7 +68,7 @@ function ConstructRecipes(lang) {
     
     switch (languageSwapper.currentLanguage){
         case Language.ENGLISH:
-            url = "/assets/json/en_uk/recipesV1.json";
+            url = "/assets/json/en_gb/recipesV1.json";
             break;
         case Language.CATALAN:
             url = "/assets/json/cat/recipesV1.json";
@@ -142,7 +149,7 @@ function ConstructTimeLines(lang) {
 
     switch (languageSwapper.currentLanguage){
         case Language.ENGLISH:
-            url = "/assets/json/en_uk/timelines.json";
+            url = "/assets/json/en_gb/timelines.json";
             break;
         case Language.CATALAN:
             url = "/assets/json/cat/timelines.json";

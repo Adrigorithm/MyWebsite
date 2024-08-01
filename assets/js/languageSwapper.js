@@ -4,25 +4,40 @@ import { Language } from "./enums.js"
 
 class LanguageSwapper {
     currentLanguage = localStorage.getItem("lang") ?? Language.NONE;
+    #url = location.pathname;
 
-    constructor(swapper){
+    constructor(){
+
+    }
+
+    SetupLangSwapper(swapper){
         swapper.childNodes.forEach(element => {
             element.addEventListener("click", (e) => {
-                console.log(element, e);
                 let lang = e.target.alt;
 
-                if (this.ShouldUpdateLanguage(lang))
+                if (this.IsLanguageChanged(lang))
                     this.UpdateLanguage(lang);
             });
         });
     }
 
-    ShouldUpdateLanguage(lang) {
+    Navigate(){
+        let lastSlashIndex = this.#url.indexOf('/', 4);
+        let lang = lastSlashIndex == -1
+            ? Language.NONE
+            : this.#url.slice(1, lastSlashIndex);
+
+        if (this.IsLanguageChanged(lang))
+            this.UpdateLanguage(this.currentLanguage, false);
+    }
+
+    IsLanguageChanged(lang) {
         return this.currentLanguage != lang;
     }
 
-    UpdateLanguage(lang) {
-        localStorage.setItem("lang", lang);
+    UpdateLanguage(lang, setLocalStorage = true) {
+        if (setLocalStorage)
+            localStorage.setItem("lang", lang);
 
         switch (lang) {
             case Language.DUTCH:
