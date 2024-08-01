@@ -1,7 +1,7 @@
 "use strict"
 
 import { DataLoader } from "./jsonFetcher.js";
-import { ContentType, OvenMode, RequestMethod } from "./enums.js";
+import { ContentType, Language, OvenMode, RequestMethod } from "./enums.js";
 import { ScrollButtonController } from "./scrollEvents.js";
 import { TimeLine, TimeLineFrame } from "./timeline.js";
 import { Ingredient, OvenSettings, Recipe, RecipeWindow } from "./recipe.js";
@@ -52,13 +52,26 @@ function GenereateGithubEmbeds(...urls) {
     });
 }
 
-function ConstructRecipes() {
+function ConstructRecipes(lang) {
     let elementBefore = document.getElementById("projects");
     let dataLoader = new DataLoader();
     let recipes = [];
     let recipeWindow;
+    let url = "";
+    
+    switch (languageSwapper.currentLanguage){
+        case Language.ENGLISH:
+            url = "/assets/json/en_uk/recipesV1.json";
+            break;
+        case Language.CATALAN:
+            url = "/assets/json/cat/recipesV1.json";
+            break;
+        case Language.DUTCH:
+            url = "/assets/json/nl_be/recipesV1.json"
+            break;
+    }
 
-    dataLoader.FetchData("/assets/json/recipes.json", RequestMethod.GET, { "Content-Type": ContentType.JSON }).then((data) => {
+    dataLoader.FetchData(url, RequestMethod.GET, { "Content-Type": ContentType.JSON }).then((data) => {
         let recipesData = data.recipes;
 
         for (let index = 0; index < recipesData.length; index++) {
@@ -121,12 +134,25 @@ function ConstructRecipes() {
     });
 }
 
-function ConstructTimeLines() {
+function ConstructTimeLines(lang) {
     let timeLinesHtml = document.getElementsByClassName("timeline");
     let dataLoader = new DataLoader();
     let timeLines = [];
+    let url = "";
 
-    dataLoader.FetchData("/assets/json/timelines.json", RequestMethod.GET, { "Content-Type": ContentType.JSON }).then((data) => {
+    switch (languageSwapper.currentLanguage){
+        case Language.ENGLISH:
+            url = "/assets/json/en_uk/timelines.json";
+            break;
+        case Language.CATALAN:
+            url = "/assets/json/cat/timelines.json";
+            break;
+        case Language.DUTCH:
+            url = "/assets/json/nl_be/timelines.json"
+            break;
+    }
+
+    dataLoader.FetchData(url, RequestMethod.GET, { "Content-Type": ContentType.JSON }).then((data) => {
         let timeLinesData = data.timelines;
 
         if (timeLinesData.length != timeLinesHtml.length) {
@@ -152,19 +178,4 @@ function ConstructTimeLines() {
             });
         };
     });
-
-    // let timeLinesHtml = document.getElementsByClassName("timeline");
-
-    // for (let index = 0; index < timelines.length; index++) {
-    //     timelines[index].children[0].children[1].innerHTML = motd[Math.floor(Math.random() * motd.length)];
-
-    //     timesCurrent.push(timelines[index].children.length - 1);
-
-    //     timelines[index].children[0].children[0].onclick = function () {
-    //         timelineClickEventHandler(index, false);
-    //     }
-    //     timelines[index].children[0].children[2].onclick = function () {
-    //         timelineClickEventHandler(index, true);
-    //     }
-    // }
 }

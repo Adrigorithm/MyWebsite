@@ -12,7 +12,7 @@
         {
             "label": "tailwindcss",
             "type": "shell",
-            "command": "pnpx tailwindcss -i ./assets/css/style.css -o ./assets/css/final.css --watch",
+            "command": "npx tailwindcss -i ./assets/css/style.css -o ./assets/css/final.css --watch",
             "problemMatcher": []
         }
     ]

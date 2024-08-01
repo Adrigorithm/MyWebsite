@@ -1,13 +1,14 @@
 "use strict"
 
-import { Language } from "./enums"
+import { Language } from "./enums.js"
 
 class LanguageSwapper {
     currentLanguage = localStorage.getItem("lang") ?? Language.NONE;
 
     constructor(swapper){
-        swapper.children.forEach(element => {
+        swapper.childNodes.forEach(element => {
             element.addEventListener("click", (e) => {
+                console.log(element, e);
                 let lang = e.target.alt;
 
                 if (this.ShouldUpdateLanguage(lang))
@@ -21,14 +22,18 @@ class LanguageSwapper {
     }
 
     UpdateLanguage(lang) {
+        localStorage.setItem("lang", lang);
+
         switch (lang) {
-            case "Dutch":
-                this.currentLanguage = Language.DUTCH;
+            case Language.DUTCH:
+                location.assign("/nl_be/index.html");
                 break;
-            case "Catalan":
-                this.currentLanguage = Language.CATALAN;
+            case Language.CATALAN:
+                location.assign("/cat/index.html");
+                break;
             default:
-                this.currentLanguage = Language.ENGLISH;
+                location.assign("/index.html");
+                break;
         }
     }
 }

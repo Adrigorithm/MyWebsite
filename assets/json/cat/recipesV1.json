@@ -47,7 +47,7 @@
                     "alternatives": []
                 }
             ],
-            "image": "./assets/img/lavaS.webp",
+            "image": "/assets/img/lavaS.webp",
             "ovenSettings": {
                 "mode": "f",
                 "degrees": 180,
@@ -149,7 +149,7 @@
                     "alternatives": []
                 }
             ],
-            "image": "./assets/img/cookiesS.webp",
+            "image": "/assets/img/cookiesS.webp",
             "ovenSettings": {
                 "mode": "f",
                 "degrees": 170,
@@ -238,7 +238,7 @@
                     "alternatives": []
                 }
             ],
-            "image": "./assets/img/cookiesS.webp",
+            "image": "/assets/img/cookiesS.webp",
             "ovenSettings": {
                 "mode": "f",
                 "degrees": 170,

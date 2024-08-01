@@ -50,14 +50,6 @@
   bottom: 0px;
 }
 
-.order-5{
-  order: 5;
-}
-
-.order-last{
-  order: 9999;
-}
-
 .order-first{
   order: -9999;
 }
@@ -66,12 +58,12 @@
   margin: 0px;
 }
 
-.m-2{
-  margin: 0.5rem;
-}
-
 .m-1{
   margin: 0.25rem;
+}
+
+.m-2{
+  margin: 0.5rem;
 }
 
 .mx-2{
@@ -105,16 +97,16 @@
   margin-right: 0.25rem;
 }
 
+.mr-2{
+  margin-right: 0.5rem;
+}
+
 .mt-1{
   margin-top: 0.25rem;
 }
 
 .mt-2{
   margin-top: 0.5rem;
-}
-
-.mr-2{
-  margin-right: 0.5rem;
 }
 
 .mt-3{
@@ -201,20 +193,12 @@
   width: 100%;
 }
 
-.flex-initial{
-  flex: 0 1 auto;
-}
-
 .grow{
   flex-grow: 1;
 }
 
 .basis-full{
   flex-basis: 100%;
-}
-
-.list-none{
-  list-style-type: none;
 }
 
 .flex-row{
@@ -247,6 +231,11 @@
 
 .justify-items-center{
   justify-items: center;
+}
+
+.gap-x-2{
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
 }
 
 .gap-x-2\.5{
@@ -345,10 +334,6 @@
   padding: 0.5rem;
 }
 
-.p-3{
-  padding: 0.75rem;
-}
-
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -373,11 +358,6 @@
 
 .font-youngSerif{
   font-family: YoungSerif, serif;
-}
-
-.text-2xl{
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .text-black{
@@ -462,14 +442,6 @@
     order: 3;
   }
 
-  .sm\:order-4{
-    order: 4;
-  }
-
-  .sm\:m-0{
-    margin: 0px;
-  }
-
   .sm\:m-3{
     margin: 0.75rem;
   }
@@ -477,27 +449,6 @@
   .sm\:my-4{
     margin-top: 1rem;
     margin-bottom: 1rem;
-  }
-
-  .sm\:my-3{
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .sm\:mb-0{
-    margin-bottom: 0px;
-  }
-
-  .sm\:mr-0{
-    margin-right: 0px;
-  }
-
-  .sm\:mr-2{
-    margin-right: 0.5rem;
-  }
-
-  .sm\:flex{
-    display: flex;
   }
 
   .sm\:w-full{
@@ -508,32 +459,8 @@
     flex-direction: row;
   }
 
-  .sm\:justify-end{
-    justify-content: flex-end;
-  }
-
-  .sm\:gap-x-2\.5{
-    -moz-column-gap: 0.625rem;
-         column-gap: 0.625rem;
-  }
-
-  .sm\:gap-x-2{
-    -moz-column-gap: 0.5rem;
-         column-gap: 0.5rem;
-  }
-
   .sm\:rounded-none{
     border-radius: 0px;
-  }
-
-  .sm\:px-2{
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
-  .sm\:py-1{
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
   }
 
   .sm\:py-2{
