@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="El cau d'A3, aquí mostro coses, també hi ha gats.">
+  <meta name="author" content="A3">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="El Cau d'A3" />
+  <meta property="og:url" content="index.html" />
+  <meta property="og:image" content="/assets/img/logo.svg" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="800" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="El meu lloc web personal, aquí mostro el que (puc) fer." />
+  <meta property="og:locale" content="ca_ES" />
+
+  <link rel="apple-touch-icon" href="/assets/img/logo.svg">
+  <link rel="icon" type="image/svg" href="/assets/img/logo.svg">
+
+  <link rel="stylesheet" href="/assets/css/final.css">
+
+  <script type="module" src="/assets/js/main.js"></script>
+
+  <title>El Cau d'A3</title>
+</head>
+
+<body class="flex flex-col font-ubuntu m-0 bg-white dark:bg-black text-black dark:text-white">
+
+  <nav id="mainNav"
+    class="flex flex-col sm:flex-row p-2 bg-mediumPurple dark:bg-lightSteelBlue justify-between">
+    <div class="flex flex-col sm:order-1 sm:flex-row items-center justify-items-center">
+      <a class="block no-underline text-black" href="#about">
+        <h1 class="m-1 sm:m-3">Sobre</h1>
+      </a>
+      <a class="block no-underline text-black" href="#projects">
+        <h1 class="m-1 sm:m-3">Projectes</h1>
+      </a>
+      <a class="block no-underline text-black" href="#recipes">
+        <h1 class="m-1 sm:m-3">Receptes</h1>
+      </a>
+    </div>
+
+    <div class="text-center order-first sm:order-2">
+      <a href="/index.html"><img src="/assets/img/logo.svg" class="w-16" alt="logo"></a>
+    </div>
+
+    <div id="langSelector" class="mt-3 sm:order-3 text-center">
+      <img class="mr-2" src="/assets/img/uk.svg" alt="English">
+      <img class="mr-2" src="/assets/img/netherlands.svg" alt="Dutch">
+      <img src="/assets/img/senyera.svg" alt="Catalan">
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="flex flex-col justify-center items-center">
+      <div>
+        <h2 class="p-2 m-0 font-youngSerif">Home</h2>
+      </div>
+      <div
+        class="bg-mediumPurple dark:bg-lightSteelBlue dark:text-black rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+        <h3 class="m-0 py-1 pl-4">Benvingut</h3>
+      </div>
+      <div class="w-full lg:flex lg:flex-row">
+        <div
+          class="flex flex-column h-[396px] lg:min-w-[639px] items-end bg-no-repeat bg-center bg-lightSteelBlue dark:bg-mediumPurple"
+          style="background-image: url(/assets/img/cat.webp)" alt="my cat">
+          <div class="w-full text-center opacity-50 bg-black dark:bg-white">
+            <p class="text-white dark:text-black p-2 m-0">Aquest és el meu gat</p>
+          </div>
+        </div>
+        <div>
+          <h4 class="px-2 font-md">
+            <span>
+              <img src="/assets/img/rChevron.svg" class="h-4" alt="subTitleIndicator">
+            </span>
+            Introducció
+          </h4>
+          <p class="px-2">Ben trobat visitant.
+            El fet que siguis aquí significa que ja has fet un gran esforç per trobar-me.
+            Per tant, tret que marxis ara mateix, no et deixaré marxar amb les mans buides.
+            Em faig dir "Adri", cosa que potser ja sabies.
+            Sóc un desenvolupador de programari belga.
+            No obstant això, no estic encasellat,
+            tinc un cinturó negre en karate i sóc un pastisser força bo, si em permeteu dir-ho.
+            Bé, això és suficient per ara, hi ha més coses com aquesta a la secció "Sobre" si vols saber-ne més.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="flex flex-col justify-center items-center">
+      <div>
+        <h2 class="p-2 m-0 font-youngSerif">Sobre</h2>
+      </div>
+      <div
+        class="bg-mediumPurple dark:bg-lightSteelBlue dark:text-black rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+        <h3 class="m-0 py-1 pl-4">Sinopsi</h3>
+      </div>
+      <div class="flex flex-col p-0 w-full">
+        <div class="lg:flex lg:flex-row flex flex-col">
+          <div class="lg:w-1/2 bg-lightSteelBlue dark:bg-mediumPurple text-center text-bold">
+            <p class="m-0 p-2">Nom:</p>
+          </div>
+          <div class="lg:w-1/2 text-center">
+            <p class="m-0 p-2">Adriaan Waem</p>
+          </div>
+        </div>
+        <div class="lg:flex lg:flex-row flex flex-col">
+          <div class="lg:w-1/2 bg-lightSteelBlue dark:bg-mediumPurple text-center text-bold">
+            <p class="m-0 p-2">Nacionalitat:</p>
+          </div>
+          <div class="lg:w-1/2 text-center">
+            <p class="m-0 p-2">Belga</p>
+          </div>
+        </div>
+        <div class="lg:flex lg:flex-row flex flex-col">
+          <div class="lg:w-1/2  bg-lightSteelBlue dark:bg-mediumPurple text-center text-bold">
+            <p class="m-0 p-2">Data de naixement:</p>
+          </div>
+          <div class="lg:w-1/2 text-center">
+            <p class="m-0 p-2">04/12/1998</p>
+          </div>
+        </div>
+        <div class="lg:flex lg:flex-row flex flex-col">
+          <div class="lg:w-1/2 bg-lightSteelBlue dark:bg-mediumPurple text-center text-bold">
+            <p class="m-0 p-2">Email*:</p>
+          </div>
+          <div class="lg:w-1/2 text-center">
+            <p class="m-0 p-2"><a href="mailto:adrigorithm@proton.me">Llegiu l'avís a continuació abans de fer clic</a></p>
+          </div>
+        </div>
+      </div>
+      <fieldset class="m-2 border-solid border-2 border-zaffre">
+        <legend class="text-bold">Avís</legend>
+        <p>
+          *: Si vols saber-ne més, utilitza aquesta adreça de correu electrònic
+        </p>
+      </fieldset>
+      <div
+        class="bg-mediumPurple dark:bg-lightSteelBlue dark:text-black rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+        <h3 class="m-0 py-1 pl-4">Educació</h3>
+      </div>
+      <div class="flex flex-col w-full justify-center items-center timeline">
+      </div>
+      <div
+        class="mt-2 bg-mediumPurple dark:bg-lightSteelBlue dark:text-black rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+        <h3 class="m-0 py-1 pl-4">Habilitats</h3>
+      </div>
+      <div class="mx-2">
+        <p>Saps com a tothom li encanta llegir (sí, això era sarcasme)? Sabies que segons un estudi els valors del QI dels humans han disminuït des que es va introduir la televisió al públic? De mitjana, 10 punts menys des de 1962 en realitat.</p>
+        <p>Per sort per a tu, he formatat aquesta secció en una taula per fer una lectura lleugera.</p>
+      </div>
+      <div class="mx-2 flex flex-col lg:flex-row w-full">
+        <div class="lg:w-full lg:mr-2">
+          <h4 class="mx-2">
+            <span>
+              <img src="/assets/img/rChevron.svg" class="h-4" alt="subTitleIndicator">
+            </span>
+            Habilitats toves
+          </h4>
+          <div>
+            <p class="bg-lightSteelBlue dark:bg-mediumPurple my-1 p-2">
+              Resolució de problemes
+            </p>
+            <p class="w-5/6 bg-lightSteelBlue dark:bg-mediumPurple my-1 p-2">
+              Adaptabilitat
+            </p>
+            <p class="w-4/5 bg-lightSteelBlue dark:bg-mediumPurple my-1 p-2">
+              Curiositat
+            </p>
+            <p class="w-4/5 bg-lightSteelBlue dark:bg-mediumPurple my-1 p-2">
+              Pensament crític
+            </p>
+          </div>
+        </div>
+        <div class="mb-2 lg:w-full">
+          <h4 class="mx-2">
+            <span>
+              <img src="/assets/img/rChevron.svg" class="h-4" alt="subTitleIndicator">
+            </span>
+            Habilitats dures
+          </h4>
+          <div>
+            <p class="bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full">
+              Programació
+            </p>
+            <p class="bg-lightSteelBlue dark:bg-mediumPurple p-1 m-0 ml-3 p-1 rounded-tr-full">
+              C#
+            </p>
+            <p class="w-5/6 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
+              Python
+            </p>
+            <p class="w-4/5 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
+              Java
+            </p>
+            <p class="w-2/3 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
+              C++
+            </p>
+            <p class="w-2/3 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
+              JavaScript
+            </p>
+            <p class="w-5/6 bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full">
+              UI
+            </p>
+            <p class="bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
+              HTML & CSS
+            </p>
+            <p class="w-2/3 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
+              XAML
+            </p>
+            <p class="w-2/3 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
+              Flutter
+            </p>
+            <p class="w-4/5 bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full"">
+              Operating Systems
+            </p>
+            <p class=" bg-lightSteelBlue dark:bg-mediumPurple p-1 m-0 ml-3 p-1 rounded-tr-full">
+              Windows
+            </p>
+            <p class=" w-5/6 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
+              GNU / Linux
+            </p>
+            <p class="w-4/5 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
+              Android
+            </p>
+            <p class="w-4/5 bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full">
+              Data(base)
+            </p>
+            <p class=" bg-lightSteelBlue dark:bg-mediumPurple p-1 m-0 ml-3 p-1 rounded-tr-full">
+              JSON
+            </p>
+            <p class="bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
+              XML
+            </p>
+            <p class=" w-5/6 bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
+              SQL
+            </p>
+            <p class="w-4/5 bg-zaffre text-white mt-1 mb-0 p-2 rounded-tr-full"">
+              Networks / CS
+            </p>
+            <p class=" bg-lightSteelBlue dark:bg-mediumPurple p-1 m-0 ml-3 p-1 rounded-tr-full">
+              Networking basics
+            </p>
+            <p class="bg-lightSteelBlue dark:bg-mediumPurple p-1  m-0 ml-3 p-1 rounded-tr-full">
+              Routing & Switching
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-mediumPurple dark:bg-lightSteelBlue dark:text-black rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+        <h3 class="m-0 py-1 pl-4">Experiència</h3>
+      </div>
+      <div class="flex flex-col w-full justify-center items-center timeline">
+      </div>
+    </section>
+    <section id="projects" class="flex flex-col justify-center items-center">
+      <div>
+        <h2 class="p-2 m-0 font-youngSerif">Projectes</h2>
+      </div>
+      <div>
+        <h4 class="mx-2">
+          <span>
+            <img src="/assets/img/rChevron.svg" class="h-4" alt="subTitleIndicator">
+          </span>
+          Nota
+        </h4>
+        <p class="mx-2">
+          Permeteu-me aprofitar aquest moment per queixar-me sobre la futilitat de l'educació a Bèlgica. És realment dolenta. Tot el que no és autodidacta és o bé una ximpleria obsoleta o un pou de lliçons subjectives/basades en opinions. Això és cert, per descomptat, per als cursos d'IT on la actualitat és fonamental a molts llocs. Un exemple perfecte que encaixa en ambdues categories és el següent. Ens van obligar a instal·lar la variant del servidor SQL d'ORACLE (versió 11g, una que data de 2011 - més d'una dècada des de la redacció d'aquest text). Aquesta peça específica de ferralla és un malson de compatibilitat, no funciona en res més que Windows. També pots trobar innombrables fets inquietants sobre la fundació Oracle per tot internet. La raó per no utilitzar una versió recent era "requereix una connexió a internet", cosa que tots considerem una ximpleria.
+        </p>
+      </div>
+      <div
+        class="bg-mediumPurple dark:bg-lightSteelBlue dark:text-black rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+        <h3 class="m-0 py-1 pl-4">Fullstack</h3>
+      </div>
+      <div id="Adribot" class="flex flex-col lg:flex-row w-full">
+        <div
+          class="flex flex-col h-[359px] w-full bg-center bg-lightSteelBlue dark:bg-mediumPurple bg-no-repeat justify-between"
+          style="background-image: url(/assets/img/adribot.webp)" alt="adribot">
+          <div class="text-center opacity-80 bg-black">
+            <p class="text-white p-2 m-0">Adribot</p>
+          </div>
+          <div class="text-center w-full opacity-80 bg-black">
+            <p class="text-white p-2 m-0">.NET Core 9</p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-mediumPurple dark:bg-lightSteelBlue dark:text-black rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+        <h3 class="m-0 py-1 pl-4">Frontend</h3>
+      </div>
+      <div id="Adrigorithm.github.io" class="flex flex-col lg:flex-row w-full">
+        <div
+          class="flex flex-col h-[359px] w-full bg-center bg-lightSteelBlue dark:bg-mediumPurple bg-no-repeat justify-between"
+          style="background-image: url(/assets/img/myWebsite.webp)" alt="myWebsite">
+          <div class="text-center opacity-80 bg-black">
+            <p class="text-white p-2 m-0">My Website</p>
+          </div>
+          <div class="text-center w-full opacity-80 bg-black">
+            <p class="text-white p-2 m-0">HTML + CSS + JS</p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-mediumPurple dark:bg-lightSteelBlue dark:text-black rounded-bl-full sm:rounded-none w-5/6 sm:w-full sm:py-2 sm:text-center self-end">
+        <h3 class="m-0 py-1 pl-4">Backend</h3>
+      </div>
+      <div id="DeLijn.Net" class="flex flex-col lg:flex-row w-full">
+        <div
+          class="flex flex-col h-[359px] w-full bg-center bg-lightSteelBlue dark:bg-mediumPurple bg-no-repeat justify-between"
+          style="background-image: url(/assets/img/deLijn.Net.webp)" alt="deLijn.Net">
+          <div class="text-center opacity-80 bg-black">
+            <p class="text-white p-2 m-0">DeLijn.Net</p>
+          </div>
+          <div class="text-center w-full opacity-80 bg-black">
+            <p class="text-white p-2 m-0">.NET Core 9</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="flex flex-col justify-center items-center">
+      <div>
+        <h2 class="p-2 m-0 font-youngSerif">Contacte</h2>
+      </div>
+      <div class="flex lg:flex-row w-full items-center justify-center">
+        <a href="https://linkedin.com/in/a3w">
+          <svg width="100" height="100" viewBox="0 0 24 24">
+            <path
+              d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
+              class="fill-lightSteelBlue dark:fill-mediumPurple"></path>
+          </svg>
+        </a>
+        <a href="https://discordapp.com/users/135081249017430016">
+          <svg width="100" height="100" viewBox="0 0 24 24">
+            <path
+              d="M18.59 5.88997C17.36 5.31997 16.05 4.89997 14.67 4.65997C14.5 4.95997 14.3 5.36997 14.17 5.69997C12.71 5.47997 11.26 5.47997 9.83001 5.69997C9.69001 5.36997 9.49001 4.95997 9.32001 4.65997C7.94001 4.89997 6.63001 5.31997 5.40001 5.88997C2.92001 9.62997 2.25001 13.28 2.58001 16.87C4.23001 18.1 5.82001 18.84 7.39001 19.33C7.78001 18.8 8.12001 18.23 8.42001 17.64C7.85001 17.43 7.31001 17.16 6.80001 16.85C6.94001 16.75 7.07001 16.64 7.20001 16.54C10.33 18 13.72 18 16.81 16.54C16.94 16.65 17.07 16.75 17.21 16.85C16.7 17.16 16.15 17.42 15.59 17.64C15.89 18.23 16.23 18.8 16.62 19.33C18.19 18.84 19.79 18.1 21.43 16.87C21.82 12.7 20.76 9.08997 18.61 5.88997H18.59ZM8.84001 14.67C7.90001 14.67 7.13001 13.8 7.13001 12.73C7.13001 11.66 7.88001 10.79 8.84001 10.79C9.80001 10.79 10.56 11.66 10.55 12.73C10.55 13.79 9.80001 14.67 8.84001 14.67ZM15.15 14.67C14.21 14.67 13.44 13.8 13.44 12.73C13.44 11.66 14.19 10.79 15.15 10.79C16.11 10.79 16.87 11.66 16.86 12.73C16.86 13.79 16.11 14.67 15.15 14.67Z"
+              class="fill-lightSteelBlue dark:fill-mediumPurple"></path>
+          </svg>
+        </a>
+        <a href="https://github.com/Adrigorithm/">
+          <svg width="100" height="100" viewBox="0 0 17 17">
+            <path
+              d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"
+              class="fill-lightSteelBlue dark:fill-mediumPurple"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+    <a id="toTopButton" class="hidden" href="#">
+      <img src="/assets/img/uArrowReceding.svg" class="h-20 w-20 fixed bottom-0 bg-white opacity-60 p-2"
+        alt="NavigateTopArrow">
+    </a>
+  </main>
+
+  <footer
+    class="mt-2 flex flex-col sm:flex-row w-full justify-evenly items-center bg-mediumPurple dark:bg-lightSteelBlue dark:text-black text-center">
+    <h2 class="sm:my-4">Adrigorithm</h2>
+    <p class="sm:my-4">Copyright © 2024 - Adrigorithm</p>
+  </footer>
+</body>
+
+</html>
