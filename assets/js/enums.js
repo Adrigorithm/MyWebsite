@@ -33,4 +33,10 @@ const Language = {
     NONE: "en_gb"
 };
 
-export {WriteMode, RequestMethod, ContentType, OvenMode, Temperature, Language};
+const CertificateStatus = {
+    COMPLETED: "Completed!",
+    IN_PROGRESS: "In progress...",
+    PLANNED: "Planned"
+}
+
+export {WriteMode, RequestMethod, ContentType, OvenMode, Temperature, Language, CertificateStatus};
