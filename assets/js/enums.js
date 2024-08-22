@@ -35,8 +35,14 @@ const Language = {
 
 const CertificateStatus = {
     COMPLETED: "Completed!",
+    COMPLETED_CAT: "Completat!",
+    COMPLETED_NL: "Voltooid!",
     IN_PROGRESS: "In progress...",
-    PLANNED: "Planned"
+    IN_PROGRESS_CAT: "En progrés...",
+    IN_PROGRESS_NL: "In uitvoering...",
+    PLANNED: "Planned",
+    PLANNED_CAT: "Planificat",
+    PLANNED_NL: "Gepland"
 }
 
 export {WriteMode, RequestMethod, ContentType, OvenMode, Temperature, Language, CertificateStatus};

@@ -1,0 +1,54 @@
+{
+    "certificates": [
+        {
+            "image": "/assets/img/azureFundamentals.svg",
+            "reference": "https://learn.microsoft.com/en-gb/users/adriw-7788/transcript/71z95spklqzlm05",
+            "name": "Microsoft Certified: Azure Fundamentals",
+            "description": "Demonstrate foundational knowledge of cloud concepts, core Azure services, plus Azure management and governance features and tools.",
+            "company": "Microsoft",
+            "achievedDate": "20 Aug 2024",
+            "expirationDate": null,
+            "status": "Completed!"
+        },
+        {
+            "image": "/assets/img/azureAssociate.svg",
+            "reference": "https://learn.microsoft.com/en-gb/users/adriw-7788/transcript/71z95spklqzlm05",
+            "name": "Microsoft Certified: Azure Administrator Associate",
+            "description": "Demonstrate key skills to configure, manage, secure, and administer key professional functions in Microsoft Azure.",
+            "company": "Microsoft",
+            "achievedDate": "TBD",
+            "expirationDate": "TBD",
+            "status": "In progress..."
+        },
+        {
+            "image": "/assets/img/LPIEssentials.webp",
+            "reference": "https://cs.lpi.org/caf/Xamman/certification/verify/LPI000416657/fceeh6ayde",
+            "name": "LE-1: Linux Essentials",
+            "description": "The purpose of the Linux Essentials Certificate is to define the basic knowledge required to competently use a desktop or mobile device using a Linux Operating System. The associated Linux Essentials Program will guide and encourage youth (and those new to Linux and Open Source) to understand the place of Linux and Open Source in the context of the broader IT industry.",
+            "company": "Linux Professional Institute",
+            "achievedDate": "30 Jan 2019",
+            "expirationDate": null,
+            "status": "Completed!"
+        },
+        {
+            "image": "/assets/img/sportVlaanderen.png",
+            "reference": "https://1drv.ms/b/c/eb8bd6425f2a249d/ERlVU2ix40hPoExQ64JDo8YBAWp2Imf6tyGZJ6tuPiKQ3g?e=o5pR0b",
+            "name": "Aspirant-Initiator Karate",
+            "description": null,
+            "company": "Sport Vlaanderen",
+            "achievedDate": "6 May 2018",
+            "expirationDate": null,
+            "status": "Completed!"
+        },
+        {
+            "image": "/assets/img/AWSFoundations.png",
+            "reference": null,
+            "name": "AWS Certified Cloud Practitioner",
+            "description": "The AWS Certified Cloud Practitioner validates foundational, high-level understanding of AWS Cloud, services, and terminology.  This is a good starting point on the AWS Certification journey for individuals with no prior IT or cloud experience switching to a cloud career or for line-of-business employees looking for foundational cloud literacy.",
+            "company": "AWS (Amazon)",
+            "achievedDate": "TBD",
+            "expirationDate": "TBD",
+            "status": "Planned"
+        }
+    ]
+}

@@ -81,12 +81,18 @@ class Certificate {
         footer.classList.add("p-2", "text-center");
         switch (this.status) {
             case CertificateStatus.COMPLETED:
+            case CertificateStatus.COMPLETED_CAT:
+            case CertificateStatus.COMPLETED_NL:
                 footer.style.backgroundColor = "green";
                 break;
             case CertificateStatus.IN_PROGRESS:
+            case CertificateStatus.IN_PROGRESS_CAT:
+            case CertificateStatus.IN_PROGRESS_NL:
                 footer.style.backgroundColor = "yellow";
                 break;
             case CertificateStatus.PLANNED:
+            case CertificateStatus.PLANNED_CAT:
+            case CertificateStatus.PLANNED_NL:
                 footer.style.backgroundColor = "grey";
                 break;
             default:
