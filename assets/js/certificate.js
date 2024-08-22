@@ -113,3 +113,5 @@ class Certificate {
         return card;
     }
 }
+
+export { Certificate, CertificateCard }

@@ -7,6 +7,7 @@ import { TimeLine, TimeLineFrame } from "./timeline.js";
 import { Ingredient, OvenSettings, Recipe, RecipeWindow } from "./recipe.js";
 import { GithubEmbedder } from "./githubEmbedder.js";
 import { LanguageSwapper } from "./languageSwapper.js";
+import { Certificate, CertificateCard } from "./certificate.js";
 
 let scrollTopButton;
 let languageSwapper;
@@ -24,6 +25,7 @@ function PageLoaded() {
     SetupLanguageSwapper();
     SetupScrollEvent();
     ConstructTimeLines();
+    ConstructCertificates();
     ConstructRecipes();
     GenereateGithubEmbeds("https://api.github.com/repos/Adrigorithm/Adribot", "https://api.github.com/repos/Adrigorithm/Adrigorithm.github.io", "https://api.github.com/repos/Adrigorithm/DeLijn.Net");
 }
@@ -59,7 +61,52 @@ function GenereateGithubEmbeds(...urls) {
     });
 }
 
-function ConstructRecipes(lang) {
+function ConstructCertificates() {
+    let elementBefore = document.getElementById("certifications");
+    let dataLoader = new DataLoader();
+    let certificates = [];
+    let certificatesContainer;
+    let url = "";
+    
+    switch (languageSwapper.currentLanguage){
+        case Language.ENGLISH:
+            url = "/assets/json/en_gb/certificates.json";
+            break;
+        case Language.CATALAN:
+            url = "/assets/json/cat/certificates.json";
+            break;
+        case Language.DUTCH:
+            url = "/assets/json/nl_be/certificates.json"
+            break;
+    }
+
+    dataLoader.FetchData(url, RequestMethod.GET, { "Content-Type": ContentType.JSON }).then((data) => {
+        let certificatesData = data.certificates;
+
+        for (let index = 0; index < certificatesData.length; index++) {
+            let certificate;
+
+            // Recipe :)
+            certificate = new Certificate(
+                certificatesData[index].image,
+                certificatesData[index].name,
+                certificatesData[index].company,
+                certificatesData[index].achievedDate,
+                certificatesData[index].expirationDate,
+                certificatesData[index].reference,
+                certificatesData[index].description,
+                certificatesData[index].status
+            );
+
+            certificates.push(certificate);
+        };
+
+        certificatesContainer = new CertificateCard(certificates);
+        elementBefore.after(certificatesContainer.ToDOMElements());
+    });
+}
+
+function ConstructRecipes() {
     let elementBefore = document.getElementById("projects");
     let dataLoader = new DataLoader();
     let recipes = [];
