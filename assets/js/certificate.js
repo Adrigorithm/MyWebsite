@@ -1,7 +1,7 @@
 "use strict"
 
-import { CertificateStatus, WriteMode } from "./enums";
-import { SetTextContent } from "./utilities";
+import { CertificateStatus, WriteMode } from "./enums.js";
+import { SetTextContent } from "./utilities.js";
 
 class CertificateCard {
     #certificates = [];
@@ -27,9 +27,12 @@ class CertificateCard {
                 cardsContainer.appendChild(category);
             }
 
-            cardsContainer.appendChild(element.ToDOMElement());
+            let cardsContainerInner = document.createElement("section");
+            cardsContainerInner.appendChild(element.ToDOMElement());
+
+            cardsContainer.appendChild(cardsContainerInner);
         }
-        
+
         return cardsContainer;
     }
 }
@@ -57,28 +60,28 @@ class Certificate {
 
     ToDOMElement(){
         let card = document.createElement("div");
-        card.classList.add("flex", "flex-col");
-
-        let title = document.createElement("h3");
-        SetTextContent(title, WriteMode.APPEND, document.createTextNode(this.company));
+        card.classList.add("flex", "flex-col", "items-center");
 
         let subtitle = document.createElement("h4");
         SetTextContent(subtitle, WriteMode.APPEND, document.createTextNode(this.name));
 
         let imageAnchor = document.createElement("a");
         imageAnchor.setAttribute("href", this.reference ?? "javascript:void(0)");
+        imageAnchor.setAttribute("title", "opens my certificate (in a new tab)");
+        imageAnchor.setAttribute("target", "_blank");
 
         let image = document.createElement("img");
         image.setAttribute("src", this.image);
+        image.setAttribute("width", "150px");
         image.setAttribute("alt", `image of certificate: ${this.name}`);
 
         let validity = document.createElement("p");
         SetTextContent(validity, WriteMode.APPEND, document.createTextNode(this.expirationDate
-            ? `Achieved on ${this.achievedDate}\nValid until ${this.expirationDate}`
-            : `Achieved on ${this.achievedDate}\nValid forever :)`));
+            ? `Achieved on: ${this.achievedDate} - Valid until: ${this.expirationDate}`
+            : `Achieved on: ${this.achievedDate} - Valid forever :)`));
 
         let footer = document.createElement("p");
-        footer.classList.add("p-2", "text-center");
+        footer.classList.add("py-2", "w-full", "text-center");
         switch (this.status) {
             case CertificateStatus.COMPLETED:
             case CertificateStatus.COMPLETED_CAT:
@@ -89,6 +92,7 @@ class Certificate {
             case CertificateStatus.IN_PROGRESS_CAT:
             case CertificateStatus.IN_PROGRESS_NL:
                 footer.style.backgroundColor = "yellow";
+                footer.style.color = "black";
                 break;
             case CertificateStatus.PLANNED:
             case CertificateStatus.PLANNED_CAT:
@@ -101,11 +105,12 @@ class Certificate {
         SetTextContent(footer, WriteMode.APPEND, document.createTextNode(this.status));
 
         imageAnchor.appendChild(image);
-        card.append(title, subtitle, imageAnchor, validity, footer);
+        card.append(subtitle, imageAnchor, validity, footer);
 
         if (this.description) {
             let description = document.createElement("p");
-            SetTextContent(description, WriteMode.APPEND, this.description);
+            description.classList.add("px-2");
+            SetTextContent(description, WriteMode.APPEND, document.createTextNode(this.description));
 
             card.insertBefore(description, footer);
         }
