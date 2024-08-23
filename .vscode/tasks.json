@@ -7,13 +7,16 @@
             "label": "start server",
             "type": "shell",
             "command": "python -m http.server --bind 127.0.0.1 8080",
-            "problemMatcher": []
         },
         {
             "label": "tailwindcss",
             "type": "shell",
             "command": "npx tailwindcss -i ./assets/css/style.css -o ./assets/css/final.css --watch",
-            "problemMatcher": []
-        }
+        },
+        {
+            "label": "deploy",
+            "type": "shell",
+            "command": "./deploy.ps1",
+        },
     ]
 }
