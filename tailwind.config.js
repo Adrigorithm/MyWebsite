@@ -8,11 +8,11 @@ module.exports = {
     extend: {
     },
     colors: {
-      zaffre: '#000fb0',
-      lightSteelBlue: '#B8CAE0',
-      mediumPurple: '#8B80f9',
-      black: '#000',
-      white: '#fff'
+      transBlue: 'lab(78, -20, -31)',
+      transPink: 'lab(76, 30, 4)',
+      transWhite: 'lab(93, 0, 0)',
+      fluoPink: 'lab(44, 71, -10)',
+      nightBlack: 'lab(9, 0, 0)'
     },
     fontFamily: {
       'ubuntu': ['Ubuntu', 'sans-serif'],
