@@ -92,7 +92,7 @@ class Certificate {
             case CertificateStatus.IN_PROGRESS_CAT:
             case CertificateStatus.IN_PROGRESS_NL:
                 footer.style.backgroundColor = "yellow";
-                footer.style.color = "black";
+                footer.style.color = "lab(9 0 0)";
                 break;
             case CertificateStatus.PLANNED:
             case CertificateStatus.PLANNED_CAT:

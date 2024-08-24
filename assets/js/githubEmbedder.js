@@ -24,9 +24,9 @@ class GithubEmbedder{
         title.classList.add("inline");
         owner.classList.add("inline");
         ownerPrefix.classList.add("inline");
-        container.classList.add("border-solid", "border-2", "border-zaffre", "text-center", "m-2", "lg:w-full");
-        titleLink.classList.add("no-underline", "text-black", "dark:text-white");
-        ownerLink.classList.add("no-underline", "text-black", "dark:text-white");
+        container.classList.add("border-solid", "border-2", "border-fluoPink", "text-center", "m-2", "lg:w-full");
+        titleLink.classList.add("no-underline", "text-nightBlack", "dark:text-transWhite");
+        ownerLink.classList.add("no-underline", "text-nightBlack", "dark:text-transWhite");
         header.classList.add("text-bold");
 
         titleLink.setAttribute("href", json.html_url);

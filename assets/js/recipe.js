@@ -27,7 +27,7 @@ class RecipeWindow {
 
         for (let index = 0; index < this.#recipes.length; index++) {
             let recipeContainer = document.createElement("section");
-            recipeContainer.classList.add("flex", "flex-col", "inset-[8%]", "fixed", "opacity-90", "bg-lightSteelBlue", "dark:bg-zaffre", "hidden");
+            recipeContainer.classList.add("flex", "flex-col", "inset-[8%]", "fixed", "opacity-90", "bg-transPink", "dark:bg-fluoPink", "hidden");
 
             let headerContainer = document.createElement("div");
             headerContainer.classList.add("flex", "flex-row", "items-center", "hidden");
@@ -37,7 +37,7 @@ class RecipeWindow {
             headerTitle.classList.add("grow", "m-0", "text-center");
 
             let servingsModifier = document.createElement("input");
-            servingsModifier.classList.add("dark:bg-zaffre", "bg-lightSteelBlue", "mr-1", "text-zaffre", "dark:text-lightSteelBlue", "border-2", "border-black", "dark:border-white")
+            servingsModifier.classList.add("dark:bg-fluoPink", "bg-transPink", "mr-1", "text-fluoPink", "dark:text-transPink", "border-2", "border-nightBlack", "dark:border-transWhite")
             servingsModifier.addEventListener("input", () => {
                 if (Number.isInteger(Number.parseFloat(servingsModifier.value)) && servingsModifier.value > 0) {
                     this.#recipes[index].ingredients.forEach(ingredient => {
@@ -56,7 +56,7 @@ class RecipeWindow {
 
             let closeButtonImg = document.createElement("img");
             closeButtonImg.setAttribute("src", "/assets/img/cross.svg");
-            closeButtonImg.classList.add("h-8", "w-8", "bg-white", "p-2");
+            closeButtonImg.classList.add("h-8", "w-8", "bg-transWhite", "p-2");
             closeButtonImg.setAttribute("alt", "CloseRecipeWindow");
 
             let recipeThumbnailImage = document.createElement("img");
@@ -101,7 +101,7 @@ class RecipeWindow {
             SetTextContent(recipeThumbnailName, WriteMode.SET, document.createTextNode(`${this.#recipes[index].name}`));
 
             let recipeThumbnailLink = document.createElement("a");
-            recipeThumbnailLink.classList.add("no-underline", "text-black", "dark:text-white");
+            recipeThumbnailLink.classList.add("no-underline", "text-nightBlack", "dark:text-transWhite");
             recipeThumbnailLink.setAttribute("href", "javascript: void(0);");
 
             recipeThumbnailLink.addEventListener("click", () => {

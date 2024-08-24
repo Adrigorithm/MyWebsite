@@ -22,21 +22,21 @@ class TimeLine {
 
             // Image part of the timeline frame
             let imageContainer = document.createElement("div");
-            imageContainer.classList.add("flex", "flex-col", "bg-contain", "basis-full", "lg:basis-1/3", "bg-lightSteelBlue", "dark:bg-mediumPurple", "bg-no-repeat", "bg-cover", "bg-center", "h-80", "justify-between", `bg-[url('${this.#timeLineFrames[index].image}')]`);
+            imageContainer.classList.add("flex", "flex-col", "bg-contain", "basis-full", "lg:basis-1/3", "bg-lightSteelBlue", "dark:bg-transPink", "bg-no-repeat", "bg-cover", "bg-center", "h-80", "justify-between", `bg-[url('${this.#timeLineFrames[index].image}')]`);
             imageContainer.setAttribute("alt", `Image of ${this.#timeLineFrames[index].name}`);
 
             let nameContainer = document.createElement("div");
-            nameContainer.classList.add("w-full", "text-center", "opacity-80", "bg-black");
+            nameContainer.classList.add("w-full", "text-center", "opacity-80", "bg-nightBlack");
 
             let name = document.createElement("p");
-            name.classList.add("text-white", "p-2", "m-0");
+            name.classList.add("text-transWhite", "p-2", "m-0");
             name.appendChild(document.createTextNode(`${this.#timeLineFrames[index].name}`));
 
             let placeContainer = document.createElement("div");
-            placeContainer.classList.add("w-full", "text-center", "opacity-80", "bg-black");
+            placeContainer.classList.add("w-full", "text-center", "opacity-80", "bg-nightBlack");
 
             let place = document.createElement("p");
-            place.classList.add("text-white", "p-2", "m-0")
+            place.classList.add("text-transWhite", "p-2", "m-0")
             place.appendChild(document.createTextNode(`${this.#timeLineFrames[index].place}`));
 
             nameContainer.appendChild(name);
@@ -48,22 +48,23 @@ class TimeLine {
             let textContainer = document.createElement("div");
             textContainer.classList.add("mx-2", "lg:basis-2/3");
 
-            let titleContainer = document.createElement("h4");
+            let titleContainer = document.createElement("div");
+            titleContainer.classList.add("flex", "flex-row", "items-center")
 
-            let titleImageContainer = document.createElement("span");
+            let title = document.createElement("h4");
 
             let titleImage = document.createElement("img");
-            titleImage.classList.add("h-4");
-            titleImage.setAttribute("src", "/assets/img/rChevron.svg");
+            titleImage.classList.add("h-6");
+            titleImage.setAttribute("src", "/assets/img/right.svg");
             titleImage.setAttribute("alt", "subTitleIndicator");
 
             let descImage = document.createElement("p");
             descImage.appendChild(document.createTextNode(`${this.#timeLineFrames[index].text}`));
 
-            titleImageContainer.appendChild(titleImage);
+            titleContainer.appendChild(titleImage);
 
-            titleContainer.appendChild(titleImageContainer);
-            titleContainer.appendChild(document.createTextNode(` ${this.#timeLineFrames[index].header}`));
+            titleContainer.appendChild(title);
+            title.appendChild(document.createTextNode(` ${this.#timeLineFrames[index].header}`));
 
             textContainer.append(titleContainer, descImage);
 
@@ -80,7 +81,7 @@ class TimeLine {
 
                 let lChevronDouble = document.createElement("img");
                 lChevronDouble.classList.add("h-6");
-                lChevronDouble.setAttribute("src", "/assets/img/lChevronDouble.svg");
+                lChevronDouble.setAttribute("src", "/assets/img/leftDouble.svg");
                 lChevronDouble.setAttribute("alt", "previousSlideIndicator");
 
                 let motd = document.createElement("p");
@@ -92,7 +93,7 @@ class TimeLine {
 
                 let rChevronDouble = document.createElement("img");
                 rChevronDouble.classList.add("h-6");
-                rChevronDouble.setAttribute("src", "/assets/img/rChevronDouble.svg");
+                rChevronDouble.setAttribute("src", "/assets/img/rightDouble.svg");
                 rChevronDouble.setAttribute("alt", "nextSlideIndicator");
 
                 navButtonLeft.appendChild(lChevronDouble);
