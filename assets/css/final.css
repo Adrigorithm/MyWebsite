@@ -141,10 +141,6 @@
   height: 5rem;
 }
 
-.h-4{
-  height: 1rem;
-}
-
 .h-6{
   height: 1.5rem;
 }
@@ -163,14 +159,6 @@
 
 .h-\[396px\]{
   height: 396px;
-}
-
-.h-3{
-  height: 0.75rem;
-}
-
-.h-7{
-  height: 1.75rem;
 }
 
 .w-16{
@@ -366,16 +354,16 @@
   font-family: YoungSerif, serif;
 }
 
+.text-fluoPink{
+  color: lab(44 71 -10);
+}
+
 .text-nightBlack{
   color: lab(9 0 0);
 }
 
 .text-transWhite{
   color: lab(93 0 0);
-}
-
-.text-fluoPink{
-  color: lab(44 71 -10);
 }
 
 .no-underline{
@@ -515,6 +503,10 @@
     border-color: lab(93 0 0);
   }
 
+  .dark\:bg-fluoPink{
+    background-color: lab(44 71 -10);
+  }
+
   .dark\:bg-nightBlack{
     background-color: lab(9 0 0);
   }
@@ -531,10 +523,6 @@
     background-color: lab(93 0 0);
   }
 
-  .dark\:bg-fluoPink{
-    background-color: lab(44 71 -10);
-  }
-
   .dark\:fill-transBlue{
     fill: lab(78 -20 -31);
   }
@@ -543,11 +531,11 @@
     color: lab(9 0 0);
   }
 
-  .dark\:text-transWhite{
-    color: lab(93 0 0);
-  }
-
   .dark\:text-transPink{
     color: lab(76 30 4);
+  }
+
+  .dark\:text-transWhite{
+    color: lab(93 0 0);
   }
 }

@@ -55,7 +55,7 @@ class RecipeWindow {
             closeButtonAnchor.setAttribute("href", "javascript: void(0);");
 
             let closeButtonImg = document.createElement("img");
-            closeButtonImg.setAttribute("src", "/assets/img/cross.svg");
+            closeButtonImg.setAttribute("src", "/assets/img/close.svg");
             closeButtonImg.classList.add("h-8", "w-8", "bg-transWhite", "p-2");
             closeButtonImg.setAttribute("alt", "CloseRecipeWindow");
 
