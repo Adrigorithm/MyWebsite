@@ -4,34 +4,35 @@ import { CertificateStatus, WriteMode } from "./enums.js";
 import { SetTextContent } from "./utilities.js";
 
 class CertificateCard {
-    #certificates = [];
+    #certificates = new Map();
 
     constructor(certificates) {
-        this.#certificates = certificates;
+        certificates.forEach(certificate => {
+            if (!this.#certificates.has(certificate.company)) {
+                this.#certificates.set(certificate.company, [certificate]);
+            } else {
+                this.#certificates.get(certificate.company).push(certificate);
+            }
+        });
     }
 
     ToDOMElements(){
-        let companyHashmap = new Set();
         let cardsContainer = document.createElement("section");
 
-        for (let index = 0; index < this.#certificates.length; index++) {
-            let element = this.#certificates[index];
-
-            if (!companyHashmap.has(element.company)) {
-                companyHashmap.add(element.company);
-
-                let category = document.createElement("h2");
-                category.classList.add("text-center");
-                SetTextContent(category, WriteMode.APPEND, document.createTextNode(element.company));
-
-                cardsContainer.appendChild(category);
-            }
+        this.#certificates.keys().forEach(company => {
+            let category = document.createElement("h2");
+            category.classList.add("text-center");
+            SetTextContent(category, WriteMode.APPEND, document.createTextNode(company));
 
             let cardsContainerInner = document.createElement("section");
-            cardsContainerInner.appendChild(element.ToDOMElement());
+            cardsContainerInner.classList.add("flex", "flex-col", "md:flex-row", "justify-center");
 
-            cardsContainer.appendChild(cardsContainerInner);
-        }
+            this.#certificates.get(company).forEach(certificate => {
+                cardsContainerInner.appendChild(certificate.ToDOMElement());
+            });
+
+            cardsContainer.append(category, cardsContainerInner);
+        });
 
         return cardsContainer;
     }
