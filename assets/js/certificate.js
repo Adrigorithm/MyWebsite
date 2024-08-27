@@ -20,7 +20,7 @@ class CertificateCard {
         let cardsContainer = document.createElement("section");
 
         this.#certificates.keys().forEach(company => {
-            let category = document.createElement("h2");
+            let category = document.createElement("h3");
             category.classList.add("text-center");
             SetTextContent(category, WriteMode.APPEND, document.createTextNode(company));
 
@@ -87,7 +87,7 @@ class Certificate {
             case CertificateStatus.COMPLETED:
             case CertificateStatus.COMPLETED_CAT:
             case CertificateStatus.COMPLETED_NL:
-                footer.style.backgroundColor = "green";
+                footer.style.backgroundColor = "darkgreen";
                 break;
             case CertificateStatus.IN_PROGRESS:
             case CertificateStatus.IN_PROGRESS_CAT:
@@ -98,10 +98,10 @@ class Certificate {
             case CertificateStatus.PLANNED:
             case CertificateStatus.PLANNED_CAT:
             case CertificateStatus.PLANNED_NL:
-                footer.style.backgroundColor = "grey";
+                footer.style.backgroundColor = "dimgrey";
                 break;
             default:
-                footer.style.backgroundColor = "green";
+                footer.style.backgroundColor = "darkgreen";
         }
         SetTextContent(footer, WriteMode.APPEND, document.createTextNode(this.status));
 

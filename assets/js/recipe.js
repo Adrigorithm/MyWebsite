@@ -16,7 +16,7 @@ class RecipeWindow {
         recipeSection.setAttribute("id", "recipes");
         recipeSection.classList.add("flex", "flex-col", "justify-center", "items-center");
 
-        let recipeSectionHead = document.createElement("h2");
+        let recipeSectionHead = document.createElement("h1");
         recipeSectionHead.classList.add("p-2", "m-0", "font-youngSerif");
         SetTextContent(recipeSectionHead, WriteMode.SET, document.createTextNode("Recipes"));
 

@@ -51,7 +51,7 @@ class TimeLine {
             let titleContainer = document.createElement("div");
             titleContainer.classList.add("flex", "flex-row", "items-center")
 
-            let title = document.createElement("h4");
+            let title = document.createElement("h3");
 
             let titleImage = document.createElement("img");
             titleImage.classList.add("h-6");
