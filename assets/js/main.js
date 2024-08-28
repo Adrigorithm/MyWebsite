@@ -70,13 +70,13 @@ function ConstructCertificates() {
     
     switch (languageSwapper.currentLanguage){
         case Language.ENGLISH:
-            url = "/assets/json/en_gb/certificates.json";
+            url = "/assets/json/en_gb/certificatesV1.json";
             break;
         case Language.CATALAN:
-            url = "/assets/json/cat/certificates.json";
+            url = "/assets/json/cat/certificatesV1.json";
             break;
         case Language.DUTCH:
-            url = "/assets/json/nl_be/certificates.json"
+            url = "/assets/json/nl_be/certificatesV1.json"
             break;
     }
 

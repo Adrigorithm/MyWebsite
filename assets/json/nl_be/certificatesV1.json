@@ -31,7 +31,7 @@
             "status": "Voltooid!"
         },
         {
-            "image": "/assets/img/sportVlaanderen.png",
+            "image": "/assets/img/sportVlaanderen.webp",
             "reference": "https://1drv.ms/b/c/eb8bd6425f2a249d/ERlVU2ix40hPoExQ64JDo8YBAWp2Imf6tyGZJ6tuPiKQ3g?e=o5pR0b",
             "name": "Aspirant-Initiator Karate",
             "description": null,
@@ -41,7 +41,7 @@
             "status": "Voltooid!"
         },
         {
-            "image": "/assets/img/AWSFoundations.png",
+            "image": "/assets/img/AWSFoundations.webp",
             "reference": null,
             "name": "AWS Certified Cloud Practitioner",
             "description": "De AWS Certified Cloud Practitioner valideert een fundamenteel, hoog niveau begrip van AWS Cloud, diensten en terminologie. Dit is een goed startpunt op de AWS-certificeringsreis voor individuen zonder eerdere IT- of cloudervaring die overstappen naar een cloudcarrière of voor lijnmedewerkers die op zoek zijn naar basiskennis over cloud.",

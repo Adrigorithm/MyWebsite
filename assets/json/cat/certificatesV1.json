@@ -31,7 +31,7 @@
             "status": "Completat!"
         },
         {
-            "image": "/assets/img/sportVlaanderen.png",
+            "image": "/assets/img/sportVlaanderen.webp",
             "reference": "https://1drv.ms/b/c/eb8bd6425f2a249d/ERlVU2ix40hPoExQ64JDo8YBAWp2Imf6tyGZJ6tuPiKQ3g?e=o5pR0b",
             "name": "Aspirant-Initiator Karate",
             "description": null,
@@ -41,7 +41,7 @@
             "status": "Completat!"
         },
         {
-            "image": "/assets/img/AWSFoundations.png",
+            "image": "/assets/img/AWSFoundations.webp",
             "reference": null,
             "name": "AWS Certified Cloud Practitioner",
             "description": "L'AWS Certified Cloud Practitioner valida una comprensió fonamental i d'alt nivell del núvol d'AWS, els seus serveis i la seva terminologia. Aquest és un bon punt de partida en el viatge de certificació AWS per a persones sense experiència prèvia en TI o núvol que canviïn a una carrera en núvol o per a empleats de línia de negoci que busquen una alfabetització bàsica en núvol.",
