@@ -13,6 +13,8 @@ class LanguageSwapper {
     SetupLangSwapper(swapper){
         swapper.childNodes.forEach(element => {
             element.addEventListener("click", (e) => {
+                e.preventDefault();
+                
                 let lang = e.target.alt;
 
                 if (this.IsLanguageChanged(lang))

@@ -67,7 +67,7 @@ class Certificate {
         SetTextContent(subtitle, WriteMode.APPEND, document.createTextNode(this.name));
 
         let imageAnchor = document.createElement("a");
-        imageAnchor.setAttribute("href", this.reference ?? "javascript:void(0)");
+        imageAnchor.setAttribute("href", this.reference ?? "https://youtu.be/Y5NTgZA-xWE?t=18");
         imageAnchor.setAttribute("title", "opens my certificate (in a new tab)");
         imageAnchor.setAttribute("target", "_blank");
 

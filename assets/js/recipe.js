@@ -52,7 +52,7 @@ class RecipeWindow {
             servingsModifier.value = this.#recipes[index].servings;
 
             let closeButtonAnchor = document.createElement("a");
-            closeButtonAnchor.setAttribute("href", "javascript: void(0);");
+            closeButtonAnchor.setAttribute("href", "#");
 
             let closeButtonImg = document.createElement("img");
             closeButtonImg.setAttribute("src", "/assets/img/close.svg");
@@ -102,13 +102,15 @@ class RecipeWindow {
 
             let recipeThumbnailLink = document.createElement("a");
             recipeThumbnailLink.classList.add("no-underline", "text-nightBlack", "dark:text-transWhite");
-            recipeThumbnailLink.setAttribute("href", "javascript: void(0);");
+            recipeThumbnailLink.setAttribute("href", "#");
 
-            recipeThumbnailLink.addEventListener("click", () => {
+            recipeThumbnailLink.addEventListener("click", (e) => {
+                e.preventDefault();
                 this.Show(recipeContainer.classList, headerContainer.classList, recipeWrapper.classList);
             });
 
-            closeButtonAnchor.addEventListener("click", () => {
+            closeButtonAnchor.addEventListener("click", (e) => {
+                e.preventDefault();
                 this.Hide(recipeContainer.classList, headerContainer.classList, recipeWrapper.classList);
             })
 
