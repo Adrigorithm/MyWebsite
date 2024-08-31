@@ -80,9 +80,10 @@ class TimeLine {
                 navButtonLeft.setAttribute("href", "#");
 
                 let lChevronDouble = document.createElement("img");
-                lChevronDouble.classList.add("h-6");
                 lChevronDouble.setAttribute("src", "/assets/img/leftDouble.svg");
                 lChevronDouble.setAttribute("alt", "previousSlideIndicator");
+                lChevronDouble.setAttribute("width", "24px");
+                lChevronDouble.setAttribute("height", "24px");
 
                 let motd = document.createElement("p");
                 motd.classList.add("p-2");
@@ -92,9 +93,10 @@ class TimeLine {
                 navButtonRight.setAttribute("href", "#");
 
                 let rChevronDouble = document.createElement("img");
-                rChevronDouble.classList.add("h-6");
                 rChevronDouble.setAttribute("src", "/assets/img/rightDouble.svg");
                 rChevronDouble.setAttribute("alt", "nextSlideIndicator");
+                rChevronDouble.setAttribute("width", "24px");
+                rChevronDouble.setAttribute("height", "24px");
 
                 navButtonLeft.appendChild(lChevronDouble);
                 navButtonRight.appendChild(rChevronDouble);

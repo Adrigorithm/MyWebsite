@@ -56,12 +56,16 @@ class RecipeWindow {
 
             let closeButtonImg = document.createElement("img");
             closeButtonImg.setAttribute("src", "/assets/img/close.svg");
-            closeButtonImg.classList.add("h-8", "w-8", "bg-transWhite", "p-2");
+            closeButtonImg.setAttribute("width", "32px");
+            closeButtonImg.setAttribute("height", "32px");
+            closeButtonImg.classList.add("bg-transWhite", "p-2");
             closeButtonImg.setAttribute("alt", "CloseRecipeWindow");
 
             let recipeThumbnailImage = document.createElement("img");
             recipeThumbnailImage.setAttribute("src", `${this.#recipes[index].image}`);
             recipeThumbnailImage.setAttribute("alt", `recipe id: ${index}`);
+            recipeThumbnailImage.setAttribute("height", "150px");
+            recipeThumbnailImage.setAttribute("width", "150px");
 
             closeButtonAnchor.appendChild(closeButtonImg);
             headerContainer.append(headerTitle, servingsModifier, closeButtonAnchor);

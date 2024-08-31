@@ -18,8 +18,11 @@ class CertificateCard {
 
     ToDOMElements(){
         let cardsContainer = document.createElement("section");
+        let keyIterator = this.#certificates.keys();
+        let key = keyIterator.next();
 
-        this.#certificates.keys().forEach(company => {
+        while (key.value){
+            let company = key.value;
             let category = document.createElement("h3");
             category.classList.add("text-center");
             SetTextContent(category, WriteMode.APPEND, document.createTextNode(company));
@@ -32,7 +35,9 @@ class CertificateCard {
             });
 
             cardsContainer.append(category, cardsContainerInner);
-        });
+
+            key = keyIterator.next();
+        }
 
         return cardsContainer;
     }
@@ -74,6 +79,7 @@ class Certificate {
         let image = document.createElement("img");
         image.setAttribute("src", this.image);
         image.setAttribute("width", "150px");
+        image.setAttribute("height", "150px");
         image.setAttribute("alt", `image of certificate: ${this.name}`);
 
         let validity = document.createElement("p");
