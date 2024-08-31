@@ -1,8 +1,30 @@
-import { WriteMode } from "./enums.js";
+import { Language, WriteMode } from "./enums.js";
 import { DateStringToDate, SetTextContent } from "./utilities.js";
 
 class GithubEmbedder{
-    static fromPublicRepoJSON(json){
+    static CreatedByString(language){
+        switch (language) {
+            case Language.CATALAN:
+                return "creat per ";
+            case Language.DUTCH:
+                return "gemaakt door ";
+            default:
+                return "created by ";
+        }
+    }
+
+    static UpdatedOnString(language, date){
+        switch (language) {
+            case Language.CATALAN:
+                return `Darrera actualització a ${date}`;
+            case Language.DUTCH:
+                return `Laatst bijgewerkt op ${date}`;
+            default:
+                return `Last updated on ${date}`;
+        }
+    }
+
+    static fromPublicRepoJSON(json, language){
         let container = document.createElement("fieldset");
         let header = document.createElement("legend");
         let titleLink = document.createElement("a");
@@ -17,9 +39,9 @@ class GithubEmbedder{
         let titleText = document.createTextNode(json.name);
         let legendText = document.createTextNode(json.name);
         let ownerText = document.createTextNode(json.owner.login);
-        let ownerPrefixText = document.createTextNode("created by ");
+        let ownerPrefixText = document.createTextNode(this.CreatedByString(language));
         let descriptionText = document.createTextNode(json.description);
-        let updatedText = document.createTextNode(`Last updated at ${DateStringToDate(json.pushed_at)}`);
+        let updatedText = document.createTextNode(this.UpdatedOnString(language, DateStringToDate(json.pushed_at, language)));
 
         title.classList.add("inline");
         owner.classList.add("inline");

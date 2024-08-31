@@ -53,7 +53,7 @@ function GenereateGithubEmbeds(...urls) {
 
     urls.forEach(url => {
         dataLoader.FetchData(url, RequestMethod.GET, { "Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28" }).then((data) => {
-            let html = GithubEmbedder.fromPublicRepoJSON(data);
+            let html = GithubEmbedder.fromPublicRepoJSON(data, languageSwapper.currentLanguage);
 
             let githubEmbedParent = document.getElementById([data.name]);
             githubEmbedParent.appendChild(html);
@@ -86,8 +86,8 @@ function ConstructCertificates() {
         for (let index = 0; index < certificatesData.length; index++) {
             let certificate;
 
-            // Recipe :)
             certificate = new Certificate(
+                languageSwapper.currentLanguage,
                 certificatesData[index].image,
                 certificatesData[index].name,
                 certificatesData[index].company,
@@ -101,7 +101,7 @@ function ConstructCertificates() {
             certificates.push(certificate);
         };
 
-        certificatesContainer = new CertificateCard(certificates);
+        certificatesContainer = new CertificateCard(certificates, languageSwapper.currentLanguage);
         elementBefore.after(certificatesContainer.ToDOMElements());
     });
 }

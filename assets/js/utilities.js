@@ -1,5 +1,6 @@
 "use strict"
 
+import { Language } from "./enums.js";
 import { NotImplementedException } from "./exceptions.js";
 
 function SetTextContent(nodeToWriteTo, writeMode, ...contentNodes) {
@@ -13,11 +14,11 @@ function SetTextContent(nodeToWriteTo, writeMode, ...contentNodes) {
     }
 };
 
-function DateStringToDate(dateString) {
+function DateStringToDate(dateString, language) {
     let date = dateString.substring(0, 10);
     let dateFrags = date.split('-');
 
-    return (`${dateFrags[2]} ${GetMonthByNumber(dateFrags[1])} ${dateFrags[0]}`);
+    return (`${dateFrags[2]} ${GetMonthByNumber(dateFrags[1], language)} ${dateFrags[0]}`);
 }
 
 function AddNodesToNode(node, nodesToAdd) {
@@ -26,51 +27,30 @@ function AddNodesToNode(node, nodesToAdd) {
     });
 };
 
-function GetMonthByNumber(monthNumber) {
-    let monthString;
+function GetMonthByNumber(monthNumber, language) {
+    let months = [
+        ["January", "Januari", "Gener"],
+        ["February", "Februari", "Febrer"],
+        ["March", "Maart", "Març"],
+        ["April", "April", "Abril"],
+        ["May", "Mei", "Maig"],
+        ["June", "Juni", "Juny"],
+        ["July", "Juli", "Juliol"],
+        ["August", "Augustus", "Agost"],
+        ["September", "September", "Setembre"],
+        ["October", "Oktober", "Octubre"],
+        ["November", "November", "Novembre"],
+        ["December", "December", "Desembre"]
+    ];
 
-    switch (monthNumber) {
-        case "01":
-            monthString = "January";
-            break;
-        case "02":
-            monthString = "February";
-            break;
-        case "03":
-            monthString = "March";
-            break;
-        case "04":
-            monthString = "April";
-            break;
-        case "05":
-            monthString = "May";
-            break;
-        case "06":
-            monthString = "June";
-            break;
-        case "07":
-            monthString = "July";
-            break;
-        case "08":
-            monthString = "August";
-            break;
-        case "09":
-            monthString = "September";
-            break;
-        case "10":
-            monthString = "October";
-            break;
-        case "11":
-            monthString = "November";
-            break;
-        case "12":
-            monthString = "December";
-            break;
+    switch (language) {
+        case Language.CATALAN:
+            return months[monthNumber - 1][2];
+        case Language.DUTCH:
+            return months[monthNumber - 1][1];
         default:
-            monthString = "Unknown Month";
+            return months[monthNumber - 1][0];
     }
-
-    return monthString;
 }
 
 export { SetTextContent, DateStringToDate };
