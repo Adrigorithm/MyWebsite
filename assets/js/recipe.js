@@ -21,7 +21,7 @@ class RecipeWindow {
         SetTextContent(recipeSectionHead, WriteMode.SET, document.createTextNode("Recipes"));
 
         let recipeSectionThumbnail = document.createElement("div");
-        recipeSectionThumbnail.classList.add("flex", "gap-x-2.5");
+        recipeSectionThumbnail.classList.add("flex", "flex-col", "sm:flex-row", "gap-x-2.5");
 
         recipeSection.append(recipeSectionHead, recipeSectionThumbnail);
 

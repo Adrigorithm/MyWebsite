@@ -21,6 +21,8 @@ class CertificateCard {
         let keyIterator = this.#certificates.keys();
         let key = keyIterator.next();
 
+        cardsContainer.classList.add("mb-3");
+
         while (key.value){
             let company = key.value;
             let category = document.createElement("h3");
@@ -28,7 +30,7 @@ class CertificateCard {
             SetTextContent(category, WriteMode.APPEND, document.createTextNode(company));
 
             let cardsContainerInner = document.createElement("section");
-            cardsContainerInner.classList.add("flex", "flex-col", "md:flex-row", "justify-center");
+            cardsContainerInner.classList.add("flex", "flex-col", "md:flex-row", "justify-center", "gap-4", "items-center", "md:items-stretch");
 
             this.#certificates.get(company).forEach(certificate => {
                 cardsContainerInner.appendChild(certificate.ToDOMElement());
@@ -96,7 +98,7 @@ class Certificate {
 
     ToDOMElement(){
         let card = document.createElement("div");
-        card.classList.add("flex", "flex-col", "items-center");
+        card.classList.add("flex", "flex-col", "text-center", "max-w-md", "p-2.5", "border-3", "border-solid");
 
         let subtitle = document.createElement("h4");
         SetTextContent(subtitle, WriteMode.APPEND, document.createTextNode(this.name));
@@ -122,20 +124,24 @@ class Certificate {
             case CertificateStatus.COMPLETED_CAT:
             case CertificateStatus.COMPLETED_NL:
                 footer.style.backgroundColor = "darkgreen";
+                card.classList.add("border-[darkgreen]");
                 break;
             case CertificateStatus.IN_PROGRESS:
             case CertificateStatus.IN_PROGRESS_CAT:
             case CertificateStatus.IN_PROGRESS_NL:
                 footer.style.backgroundColor = "yellow";
                 footer.style.color = "lab(9 0 0)";
+                card.classList.add("border-[yellow]");
                 break;
             case CertificateStatus.PLANNED:
             case CertificateStatus.PLANNED_CAT:
             case CertificateStatus.PLANNED_NL:
                 footer.style.backgroundColor = "dimgrey";
+                card.classList.add("border-[dimgrey]");
                 break;
             default:
                 footer.style.backgroundColor = "darkgreen";
+                card.classList.add("border-[darkgreen]");
         }
         SetTextContent(footer, WriteMode.APPEND, document.createTextNode(this.status));
 
