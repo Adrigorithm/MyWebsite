@@ -1,0 +1,33 @@
+{
+    "commands": [
+        {
+            "name": "ls",
+            "options": [
+                {
+                    "name": "-l",
+                    "help": "include description"
+                }
+            ],
+            "description": "list all commands"
+        },
+        {
+            "name": "help",
+            "description": "describe all commands v-1"
+        },
+        {
+            "name": "help",
+            "description": "describe all commands"
+        },
+        {
+            "name": " ",
+            "description": "describe all commands"
+        },
+        {
+            "description": "invalid command"
+        },
+        {
+            "name": "neofetch",
+            "description": "display system information"
+        }
+    ]
+}
