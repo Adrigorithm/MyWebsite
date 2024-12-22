@@ -31,4 +31,21 @@ const CommandType = {
     SUGGESTIONS: 2
 };
 
-export { RequestMethod, ResponseType, CommandType }
+const KeyCode = {
+    ENTER: 13
+};
+
+const AccessMode = {
+    READ: 0,
+    ADD: 1,
+    SET: 2
+};
+
+const LogLevel = {
+    NONE: "LOG",
+    INFO: "INFO",
+    WARNING: "WARNING",
+    ERROR: "ERROR"
+};
+
+export { RequestMethod, ResponseType, CommandType, KeyCode, AccessMode, LogLevel }

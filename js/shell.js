@@ -5,7 +5,7 @@ import { Suggestions } from "./components/suggestions.js";
 
 import { CaseInsensitiveMap } from "./caseInsensitiveMap.js";
 import { DataLoader } from "./dataLoader.js";
-import { RequestMethod, ResponseType } from "./enums.js";
+import { KeyCode, RequestMethod, ResponseType } from "./enums.js";
 import { FilePaths } from "./statics.js";
 import { Util } from "./utilities.js";
 
@@ -22,7 +22,8 @@ class Shell {
                     this.suggestCommands(caller);
                 });
                 this.#prompt.addEventListener("keyup", (caller) => {
-                    this.executeCommand(caller.target.value);
+                    if (caller.keyCode == KeyCode.ENTER)
+                        this.executeCommand(caller.target.value);
                 });
                 submitCommandButton.addEventListener("click", (event) => {
                     this.executeCommand(caller.target.value);
@@ -57,6 +58,8 @@ class Shell {
     executeCommand(commandName) {
         let command = this.#commands.get(commandName);
         let result = this.createInstance(command);
+
+        this.#history.appendChild(result.toHTML());
     }
 
     createInstance(config) {

@@ -1,5 +1,7 @@
 "use strict"
 
+import { AccessMode } from "./enums.js";
+
 class Util {
     /**
      * Ensures the first charater of a string is a capital charater
@@ -20,6 +22,22 @@ class Util {
      */
     static isNullOrEmpty(str) {
         return !str || str.length == 0 /* Micro optimisation :3 */ || str.trim().length == 0;
+    }
+
+    static setInnerText(node, textToAdd, accessMode) {
+        let textNode = document.createTextNode(textToAdd);
+
+        switch (accessMode) {
+            case AccessMode.ADD:
+                node.appendChild(textNode);
+                break;
+
+            case AccessMode.SET:
+            default:
+                node.replaceChildren();
+                node.appendChild(textNode);
+                break;
+        }
     }
 }
 
