@@ -8,13 +8,18 @@ import { DataLoader } from "./dataLoader.js";
 import { KeyCode, RequestMethod, ResponseType } from "./enums.js";
 import { FilePaths } from "./statics.js";
 import { Util } from "./utilities.js";
+import { Logger } from "./logger.js";
 
 class Shell {
-    #commands = new CaseInsensitiveMap();
+    #commands = undefined;
     #prompt = undefined;
     #history = undefined;
+    #logger = undefined;
 
     constructor(commandsFilePath, textInputField, submitCommandButton, historyContainer) {
+        this.#logger = new Logger();
+        this.#commands = new CaseInsensitiveMap(this.#logger);
+
         DataLoader.GetAsyncData(commandsFilePath ??= FilePaths.COMMANDS, RequestMethod.GET, ResponseType.JSON).then((data) => {
             if (textInputField.tagName == "INPUT") {
                 this.#prompt = textInputField;
@@ -30,13 +35,13 @@ class Shell {
                     event.preventDefault();
                 })
             } else {
-                console.error(`The WebTerminal cannot work without an <input> element as prompt. Expected, <input>, but was <${textInputField.tagName}>`);
+                this.#logger.error(`The WebTerminal cannot work without an <input> element as prompt. Expected, <input>, but was <${textInputField.tagName}>`, true);
             }
 
             if (historyContainer) {
                 this.#history = historyContainer;
             } else {
-                console.error("The WebTerminal cannot work without a container element to direct stdout to.");
+                this.#logger.error("The WebTerminal cannot work without a container element to direct stdout to.");
             }
 
             this.addCommands(data.commands);

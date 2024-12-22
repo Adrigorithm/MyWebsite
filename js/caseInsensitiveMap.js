@@ -3,6 +3,14 @@
 import { Util } from "./utilities.js";
 
 class CaseInsensitiveMap extends Map {
+    #logger = undefined;
+    
+    constructor(logger) {
+        super();
+
+        this.#logger = logger;
+    }
+
     /**
      * Adds a new element with a specified key and value to the Map if an element with the same (case-insensitive) key doesn't exist.
      * @param {string} key Unique case-insensitive id for a value
@@ -11,18 +19,21 @@ class CaseInsensitiveMap extends Map {
      */
     set(key, value) {
         if (!value) {
-            console.error(`Value for ${key} should not be missing or null.`);
+            if (this.#logger)
+                this.#logger.error(`Value for ${key} should not be missing or null.`, true);
             return false;
         }
 
         if (!key || key.trim().length == 0) {
-            console.error(`Key for ${value} should not be missing or null.`);
+            if (this.#logger)
+                this.#logger.error(`Key for ${value} should not be missing or null.`, true);
             return false;
         }
 
         for (const setKey of this.keys()) {
             if (key.toUpperCase() == setKey.toUpperCase()) {
-                console.warn(`New KeyValuePair {${key}, ${value}} is not set because they key already exists (case-insensitive)`);
+                if (this.#logger)
+                    this.#logger.warn(`New KeyValuePair {${key}, ${value}} is not set because they key already exists (case-insensitive)`, true);
                 return false;
             }
         }

@@ -10,18 +10,18 @@ class Logger {
         this.#logs.push(logConfig);
 
         if (show)
-            showLog(logConfig);
+            this.showLog(logConfig);
     }
 
-    static info(message, show) {
+    info(message, show) {
         this.log(new LogConfig(LogLevel.INFO, message), show);
     }
 
-    static warn(message, show) {
+    warn(message, show) {
         this.log(new LogConfig(LogLevel.WARNING, message), show);
     }
 
-    static error(message, show) {
+    error(message, show) {
         this.log(new LogConfig(LogLevel.ERROR, message), show);
     }
 
@@ -29,7 +29,7 @@ class Logger {
         let dateTime = document.createElement("span");
         dateTime.style.backgroundColor = "black";
         dateTime.style.color = "white";
-        Util.setInnerText(dateTime, logConfig.timestamp.toUTCString());
+        Util.setInnerText(dateTime, );
 
         let error = document.createElement("span");
         switch (logConfig.logLevel) {
@@ -51,10 +51,31 @@ class Logger {
         let message = document.createElement("span");
         Util.setInnerText(message, logConfig.message);
 
+        let logLevelColour = this.logLevelBfFgColourString(logConfig.logLevel);
+
         if (logConfig.objects.length == 0)
-            console.log(dateTime, error, message);
+            console.log(
+                `%c ${logConfig.timestamp.toUTCString()} %c ${logConfig.logLevel} `, 
+                `color: white; background-color: black`, 
+                `color: ${logLevelColour[1]}; background-color: ${logLevelColour[0]}`, 
+                logConfig.message);
         else
-        console.log(dateTime, error, message, logConfig.objects);
+            console.log(
+                `%c ${logConfig.timestamp.toUTCString()} %c ${logConfig.logLevel} `, 
+                `color: white; background-color: black`, 
+                `color: ${logLevelColour[1]}; background-color: ${logLevelColour[0]}`, 
+                logConfig.message, logConfig.objects);
+    }
+
+    logLevelBfFgColourString(logLevel){
+        switch (logLevel) {
+            case LogLevel.ERROR:
+                return ["red", "white"];
+            case LogLevel.WARNING:
+                return ["yellow", "black"];
+            default:
+                return ["white", "black"];
+        }
     }
 }
 
@@ -68,6 +89,8 @@ class LogConfig {
         this.logLevel = logLevel;
         this.message = message;
         this.objects = objects;
-        this.timestamp = Date.now();
+        this.timestamp = new Date();
     }
 }
+
+export { Logger };
