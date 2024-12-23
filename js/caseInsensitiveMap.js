@@ -4,7 +4,7 @@ import { Util } from "./utilities.js";
 
 class CaseInsensitiveMap extends Map {
     #logger = undefined;
-    
+
     constructor(logger) {
         super();
 
@@ -57,25 +57,70 @@ class CaseInsensitiveMap extends Map {
             if (setKey.toUpperCase() == key)
                 return super.get(setKey);
         }
-    
+
         return null;
     }
 
     /**
-     * Find values for keys that contain a specific string pattern.
-     * @param {string} pattern String to find a match for
-     * @returns The maching vlaues found for provided pattern if found, otherwise an empty array.
+     * Search the command repository to match by a command name, ignores case sensitivity
+     * @param {string} pattern String to search for
+     * @param {string} matchColour Colour to display the match in the command name in, inherit if not specified
+     * @returns An array of matching command names as HTMLParagraphElements
      */
-    match(pattern) {
-        pattern = pattern.toUpperCase();
-        let values = [];
-    
-        for (const setKey of this.keys()) {
-            if (setKey.toUpperCase().includes(pattern))
-                values.push(super.get(setKey));
-        }
-        
-        return values;
+    match(pattern, matchColour) {
+        let query = pattern.toUpperCase();
+        let matches = [];
+
+        this.keys().forEach(k => {
+            let kUpperCase = k.toUpperCase();
+
+            let stringP = document.createElement("p");
+            let subString = "";
+            let spanString = "";
+            let queryIndex = 0;
+
+            for (let i = 0; i < k.length; i++) {
+                if (queryIndex < query.length && query.charAt(queryIndex) == kUpperCase[i]) {
+                    let textNode = document.createTextNode(subString);
+                    stringP.appendChild(textNode);
+
+                    subString = "";
+                    spanString += k[i];
+
+                    queryIndex++;
+
+                    continue;
+                }
+
+                if (spanString != "") {
+                    let textNode = document.createTextNode(spanString);
+                    let span = document.createElement("span");
+                    span.setAttribute("style", `color: ${matchColour ? matchColour : "inherit"};`);
+                    span.appendChild(textNode);
+                    stringP.appendChild(span)
+
+                    spanString = "";
+                }
+
+                subString += w[i];
+            }
+
+            if (spanString != "") {
+                let textNode = document.createTextNode(spanString);
+                let span = document.createElement("span");
+                span.setAttribute("style", `color: ${matchColour ? matchColour : "inherit"};`);
+                span.appendChild(textNode);
+                stringP.appendChild(span)
+            }
+
+            let textNode = document.createTextNode(subString);
+            stringP.appendChild(textNode);
+
+            if (queryIndex == query.length)
+                matches.push(stringP);
+        });
+
+        return matches;
     }
 }
 

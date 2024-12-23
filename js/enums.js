@@ -24,11 +24,10 @@ const ResponseType = {
     CLONE: 6
 };
 
-const CommandType = {
-    NONE: 0,
-    HTML: 0,
-    TEXT: 1,
-    SUGGESTIONS: 2
+const CommandStatus = {
+    SUCCESS: "1",
+    FAILURE: "0",
+    PROCESSING: "2"
 };
 
 const KeyCode = {
@@ -48,4 +47,4 @@ const LogLevel = {
     ERROR: "ERROR"
 };
 
-export { RequestMethod, ResponseType, CommandType, KeyCode, AccessMode, LogLevel }
+export { RequestMethod, ResponseType, CommandStatus, KeyCode, AccessMode, LogLevel }

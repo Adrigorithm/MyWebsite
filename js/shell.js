@@ -56,11 +56,16 @@ class Shell {
     }
 
     suggestCommands(caller) {
-        let commands = this.#commands.match(caller.target.value);
-        this.executeCommand(null);
+        let commandNameElements = this.#commands.match(caller.target.value);
+        
+        if (commandNameElements.length > 0)
+            this.executeCommand("suggestions", {
+                name: "suggestions",
+                htmlData: commandNameElements
+            });
     }
 
-    executeCommand(commandName) {
+    executeCommand(commandName, ...params) {
         let command = this.#commands.get(commandName);
         let result = this.createInstance(command);
 
