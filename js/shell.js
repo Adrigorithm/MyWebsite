@@ -56,6 +56,7 @@ class Shell {
     }
 
     suggestCommands(caller) {
+        this.removeSuggestionsDuplicate();
         let commandNameElements = this.#commands.match(caller.target.value);
         
         if (commandNameElements.length > 0)
@@ -70,6 +71,8 @@ class Shell {
         let result = this.createInstance(command, config);
 
         this.#history.appendChild(result.toHTML());
+
+        this.#logger.info(`Command: ${result.constructor.name} executed`, true);
     }
 
     createInstance(command, config) {
@@ -79,7 +82,15 @@ class Shell {
         return new constructor(config);
     }
 
+    removeSuggestionsDuplicate() {
+        if (this.#history.children.length == 0)
+            return;
 
+        let lastCommand = this.#history.lastChild;
+
+        if (lastCommand.querySelector("legend").textContent == "suggestions")
+            lastCommand.remove();
+    }
 }
 
 export { Shell };
