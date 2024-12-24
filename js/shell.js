@@ -65,16 +65,16 @@ class Shell {
             });
     }
 
-    executeCommand(commandName, ...params) {
+    executeCommand(commandName, config) {
         let command = this.#commands.get(commandName);
-        let result = this.createInstance(command);
+        let result = this.createInstance(command, config);
 
         this.#history.appendChild(result.toHTML());
     }
 
-    createInstance(config) {
-        const constructor = eval(config 
-            ? Util.capitalise(config.name)
+    createInstance(command, config) {
+        const constructor = eval(command 
+            ? Util.capitalise(command.name)
             : "Suggestions");
         return new constructor(config);
     }

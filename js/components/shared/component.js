@@ -15,9 +15,12 @@ class Component {
         container.style.border = `3px solid ${this.#commandColour(CommandStatus.SUCCESS)}`;
         
         let title = document.createElement("legend");
-        Util.setInnerText(title, config.name);
+        Util.setInnerText(title, this.config.name);
 
-        container.appendChild(title);
+        let content = document.createElement("div");
+        content.classList.add("commandHistoryContent");
+
+        container.append(title, content);
 
         return container;
     }

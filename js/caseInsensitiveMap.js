@@ -68,10 +68,12 @@ class CaseInsensitiveMap extends Map {
      * @returns An array of matching command names as HTMLParagraphElements
      */
     match(pattern, matchColour) {
+        const keys = this.keys();
         let query = pattern.toUpperCase();
         let matches = [];
+        let k = keys.next().value;
 
-        this.keys().forEach(k => {
+        while (k) {
             let kUpperCase = k.toUpperCase();
 
             let stringP = document.createElement("p");
@@ -102,7 +104,7 @@ class CaseInsensitiveMap extends Map {
                     spanString = "";
                 }
 
-                subString += w[i];
+                subString += k[i];
             }
 
             if (spanString != "") {
@@ -118,7 +120,9 @@ class CaseInsensitiveMap extends Map {
 
             if (queryIndex == query.length)
                 matches.push(stringP);
-        });
+
+            k = keys.next().value;
+        }
 
         return matches;
     }

@@ -6,9 +6,10 @@ class Suggestions extends Component{
     }
 
     toHTML() {
-        let container = super.toHTML();
+        const container = super.toHTML();
+        let content = container.querySelector(".commandHistoryContent");
 
-        container.textContent = "suggestions test";
+        content.append(...this.config.htmlData);
 
         return container;
     }
