@@ -119,6 +119,7 @@ class CaseInsensitiveMap extends Map {
             stringP.appendChild(textNode);
 
             if (queryIndex == query.length)
+                stringP.classList.add("sm:basis-1/3", "md:basis-1/4", "lg:basis-1/6", "justify-around", "text-center");
                 matches.push(stringP);
 
             k = keys.next().value;
