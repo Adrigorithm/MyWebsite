@@ -1,6 +1,11 @@
 {
     "commands": [
         {
+            "name": "suggestions",
+            "description": "list all commands matching the current prompt",
+            "hidden": true
+        },
+        {
             "name": "ls",
             "options": [
                 {

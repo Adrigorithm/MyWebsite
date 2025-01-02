@@ -74,6 +74,12 @@ class CaseInsensitiveMap extends Map {
         let k = keys.next().value;
 
         while (k) {
+            if (super.get(k).hidden) {
+                k = keys.next().value;
+                continue;
+            }
+                
+
             let kUpperCase = k.toUpperCase();
 
             let stringP = document.createElement("p");
@@ -83,10 +89,13 @@ class CaseInsensitiveMap extends Map {
 
             for (let i = 0; i < k.length; i++) {
                 if (queryIndex < query.length && query.charAt(queryIndex) == kUpperCase[i]) {
-                    let textNode = document.createTextNode(subString);
-                    stringP.appendChild(textNode);
+                    if (subString.length > 0) {
+                        let textNode = document.createTextNode(subString);
+                        stringP.appendChild(textNode);
 
-                    subString = "";
+                        subString = "";
+                    }
+                    
                     spanString += k[i];
 
                     queryIndex++;
@@ -94,10 +103,10 @@ class CaseInsensitiveMap extends Map {
                     continue;
                 }
 
-                if (spanString != "") {
+                if (spanString.length > 0) {
                     let textNode = document.createTextNode(spanString);
                     let span = document.createElement("span");
-                    span.setAttribute("style", `color: ${matchColour ? matchColour : "inherit"};`);
+                    span.classList.add(matchColour ? matchColour : "text-red-600");
                     span.appendChild(textNode);
                     stringP.appendChild(span)
 
@@ -107,10 +116,10 @@ class CaseInsensitiveMap extends Map {
                 subString += k[i];
             }
 
-            if (spanString != "") {
+            if (spanString.length > 0) {
                 let textNode = document.createTextNode(spanString);
                 let span = document.createElement("span");
-                span.setAttribute("style", `color: ${matchColour ? matchColour : "inherit"};`);
+                span.classList.add(matchColour ? matchColour : "text-red-600");
                 span.appendChild(textNode);
                 stringP.appendChild(span)
             }
@@ -118,10 +127,11 @@ class CaseInsensitiveMap extends Map {
             let textNode = document.createTextNode(subString);
             stringP.appendChild(textNode);
 
-            if (queryIndex == query.length)
+            if (queryIndex == query.length) {
                 stringP.classList.add("sm:basis-1/3", "md:basis-1/4", "lg:basis-1/6", "justify-around", "text-center");
                 matches.push(stringP);
-
+            }
+                
             k = keys.next().value;
         }
 

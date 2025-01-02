@@ -68,6 +68,12 @@ class Shell {
 
     executeCommand(commandName, config) {
         let command = this.#commands.get(commandName);
+
+        if (!command) {
+            this.#logger.error(`Command: ${commandName} not found`, true);
+            return;
+        }
+            
         let result = this.createInstance(command, config);
 
         this.#history.appendChild(result.toHTML());
@@ -76,9 +82,8 @@ class Shell {
     }
 
     createInstance(command, config) {
-        const constructor = eval(command 
-            ? Util.capitalise(command.name)
-            : "Suggestions");
+        const constructor = eval(Util.capitalise(command.name));
+
         return new constructor(config);
     }
 
