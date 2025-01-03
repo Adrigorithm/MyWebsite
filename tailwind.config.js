@@ -7,7 +7,13 @@ module.exports = {
     "js/components/shared/*.js"
   ],
   theme: {
-    extend: {},
+    extend: {
+      minWidth: {
+        "1/2": "50%",
+        "1/4": "25%",
+        "1/6": "16.666667%",
+      }
+    },
   },
   plugins: [],
 }

@@ -9,7 +9,7 @@ class Suggestions extends Component{
         const container = super.toHTML();
         
         let content = container.querySelector(".commandHistoryContent");
-        content.classList.add("flex", "flex-col", "sm:gap-3", "sm:flex-row");
+        content.classList.add("flex", "flex-col", "flex-wrap", "sm:flex-row");
 
         content.append(...this.config.htmlData);
 

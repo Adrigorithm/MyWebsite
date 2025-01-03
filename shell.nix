@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.mkShell {
-  buildInputs = [ pkgs.git pkgs.vscodium pkgs.python314 pkgs.tailwindcss ];
+  buildInputs = [ pkgs.git pkgs.python314 pkgs.tailwindcss ];
 
   shellHook = ''
     codium --install-extension bradlc.vscode-tailwindcss --force

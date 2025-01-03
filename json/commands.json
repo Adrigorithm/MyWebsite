@@ -10,29 +10,62 @@
             "options": [
                 {
                     "name": "-l",
-                    "help": "include description"
+                    "help": "include metadata"
                 }
             ],
-            "description": "list all commands"
-        },
-        {
-            "name": "help",
-            "description": "describe all commands v-1"
+            "description": "list all readable content"
         },
         {
             "name": "help",
             "description": "describe all commands"
-        },
-        {
-            "name": " ",
-            "description": "describe all commands"
-        },
-        {
-            "description": "invalid command"
         },
         {
             "name": "neofetch",
             "description": "display system information"
+        },
+        {
+            "name": "curl",
+            "description": "utility to navigate to various relevant external resources"
+        },
+        {
+            "name": "wget",
+            "description": "download specific resources"
+        },
+        {
+            "name": "cd",
+            "description": "utility to navigate to various relevant internal resource directories"
+        },
+        {
+            "name": "cat",
+            "description": "read a specific resource's content"
+        },
+        {
+            "name": "ai",
+            "description": "chat with an Artifically Intelligent entity"
+        },
+        {
+            "name": "config",
+            "description": "configure various aspects of this webpage to your liking"
+        },
+        {
+            "name": "sendmail",
+            "description": "send me (the idiot that made this stupid webpage) a quick message"
+        },
+        {
+            "name": "grep",
+            "description": "search the website for a specific keyword"
+        },
+        {
+            "name": "pwd",
+            "description": "display current abosulte path of your shell environment"
+        },
+        {
+            "name": "clear",
+            "description": "clears command history"
+        },
+        {
+            "name": "dmesg",
+            "description": "view logs"
         }
     ]
 }
