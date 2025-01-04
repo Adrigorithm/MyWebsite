@@ -47,4 +47,9 @@ const LogLevel = {
     ERROR: "ERROR"
 };
 
-export { RequestMethod, ResponseType, CommandStatus, KeyCode, AccessMode, LogLevel }
+const ServiceStatus = {
+    IDLE: "IDLE",
+    RUNNING: "RUNNING"
+}
+
+export { RequestMethod, ResponseType, CommandStatus, KeyCode, AccessMode, LogLevel, ServiceStatus }

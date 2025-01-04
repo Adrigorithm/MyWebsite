@@ -39,6 +39,20 @@ class Util {
                 break;
         }
     }
+
+    /**
+     * Displays a TimeSpan in a human readable form, currently in ms and s.
+     * @param {Number} ms time in milliseconds
+     * @returns a string representing a TimeSpan 
+     */
+    static parseMs(ms) {
+        if (ms < 1000)
+            return `${ms}ms`
+
+        let seconds = Number.parseInt(ms / 1000);
+
+        return `${seconds}s ${ms - seconds * 1000}ms`;
+    }
 }
 
 export { Util };

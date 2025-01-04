@@ -9,28 +9,35 @@ import { KeyCode, RequestMethod, ResponseType } from "./enums.js";
 import { FilePaths } from "./statics.js";
 import { Util } from "./utilities.js";
 import { Logger } from "./logger.js";
+import { Timer } from "./timer.js";
 
 class Shell {
     #commands = undefined;
     #prompt = undefined;
     #history = undefined;
     #logger = undefined;
+    #timer = undefined;
 
     constructor(commandsFilePath, textInputField, submitCommandButton, historyContainer) {
         this.#logger = new Logger();
         this.#commands = new CaseInsensitiveMap(this.#logger);
+        this.#timer = new Timer();
 
         DataLoader.GetAsyncData(commandsFilePath ??= FilePaths.COMMANDS, RequestMethod.GET, ResponseType.JSON).then((data) => {
             if (textInputField.tagName == "INPUT") {
                 this.#prompt = textInputField;
                 this.#prompt.addEventListener("input", (caller) => {
+                    this.#timer.startUnsafe();
                     this.suggestCommands(caller);
                 });
                 this.#prompt.addEventListener("keyup", (caller) => {
-                    if (caller.keyCode == KeyCode.ENTER)
+                    if (caller.keyCode == KeyCode.ENTER) {
+                        this.#timer.startUnsafe();
                         this.executeCommand(caller.target.value);
+                    }
                 });
                 submitCommandButton.addEventListener("click", (event) => {
+                    this.#timer.startUnsafe();
                     this.executeCommand(caller.target.value);
                     event.preventDefault();
                 })
@@ -78,7 +85,7 @@ class Shell {
 
         this.#history.appendChild(result.toHTML());
 
-        this.#logger.info(`Command: ${result.constructor.name} executed`, true);
+        this.#logger.info(`Command: ${result.constructor.name} executed, ${this.#timer.elapsed(true)} elapsed`, true);
     }
 
     createInstance(command, config) {
