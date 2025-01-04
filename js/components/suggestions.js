@@ -1,6 +1,6 @@
 import { Component } from "./shared/component.js";
 
-class Suggestions extends Component{
+class Suggestions extends Component {
     constructor(config) {
         super(config);
     }

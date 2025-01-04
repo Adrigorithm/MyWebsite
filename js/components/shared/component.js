@@ -12,7 +12,7 @@ class Component {
 
     toHTML() {
         let container = document.createElement("fieldset");
-        container.style.border = `3px solid ${this.#commandColour(CommandStatus.SUCCESS)}`;
+        container.classList.add("border-4", "border-solid", `border-${this.#commandColour(CommandStatus.SUCCESS)}`);
         
         let title = document.createElement("legend");
         Util.setInnerText(title, this.config.name);

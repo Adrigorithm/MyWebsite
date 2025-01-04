@@ -82,7 +82,7 @@ class CaseInsensitiveMap extends Map {
 
             let kUpperCase = k.toUpperCase();
 
-            let stringP = document.createElement("p");
+            let stringP = document.createElement("a");
             let subString = "";
             let spanString = "";
             let queryIndex = 0;
