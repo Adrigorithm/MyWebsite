@@ -11,11 +11,12 @@ class Component {
     }
 
     toHTML() {
-        let container = document.createElement("fieldset");
+        let container = document.createElement("div");
         container.classList.add("border-4", "border-solid", `border-${this.#commandColour(CommandStatus.SUCCESS)}`);
         
-        let title = document.createElement("legend");
+        let title = document.createElement("h4");
         Util.setInnerText(title, this.config.name);
+        title.classList.add("bg-red-700", "absolute", "ml-3", "-mt-4", "px-2");
 
         let content = document.createElement("div");
         content.classList.add("commandHistoryContent");

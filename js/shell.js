@@ -100,7 +100,7 @@ class Shell {
 
         let lastCommand = this.#history.lastChild;
 
-        if (lastCommand.querySelector("legend").textContent == "suggestions")
+        if (lastCommand.querySelector("h4").textContent == "suggestions")
             lastCommand.remove();
     }
 }
