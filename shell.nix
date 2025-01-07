@@ -8,4 +8,3 @@ pkgs.mkShell {
     codium --install-extension jnoortheen.nix-ide --force
   '';
 }
-
