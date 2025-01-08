@@ -69,7 +69,7 @@ class CaseInsensitiveMap extends Map {
      */
     match(pattern, matchColour) {
         const keys = this.keys();
-        let query = pattern.toUpperCase();
+        let query = pattern.trim().toUpperCase();
         let matches = [];
         let k = keys.next().value;
 

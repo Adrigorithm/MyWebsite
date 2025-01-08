@@ -13,10 +13,12 @@
                     "help": "include metadata"
                 }
             ],
+            "synopsis": "ls [-l]",
             "description": "list all readable content"
         },
         {
             "name": "help",
+            "synopsis": "help ",
             "description": "describe all commands"
         },
         {
