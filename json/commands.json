@@ -19,7 +19,13 @@
         {
             "name": "help",
             "synopsis": "help ",
-            "description": "describe all commands"
+            "description": "describe all commands",
+            "examples": [
+                {
+                    "command": "help",
+                    "explanation": ""
+                }
+            ]
         },
         {
             "name": "neofetch",

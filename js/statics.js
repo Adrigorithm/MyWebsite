@@ -4,4 +4,16 @@ const FilePaths = {
     COMMANDS: "/json/commands.json"
 };
 
-export { FilePaths }
+class Cache {
+    #commands = [];
+
+    static getCommands(){
+
+    }
+
+    static setCommands(){
+        
+    }
+}
+
+export { FilePaths, Cache }
