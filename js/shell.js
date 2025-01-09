@@ -2,6 +2,7 @@
 
 // Components (YOUR IDE WILL COMPLAIN - THIS IS NORMAL - DO NOT REMOVE UNUSED IMPORTS)
 import { Suggestions } from "./components/suggestions.js";
+import { Help } from "./components/help.js";
 
 import { CaseInsensitiveMap } from "./caseInsensitiveMap.js";
 import { DataLoader } from "./dataLoader.js";
@@ -67,13 +68,10 @@ class Shell {
         let commandNameElements = this.#commands.match(caller.target.value);
         
         if (commandNameElements.length > 0)
-            this.executeCommand("suggestions", {
-                name: "suggestions",
-                htmlData: commandNameElements
-            });
+            this.executeCommandUnsafe("suggestions", [commandNameElements]);
     }
 
-    executeCommand(commandName, config) {
+    executeCommandUnsafe(commandName, params) {
         let command = this.#commands.get(commandName);
 
         if (!command) {
@@ -81,17 +79,28 @@ class Shell {
             return;
         }
             
-        let result = this.createInstance(command, config);
+        let result = this.createInstance(command, params);
 
         this.#history.appendChild(result.toHTML());
 
         this.#logger.info(`Command: ${result.constructor.name} executed, ${this.#timer.elapsed(true)} elapsed`, true);
     }
 
-    createInstance(command, config) {
+    executeCommand(params) {
+        params = this.parseArguments(params);
+
+        this.executeCommandUnsafe(params[0], params.length > 1 
+            ? params.slice(1)
+            : null);
+    }
+
+    createInstance(command, params) {
         const constructor = eval(Util.capitalise(command.name));
 
-        return new constructor(config);
+        return new constructor({
+            command: command,
+            params: params
+        });
     }
 
     removeSuggestionsDuplicate() {
@@ -102,6 +111,13 @@ class Shell {
 
         if (lastCommand.querySelector("h4").textContent == "suggestions")
             lastCommand.remove();
+    }
+
+    parseArguments(inputStr) {
+        if (Util.isNullOrEmpty(inputStr))
+            return null;
+
+        return inputStr.split(' ');
     }
 }
 

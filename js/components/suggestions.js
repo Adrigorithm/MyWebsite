@@ -11,7 +11,7 @@ class Suggestions extends Component {
         let content = container.querySelector(".commandHistoryContent");
         content.classList.add("flex", "flex-col", "flex-wrap", "sm:flex-row");
 
-        content.append(...this.config.htmlData);
+        content.append(...this.config.params[0]);
 
         return container;
     }
