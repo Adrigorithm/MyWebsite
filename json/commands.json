@@ -20,6 +20,12 @@
             "name": "help",
             "synopsis": "help ",
             "description": "describe all commands",
+            "params": [
+                {
+                    "name": "command",
+                    "explanation": ""
+                }
+            ],
             "examples": [
                 {
                     "command": "help",

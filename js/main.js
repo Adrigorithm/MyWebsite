@@ -8,5 +8,5 @@ window.addEventListener("load", onLoad);
 let shell;
 
 function onLoad() {
-    shell = new Shell(FilePaths.COMMANDS, document.getElementById("prompt"), document.getElementById("submitCmdButton"), document.getElementById("history"));
+    shell = new Shell(document.getElementById("prompt"), document.getElementById("submitCmdButton"), document.getElementById("history"));
 }

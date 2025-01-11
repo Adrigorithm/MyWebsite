@@ -52,13 +52,6 @@ class Shell {
         }
     }
 
-    addCommands(commands) {
-        if (!commands || !(commands instanceof Array))
-            return;
-
-        commands.forEach(c => Cache.commands.set(c.name, c));
-    }
-
     suggestCommands(caller) {
         this.removeSuggestionsDuplicate();
         let commandNameElements = Cache.commands.match(caller.target.value);
@@ -100,7 +93,8 @@ class Shell {
 
         return new constructor({
             command: command,
-            params: params
+            params: params,
+            logger: this.#logger
         });
     }
 

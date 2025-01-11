@@ -1,6 +1,6 @@
 "use strict"
 
-import { AccessMode, CommandStatus } from "../../enums.js";
+import { CommandStatus } from "../../enums.js";
 import { Util } from "../../utilities.js";
 
 class Component {
@@ -24,6 +24,12 @@ class Component {
         container.append(title, content);
 
         return container;
+    }
+
+    logInvalidParams(param) {
+        param
+            ? this.config.logger.error(`Command: ${this.config.command.name} has invalid parameter value for ${param}, run help ${this.config.command.name}`, true)
+            : this.config.logger.error(`Command: ${this.config.command.name} has invalid parameters, run help ${this.config.command.name}`, true);
     }
 
     #commandColour(status) {

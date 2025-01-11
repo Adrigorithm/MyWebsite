@@ -6,6 +6,11 @@ class Suggestions extends Component {
     }
 
     toHTML() {
+        if (!this.config.params || !(this.config.params instanceof Array) || this.config.params.length == 0) {
+            this.logInvalidParams();
+            return;
+        }
+
         const container = super.toHTML();
         
         let content = container.querySelector(".commandHistoryContent");
