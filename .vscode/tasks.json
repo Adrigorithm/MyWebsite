@@ -9,11 +9,6 @@
             "command": "python3 -m http.server"
         },
         {
-            "label": "css init",
-            "type": "shell",
-            "command": "tailwindcss init"
-        },
-        {
             "label": "css watch",
             "type": "shell",
             "command": "tailwindcss -i input.css -o output.css --watch"

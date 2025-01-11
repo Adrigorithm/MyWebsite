@@ -9,11 +9,6 @@ class Help extends Component {
         super(config);
     }
 
-    fetchCommand() {
-        localStorage.getItem("commands");
-        
-    }
-
     toHTML() {
         const container = super.toHTML();
         

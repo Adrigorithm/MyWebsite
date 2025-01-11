@@ -15,7 +15,7 @@ class Component {
         container.classList.add("border-4", "border-solid", `border-${this.#commandColour(CommandStatus.SUCCESS)}`);
         
         let title = document.createElement("h4");
-        Util.setInnerText(title, this.config.name);
+        Util.setInnerText(title, this.config.command.name);
         title.classList.add("bg-red-700", "absolute", "ml-3", "-mt-4", "px-2");
 
         let content = document.createElement("div");

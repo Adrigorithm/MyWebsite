@@ -11,6 +11,10 @@ class CaseInsensitiveMap extends Map {
         this.#logger = logger;
     }
 
+    setLogger(logger) {
+        this.#logger = logger;
+    }
+
     /**
      * Adds a new element with a specified key and value to the Map if an element with the same (case-insensitive) key doesn't exist.
      * @param {string} key Unique case-insensitive id for a value
