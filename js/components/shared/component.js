@@ -12,7 +12,7 @@ class Component {
 
     toHTML() {
         let container = document.createElement("div");
-        container.classList.add("border-4", "border-solid", `border-${this.#commandColour(CommandStatus.SUCCESS)}`);
+        container.classList.add("border-4", "border-solid", `border-${this.#commandColour(CommandStatus.SUCCESS)}`, "mt-4");
         
         let title = document.createElement("h4");
         Util.setInnerText(title, this.config.command.name);
