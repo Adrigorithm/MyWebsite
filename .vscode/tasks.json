@@ -12,6 +12,11 @@
             "label": "css watch",
             "type": "shell",
             "command": "tailwindcss -i input.css -o output.css --watch"
+        },
+        {
+            "label": "transpile ts",
+            "type": "shell",
+            "command": "./node_modules/.bin/tsc"
         }
     ]
 }
