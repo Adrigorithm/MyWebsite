@@ -9,8 +9,7 @@
         "alwaysStrict": true
     },
     "include": [
-        "./ts/*.ts",
-        "./ts/components/*.ts",
-        "./ts/components/shared/*.ts"
+        "./ts/interfaces/*.ts",
+        "./ts/classes/*.ts",
     ]
 }

@@ -3,4 +3,4 @@ output.css
 
 # Generated content directories
 node_modules
-js
+js/*
