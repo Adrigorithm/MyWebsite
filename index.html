@@ -1,23 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Adriaan Waem">
-    <meta name="description" content="Adri's personal website. You can read about me, what I do, which services I offer and more. This also doubles as an online CV of sorts.">
+    <meta name="description"
+        content="Adri's personal website. You can read about me, what I do, which services I offer and more. This also doubles as an online CV of sorts.">
     <meta name="keywords" content="adriaan waem, adrigorithm, adri">
-    <meta property="og:title" content="The Rock" />
-    <meta property="og:url" content="https://www.imdb.com/title/tt0117500/" />
-    <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" />
+    <meta property="og:title" content="Adri" />
+    <meta property="og:url" content="https://adrigorithm.github.io/" />
+    <meta property="og:image" content="https://adrigorithm.github.io/assets/img/logo.png" />
 
     <link rel="stylesheet" href="/assets/css/output.css">
-    
+
     <!-- <script type="module" src="/js/main.js"></script> -->
 
     <title>Adri's cat tree</title>
 </head>
-<body class="bg-[url(/assets/img/aurora_light_s.avif)] dark:bg-[url(/assets/img/aurora_dark_s.avif)] md:bg-[url(/assets/img/aurora_light_l.avif)] dark:md:bg-[url(/assets/img/aurora_dark_l.avif)] xxl:bg-[url(/assets/img/aurora_light_xl.avif)] dark:xxl:bg-[url(/assets/img/aurora_dark_xl.avif)] bg-cover bg-center h-screen w-screen">
-    
+
+<body class="bg-[url(/assets/img/aurora_light_s.avif)] dark:bg-[url(/assets/img/aurora_dark_s.avif)] 
+md:bg-[url(/assets/img/aurora_light_l.avif)] dark:md:bg-[url(/assets/img/aurora_dark_l.avif)] 
+xxl:bg-[url(/assets/img/aurora_light_xl.avif)] dark:xxl:bg-[url(/assets/img/aurora_dark_xl.avif)] 
+bg-cover bg-center h-screen w-screen flex flex-col justify-between dark:text-white items-center">
+    <nav class="flex flex-row px-2 bg-white-overlay dark:bg-black-overlay w-full items-center gap-3">
+        <img class="py-2 invert-0 dark:invert" src="/assets/img/logo_s.avif" alt="logo of black cat writing adri">
+        <a class="py-2" href="#!"><p>About me</p></a>
+        <a class="py-2" href="#!"><p>Projects</p></a>
+    </nav>
+    <main class="flex flex-col w-[226px] sm:w-9/12 lg:w-1/2">
+        <div class="flex flex-row bg-white-overlay dark:bg-black-overlay justify-center py-2">
+            <h1 class="text-2xl">Hiii</h1>
+            <img src="/assets/img/emoji_1F638_2rem.avif" alt="emoji of a grinning cat with smiling eyes">
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-center items-center sm:items-start md:mx-">
+            <picture class="shrink-0">
+                <source media="(min-width: 1536px)" srcset="/assets/img/me_l.avif" />
+                <img src="/assets/img/me_m.avif" alt="a picture of me" />
+            </picture>
+
+            <div class="flex flex-col bg-white-overlay dark:bg-black-overlay text-center sm:text-left p-1 pt-2 sm:pt-0">
+                <p>
+                    Pleased to meet you, my name is Adriaan, but you can call me Adri,
+                    I am a software engineer, cloud and cyber security professional and OSS enthousiast.
+                    On this website you can find my projects, more about me and a variety of bits and bobs.
+                    Please, browse to your heart's content.
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer class="text-center bg-white-overlay dark:bg-black-overlay py-2 w-full">
+        Made with ❤ by <span><a href="mailto:adrigorithm@proton.me">Adri</a></span>
+    </footer>
+
 </body>
+
 </html>
