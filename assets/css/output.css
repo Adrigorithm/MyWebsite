@@ -1,0 +1,35 @@
+@taiwind base;
+
+@font-face {
+  font-family: "Ubuntu";
+
+  src:
+      url("../fonts/Ubuntu-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "YoungSerif";
+
+  src:
+      url("../fonts/YoungSerif-Regular.woff2") format("woff2");
+}
+
+.bg-\[url\(\'\/assets\/img\/colruyt\.webp\'\)\]{
+  background-image: url('/assets/img/colruyt.webp')
+}
+
+.bg-\[url\(\'\/assets\/img\/pxl\.webp\'\)\]{
+  background-image: url('/assets/img/pxl.webp')
+}
+
+.bg-\[url\(\'\/assets\/img\/sjb\.webp\'\)\]{
+  background-image: url('/assets/img/sjb.webp')
+}
+
+.bg-\[url\(\'\/assets\/img\/tm\.webp\'\)\]{
+  background-image: url('/assets/img/tm.webp')
+}
+
+.bg-\[url\(\'\/assets\/img\/uhasselt\.webp\'\)\]{
+  background-image: url('/assets/img/uhasselt.webp')
+}

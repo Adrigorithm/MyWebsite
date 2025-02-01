@@ -11,7 +11,7 @@
         {
             "label": "css watch",
             "type": "shell",
-            "command": "tailwindcss -i input.css -o output.css --watch"
+            "command": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch"
         },
         {
             "label": "transpile ts",
