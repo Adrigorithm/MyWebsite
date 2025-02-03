@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+@theme {
+    --font-kalam: "Kalam", "sans-serif";
+
+    /* dark mode colours */
+    --color-burnt-umber: oklch(45.41% 0.1487 30.87);
+    --color-onyx: oklch(36.08% 0.0078 234.83);
+    --color-dim-gray: oklch(49.47% 0.0079 219.63);
+    --color-night: oklch(15.85% 0.0043 229.13);
+    --color-eerie-black: oklch(27.01% 0.0035 228.92);
+
+    /* light mode colours */
+    --color-taupe: oklch(36.57% 0.029 57.2);
+    --color-dark-moss-green: oklch(40.54% 0.0681 120.41);
+    --color-black-olive: oklch(31.33% 0.039 120.85);
+    --color-melon: oklch(77.13% 0.09 36.11);
+    --color-pale-dogwood: oklch(85.81% 0.0293 46.5);
+}
+
+@font-face {
+    font-family: Kalam;
+    src: url("/assets/fonts/Kalam-Regular.woff2") format("woff2");
+}
