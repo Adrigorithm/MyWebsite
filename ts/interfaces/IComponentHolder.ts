@@ -1,0 +1,3 @@
+interface IComponentHolder {
+    sectionIndicators: SectionIndicator[]
+}
