@@ -1,3 +1,5 @@
+import { SectionIndicator } from "./SectionIndicator.js";
+
 class ComponentHolder implements IComponentHolder {
     sectionIndicators: ISectionIndicator[];
 

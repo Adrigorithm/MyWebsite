@@ -10,7 +10,9 @@ class SectionIndicator implements ISectionIndicator {
     }
     
     initialise(): void {
-        document.addEventListener("scroll", this.scrollHandler)
+        document.addEventListener("scroll", () => {
+            this.scrollHandler();
+        })
     }
 
     scrollHandler(): void {
@@ -40,3 +42,5 @@ class SectionIndicator implements ISectionIndicator {
         return closest;
     }
 }
+
+export { SectionIndicator }
