@@ -1,4 +1,5 @@
 interface IComponentHolder {
-    sectionIndicators: SectionIndicator[]
-    setSectionIndicators(siSections: Element[], siContents: Element[]): void
+    sectionIndicators: ISectionIndicator[]
+
+    addSectionIndicators(siSections: Element[], siContents: Element[]): void
 }

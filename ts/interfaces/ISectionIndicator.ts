@@ -4,4 +4,5 @@ interface ISectionIndicator {
 
     initialise(): void;
     scrollHandler(): void;
+    determineActiveElement(): number;
 }

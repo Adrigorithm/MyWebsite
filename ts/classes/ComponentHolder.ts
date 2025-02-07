@@ -1,13 +1,12 @@
 class ComponentHolder implements IComponentHolder {
-    sectionIndicators: SectionIndicator[];
+    sectionIndicators: ISectionIndicator[];
 
     constructor() {
         this.sectionIndicators = [];
     }
 
-    setSectionIndicators(siSections: Element[], siContents: Element[]): void {
-
-        throw new Error("Method not implemented.");
+    addSectionIndicators(siSections: Element[], siContents: Element[]): void {
+        this.sectionIndicators.push(new SectionIndicator(siSections, siContents));
     }
 }
 
