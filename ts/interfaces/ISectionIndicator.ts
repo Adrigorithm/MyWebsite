@@ -3,6 +3,6 @@ interface ISectionIndicator {
     siContents: Element[];
 
     initialise(): void;
-    scrollHandler(): void;
+    work(): void;
     determineActiveElement(): number;
 }

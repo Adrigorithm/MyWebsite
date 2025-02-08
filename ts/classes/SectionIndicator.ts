@@ -10,12 +10,18 @@ class SectionIndicator implements ISectionIndicator {
     }
     
     initialise(): void {
+        this.work();
+
         document.addEventListener("scroll", () => {
-            this.scrollHandler();
+            this.work();
+        })
+
+        document.addEventListener("resize", () => {
+            this.work();
         })
     }
 
-    scrollHandler(): void {
+    work(): void {
         const activeElement = this.determineActiveElement();
 
         this.siContents[activeElement].setAttribute("style", "color: green");
