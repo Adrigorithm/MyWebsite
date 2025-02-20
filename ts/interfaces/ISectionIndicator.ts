@@ -4,5 +4,6 @@ interface ISectionIndicator {
 
     initialise(): void;
     work(): void;
+    styleActiveElement(oldId: number | undefined, newId: number): void;
     determineActiveElement(): number;
 }

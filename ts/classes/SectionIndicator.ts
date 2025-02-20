@@ -16,15 +16,37 @@ class SectionIndicator implements ISectionIndicator {
             this.work();
         })
 
-        document.addEventListener("resize", () => {
+        window.addEventListener("resize", () => {
             this.work();
         })
     }
 
     work(): void {
-        const activeElement = this.determineActiveElement();
+        let activeElementId = this.determineActiveElement();
 
-        this.siContents[activeElement].setAttribute("style", "color: green");
+        this.styleActiveElement(activeElementId);
+    }
+
+    styleActiveElement(newId: number): void {
+        for (let i = 0; i < this.siContents.length; i++) {
+            const element = this.siContents[i];
+            
+            if (i == newId) {
+                element.classList.remove("p-6", "text-dim-gray");
+                element.classList.add("p-2", "text-night", "dark:text-pale-dogwood");
+
+                this.siSections[i].classList.remove("text-dim-gray");
+                this.siSections[i].classList.add("text-night", "dark:text-pale-dogwood", "font-bold", "text-2xl");
+
+                continue;
+            }
+
+            element.classList.remove("p-2", "text-night", "dark:text-pale-dogwood");
+            element.classList.add("p-6", "text-dim-gray");
+
+            this.siSections[i].classList.remove("text-night", "dark:text-pale-dogwood", "font-bold", "text-2xl");
+            this.siSections[i].classList.add("text-dim-gray");
+        }
     }
 
     determineActiveElement(): number {
@@ -36,8 +58,6 @@ class SectionIndicator implements ISectionIndicator {
             const element = this.siContents[index];
             const siContentBounds = this.siContents[index].getBoundingClientRect();
             const offset = Math.abs((siContentBounds.top + siContentBounds.bottom)/2 - viewPortYMiddle);
-
-            element.setAttribute("style", "color: red");
 
             if (offset < closestOffset) {
                 closestOffset = offset;
