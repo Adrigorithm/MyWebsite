@@ -12,6 +12,14 @@ class SectionIndicator implements ISectionIndicator {
     initialise(): void {
         this.work();
 
+        for (let i = 0; i < this.siSections.length; i++) {
+            const element = this.siSections[i];
+            
+            element.addEventListener("click", () => {
+                this.styleActiveElement(i);
+            })
+        }
+
         document.addEventListener("scroll", () => {
             this.work();
         })
