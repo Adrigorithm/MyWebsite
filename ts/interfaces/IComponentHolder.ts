@@ -1,5 +1,7 @@
 interface IComponentHolder {
     sectionIndicators: ISectionIndicator[]
+    simpleSliders: ISimpleSlider[]
 
-    addSectionIndicators(siSections: Element[], siContents: Element[]): void
+    addSectionIndicator(siSections: Element[], siContents: Element[]): void
+    addSimpleSlider(rangeInputElement: HTMLInputElement, elments: Element[]): void
 }
