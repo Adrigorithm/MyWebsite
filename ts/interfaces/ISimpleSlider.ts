@@ -3,4 +3,5 @@ interface ISimpleSlider {
     elements: Element[];
 
     styleActiveElement(newId: number): void;
+    forceStyle(newId: number): void;
 }

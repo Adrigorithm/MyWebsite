@@ -21,8 +21,8 @@
 </head>
 
 <body
-    class="bg-melon dark:bg-eerie-black flex flex-col justify-between text-night dark:text-pale-dogwood font-kalam text-lg min-h-screen">
-    <nav id="nav-main" class="flex flex-row px-2 bg-pale-dogwood dark:bg-night w-full items-center gap-6">
+    class="bg-pale-dogwood dark:bg-eerie-black flex flex-col justify-between text-night dark:text-pale-dogwood font-kalam text-lg min-h-screen">
+    <nav id="nav-main" class="flex flex-row px-2 bg-melon dark:bg-night w-full items-center gap-6">
         <a href="/"><img class="py-2 invert-0 dark:invert" src="/assets/img/logo_s.avif"
                 alt="logo of black cat writing adri"></a>
         <a class="py-2" href="/pages/about-me.html">
@@ -41,8 +41,8 @@
             <ol class="flex flex-row md:flex-col gap-2 md:gap-1 items-center si-section p-4 flex-wrap">
                 <li class="text-dim-gray">Intro</li>
                 <li class="text-dim-gray">Cat</li>
+                <li class="text-dim-gray">Skills</li>
                 <li class="text-dim-gray">Contact</li>
-                <li class="text-dim-gray">item1</li>
                 <li class="text-dim-gray">item1</li>
                 <li class="text-dim-gray">item1</li>
                 <li class="text-dim-gray">item1</li>
@@ -149,26 +149,55 @@
             </div>
 
             <div class="p-6 text-dim-gray flex flex-col items-center">
+                <h2 class="text-3xl w-1/2 text-center mb-2 border-b-4 border-dark-moss-green dark:border-burnt-umber">Skills</h2>
+                <p>I am an adept in a wide variety of technological aspects (or just generic skills), granting me the required knowledge to adapt to pretty much anything at quick pace. Below is a weird graph I have constructed, just click/tap on items if something seems to be of interest to you and sub items indicating my experience and knowledge will appear.</p>
+                <div class="flex flex-row md:flex-col md:w-4/5 mt-2">
+                    <div></div>
+                </div>
+            </div>
+
+            <div class="p-6 text-dim-gray flex flex-col items-center">
                 <h2 class="text-3xl w-1/2 text-center mb-2 border-b-4 border-dark-moss-green dark:border-burnt-umber">Contact</h2>
                 <p><strong>WAIT!</strong> Please read this before proceeding any further. Even though I cannot enforce them, I do have some restrictions on whether you should contact me. They are not very strict but if ignored I might ignore you as well. Tit for tat.</p>
-                <p>All read up? Wonderful. You can contact me using one of the methods below.</p>
-                <div class="flex flex-row md:flex-col w-full md:w-4/5">
+                <p class="mt-2">All read up? Wonderful. You can contact me using one of the methods below. Adjust the slider to see the prefered methods by which I am contacted according to your intentions towards me.</p>
+                <div class="flex flex-row md:flex-col w-full md:w-4/5 mt-2">
                     <div class="flex flex-col md:flex-row gap-6 items-center">
                         <p>Casual</p>
-                        <input class="grow writing-vertical [writing-mode:vertical-lr] md:[writing-mode:horizontal-tb] simpleSlider" type="range" min="0" max="2" value="1">
+                        <input class="grow [writing-mode:vertical-lr] md:[writing-mode:horizontal-tb] simpleSlider slider bg-melon dark:bg-night rounded-full" type="range" min="0" max="2" value="1">
                         <p>Business</p>
                     </div>
-                    <div class="hidden simpleSliderContent">
-                        0
+                    <div class="hidden simpleSliderContent flex flex-col md:flex-row justify-center gap-6 grow">
+                        <div class="flex flex-col items-center">
+                            <h3 class="text-xl">Dm me on Discord.</h3>
+                            <a href="https://discordapp.com/users/85257659694993408"><div class="h-[76px] w-[100px] bg-[url(/assets/img/logos/discord_dark.avif)] dark:bg-[url(/assets/img/logos/discord.avif)]"></div></a>
+                            <a href="https://discordapp.com/users/85257659694993408"><p class="underline">adrigorithm</p></a>
+                        </div>
                     </div>
-                    <div class="simpleSliderContent">
-                        1
+                    <div class="hidden simpleSliderContent flex flex-col md:flex-row justify-center gap-6 grow">
+                        <div class="flex flex-col items-center justify-between">
+                            <h3 class="text-xl">Dm me on Discord.</h3>
+                            <a href="https://discordapp.com/users/85257659694993408"><div class="h-[76px] w-[100px] bg-[url(/assets/img/logos/discord_dark.avif)] dark:bg-[url(/assets/img/logos/discord.avif)]"></div></a>
+                            <a href="https://discordapp.com/users/85257659694993408"><p class="underline">adrigorithm</p></a>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <h3 class="text-xl">Mail me.</h3>
+                            <a href="mailto:adrigorithm@proton.me"><div class="h-[100px] w-[100px] bg-[url(/assets/img/logos/mail_dark.avif)] dark:bg-[url(/assets/img/logos/mail.avif)]"></div></a>
+                            <a href="mailto:adrigorithm@proton.me"><p class="underline">adrigorithm@proton.me</p></a>
+                        </div>
                     </div>
-                    <div class="hidden simpleSliderContent">
-                        2
+                    <div class="hidden simpleSliderContent flex flex-col md:flex-row justify-center gap-6 grow">
+                        <div class="flex flex-col items-center justify-between">
+                            <h3 class="text-xl">Connect.</h3>
+                            <a href="https://be.linkedin.com/in/a3w"><div class="h-[80px] w-[100px] bg-[url(/assets/img/logos/linkedin_dark.avif)] dark:bg-[url(/assets/img/logos/linkedin.avif)]"></div></a>
+                            <a href="https://be.linkedin.com/in/a3w"><p class="underline">adrigorithm</p></a>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <h3 class="text-xl">Mail me.</h3>
+                            <a href="mailto:adriaan.waem@synguard.be"><div class="h-[100px] w-[100px] bg-[url(/assets/img/logos/mail_dark.avif)] dark:bg-[url(/assets/img/logos/mail.avif)]"></div></a>
+                            <a href="mailto:adriaan.waem@synguard.be"><p class="underline">adriaan.waem@synguard.be</p></a>
+                        </div>
                     </div>
                 </div>
-                
             </div>
 
             <p class="p-6 text-dim-gray">
@@ -225,12 +254,6 @@
                 parturient montes, nascetur ridiculus mus. Fusce eros diam, auctor non massa nec, suscipit porttitor
                 nunc. Etiam quis mollis nunc. Morbi elementum lacinia ex, a feugiat ipsum congue vel. Proin quam nulla,
                 iaculis quis sem vitae, porta mattis nibh. Sed sollicitudin id ante quis bibendum.
-            </p>
-            <p class="p-6 text-dim-gray">
-                Ut imperdiet pharetra eros nec consectetur. Mauris mi nisi, tristique at turpis ut, gravida ultrices
-                purus. Vestibulum eu elementum mi. Donec at auctor felis. Cras ut velit venenatis, rutrum odio at,
-                suscipit orci. Sed ac lacinia dui. Cras gravida eu sapien ut semper. Nullam hendrerit sapien ac varius
-                porttitor.
             </p>
         </section>
     </main>
