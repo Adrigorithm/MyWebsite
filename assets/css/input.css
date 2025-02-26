@@ -43,3 +43,7 @@
     background-image: url("/assets/img/paw.avif");
     cursor: pointer;
 }
+
+.h-p {
+    height: 1.75rem;
+}
