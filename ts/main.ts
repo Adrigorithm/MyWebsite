@@ -8,6 +8,7 @@ function loaded() {
     initComponentHolder();
     initSectionIndicators();
     initSimpleSliders();
+    initSquarifier();
 }
 
 function initComponentHolder() {
@@ -32,4 +33,11 @@ function initSimpleSliders() {
 
         componentHolder!.addSimpleSlider(inputElement, Array.from(sliderContents).slice(0, Number.parseInt(inputElement.max) + 1));
     }
+}
+
+function initSquarifier() {
+    let missingHeightSquares = document.getElementsByClassName("noYElement");
+    let missingWidthSquares = document.getElementsByClassName("noXElement");
+
+    componentHolder!.addSquares(Array.from(missingHeightSquares) as HTMLElement[], Array.from(missingWidthSquares) as HTMLElement[]);
 }
