@@ -36,10 +36,14 @@
         </a>
     </nav>
 
-    <main class="flex flex-col md:flex-row justify-between h-full slideshow">
-        <div class="flex items-center justify-center w-full md:w-1/6 h-1/6 md:h-full"><</div>
-        <div class="grow flex items-center justify-center ">content</div>
-        <div class="flex items-center justify-center w-full md:w-1/6 h-1/6 md:h-full">></div>
+    <main class="flex flex-col md:flex-row justify-between h-full">
+        <div class="flex justify-center items-center md:w-1/6 h-1/6 md:h-full">
+            <img class="h-1/2 md:h-auto md:w-1/2" src="/assets/img/icons/arrow_up.svg" alt="previous slide arrow">
+        </div>
+        <div class="flex justify-center items-center grow">content</div>
+        <div class="flex justify-center items-center md:w-1/6 h-1/6 md:h-full">
+            <img class="h-1/2 md:h-auto md:w-1/2" src="/assets/img/icons/arrow_down.svg" alt="next slide arrow">
+        </div>
     </main>
 
     <footer class="text-center bg-pale-dogwood dark:bg-night py-2 w-full">
