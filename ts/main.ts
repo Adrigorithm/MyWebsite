@@ -8,6 +8,7 @@ function loaded() {
     initComponentHolder();
     initSectionIndicators();
     initSimpleSliders();
+    initSlideShows();
     initSquarifier();
 }
 
@@ -16,8 +17,8 @@ function initComponentHolder() {
 }
 
 function initSectionIndicators() {
-    let siSections = document.getElementsByClassName("si-section");
-    let siContents = document.getElementsByClassName("si-content");
+    let siSections: HTMLCollectionOf<Element> = document.getElementsByClassName("si-section");
+    let siContents: HTMLCollectionOf<Element> = document.getElementsByClassName("si-content");
 
     for (let index = 0; index < siSections.length; index++) {
         componentHolder!.addSectionIndicator(Array.from(siSections[index].children), Array.from(siContents[index].children));
@@ -25,8 +26,8 @@ function initSectionIndicators() {
 } 
 
 function initSimpleSliders() {
-    let sliders = document.getElementsByClassName("simpleSlider");
-    let sliderContents = document.getElementsByClassName("simpleSliderContent");
+    let sliders: HTMLCollectionOf<Element> = document.getElementsByClassName("simpleSlider");
+    let sliderContents: HTMLCollectionOf<Element> = document.getElementsByClassName("simpleSliderContent");
 
     for (let index = 0; index < sliders.length; index++) {
         let inputElement = sliders[index] as HTMLInputElement;
@@ -35,9 +36,36 @@ function initSimpleSliders() {
     }
 }
 
+function initSlideShows() {
+    let slideShows: HTMLCollectionOf<Element> = document.getElementsByClassName("slideShow");
+    
+    for (let index = 0; index < slideShows.length; index++) {
+        let slideShow = slideShows[index] as HTMLDivElement;
+        let previousButton: HTMLDivElement = slideShow.firstElementChild as HTMLDivElement;
+        let nextButton: HTMLDivElement = slideShow.lastElementChild as HTMLDivElement;
+        let contents: HTMLDivElement[] = Array.from(slideShow.children).slice(1, -1) as HTMLDivElement[];
+        let imgPaths: string[] = getData(slideShow.id);
+
+        componentHolder!.addSlideShow(previousButton, nextButton, contents, slideShow, imgPaths);
+    }
+}
+
 function initSquarifier() {
-    let missingHeightSquares = document.getElementsByClassName("noYElement");
-    let missingWidthSquares = document.getElementsByClassName("noXElement");
+    let missingHeightSquares: HTMLCollectionOf<Element> = document.getElementsByClassName("noYElement");
+    let missingWidthSquares: HTMLCollectionOf<Element> = document.getElementsByClassName("noXElement");
 
     componentHolder!.addSquares(Array.from(missingHeightSquares) as HTMLElement[], Array.from(missingWidthSquares) as HTMLElement[]);
+}
+
+function getData(id: string): string[] {
+    switch (id) {
+        case "slideShowProjects":
+            return [
+                "bg-[url(/assets/img/projects/MyWebsite.git.avif)]",
+                "bg-[url(/assets/img/projects/Adribot.git.avif)]",
+                "bg-[url(/assets/img/projects/AdriTemplater.git.avif)]"
+            ];
+        default:
+            return [];
+    }
 }
