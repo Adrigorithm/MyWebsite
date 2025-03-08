@@ -61,9 +61,9 @@ function getData(id: string): string[] {
     switch (id) {
         case "slideShowProjects":
             return [
-                "bg-[url(/assets/img/projects/MyWebsite.git.avif)]",
                 "bg-[url(/assets/img/projects/Adribot.git.avif)]",
-                "bg-[url(/assets/img/projects/AdriTemplater.git.avif)]"
+                "bg-[url(/assets/img/projects/AdriTemplater.git.avif)]",
+                "bg-[url(/assets/img/projects/MyWebsite.git.avif)]"
             ];
         default:
             return [];
