@@ -10,6 +10,7 @@
     },
     "include": [
         "./ts/*.ts",
+        "./ts/enums/*.ts",
         "./ts/interfaces/*.ts",
         "./ts/classes/*.ts",
     ]
