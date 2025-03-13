@@ -1,8 +1,17 @@
 import { ComponentHolder } from "./classes/ComponentHolder.js"
+import { PageInitialiser } from "./classes/PageInitialiser.js";
+
+initialise();
 
 document.addEventListener("DOMContentLoaded", loaded);
 
 let componentHolder: undefined | ComponentHolder = undefined;
+
+function initialise(): void {
+    let initialiser = new PageInitialiser();
+
+    initialiser.processUrl();
+}
 
 function loaded() {
     initComponentHolder();

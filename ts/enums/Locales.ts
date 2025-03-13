@@ -10,21 +10,4 @@ class Locales {
     static get French(): string { return this.#french; }
     static get German(): string { return this.#german; }
     static get Catalan(): string { return this.#catalan; }
-
-    static match(locale: string): string {
-        switch (locale.toUpperCase()) {
-            case this.#english.toUpperCase():
-                return this.#english;
-            case this.#dutch.toUpperCase():
-                return this.#dutch;
-            case this.#french.toUpperCase():
-                return this.#french;
-            case this.#german.toUpperCase():
-                return this.#german;
-            case this.#catalan.toUpperCase():
-                return this.#catalan;    
-            default:
-                return this.#english;
-        }
-    }
 }
