@@ -11,3 +11,5 @@ class Locales {
     static get German(): string { return this.#german; }
     static get Catalan(): string { return this.#catalan; }
 }
+
+export { Locales }

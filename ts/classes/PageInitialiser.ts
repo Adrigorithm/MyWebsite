@@ -1,3 +1,6 @@
+import { Locales } from "../enums/Locales.js";
+import { Themes } from "../enums/Themes.js";
+
 class PageInitialiser implements IPageInitialiser {
     settings: ISetting;
 
