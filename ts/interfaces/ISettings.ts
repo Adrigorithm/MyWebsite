@@ -1,4 +1,4 @@
-interface ISetting {
+interface ISettings {
     theme: string;
     locale: string;
 }

@@ -1,4 +1,5 @@
 import { SectionIndicator } from "./SectionIndicator.js";
+import { SettingContainer } from "./SettingContainer.js";
 import { SimpleSlider } from "./SimpleSlider.js";
 import { SlideShow } from "./SlideShow.js";
 import { Squarifier } from "./Squarifier.js";
@@ -8,12 +9,20 @@ class ComponentHolder implements IComponentHolder {
     simpleSliders: ISimpleSlider[];
     slideShows: ISlideShow[];
     squarifier: ISquarifier;
+    settingContainer: ISettingContainer;
 
     constructor() {
+        this.settingContainer = new SettingContainer();
+        this.settingContainer.processUrl();
+
         this.sectionIndicators = [];
         this.simpleSliders = [];
         this.slideShows = [];
         this.squarifier = new Squarifier();
+    }
+
+    addSettings(localeElements: HTMLDivElement[], themeElements: HTMLDivElement[]): void {
+        this.settingContainer.initSettingsMenu(localeElements, themeElements);
     }
     
     addSquares(missingHeightSquares: HTMLElement[], missingWidthSquares: HTMLElement[]): void {

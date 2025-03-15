@@ -3,7 +3,9 @@ interface IComponentHolder {
     simpleSliders: ISimpleSlider[];
     slideShows: ISlideShow[];
     squarifier: ISquarifier;
+    settingContainer: ISettingContainer;
 
+    addSettings(localeElements: HTMLDivElement[], themeElements: HTMLDivElement[]): void;
     addSectionIndicator(siSections: Element[], siContents: Element[]): void;
     addSimpleSlider(rangeInputElement: HTMLInputElement, elements: Element[]): void;
     addSquares(missingHeightSquares: HTMLElement[], missingWidthSquares: HTMLElement[]): void;

@@ -1,28 +1,31 @@
 import { ComponentHolder } from "./classes/ComponentHolder.js"
-import { PageInitialiser } from "./classes/PageInitialiser.js";
-
-initialise();
-
-document.addEventListener("DOMContentLoaded", loaded);
 
 let componentHolder: undefined | ComponentHolder = undefined;
 
-function initialise(): void {
-    let initialiser = new PageInitialiser();
+initialise();
+document.addEventListener("DOMContentLoaded", loaded);
 
-    initialiser.processUrl();
+function initialise(): void {
+    initComponentHolder();
 }
 
 function loaded() {
-    initComponentHolder();
     initSectionIndicators();
     initSimpleSliders();
     initSlideShows();
     initSquarifier();
+    initSettings();
 }
 
 function initComponentHolder() {
     componentHolder = new ComponentHolder();
+}
+
+function initSettings() {
+    let localeElements: HTMLCollection | undefined = document.getElementById("localeSettings")?.children;
+    let themeElements: HTMLCollection | undefined = document.getElementById("themeSettings")?.children;
+
+    componentHolder?.addSettings(Array.from(localeElements ?? []) as HTMLDivElement[], Array.from(themeElements ?? []) as HTMLDivElement[]);
 }
 
 function initSectionIndicators() {
