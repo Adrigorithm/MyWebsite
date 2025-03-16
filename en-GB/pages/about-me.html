@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="/assets/css/output.css">
 
     <script type="module" src="/js/main.js"></script>
+    <script>
+        document.documentElement.classList.add(localStorage.getItem("theme") ?? (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light"));
+    </script>
 
     <title>Adri's cat tree - About me</title>
 </head>
@@ -280,9 +285,7 @@
             <div class="p-6 text-dim-gray flex flex-col items-center">
                 <h2 class="text-3xl w-1/2 text-center mb-2 border-b-4 border-dark-moss-green dark:border-burnt-umber">
                     Soft skills</h2>
-                <p>I am an adept in a wide variety of technological aspects, granting me the
-                    required knowledge to adapt to pretty much anything at quick pace. Below is a weird graph I have
-                    constructed. This part mainly covers tech hard skills. You are supposed to interpret the range values compared to other range values within the same section.</p>
+                <p>Identical as the previous section but for soft skills. What even are soft skills? </p>
 
                 <div class="flex flex-col md:flex-row w-full md:w-4/5 mt-2 gap-6">
                     <div class="w-full text-center">

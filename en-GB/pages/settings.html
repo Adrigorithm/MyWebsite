@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="/assets/css/output.css">
 
     <script type="module" src="/js/main.js"></script>
+    <script>
+        document.documentElement.classList.add(localStorage.getItem("theme") ?? (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light"));
+    </script>
 
     <title>Adri's cat tree - Settings</title>
 </head>
@@ -79,11 +84,6 @@
             <div class="flex flex-col p-3 justify-between border-6 border-transparent">
                 <h2 class="settingValue">light</h2>
                 <img src="/assets/img/flags/nl.svg" alt="colours of light theme">
-            </div>
-
-            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
-                <h2 class="settingValue">auto</h2>
-                <img src="/assets/img/flags/fr.svg" alt="colours of auto theme">
             </div>
 
             <div class="flex flex-col p-3 justify-between border-6 border-transparent">

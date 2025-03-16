@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="/assets/css/output.css">
 
     <script type="module" src="/js/main.js"></script>
+    <script>
+        document.documentElement.classList.add(localStorage.getItem("theme") ?? (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light"));
+    </script>
 
     <title>Arbre à chat d'Adri - À propos de moi</title>
 </head>

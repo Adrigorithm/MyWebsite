@@ -1,5 +1,4 @@
 import { Locales } from "../enums/Locales.js";
-import { Themes } from "../enums/Themes.js";
 
 class SettingContainer implements ISettingContainer {
     settings: ISettings;
@@ -7,7 +6,9 @@ class SettingContainer implements ISettingContainer {
     constructor() {
         this.settings = {
             locale: localStorage.getItem("locale") ?? Locales.English,
-            theme: localStorage.getItem("theme") ?? Themes.Light
+            theme: localStorage.getItem("theme") ?? (window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light")
         };
     }
 

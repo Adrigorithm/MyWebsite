@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="/assets/css/output.css">
 
     <script type="module" src="/js/main.js"></script>
+    <script>
+        document.documentElement.classList.add(localStorage.getItem("theme") ?? (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light"));
+    </script>
 
     <title>Arbre à chat d'Adri - Paramètres</title>
 </head>
@@ -72,23 +77,21 @@
         <h1>Thema</h1>
         <div id="themeSettings" class="flex flex-row">
             <div class="flex flex-col p-3 justify-between border-6 border-transparent">
-                <h2 class="settingValue">sombre</h2>
+                <h2>sombre</h2>
                 <img src="/assets/img/flags/uk.svg" alt="couleurs du thème sombre">
+                <p class="settingValue hidden">dark</p>
             </div>
 
             <div class="flex flex-col p-3 justify-between border-6 border-transparent">
-                <h2 class="settingValue">lumière</h2>
+                <h2>lumière</h2>
                 <img src="/assets/img/flags/nl.svg" alt="thème des couleurs de la lumière">
+                <p class="settingValue hidden">light</p>
             </div>
 
             <div class="flex flex-col p-3 justify-between border-6 border-transparent">
-                <h2 class="settingValue">auto</h2>
-                <img src="/assets/img/flags/fr.svg" alt="couleurs du thème auto">
-            </div>
-
-            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
-                <h2 class="settingValue">spécial</h2>
+                <h2>spécial</h2>
                 <img src="/assets/img/flags/fr.svg" alt="couleurs du thème spécial">
+                <p class="settingValue hidden">special</p>
             </div>
         </div>
     </main>
