@@ -17,11 +17,11 @@
 
     <script type="module" src="/js/main.js"></script>
 
-    <title>Adris Kratzbaum - Fehler 404</title>
+    <title>Adris Kratzbaum - Einstellungen</title>
 </head>
 
 <body
-    class="bg-melon dark:bg-eerie-black flex flex-col justify-between text-night dark:text-pale-dogwood font-kalam text-lg min-h-screen">
+    class="bg-melon dark:bg-eerie-black flex flex-col justify-between text-night dark:text-pale-dogwood font-kalam text-lg h-screen w-screen">
     <nav id="nav-main" class="flex flex-row px-2 bg-pale-dogwood dark:bg-night w-full items-center gap-6">
         <a href="/de-DE"><img class="py-2 invert-0 dark:invert" src="/assets/img/logo_s.avif"
                 alt="Logo einer schwarzen Katze, die Adri schreibt"></a>
@@ -32,15 +32,64 @@
             <p>Projekte</p>
         </a>
         <a class="py-2" href="settings.html">
-            <p>Einstellungen</p>
+            <p class="text-dark-moss-green dark:text-burnt-umber text-xl font-bold">Einstellungen</p>
         </a>
     </nav>
 
-    <main class="flex flex-col justify-between bg-[url(/assets/img/404.avif)] bg-cover bg-center grow">
-        <h1 class="p-4 bg-melon/80 dark:bg-eerie-black/70 text-dark-moss-green dark:text-burnt-umber text-6xl font-bold border-8 border-dark-moss-green dark:border-burnt-umber text-center">404</h1>
-        <div class="p-4 bg-melon/80 dark:bg-eerie-black/70">
-            <p class="text-center text-2xl font-bold">Whiterun-Wache</p>
-            <p class="text-center">Du hast Verbrechen gegen Himmelsrand und ihre Bürger begangen. Wie verteidigst du dich?</p>
+    <main class="flex flex-col items-center">
+        <h1>Locale</h1>
+        <div id="localeSettings" class="flex flex-row justify-center flex-wrap">
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2>Englisch</h2>
+                <img src="/assets/img/flags/uk.svg" alt="flagge des Vereinigten Königreichs">
+                <p class="settingValue">en-GB</p>
+            </div>
+
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2>Holländisch</h2>
+                <img src="/assets/img/flags/nl.svg" alt="flagge der Niederlande">
+                <p class="settingValue">nl-BE</p>
+            </div>
+
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2>Französisch</h2>
+                <img src="/assets/img/flags/fr.svg" alt="flagge von Frankreich">
+                <p class="settingValue">fr-FR</p>
+            </div>
+
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2>Deutsch</h2>
+                <img src="/assets/img/flags/de.svg" alt="flagge von Deutschland">
+                <p class="settingValue">de-DE</p>
+            </div>
+
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2>Katalanisch</h2>
+                <img src="/assets/img/flags/cat.svg" alt="flagge von Katalonien">
+                <p class="settingValue">ca-AD</p>
+            </div>
+        </div>
+        <h1>Thema</h1>
+        <div id="themeSettings" class="flex flex-row">
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2 class="settingValue">dunkel</h2>
+                <img src="/assets/img/flags/uk.svg" alt="Farben des dunklen Themas">
+            </div>
+
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2 class="settingValue">licht</h2>
+                <img src="/assets/img/flags/nl.svg" alt="Thema Farben des Lichts">
+            </div>
+
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2 class="settingValue">auto</h2>
+                <img src="/assets/img/flags/fr.svg" alt="Farben des Auto-Themas">
+            </div>
+
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2 class="settingValue">spezial</h2>
+                <img src="/assets/img/flags/fr.svg" alt="Farben des speziellen Themas">
+            </div>
         </div>
     </main>
 

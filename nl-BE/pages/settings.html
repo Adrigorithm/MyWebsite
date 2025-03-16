@@ -21,7 +21,7 @@
 </head>
 
 <body
-    class="bg-melon dark:bg-eerie-black flex flex-col justify-between text-night dark:text-pale-dogwood font-kalam text-lg min-h-screen">
+    class="bg-melon dark:bg-eerie-black flex flex-col justify-between text-night dark:text-pale-dogwood font-kalam text-lg h-screen w-screen">
     <nav id="nav-main" class="flex flex-row px-2 bg-pale-dogwood dark:bg-night w-full items-center gap-6">
         <a href="/nl-BE"><img class="py-2 invert-0 dark:invert" src="/assets/img/logo_s.avif"
                 alt="logo van een zwarte kat die adri schrijft"></a>
@@ -36,8 +36,61 @@
         </a>
     </nav>
 
-    <main class="flex flex-col">
+    <main class="flex flex-col items-center">
+        <h1>Taal</h1>
+        <div id="localeSettings" class="flex flex-row justify-center flex-wrap">
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2>Engels</h2>
+                <img src="/assets/img/flags/uk.svg" alt="vlag van Verenigd Koninkrijk">
+                <p class="settingValue">en-GB</p>
+            </div>
 
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2>Nederlands</h2>
+                <img src="/assets/img/flags/nl.svg" alt="vlag van Nederland">
+                <p class="settingValue">nl-BE</p>
+            </div>
+
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2>Frans</h2>
+                <img src="/assets/img/flags/fr.svg" alt="vlag of Frankrijk">
+                <p class="settingValue">fr-FR</p>
+            </div>
+
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2>Duits</h2>
+                <img src="/assets/img/flags/de.svg" alt="vlag of Duitsland">
+                <p class="settingValue">de-DE</p>
+            </div>
+
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2>Catalaans</h2>
+                <img src="/assets/img/flags/cat.svg" alt="vlag of Catalonië">
+                <p class="settingValue">ca-AD</p>
+            </div>
+        </div>
+        <h1>Thema</h1>
+        <div id="themeSettings" class="flex flex-row">
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2 class="settingValue">donker</h2>
+                <img src="/assets/img/flags/uk.svg" alt="kleuren van donker thema">
+            </div>
+
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2 class="settingValue">licht</h2>
+                <img src="/assets/img/flags/nl.svg" alt="kleuren van licht thema">
+            </div>
+
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2 class="settingValue">auto</h2>
+                <img src="/assets/img/flags/fr.svg" alt="kleuren van auto thema">
+            </div>
+
+            <div class="flex flex-col p-3 justify-between border-6 border-transparent">
+                <h2 class="settingValue">speciaal</h2>
+                <img src="/assets/img/flags/fr.svg" alt="kleuren van speciaal thema">
+            </div>
+        </div>
     </main>
 
     <footer class="text-center bg-pale-dogwood dark:bg-night py-2 w-full">
