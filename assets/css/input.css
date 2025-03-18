@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+@custom-variant special (&:where(.special, .special *));
 
 @theme {
     --font-kalam: "Kalam", "sans-serif";
