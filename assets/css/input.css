@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
-@custom-variant special (&:where(.special, .special *));
+@custom-variant sunset (&:where(.sunset, .sunset *));
 
 @theme {
     --font-kalam: "Kalam", "sans-serif";
@@ -14,11 +14,16 @@
     --color-eerie-black: oklch(27.01% 0.0035 228.92);
 
     /* light mode colours */
-    --color-taupe: oklch(36.57% 0.029 57.2);
     --color-dark-moss-green: oklch(40.54% 0.0681 120.41);
     --color-black-olive: oklch(31.33% 0.039 120.85);
     --color-melon: oklch(77.13% 0.09 36.11);
     --color-pale-dogwood: oklch(85.81% 0.0293 46.5);
+
+    /* sunset mode colours */
+    --color-indigo-dye: oklch(41.41% 0.082 242.09);
+    --color-cool-gray: oklch(69.48% 0.0305 289.95);
+    --color-icterine: oklch(95.69% 0.1263 105.15);
+    --color-orange-web: oklch(80.49% 0.1594 70.63);
 }
 
 @font-face {
