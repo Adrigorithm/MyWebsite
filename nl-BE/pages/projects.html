@@ -26,15 +26,15 @@
 </head>
 
 <body
-    class="bg-melon dark:bg-eerie-black flex flex-col justify-between text-night dark:text-pale-dogwood font-kalam text-lg h-screen w-screen">
-    <nav id="nav-main" class="flex flex-row px-2 bg-pale-dogwood dark:bg-night w-full items-center gap-6">
+    class="bg-melon dark:bg-eerie-black sunset:bg-indigo-dye flex flex-col justify-between text-night dark:text-pale-dogwood sunset:text-icterine font-kalam text-lg h-screen w-screen">
+    <nav id="nav-main" class="flex flex-row px-2 bg-pale-dogwood dark:bg-night sunset:bg-cool-gray w-full items-center gap-6">
         <a href="/nl-BE"><img class="py-2 invert-0 dark:invert" src="/assets/img/logo_s.avif"
                 alt="logo van een zwarte kat die adri schrijft"></a>
         <a class="py-2" href="about-me.html">
             <p>Over mij</p>
         </a>
         <a class="py-2" href="projects.html">
-            <p class="text-dark-moss-green dark:text-burnt-umber text-xl font-bold">Projecten</p>
+            <p class="text-dark-moss-green dark:text-burnt-umber sunset:text-orange-web text-xl font-bold">Projecten</p>
         </a>
         <a class="py-2" href="settings.html">
             <p>Instellingen</p>
@@ -44,13 +44,13 @@
     <main id="slideShowProjects"
         class="flex flex-col md:flex-row justify-between h-full bg-[url(/assets/img/projects/Adribot.git.avif)] bg-center bg-no-repeat slideShow">
         <div
-            class="md:w-32 h-32 p-4 md:h-full bg-origin-content bg-eerie-black/80 bg-[url(/assets/img/icons/arrow_up.svg)] md:bg-[url(/assets/img/icons/arrow_left.svg)] bg-center bg-no-repeat bg-contain invert-94 dark:invert-6 sepia-4 dark:sepia-16 saturate-1953 dark:saturate-281 hue-rotate-312 dark:hue-rotate-156 brightness-93 dark:brightness-92 contrast-89 dark:contrast-102">
+            class="md:w-32 h-32 p-4 md:h-full bg-origin-content bg-eerie-black/80 bg-[url(/assets/img/icons/arrow_up.svg)] md:bg-[url(/assets/img/icons/arrow_left.svg)] bg-center bg-no-repeat bg-contain invert-94 dark:invert-6 sunset:invert-24 sepia-4 dark:sepia-16 sunset:sepia-10 saturate-1953 dark:saturate-281 sunset:saturate-5262 hue-rotate-312 dark:hue-rotate-156 sunset:hue-rotate-167 brightness-93 dark:brightness-92 sunset:brightness-98 contrast-89 dark:contrast-102 sunset:contrast-87">
         </div>
         <div class="grow">
             <h1
-                class="text-center bg-pale-dogwood/90 dark:bg-eerie-black/90 border-b-4 border-dark-moss-green dark:border-burnt-umber text-3xl p-2">
+                class="text-center bg-pale-dogwood/90 dark:bg-eerie-black sunset:bg-indigo-dye/90 border-b-4 border-dark-moss-green dark:border-burnt-umber sunset:border-orange-web text-3xl p-2">
                 Adribot</h1>
-            <p class="bg-pale-dogwood/90 dark:bg-eerie-black/90 p-2">Een krachtige Discord-bot geschreven in C# (.NET 9)
+            <p class="bg-pale-dogwood/90 dark:bg-eerie-black sunset:bg-indigo-dye/90 p-2">Een krachtige Discord-bot geschreven in C# (.NET 9)
                 met gebruik van <a class="underline" href="https://docs.discordnet.dev/"
                     target="_blank">Discord.NET</a>. Het kan evenementen uit een kalender aankondigen via Discord, emoji
                 omzetten naar Minecraft-chatcompatibele emoji, schattige katten/fox/... foto's plaatsen en nog veel
@@ -58,28 +58,28 @@
         </div>
         <div class="grow hidden">
             <h1
-                class="text-center bg-pale-dogwood/90 dark:bg-eerie-black/90 border-b-4 border-dark-moss-green dark:border-burnt-umber text-3xl p-2">
+                class="text-center bg-pale-dogwood/90 dark:bg-eerie-black sunset:bg-indigo-dye/90 border-b-4 border-dark-moss-green dark:border-burnt-umber sunset:border-orange-web text-3xl p-2">
                 AdriTemplater</h1>
-            <p class="bg-pale-dogwood/90 dark:bg-eerie-black/90 p-2">Een shell-hulpprogramma (voor ontwikkelaars) dat
+            <p class="bg-pale-dogwood/90 dark:bg-eerie-black sunset:bg-indigo-dye/90 p-2">Een shell-hulpprogramma (voor ontwikkelaars) dat
                 bestanden template. Het is zoals de populaire Jinja-template-engine, maar meer configureerbaar,
                 gemakkelijker te gebruiken en sneller - ten koste van functies. Dit hulpprogramma is geschreven in
                 Python en werkt op Windows, de meeste Linux-distributies met een bestandssysteem en macOS.</p>
         </div>
         <div class="grow hidden">
             <h1
-                class="text-center bg-pale-dogwood/90 dark:bg-eerie-black/90 border-b-4 border-dark-moss-green dark:border-burnt-umber text-3xl p-2">
+                class="text-center bg-pale-dogwood/90 dark:bg-eerie-black sunset:bg-indigo-dye/90 border-b-4 border-dark-moss-green dark:border-burnt-umber sunset:border-orange-web text-3xl p-2">
                 MyWebsite</h1>
-            <p class="bg-pale-dogwood/90 dark:bg-eerie-black/90 p-2">Letterlijk deze website. Het is gemaakt met <a
+            <p class="bg-pale-dogwood/90 dark:bg-eerie-black sunset:bg-indigo-dye/90 p-2">Letterlijk deze website. Het is gemaakt met <a
                     class="underline" href="https://tailwindcss.com/" target="_blank">Tailwind CSS v4.0</a> en
                 TypeScript. Ik hou van volledige controle en haat trage en opgeblazen frameworks, dus ik gebruik ze
                 simpelweg niet. Het is volledig responsief en ondersteunt zowel de lichte als de donkere modus.</p>
         </div>
         <div
-            class="md:w-32 h-32 p-4 md:h-full bg-origin-content bg-eerie-black/80 bg-[url(/assets/img/icons/arrow_down.svg)] md:bg-[url(/assets/img/icons/arrow_right.svg)] bg-center bg-no-repeat bg-contain invert-94 dark:invert-6 sepia-4 dark:sepia-16 saturate-1953 dark:saturate-281 hue-rotate-312 dark:hue-rotate-156 brightness-93 dark:brightness-92 contrast-89 dark:contrast-102">
+            class="md:w-32 h-32 p-4 md:h-full bg-origin-content bg-eerie-black/80 bg-[url(/assets/img/icons/arrow_up.svg)] md:bg-[url(/assets/img/icons/arrow_left.svg)] bg-center bg-no-repeat bg-contain invert-94 dark:invert-6 sunset:invert-24 sepia-4 dark:sepia-16 sunset:sepia-10 saturate-1953 dark:saturate-281 sunset:saturate-5262 hue-rotate-312 dark:hue-rotate-156 sunset:hue-rotate-167 brightness-93 dark:brightness-92 sunset:brightness-98 contrast-89 dark:contrast-102 sunset:contrast-87">
         </div>
     </main>
 
-    <footer class="text-center bg-pale-dogwood dark:bg-night py-2 w-full">
+    <footer class="text-center bg-pale-dogwood dark:bg-night sunset:bg-cool-gray py-2 w-full">
         Gemaakt met ❤ door <span><a href="mailto:adri@a3aan.cat">Adri</a></span>
     </footer>
 
