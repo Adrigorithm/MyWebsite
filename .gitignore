@@ -3,4 +3,9 @@ assets/css/output.css
 
 # Generated content directories
 node_modules
-js/*
+js
+en-GB
+nl-BE
+fr-FR
+de-DE
+ca-AD
