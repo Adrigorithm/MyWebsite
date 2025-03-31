@@ -64,7 +64,7 @@ class SettingContainer implements ISettingContainer {
 
     styleActiveElemenet(element: HTMLDivElement): void {
         element.classList.remove("border-transparent");
-        element.classList.add("border-dark-moss-green", "dark:border-burnt-umber")
+        element.classList.add("border-dark-moss-green", "dark:border-burnt-umber", "sunset:border-orange-web")
     }
 }
 
