@@ -1,3 +1,4 @@
+import { PositionComponentToggler } from "./PositionComponentToggler.js";
 import { SectionIndicator } from "./SectionIndicator.js";
 import { SettingContainer } from "./SettingContainer.js";
 import { SimpleSlider } from "./SimpleSlider.js";
@@ -10,6 +11,7 @@ class ComponentHolder implements IComponentHolder {
     slideShows: ISlideShow[];
     squarifier: ISquarifier;
     settingContainer: ISettingContainer;
+    positionComponentToggler: IPositionComponentToggler;
 
     constructor() {
         this.settingContainer = new SettingContainer();
@@ -19,6 +21,11 @@ class ComponentHolder implements IComponentHolder {
         this.simpleSliders = [];
         this.slideShows = [];
         this.squarifier = new Squarifier();
+        this.positionComponentToggler = new PositionComponentToggler();
+    }
+    
+    addPositionComponentToggler(activateOnYOffsetElements: Map<Element, number>): void {
+        this.positionComponentToggler.addComponents(activateOnYOffsetElements);
     }
 
     addSettings(localeElements: HTMLDivElement[], themeElements: HTMLDivElement[]): void {

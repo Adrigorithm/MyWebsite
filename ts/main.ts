@@ -9,26 +9,27 @@ function initialise(): void {
     initComponentHolder();
 }
 
-function loaded() {
+function loaded(): void {
     initSectionIndicators();
     initSimpleSliders();
     initSlideShows();
     initSquarifier();
     initSettings();
+    initPositionComponentToggler();
 }
 
-function initComponentHolder() {
+function initComponentHolder(): void {
     componentHolder = new ComponentHolder();
 }
 
-function initSettings() {
+function initSettings(): void {
     let localeElements: HTMLCollection | undefined = document.getElementById("localeSettings")?.children;
     let themeElements: HTMLCollection | undefined = document.getElementById("themeSettings")?.children;
 
     componentHolder?.addSettings(Array.from(localeElements ?? []) as HTMLDivElement[], Array.from(themeElements ?? []) as HTMLDivElement[]);
 }
 
-function initSectionIndicators() {
+function initSectionIndicators(): void {
     let siSections: HTMLCollectionOf<Element> = document.getElementsByClassName("si-section");
     let siContents: HTMLCollectionOf<Element> = document.getElementsByClassName("si-content");
 
@@ -37,7 +38,7 @@ function initSectionIndicators() {
     }
 } 
 
-function initSimpleSliders() {
+function initSimpleSliders(): void {
     let sliders: HTMLCollectionOf<Element> = document.getElementsByClassName("simpleSlider");
     let sliderContents: HTMLCollectionOf<Element> = document.getElementsByClassName("simpleSliderContent");
 
@@ -48,7 +49,7 @@ function initSimpleSliders() {
     }
 }
 
-function initSlideShows() {
+function initSlideShows(): void {
     let slideShows: HTMLCollectionOf<Element> = document.getElementsByClassName("slideShow");
     
     for (let index = 0; index < slideShows.length; index++) {
@@ -62,11 +63,24 @@ function initSlideShows() {
     }
 }
 
-function initSquarifier() {
+function initSquarifier(): void {
     let missingHeightSquares: HTMLCollectionOf<Element> = document.getElementsByClassName("noYElement");
     let missingWidthSquares: HTMLCollectionOf<Element> = document.getElementsByClassName("noXElement");
 
     componentHolder!.addSquares(Array.from(missingHeightSquares) as HTMLElement[], Array.from(missingWidthSquares) as HTMLElement[]);
+}
+
+function initPositionComponentToggler(): void {
+    let map: Map<Element, number> = new Map();
+    let elements = document.getElementsByClassName("yOffsetToggle");
+
+    for (let index = 0; index < elements.length; index++) {
+        const element = elements[index] as HTMLElement;
+        
+        map.set(element, element.dataset.value as unknown as number)
+    }
+
+    componentHolder!.addPositionComponentToggler(map);
 }
 
 function getData(id: string): string[] {
