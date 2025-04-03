@@ -8,7 +8,10 @@ class SettingContainer implements ISettingContainer {
             locale: localStorage.getItem("locale") ?? Locales.English,
             theme: localStorage.getItem("theme") ?? (window.matchMedia("(prefers-color-scheme: dark)").matches
                 ? "dark"
-                : "light")
+                : "light"),
+            firstVisit: localStorage.getItem("firstVisit") 
+                ? false
+                : true  
         };
     }
 
@@ -20,10 +23,18 @@ class SettingContainer implements ISettingContainer {
     }
 
     processUrl(): void {
+        if (this.settings.firstVisit)
+            this.initialSetup();
+
         let path = location.pathname.substring(1);
         let localeSepIndex = path.indexOf('/');
         
         this.applyLocale(path.substring(localeSepIndex + 1), path.substring(0, localeSepIndex), this.settings.locale as string);
+    }
+
+    initialSetup(): void {
+        localStorage.setItem("firstVisit", '0');
+        location.assign("/en-GB/pages/settings.html");
     }
 
     initSettingsMenu(localeElements: HTMLDivElement[], themeElements: HTMLDivElement[]): void {
