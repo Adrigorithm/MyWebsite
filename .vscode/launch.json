@@ -12,7 +12,7 @@
             "console": "integratedTerminal",
             "args": [
                 "translations.csv",
-                ".",
+                "source",
                 ".",
                 "-d |",
                 "-l ~",

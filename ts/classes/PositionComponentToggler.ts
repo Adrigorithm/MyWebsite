@@ -1,11 +1,11 @@
 class PositionComponentToggler implements IPositionComponentToggler {
-    activateOnYOffsetElements: Map<Element, number>;
+    activateOnYOffsetElements: Map<Element, number | string>;
 
     constructor() {
         this.activateOnYOffsetElements = new Map();
     }
 
-    addComponents(activateOnYOffsetElements: Map<Element, number>): void {
+    addComponents(activateOnYOffsetElements: Map<Element, number | string>): void {
         this.activateOnYOffsetElements = activateOnYOffsetElements;
 
         this.initialise();
@@ -25,10 +25,18 @@ class PositionComponentToggler implements IPositionComponentToggler {
     }
 
     work(): void {
-        let yOffset = window.scrollY;
+        for (let [key, value] of this.activateOnYOffsetElements) {
+            if (typeof value === "string") {
+                switch (value) {
+                    case "h-screen":
+                        value = window.visualViewport!.height
+                        break;
+                    default:
+                        value = 100;
+                }
+            }
 
-        for (const [key, value] of this.activateOnYOffsetElements) {
-            if (yOffset >= value)
+            if (window.scrollY >= value)
                 key.classList.remove("hidden");
             else
                 key.classList.add("hidden");
