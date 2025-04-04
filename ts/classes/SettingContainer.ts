@@ -23,8 +23,10 @@ class SettingContainer implements ISettingContainer {
     }
 
     processUrl(): void {
-        if (this.settings.firstVisit)
+        if (this.settings.firstVisit) {
             this.initialSetup();
+            return;
+        }
 
         let path = location.pathname.substring(1);
         let localeSepIndex = path.indexOf('/');
