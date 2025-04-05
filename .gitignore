@@ -1,5 +1,5 @@
 # Generated files
-assets/css/output.css
+assets/css/output*.css
 
 # Generated content directories
 node_modules
