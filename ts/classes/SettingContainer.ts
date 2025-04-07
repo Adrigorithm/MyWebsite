@@ -25,6 +25,7 @@ class SettingContainer implements ISettingContainer {
     processUrl(): void {
         if (this.settings.firstVisit) {
             this.initialSetup();
+            
             return;
         }
 
