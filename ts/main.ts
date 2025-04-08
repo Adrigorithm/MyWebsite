@@ -1,4 +1,5 @@
 import { ComponentHolder } from "./classes/ComponentHolder.js"
+import { Popups } from "./enums/Popups.js";
 
 let componentHolder: undefined | ComponentHolder = undefined;
 
@@ -89,10 +90,10 @@ function initPopupController(): void {
 
     for (let index = 0; index < elements.length; index++) {
         const element = elements[index] as HTMLElement;
-        let localStorageKey = element.dataset.value as string;
-        let triggerButtons = Array.from(document.getElementsByClassName(`popup${localStorageKey}`)) as HTMLElement[];
+        let popupKey = element.dataset.value as string;
+        let triggerButtons = Array.from(document.getElementsByClassName(`popup-${popupKey}`)) as HTMLElement[];
 
-        componentHolder!.addPopup(element, triggerButtons, showPopup(localStorageKey))
+        componentHolder!.addPopup(element, triggerButtons, showPopup(popupKey))
     }
 }
 
@@ -109,7 +110,14 @@ function getData(id: string): string[] {
     }
 }
 
-function showPopup(localStorageKey: string): boolean {
-    let lsItem = localStorage.getItem(localStorageKey);
-    return lsItem !== null && Number.parseInt(lsItem) == 1;
+function showPopup(popupKey: string): boolean {
+    switch (popupKey) {
+        case Popups.Locale:
+            let lsItem = localStorage.getItem("locale");
+            
+            return lsItem == null;
+        default:
+            return false;
+    }
+    
 }

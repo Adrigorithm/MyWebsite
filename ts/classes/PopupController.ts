@@ -11,6 +11,17 @@ class PopupController implements IPopupController {
         if (forceShow)
             this.togglePopup(popup);
 
+        popup.firstElementChild?.addEventListener("click", (e) => {
+            e.stopPropagation();
+            console.log("Popup content clicked.");
+            
+        })
+
+        popup.addEventListener("click", () => {
+            console.log("Popup container clicked.");
+            this.togglePopup(popup);
+        })
+
         toggleButtons.forEach((tb => {
             tb.addEventListener("click", () => {
                 this.togglePopup(popup);

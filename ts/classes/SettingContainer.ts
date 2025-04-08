@@ -4,15 +4,22 @@ class SettingContainer implements ISettingContainer {
     settings: ISettings;
 
     constructor() {
+        let version = localStorage.getItem("version");
+
+        if (version == null || Number.parseInt(version) != 1)
+            this.resetSettings();
+
         this.settings = {
-            locale: localStorage.getItem("locale") ?? Locales.English,
+            locale: localStorage.getItem("locale"),
             theme: localStorage.getItem("theme") ?? (window.matchMedia("(prefers-color-scheme: dark)").matches
                 ? "dark"
-                : "light"),
-            firstVisit: localStorage.getItem("firstVisit") 
-                ? false
-                : true  
+                : "light")
         };
+    }
+
+    resetSettings(): void {
+        localStorage.clear();
+        localStorage.setItem("version", '1');
     }
 
     applyLocale(destination: string, urlLocale: string, locale: string): void {
@@ -23,21 +30,13 @@ class SettingContainer implements ISettingContainer {
     }
 
     processUrl(): void {
-        if (this.settings.firstVisit) {
-            this.initialSetup();
-            
+        if (this.settings.locale == null)
             return;
-        }
 
         let path = location.pathname.substring(1);
         let localeSepIndex = path.indexOf('/');
         
         this.applyLocale(path.substring(localeSepIndex + 1), path.substring(0, localeSepIndex), this.settings.locale as string);
-    }
-
-    initialSetup(): void {
-        localStorage.setItem("firstVisit", '0');
-        location.assign("/en-GB/pages/settings.html");
     }
 
     initSettingsMenu(localeElements: HTMLDivElement[], themeElements: HTMLDivElement[]): void {

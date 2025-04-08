@@ -5,5 +5,5 @@ interface ISettingContainer {
     processUrl(): void;
     initSettingsMenu(localeElements: HTMLDivElement[], themeElements: HTMLDivElement[]): void;
     styleActiveElemenet(element: HTMLDivElement): void;
-    initialSetup(): void;
+    resetSettings(): void;
 }
