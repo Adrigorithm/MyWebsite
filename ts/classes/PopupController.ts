@@ -32,3 +32,5 @@ class PopupController implements IPopupController {
         this.popups.set(popup, true);
     }
 }
+
+export { PopupController }

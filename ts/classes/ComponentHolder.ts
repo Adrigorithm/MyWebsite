@@ -1,3 +1,4 @@
+import { PopupController } from "./PopupController.js";
 import { PositionComponentToggler } from "./PositionComponentToggler.js";
 import { SectionIndicator } from "./SectionIndicator.js";
 import { SettingContainer } from "./SettingContainer.js";
@@ -12,6 +13,7 @@ class ComponentHolder implements IComponentHolder {
     squarifier: ISquarifier;
     settingContainer: ISettingContainer;
     positionComponentToggler: IPositionComponentToggler;
+    popupController: IPopupController;
 
     constructor() {
         this.settingContainer = new SettingContainer();
@@ -22,6 +24,7 @@ class ComponentHolder implements IComponentHolder {
         this.slideShows = [];
         this.squarifier = new Squarifier();
         this.positionComponentToggler = new PositionComponentToggler();
+        this.popupController = new PopupController();
     }
     
     addPositionComponentToggler(activateOnYOffsetElements: Map<Element, number>): void {
@@ -46,6 +49,10 @@ class ComponentHolder implements IComponentHolder {
 
     addSlideShow(previousButton: HTMLDivElement, nextButton: HTMLDivElement, backgroundContents: HTMLDivElement[], background: HTMLDivElement, imgPaths: string[]) {
         this.slideShows.push(new SlideShow(previousButton, nextButton, backgroundContents, background, imgPaths));
+    }
+
+    addPopup(popup: HTMLElement, toggleButtons: HTMLElement[], forceShow: boolean): void {
+        this.popupController.addPopup(popup, toggleButtons, forceShow);
     }
 }
 

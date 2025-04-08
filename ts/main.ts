@@ -16,6 +16,7 @@ function loaded(): void {
     initSquarifier();
     initSettings();
     initPositionComponentToggler();
+    initPopupController();
 }
 
 function initComponentHolder(): void {
@@ -83,6 +84,18 @@ function initPositionComponentToggler(): void {
     componentHolder!.addPositionComponentToggler(map);
 }
 
+function initPopupController(): void {
+    let elements = document.getElementsByClassName("popup");
+
+    for (let index = 0; index < elements.length; index++) {
+        const element = elements[index] as HTMLElement;
+        let localStorageKey = element.dataset.value as string;
+        let triggerButtons = Array.from(document.getElementsByClassName(`popup${localStorageKey}`)) as HTMLElement[];
+
+        componentHolder!.addPopup(element, triggerButtons, showPopup(localStorageKey))
+    }
+}
+
 function getData(id: string): string[] {
     switch (id) {
         case "slideShowProjects":
@@ -94,4 +107,9 @@ function getData(id: string): string[] {
         default:
             return [];
     }
+}
+
+function showPopup(localStorageKey: string): boolean {
+    let lsItem = localStorage.getItem(localStorageKey);
+    return lsItem !== null && Number.parseInt(lsItem) == 1;
 }
