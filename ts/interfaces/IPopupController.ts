@@ -1,6 +1,6 @@
 interface IPopupController {
     popups: Map<HTMLElement, boolean>;
 
-    initialise(popups: Map<HTMLElement, HTMLElement[] | boolean>): void;
-    work(): void;
+    addPopup(popup: HTMLElement, toggleButtons: HTMLElement[], forceShow: boolean): void;
+    togglePopup(popup: HTMLElement): void;
 }

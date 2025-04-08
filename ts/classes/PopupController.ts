@@ -4,26 +4,31 @@ class PopupController implements IPopupController {
     constructor() {
         this.popups = new Map();
     }
+    
+    addPopup(popup: HTMLElement, toggleButtons: HTMLElement[], forceShow: boolean): void {
+        this.popups.set(popup, false);
 
-    initialise(popups: Map<HTMLElement, HTMLElement[] | boolean>): void {
-        for (const [popup, trigger] of popups) {
+        if (forceShow)
+            this.togglePopup(popup);
+
+        toggleButtons.forEach((tb => {
+            tb.addEventListener("click", () => {
+                this.togglePopup(popup);
+            });
+        }));
+    }
+
+    togglePopup(popup: HTMLElement): void {
+        let popupActive = this.popups.get(popup);
+
+        if (popupActive) {
+            popup.classList.add("hidden");
             this.popups.set(popup, false);
 
-            if (typeof trigger === 'boolean') {
-                if (trigger)
-                    popup.classList.remove("hidden");
-                
-                continue;
-            }
-
-            trigger.forEach(element => {
-                element.addEventListener("click", () => {})
-            });
+            return;
         }
-    }
 
-    work(): void {
-        throw new Error("Method not implemented.");
+        popup.classList.remove("hidden");
+        this.popups.set(popup, true);
     }
-    
 }
