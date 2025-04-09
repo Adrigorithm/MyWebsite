@@ -11,7 +11,7 @@
         {
             "label": "css watch",
             "type": "shell",
-            "command": "pnpx @tailwindcss/cli -i ./assets/css/input.css -o ./assets/css/output_v1.0.css --watch"
+            "command": "pnpx @tailwindcss/cli -i ./assets/css/input.css -o ./assets/css/output_v1.1.css --watch"
         },
         {
             "label": "transpile ts",
