@@ -34,9 +34,15 @@ class SettingContainer implements ISettingContainer {
             return;
 
         let path = location.pathname.substring(1);
+
+        if (path == '') {
+            location.assign(`/${this.settings.locale}/index.html`);
+            return;
+        }
+
         let localeSepIndex = path.indexOf('/');
         
-        this.applyLocale(path.substring(localeSepIndex + 1), path.substring(0, localeSepIndex), this.settings.locale as string);
+        this.applyLocale(path.substring(localeSepIndex + 1), path.substring(0, localeSepIndex), this.settings.locale);
     }
 
     initSettingsMenu(localeElements: HTMLDivElement[], themeElements: HTMLDivElement[]): void {
