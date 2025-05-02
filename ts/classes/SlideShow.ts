@@ -1,18 +1,15 @@
 class SlideShow implements ISlideShow {
     activeElement: number;
-    imgPaths: string[];
     previousButton: HTMLDivElement;
     nextButton: HTMLDivElement;
-    backgroundContents: HTMLDivElement[];
-    background: HTMLDivElement;
+    slides: HTMLDivElement[];
 
-    constructor(previousButton: HTMLDivElement, nextButton: HTMLDivElement, backgroundContents: HTMLDivElement[], background: HTMLDivElement, imgPaths: string[]) {
+
+    constructor(previousButton: HTMLDivElement, nextButton: HTMLDivElement, slide: HTMLDivElement[]) {
         this.previousButton = previousButton;
         this.nextButton = nextButton;
-        this.backgroundContents = backgroundContents;
-        this.background = background;
+        this.slides = slide;
         this.activeElement = 0;
-        this.imgPaths = imgPaths;
 
         this.initialise();
     }
@@ -28,18 +25,17 @@ class SlideShow implements ISlideShow {
     }
 
     styleActiveElement(oldActiveElement: number, newActiveElement: number): void {
-        this.background.classList.replace(this.imgPaths[oldActiveElement], this.imgPaths[newActiveElement]);
-        this.backgroundContents[oldActiveElement].classList.add("hidden");
-        this.backgroundContents[newActiveElement].classList.remove("hidden");
+        this.slides[oldActiveElement].classList.add("hidden");
+        this.slides[newActiveElement].classList.remove("hidden");
     }
 
     nextActiveElement(invert: boolean): void {
         let oldActiveElement: number = this.activeElement;
 
         if (invert)
-            this.activeElement = this.activeElement == 0 ? this.imgPaths.length - 1 : this.activeElement - 1;
+            this.activeElement = this.activeElement == 0 ? this.slides.length - 1 : this.activeElement - 1;
         else
-            this.activeElement = this.activeElement == this.imgPaths.length - 1 ? 0 : this.activeElement + 1;
+            this.activeElement = this.activeElement == this.slides.length - 1 ? 0 : this.activeElement + 1;
 
         this.styleActiveElement(oldActiveElement, this.activeElement);
     }

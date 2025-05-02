@@ -47,8 +47,8 @@ class ComponentHolder implements IComponentHolder {
         this.simpleSliders.push(new SimpleSlider(rangeInputElement, elements));
     }
 
-    addSlideShow(previousButton: HTMLDivElement, nextButton: HTMLDivElement, backgroundContents: HTMLDivElement[], background: HTMLDivElement, imgPaths: string[]) {
-        this.slideShows.push(new SlideShow(previousButton, nextButton, backgroundContents, background, imgPaths));
+    addSlideShow(previousButton: HTMLDivElement, nextButton: HTMLDivElement, slides: HTMLDivElement[]) {
+        this.slideShows.push(new SlideShow(previousButton, nextButton, slides));
     }
 
     addPopup(popup: HTMLElement, toggleButtons: HTMLElement[], forceShow: boolean): void {

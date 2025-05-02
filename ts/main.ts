@@ -58,10 +58,9 @@ function initSlideShows(): void {
         let slideShow = slideShows[index] as HTMLDivElement;
         let previousButton: HTMLDivElement = slideShow.firstElementChild as HTMLDivElement;
         let nextButton: HTMLDivElement = slideShow.lastElementChild as HTMLDivElement;
-        let contents: HTMLDivElement[] = Array.from(slideShow.children).slice(1, -1) as HTMLDivElement[];
-        let imgPaths: string[] = getData(slideShow.id);
+        let slides: HTMLDivElement[] = Array.from(slideShow.children).slice(1, -1) as HTMLDivElement[];
 
-        componentHolder!.addSlideShow(previousButton, nextButton, contents, slideShow, imgPaths);
+        componentHolder!.addSlideShow(previousButton, nextButton, slides);
     }
 }
 
@@ -94,19 +93,6 @@ function initPopupController(): void {
         let triggerButtons = Array.from(document.getElementsByClassName(`popup-${popupKey}`)) as HTMLElement[];
 
         componentHolder!.addPopup(element, triggerButtons, showPopup(popupKey))
-    }
-}
-
-function getData(id: string): string[] {
-    switch (id) {
-        case "slideShowProjects":
-            return [
-                "bg-[url(/assets/img/projects/Adribot.git.avif)]",
-                "bg-[url(/assets/img/projects/AdriTemplater.git.avif)]",
-                "bg-[url(/assets/img/projects/MyWebsite.git.avif)]"
-            ];
-        default:
-            return [];
     }
 }
 
