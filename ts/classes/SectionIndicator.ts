@@ -17,7 +17,7 @@ class SectionIndicator implements ISectionIndicator {
             
             element.addEventListener("click", () => {
                 this.siContents[i].scrollIntoView({
-                    behavior: "smooth"
+                    behavior: "instant"
                 });
             })
         }
