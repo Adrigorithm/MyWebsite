@@ -46,7 +46,7 @@ class SectionIndicator implements ISectionIndicator {
                 newIds.splice(newIdIndice, 1);
 
                 element.classList.remove("text-dim-gray");
-                element.classList.add("px-2", "text-night", "dark:text-pale-dogwood", "sunset:text-icterine", "bg-dim-gray/30");
+                element.classList.add("text-night", "dark:text-pale-dogwood", "sunset:text-icterine", "bg-dim-gray/30");
 
                 this.siSections[i].classList.remove("text-dim-gray");
                 this.siSections[i].classList.add("text-night", "dark:text-pale-dogwood", "sunset:text-icterine", "font-bold", "text-2xl");
@@ -54,7 +54,7 @@ class SectionIndicator implements ISectionIndicator {
                 continue;
             }
 
-            element.classList.remove("px-2", "text-night", "dark:text-pale-dogwood", "sunset:text-icterine", "bg-dim-gray/30");
+            element.classList.remove("text-night", "dark:text-pale-dogwood", "sunset:text-icterine", "bg-dim-gray/30");
             element.classList.add("text-dim-gray");
 
             this.siSections[i].classList.remove("text-night", "dark:text-pale-dogwood", "sunset:text-icterine", "font-bold", "text-2xl");
