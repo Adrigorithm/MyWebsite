@@ -49,7 +49,7 @@ class SectionIndicator implements ISectionIndicator {
                 element.classList.add("text-night", "dark:text-pale-dogwood", "sunset:text-icterine", "bg-dim-gray/30");
 
                 this.siSections[i].classList.remove("text-dim-gray");
-                this.siSections[i].classList.add("text-night", "dark:text-pale-dogwood", "sunset:text-icterine", "font-bold", "text-2xl");
+                this.siSections[i].classList.add("text-night", "dark:text-pale-dogwood", "sunset:text-icterine");
 
                 continue;
             }
@@ -57,7 +57,7 @@ class SectionIndicator implements ISectionIndicator {
             element.classList.remove("text-night", "dark:text-pale-dogwood", "sunset:text-icterine", "bg-dim-gray/30");
             element.classList.add("text-dim-gray");
 
-            this.siSections[i].classList.remove("text-night", "dark:text-pale-dogwood", "sunset:text-icterine", "font-bold", "text-2xl");
+            this.siSections[i].classList.remove("text-night", "dark:text-pale-dogwood", "sunset:text-icterine");
             this.siSections[i].classList.add("text-dim-gray");
         }
     }
@@ -77,12 +77,12 @@ class SectionIndicator implements ISectionIndicator {
             const siContentHeight = element.clientHeight;
             const siContentStopY = siContentStartY + siContentHeight;
 
-            if (siContentStopY > viewportStartY && siContentStartY < viewportStopY) {
+            if (siContentStopY >= viewportStartY && siContentStartY <= viewportStopY) {
                 if (siContentStartY < viewportStartY) {
                     if ((siContentStopY - viewportStartY) > (viewportHeight * .5))
                         activeElementIds.push(index);
                 } else {
-                    if (siContentStopY < viewportStopY || ((viewportStopY - siContentStartY) > (viewportHeight * .5)))
+                    if (siContentStopY <= viewportStopY || ((viewportStopY - siContentStartY) > (viewportHeight * .5)))
                         activeElementIds.push(index);
                 }
             }
