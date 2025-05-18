@@ -8,7 +8,7 @@ interface IComponentHolder {
     popupController: IPopupController;
 
     addSettings(localeElements: HTMLDivElement[], themeElements: HTMLDivElement[]): void;
-    addSectionIndicator(siSections: Element[], siContents: Element[]): void;
+    addSectionIndicator(siSections: HTMLDivElement[], siContents: HTMLDivElement[]): void;
     addSimpleSlider(rangeInputElement: HTMLInputElement, elements: Element[]): void;
     addSquares(missingHeightSquares: HTMLElement[], missingWidthSquares: HTMLElement[]): void;
     addSlideShow(previousButton: HTMLDivElement, nextButton: HTMLDivElement, backgroundContents: HTMLDivElement[], background: HTMLDivElement, imgPaths: string[]): void;

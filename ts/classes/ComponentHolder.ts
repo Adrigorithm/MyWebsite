@@ -39,7 +39,7 @@ class ComponentHolder implements IComponentHolder {
         this.squarifier.initialise(missingWidthSquares, missingHeightSquares);
     }
 
-    addSectionIndicator(siSections: Element[], siContents: Element[]): void {
+    addSectionIndicator(siSections: HTMLDivElement[], siContents: HTMLDivElement[]): void {
         this.sectionIndicators.push(new SectionIndicator(siSections, siContents));
     }
 

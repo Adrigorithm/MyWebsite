@@ -36,7 +36,7 @@ function initSectionIndicators(): void {
     let siContents: HTMLCollectionOf<Element> = document.getElementsByClassName("si-content");
 
     for (let index = 0; index < siSections.length; index++) {
-        componentHolder!.addSectionIndicator(Array.from(siSections[index].children), Array.from(siContents[index].children));
+        componentHolder!.addSectionIndicator(Array.from(siSections[index].children) as HTMLDivElement[], Array.from(siContents[index].children) as HTMLDivElement[]);
     }
 } 
 

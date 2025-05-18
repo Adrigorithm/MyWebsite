@@ -1,9 +1,9 @@
 interface ISectionIndicator {
-    siSections: Element[];
-    siContents: Element[];
+    siSections: HTMLDivElement[];
+    siContents: HTMLDivElement[];
 
     initialise(): void;
     work(): void;
-    styleActiveElement(oldId: number | undefined, newId: number): void;
-    determineActiveElement(): number;
+    styleActiveElements(oldIds: number[] | undefined, newIds: number[]): void;
+    determineActiveElements(): number[];
 }
