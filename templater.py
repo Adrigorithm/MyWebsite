@@ -34,13 +34,13 @@ def parse_languages(languages: list[str]) -> dict[str, list[str]]:
     return language_map
 
 def parse_config_file(file_name):
-    with open(file_name) as file:
+    with open(file_name, encoding="utf-8") as file:
         return json.load(file)
 
 def content_language_mapper(language_file: str, delimiter: str) -> dict[str, list[str]]:
     language_map = None
 
-    with open(language_file) as file:
+    with open(language_file, encoding="utf-8") as file:
         language_map = parse_languages(file.readline().split(delimiter))
         key_list = list(language_map.keys())
 
@@ -115,7 +115,7 @@ def write(templated_strings: dict[str, str], output_dir: str, dir_path: str, fil
 
         os.makedirs(path, exist_ok=True)
 
-        with open(f"{path}{os.sep}{file_name}", "w") as file:
+        with open(f"{path}{os.sep}{file_name}", "w", encoding="utf-8") as file:
             file.write(string)
 
 def get_file_paths(root_dir: str, patterns: list) -> set[str]:

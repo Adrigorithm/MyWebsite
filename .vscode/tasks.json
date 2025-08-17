@@ -6,7 +6,7 @@
         {
             "label": "start weeb server",
             "type": "shell",
-            "command": "python3 -m http.server"
+            "command": "python -m http.server"
         },
         {
             "label": "css watch",
