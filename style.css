@@ -1,0 +1,30 @@
+:root {
+    --light-green: #b6d094ff;
+    --ver-light-brown: #e1aa7dff;
+    --light-brown: #be8a60ff;
+    --dark-red: #6a2e35ff;
+    --light-black: #2e2836ff;
+
+    --bg: var(--light-green);
+    --fg: var(--light-black);
+}
+
+.theme-dark {
+    --bg: var(--light-black);
+    --fg: var(--light-green);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--fg);
+}
+
+.hidden {
+    display: none;
+}
+
+.bold {
+    font-weight: bold;
+}
