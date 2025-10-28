@@ -1,0 +1,5 @@
+{
+  "patterns": ["*.html"],
+  "template_char_left": "~",
+  "template_char_right": "~"
+}
