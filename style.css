@@ -63,7 +63,10 @@ a {
 .flex-row {
     display: flex;
     gap: var(--flex-gap);
-    justify-content: center;
+}
+
+.justify-spread {
+    justify-content: space-between;
 }
 
 .flex-column {
