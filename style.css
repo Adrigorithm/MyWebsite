@@ -14,7 +14,7 @@
     --accent-colour: var(--dark-red);
 }
 
-.theme-dark {
+.dark {
     --bg: var(--light-black);
     --fg: var(--light-green);
     --accent-colour: var(--light-brown);
@@ -33,11 +33,6 @@ html {
     color: var(--fg);
 }
 
-.invert-theme {
-    background-color: var(--fg);
-    color: var(--bg);
-}
-
 button {
     border: none;
     padding: var(--text-padding);
@@ -50,6 +45,15 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+nav svg {
+    fill: var(--bg);
+}
+
+.invert-theme {
+    background-color: var(--fg);
+    color: var(--bg);
 }
 
 .hidden {
