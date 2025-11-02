@@ -21,11 +21,13 @@
         <title>A3 ^.^ :3</title>
     </head>
 
-    <body>
+    <body
+        class="font-display bg-gray-400 dark:bg-gray-700 text-cosmic dark:text-lilac"
+    >
         <header></header>
 
-        <nav>
-            <ul class="flex-row">
+        <nav class="bg-gray-300 dark:bg-gray-800 text-cosmic dark:text-lilac">
+            <ul class="flex items-center justify-between">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="1rem"
@@ -120,12 +122,18 @@
                              72.00,88.00 73.00,82.00 73.00,82.00 Z"
                     />
                 </svg>
-                <ul class="flex-row" id="nav-main">
-                    <li><button>Home</button></li>
-                    <li><button value="about">About</button></li>
-                    <li><button value="projects">Projects</button></li>
+                <ul class="flex" id="nav-main">
+                    <li class="border-solid border-cosmic dark:border-lilac">
+                        <button class="p-1">Home</button>
+                    </li>
+                    <li class="border-solid border-cosmic dark:border-lilac">
+                        <button class="p-1" value="about">About</button>
+                    </li>
+                    <li class="border-solid border-cosmic dark:border-lilac">
+                        <button class="p-1" value="projects">Projects</button>
+                    </li>
                 </ul>
-                <ul class="flex-row">
+                <ul class="flex">
                     <li>
                         <button>
                             <svg
