@@ -187,14 +187,17 @@
   .hidden {
     display: none;
   }
-  .flex-row {
-    flex-direction: row;
-  }
   .items-center {
     align-items: center;
   }
+  .justify-around {
+    justify-content: space-around;
+  }
   .justify-between {
     justify-content: space-between;
+  }
+  .gap-1\.5 {
+    gap: calc(var(--spacing) * 1.5);
   }
   .border-b-1 {
     border-bottom-style: var(--tw-border-style);
@@ -207,17 +210,26 @@
   .border-cosmic {
     border-color: var(--color-cosmic);
   }
-  .border-lilac {
-    border-color: var(--color-lilac);
-  }
   .bg-gray-300 {
     background-color: var(--color-gray-300);
   }
   .bg-gray-400 {
     background-color: var(--color-gray-400);
   }
+  .fill-cosmic {
+    fill: var(--color-cosmic);
+  }
   .p-1 {
     padding: calc(var(--spacing) * 1);
+  }
+  .p-1\.5 {
+    padding: calc(var(--spacing) * 1.5);
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+  .px-1\.5 {
+    padding-inline: calc(var(--spacing) * 1.5);
   }
   .font-display {
     font-family: var(--font-display);
@@ -228,11 +240,6 @@
   }
   .text-cosmic {
     color: var(--color-cosmic);
-  }
-  .dark\:border-cosmic {
-    @media (prefers-color-scheme: dark) {
-      border-color: var(--color-cosmic);
-    }
   }
   .dark\:border-lilac {
     @media (prefers-color-scheme: dark) {
@@ -247,6 +254,11 @@
   .dark\:bg-gray-800 {
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-gray-800);
+    }
+  }
+  .dark\:fill-lilac {
+    @media (prefers-color-scheme: dark) {
+      fill: var(--color-lilac);
     }
   }
   .dark\:text-lilac {
