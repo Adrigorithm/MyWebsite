@@ -178,6 +178,9 @@
   .fixed {
     position: fixed;
   }
+  .bottom-0 {
+    bottom: calc(var(--spacing) * 0);
+  }
   .contents {
     display: contents;
   }
@@ -186,6 +189,15 @@
   }
   .hidden {
     display: none;
+  }
+  .min-h-dvh {
+    min-height: 100dvh;
+  }
+  .grow {
+    flex-grow: 1;
+  }
+  .flex-col {
+    flex-direction: column;
   }
   .items-center {
     align-items: center;
@@ -219,14 +231,8 @@
   .fill-cosmic {
     fill: var(--color-cosmic);
   }
-  .p-1 {
-    padding: calc(var(--spacing) * 1);
-  }
   .p-1\.5 {
     padding: calc(var(--spacing) * 1.5);
-  }
-  .p-2 {
-    padding: calc(var(--spacing) * 2);
   }
   .px-1\.5 {
     padding-inline: calc(var(--spacing) * 1.5);
