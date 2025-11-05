@@ -14,6 +14,9 @@ class Router {
   setup() {
     this.closeNavbar();
 
+    let headerHeight = document.getElementsByTagName("header")[0].clientHeight;
+    this.#navbar.style.top = `${headerHeight}px`;
+
     this.#navbarControls[0].addEventListener("click", () => {
       if (this.#isNavbarFirstShow) {
         let navbarNav = this.#navbar.parentElement;
