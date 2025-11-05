@@ -193,24 +193,24 @@
             </svg>
         </header>
 
-        <main class="grow">
+        <main class="grow relative">
             <nav
-                class="bg-gray-300 dark:bg-gray-800 text-cosmic dark:text-lilac fixed opacity-80 h-full px-1.5 duration-200 invisible"
+                class="bg-gray-300 dark:bg-gray-800 text-cosmic dark:text-lilac opacity-80 duration-200 invisible z-10 h-full absolute"
             >
-                <ul id="nav-main" class="flex flex-col">
-                    <li>
+                <ul id="nav-main" class="flex flex-col px-1.5">
+                    <li class="pr-8 border-cosmic dark:border-lilac">
                         <button>Home</button>
                     </li>
-                    <li>
+                    <li class="pr-8 border-cosmic dark:border-lilac">
                         <button value="about">About</button>
                     </li>
-                    <li>
+                    <li class="pr-8 border-cosmic dark:border-lilac">
                         <button value="projects">Projects</button>
                     </li>
                 </ul>
             </nav>
 
-            <section class="hidden grow">
+            <section class="hidden">
                 <h1>Home</h1>
                 <h1>Home</h1>
                 <h1>Home</h1>
@@ -223,7 +223,7 @@
                 <h1>Home</h1>
             </section>
 
-            <section id="about" class="hidden grow">
+            <section id="about" class="hidden">
                 <h1>About</h1>
                 <h1>About</h1>
                 <h1>About</h1>
@@ -236,7 +236,7 @@
                 <h1>About</h1>
             </section>
 
-            <section id="projects" class="hidden grow">
+            <section id="projects" class="hidden">
                 <h1>Projects</h1>
                 <h1>Projects</h1>
                 <h1>Projects</h1>

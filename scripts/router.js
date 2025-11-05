@@ -74,8 +74,13 @@ class Router {
       let button = li.getElementsByTagName("button")[0];
       let buttonValue = button?.value;
 
-      if (buttonValue == newId) button.classList.add("font-bold");
-      else if (buttonValue == oldId) button.classList.remove("font-bold");
+      if (buttonValue == newId) {
+        button.classList.add("font-bold");
+        li.classList.add("border-r");
+      } else if (buttonValue == oldId) {
+        button.classList.remove("font-bold");
+        li.classList.remove("border-r");
+      }
     }
 
     for (const main of this.#contents) {
