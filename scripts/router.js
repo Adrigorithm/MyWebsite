@@ -3,6 +3,8 @@ class Router {
   #navbarControls;
   #contents;
 
+  #isNavbarFirstShow = true;
+
   constructor(navbar, navbarControls, contents) {
     this.#navbar = navbar;
     this.#navbarControls = navbarControls;
@@ -13,6 +15,15 @@ class Router {
     this.closeNavbar();
 
     this.#navbarControls[0].addEventListener("click", () => {
+      if (this.#isNavbarFirstShow) {
+        let navbarNav = this.#navbar.parentElement;
+
+        navbarNav.classList.remove("invisible");
+        navbarNav.classList.add("transition-margin-left");
+
+        this.#isNavbarFirstShow = false;
+      }
+
       this.openNavbar();
 
       this.#navbarControls[0].classList.add("hidden");
