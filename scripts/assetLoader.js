@@ -4,7 +4,7 @@ class AssetLoader {
   constructor(images) {
     this.#images = images;
 
-    loadAssets();
+    this.loadAssets();
   }
 
   loadAssets() {
