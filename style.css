@@ -7,6 +7,10 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-300: oklch(80.8% 0.114 19.571);
+    --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-green-300: oklch(87.1% 0.15 154.449);
+    --color-green-700: oklch(52.7% 0.154 150.069);
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-700: oklch(37.3% 0.034 259.733);
@@ -239,8 +243,14 @@
     --tw-translate-y: calc(calc(1/2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .transform {
+    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
   .flex-col {
     flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
   }
   .items-center {
     align-items: center;
@@ -250,6 +260,9 @@
   }
   .justify-center {
     justify-content: center;
+  }
+  .justify-end {
+    justify-content: flex-end;
   }
   .gap-1 {
     gap: calc(var(--spacing) * 1);
@@ -277,11 +290,20 @@
   .bg-gray-400 {
     background-color: var(--color-gray-400);
   }
+  .bg-green-300 {
+    background-color: var(--color-green-300);
+  }
   .fill-cosmic {
     fill: var(--color-cosmic);
   }
   .fill-gray-300 {
     fill: var(--color-gray-300);
+  }
+  .fill-green-700 {
+    fill: var(--color-green-700);
+  }
+  .fill-red-700 {
+    fill: var(--color-red-700);
   }
   .stroke-cosmic {
     stroke: var(--color-cosmic);
@@ -294,9 +316,6 @@
   }
   .p-3 {
     padding: calc(var(--spacing) * 3);
-  }
-  .p-5 {
-    padding: calc(var(--spacing) * 5);
   }
   .px-1\.5 {
     padding-inline: calc(var(--spacing) * 1.5);
@@ -359,14 +378,29 @@
       background-color: var(--color-gray-800);
     }
   }
+  .dark\:bg-green-700 {
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-green-700);
+    }
+  }
   .dark\:fill-gray-800 {
     @media (prefers-color-scheme: dark) {
       fill: var(--color-gray-800);
     }
   }
+  .dark\:fill-green-300 {
+    @media (prefers-color-scheme: dark) {
+      fill: var(--color-green-300);
+    }
+  }
   .dark\:fill-lilac {
     @media (prefers-color-scheme: dark) {
       fill: var(--color-lilac);
+    }
+  }
+  .dark\:fill-red-300 {
+    @media (prefers-color-scheme: dark) {
+      fill: var(--color-red-300);
     }
   }
   .dark\:stroke-lilac {
@@ -393,6 +427,18 @@
     filter: brightness(0) saturate(100%) invert(66%) sepia(55%) saturate(2136%) hue-rotate(208deg) brightness(101%) contrast(101%);
   }
 }
+.filter-success {
+  filter: brightness(0) saturate(100%) invert(30%) sepia(90%) saturate(895%) hue-rotate(111deg) brightness(95%) contrast(103%);
+  @media (prefers-color-scheme: dark) {
+    filter: brightness(0) saturate(100%) invert(88%) sepia(11%) saturate(1628%) hue-rotate(81deg) brightness(98%) contrast(94%);
+  }
+}
+.filter-background {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(8%) saturate(441%) hue-rotate(179deg) brightness(93%) contrast(95%);
+  @media (prefers-color-scheme: dark) {
+    filter: brightness(0) saturate(100%) invert(22%) sepia(8%) saturate(1758%) hue-rotate(178deg) brightness(96%) contrast(88%);
+  }
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
@@ -407,6 +453,26 @@
   syntax: "*";
   inherits: false;
   initial-value: 0;
+}
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
 }
 @property --tw-border-style {
   syntax: "*";
@@ -492,6 +558,11 @@
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
       --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-shadow: 0 0 #0000;
