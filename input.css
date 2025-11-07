@@ -14,3 +14,13 @@
 
     --font-display: "Inter", sans-serif;
 }
+
+.filter-accent {
+    filter: brightness(0) saturate(100%) invert(15%) sepia(39%) saturate(4685%)
+        hue-rotate(257deg) brightness(92%) contrast(137%);
+
+    @variant dark {
+        filter: brightness(0) saturate(100%) invert(66%) sepia(55%)
+            saturate(2136%) hue-rotate(208deg) brightness(101%) contrast(101%);
+    }
+}

@@ -1,11 +1,11 @@
 const Language = {
-  English: "en",
+  English: "gb",
   Dutch: "nl",
   French: "fr",
   German: "de",
   Polish: "pl",
   Catalan: "ca",
-  Chinese: "zh",
+  Chinese: "cn",
   Japanese: "jp",
   Norwegian: "no",
 };
