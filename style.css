@@ -217,6 +217,9 @@
   .z-30 {
     z-index: 30;
   }
+  .mb-2\.5 {
+    margin-bottom: calc(var(--spacing) * 2.5);
+  }
   .contents {
     display: contents;
   }
@@ -290,6 +293,9 @@
   .bg-gray-400 {
     background-color: var(--color-gray-400);
   }
+  .bg-gray-800 {
+    background-color: var(--color-gray-800);
+  }
   .bg-green-300 {
     background-color: var(--color-green-300);
   }
@@ -301,6 +307,9 @@
   }
   .fill-green-700 {
     fill: var(--color-green-700);
+  }
+  .fill-lilac {
+    fill: var(--color-lilac);
   }
   .fill-red-700 {
     fill: var(--color-red-700);

@@ -84,6 +84,10 @@ class Translator {
     }
   }
 
+  getActiveLanguage() {
+    return this.#language_active;
+  }
+
   getEnglishTranslations() {
     return ["Hi"];
   }
@@ -120,3 +124,5 @@ class Translator {
     return ["Hi"];
   }
 }
+
+export { Translator };
