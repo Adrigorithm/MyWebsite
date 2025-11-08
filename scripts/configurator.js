@@ -49,6 +49,7 @@ class Configurator {
           language,
           this.getBannerFromSectionDiv(language),
         );
+        this.refreshApplyButtons();
       });
 
       if (language.dataset.lang !== this.#originalLanguage) return;
@@ -61,6 +62,7 @@ class Configurator {
     this.#themes.forEach((theme) => {
       theme.addEventListener("click", () => {
         this.setActiveThemeBanner(theme, this.getBannerFromSectionDiv(theme));
+        this.refreshApplyButtons();
       });
 
       if (theme.dataset.theme !== this.#originalTheme) return;
@@ -69,6 +71,16 @@ class Configurator {
 
       activeThemeBanner.classList.remove("invisible");
     });
+  }
+
+  refreshApplyButtons() {
+    if (this.areChangesPending()) {
+      this.#applyButton.classList.add("hidden");
+      this.#applyChangesButton.classList.remove("hidden");
+    } else {
+      this.#applyButton.classList.remove("hidden");
+      this.#applyChangesButton.classList.add("hidden");
+    }
   }
 
   getBannerFromLanguage(lang) {
@@ -106,11 +118,8 @@ class Configurator {
       }
 
       if (theme.dataset.theme === this.#originalTheme) {
-        activeBanner.classList.replace("bg-yellow-300", "bg-green-300");
-        activeBanner.classList.replace(
-          "dark:bg-yellow-700",
-          "dark:bg-green-700",
-        );
+        banner.classList.replace("bg-yellow-300", "bg-green-300");
+        banner.classList.replace("dark:bg-yellow-700", "dark:bg-green-700");
       } else {
         banner.classList.remove("invisible");
       }
@@ -131,8 +140,15 @@ class Configurator {
     activeBanner.classList.replace("bg-green-300", "bg-yellow-300");
     activeBanner.classList.replace("dark:bg-green-700", "dark:bg-yellow-700");
     banner.classList.remove("invisible");
-    this.#applyButton.classList.add("hidden");
-    this.#applyChangesButton.classList.remove("hidden");
+  }
+
+  areChangesPending() {
+    return (
+      (this.#selectionLanguage &&
+        this.#selectionLanguage.dataset.lang !== this.#originalLanguage) ||
+      (this.#selectionTheme &&
+        this.#selectionTheme.dataset.theme !== this.#originalTheme)
+    );
   }
 
   setActiveLangBanner(lang, banner) {
@@ -152,11 +168,8 @@ class Configurator {
       }
 
       if (lang.dataset.lang === this.#originalLanguage) {
-        activeBanner.classList.replace("bg-yellow-300", "bg-green-300");
-        activeBanner.classList.replace(
-          "dark:bg-yellow-700",
-          "dark:bg-green-700",
-        );
+        banner.classList.replace("bg-yellow-300", "bg-green-300");
+        banner.classList.replace("dark:bg-yellow-700", "dark:bg-green-700");
       } else {
         banner.classList.remove("invisible");
       }
@@ -177,8 +190,6 @@ class Configurator {
     activeBanner.classList.replace("bg-green-300", "bg-yellow-300");
     activeBanner.classList.replace("dark:bg-green-700", "dark:bg-yellow-700");
     banner.classList.remove("invisible");
-    this.#applyButton.classList.add("hidden");
-    this.#applyChangesButton.classList.remove("hidden");
   }
 
   changeLanguageActive(language) {
