@@ -1,17 +1,25 @@
 import { AssetLoader } from "./assetLoader.js";
 import { ClickIndicator } from "./clickIndicator.js";
+import { Configurator } from "./configurator.js";
 import { Router } from "./router.js";
+import { Translator } from "./translator.js";
 
 document.addEventListener("DOMContentLoaded", load);
 
 let router = undefined;
 let assetsLoader = undefined;
 let clickIndicator = undefined;
+let translator = undefined;
+let configurator = undefined;
 
 function load() {
   setupRouter();
   setupAssetsLoader();
   setupClickIndicator();
+  setupTranslator();
+  setupConfigurator();
+
+  setupActiveLanguageButton();
 }
 
 function setupRouter() {
@@ -35,4 +43,30 @@ function setupClickIndicator() {
   let paw = document.getElementById("clickIndicator");
 
   clickIndicator = new ClickIndicator(paw);
+}
+
+function setupTranslator() {
+  translator = new Translator();
+}
+
+function setupConfigurator() {
+  let configuratorElement = document.getElementById("configurator");
+  let activateOnClickElements = document.getElementsByClassName("openConfig");
+
+  configurator = new Configurator(
+    configuratorElement,
+    activateOnClickElements,
+    translator,
+  );
+}
+
+function setupActiveLanguageButton() {
+  let button = document.getElementById("activeLanguage");
+  button.textContent = "";
+  let flag = configurator.getActiveLanguageSvg(translator.getActiveLanguage());
+  let flagCopy = flag.cloneNode(true);
+
+  flagCopy.classList.replace("h-16", "h-4");
+
+  button.appendChild(flagCopy);
 }
