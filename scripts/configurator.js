@@ -51,12 +51,13 @@ class Configurator {
         this.#selectionTheme?.dataset.theme ?? this.#originalThemeCode,
       );
 
-      this.#applyChangesButton.classList.add("hidden");
+      this.resetApplyButtons();
       this.render();
     });
 
     defaultsButton.addEventListener("click", () => {
       this.saveSettings(Language.English, null);
+      this.resetApplyButtons();
       this.render();
     });
   }
@@ -77,6 +78,11 @@ class Configurator {
     }
 
     this.updateActiveLanguageButton();
+  }
+
+  resetApplyButtons() {
+    this.#applyChangesButton.classList.add("hidden");
+    this.#applyButton.classList.remove("hidden");
   }
 
   render() {
@@ -117,6 +123,8 @@ class Configurator {
         this.getBannerFromSectionDiv(theme).classList.add("invisible");
       else this.#originalTheme = theme;
     });
+
+    this.resetApplyButtons();
   }
 
   activateLanguage(language) {
@@ -185,21 +193,26 @@ class Configurator {
 
         flagCopy.classList.replace("h-16", "h-4");
         this.#activeLanguagebutton.appendChild(flagCopy);
+        void this.#activeLanguagebutton.offsetWidth;
       }
     }
+  }
+
+  setActiveLanguageButton(button) {
+    this.#activeLanguagebutton = button;
   }
 
   show() {
     if (this.#isActive) return;
 
     this.render();
-    this.#configurator.classList.remove("invisible");
+    this.#configurator.classList.remove("hidden");
 
     this.#isActive = true;
   }
 
   close() {
-    this.#configurator.classList.add("invisible");
+    this.#configurator.classList.add("hidden");
 
     this.#isActive = false;
   }

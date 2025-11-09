@@ -11,6 +11,7 @@ let assetsLoader = undefined;
 let clickIndicator = undefined;
 let translator = undefined;
 let configurator = undefined;
+let activeLanguageButton = undefined;
 
 function load() {
   setupRouter();
@@ -60,5 +61,7 @@ function setupConfigurator() {
 }
 
 function setupActiveLanguageButton() {
+  activeLanguageButton = document.getElementById("activeLanguage");
+  configurator.setActiveLanguageButton(activeLanguageButton);
   configurator.updateActiveLanguageButton();
 }
