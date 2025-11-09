@@ -1,4 +1,4 @@
-import { Language } from "./enums.js";
+import { Language, LogLevel } from "./enums.js";
 
 class Configurator {
   #configurator; // The entire config window
@@ -15,6 +15,7 @@ class Configurator {
   #applyButton; // Button to change settings (does nothing)
   #applyChangesButton; // Button to change changed settings
   #activeLanguagebutton; // Button to display current display language
+  #toastSpawner; // Used to spawn 'saved' messages
 
   constructor(configurator, activateOnClickElements, translator) {
     this.#configurator = configurator;
@@ -53,12 +54,14 @@ class Configurator {
 
       this.resetApplyButtons();
       this.render();
+      this.#toastSpawner.spawn("Settings updated!", LogLevel.Success);
     });
 
     defaultsButton.addEventListener("click", () => {
       this.saveSettings(Language.English, null);
       this.resetApplyButtons();
       this.render();
+      this.#toastSpawner.spawn("Reverted setting changes!", LogLevel.Success);
     });
   }
 
@@ -196,6 +199,10 @@ class Configurator {
         void this.#activeLanguagebutton.offsetWidth;
       }
     }
+  }
+
+  setToastSpawner(toastSpawner) {
+    this.#toastSpawner = toastSpawner;
   }
 
   setActiveLanguageButton(button) {

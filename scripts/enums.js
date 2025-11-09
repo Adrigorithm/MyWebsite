@@ -10,4 +10,8 @@ const Language = {
   Norwegian: "no",
 };
 
-export { Language };
+const LogLevel = {
+  Success: 1,
+};
+
+export { Language, LogLevel };

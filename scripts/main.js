@@ -2,6 +2,7 @@ import { AssetLoader } from "./assetLoader.js";
 import { ClickIndicator } from "./clickIndicator.js";
 import { Configurator } from "./configurator.js";
 import { Router } from "./router.js";
+import { ToastSpawner } from "./toastSpawner.js";
 import { Translator } from "./translator.js";
 
 document.addEventListener("DOMContentLoaded", load);
@@ -12,6 +13,7 @@ let clickIndicator = undefined;
 let translator = undefined;
 let configurator = undefined;
 let activeLanguageButton = undefined;
+let toastSpawner = undefined;
 
 function load() {
   setupRouter();
@@ -20,6 +22,9 @@ function load() {
   setupTranslator();
   setupConfigurator();
   setupActiveLanguageButton();
+  setupToastSpawner();
+
+  applyDependencies();
 }
 
 function setupRouter() {
@@ -64,4 +69,12 @@ function setupActiveLanguageButton() {
   activeLanguageButton = document.getElementById("activeLanguage");
   configurator.setActiveLanguageButton(activeLanguageButton);
   configurator.updateActiveLanguageButton();
+}
+
+function setupToastSpawner() {
+  toastSpawner = new ToastSpawner();
+}
+
+function applyDependencies() {
+  configurator.setToastSpawner(toastSpawner);
 }
