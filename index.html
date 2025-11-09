@@ -8,18 +8,13 @@
         <link href="style.css" rel="stylesheet" />
 
         <script>
-            let theme = localStorage.theme;
-
-            if (!theme) {
-                theme = window.matchMedia("(prefers-color-scheme: dark)")
-                    .matches
-                    ? "dark"
-                    : "";
-
-                localStorage.setItem("theme", theme);
-            }
-
-            document.documentElement.classList.add(theme);
+            document.documentElement.classList.toggle(
+                "dark",
+                localStorage.theme === "dark" ||
+                    (!("theme" in localStorage) &&
+                        window.matchMedia("(prefers-color-scheme: dark)")
+                            .matches),
+            );
         </script>
         <script type="module" src="scripts/main.js"></script>
 
@@ -308,9 +303,7 @@
                                        M 11.03,11.00 11.03,11.00 11.03,11.00 11.03,11.00"
                                 />
                             </svg>
-                            <div
-                                class="bg-green-300 dark:bg-green-700 invisible"
-                            >
+                            <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
                         </div>
@@ -359,9 +352,7 @@
                                        M 10.58,10.38 10.58,10.38 10.58,10.38 10.58,10.38"
                                 />
                             </svg>
-                            <div
-                                class="bg-green-300 dark:bg-green-700 invisible"
-                            >
+                            <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
                         </div>
@@ -399,9 +390,7 @@
                                     d="M0 193v96h640v-96zM273 0v480h96V0z"
                                 />
                             </svg>
-                            <div
-                                class="bg-green-300 dark:bg-green-700 invisible"
-                            >
+                            <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
                         </div>
@@ -417,9 +406,7 @@
                                 <path fill="#21468b" d="M0 320h640v160H0z" />
                             </svg>
 
-                            <div
-                                class="bg-green-300 dark:bg-green-700 invisible"
-                            >
+                            <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
                         </div>
@@ -438,9 +425,7 @@
                                 />
                             </svg>
 
-                            <div
-                                class="bg-green-300 dark:bg-green-700 invisible"
-                            >
+                            <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
                         </div>
@@ -456,9 +441,7 @@
                                 <path fill="red" d="M0 160h640v160H0z" />
                             </svg>
 
-                            <div
-                                class="bg-green-300 dark:bg-green-700 invisible"
-                            >
+                            <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
                         </div>
@@ -473,9 +456,7 @@
                                 <path fill="#dc143c" d="M640 480H0V240h640z" />
                             </svg>
 
-                            <div
-                                class="bg-green-300 dark:bg-green-700 invisible"
-                            >
+                            <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
                         </div>
@@ -495,9 +476,7 @@
                                 />
                             </svg>
 
-                            <div
-                                class="bg-green-300 dark:bg-green-700 invisible"
-                            >
+                            <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
                         </div>
@@ -548,9 +527,7 @@
                                 />
                             </svg>
 
-                            <div
-                                class="bg-green-300 dark:bg-green-700 invisible"
-                            >
+                            <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
                         </div>
@@ -589,9 +566,7 @@
                                 </g>
                             </svg>
 
-                            <div
-                                class="bg-green-300 dark:bg-green-700 invisible"
-                            >
+                            <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
                         </div>
@@ -609,9 +584,7 @@
                                 <path fill="#002664" d="M0 210h640v60H0z" />
                             </svg>
 
-                            <div
-                                class="bg-green-300 dark:bg-green-700 invisible"
-                            >
+                            <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
                         </div>
@@ -619,7 +592,10 @@
                 </section>
 
                 <section class="flex p-1.5 gap-1 justify-end">
-                    <button class="bg-gray-300 dark:bg-gray-800 p-1.5">
+                    <button
+                        id="defaults"
+                        class="bg-gray-300 dark:bg-gray-800 p-1.5"
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             class="fill-cosmic dark:fill-lilac h-6"

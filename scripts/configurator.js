@@ -1,15 +1,20 @@
+import { Language } from "./enums.js";
+
 class Configurator {
-  #configurator;
-  #languages;
-  #originalLanguage; // Language code: "gb" || "nl" || ...
-  #selectionLanguage; // Lanuguage setting <div>
-  #themes;
-  #originalTheme; // Theme string: "dark" || "light" || ...
+  #configurator; // The entire config window
+  #languages; // List of all language settings <div>s
+  #originalLanguageCode; // "gb", "nl", ...
+  #originalLanguage; // Language setting <div>
+  #selectionLanguage; // Language setting <div>
+  #themes; // List of all theme settings <div>s
+  #originalThemeCode; // "dark", "light"
+  #originalTheme; // Theme setting <div>
   #selectionTheme; // Theme setting <div>
-  #isActive = false;
-  #translator;
-  #applyButton;
-  #applyChangesButton;
+  #isActive = false; // Window visibility
+  #translator; // Translator object
+  #applyButton; // Button to change settings (does nothing)
+  #applyChangesButton; // Button to change changed settings
+  #activeLanguagebutton; // Button to display current display language
 
   constructor(configurator, activateOnClickElements, translator) {
     this.#configurator = configurator;
@@ -30,47 +35,120 @@ class Configurator {
     this.#applyButton = this.#configurator.querySelector("#apply");
     this.#applyChangesButton =
       this.#configurator.querySelector("#applyChanges");
+    this.#activeLanguagebutton = document.getElementById("activeLanguage");
     let closeButtons = this.#configurator.getElementsByClassName("closeConfig");
+    let defaultsButton = this.#configurator.querySelector("#defaults");
 
     for (const button of closeButtons) {
       button.addEventListener("click", () => {
         this.close();
       });
     }
+
+    this.#applyChangesButton.addEventListener("click", (e) => {
+      this.saveSettings(
+        this.#selectionLanguage?.dataset.lang ?? this.#originalLanguageCode,
+        this.#selectionTheme?.dataset.theme ?? this.#originalThemeCode,
+      );
+
+      this.#applyChangesButton.classList.add("hidden");
+      this.render();
+    });
+
+    defaultsButton.addEventListener("click", () => {
+      this.saveSettings(Language.English, null);
+      this.render();
+    });
   }
 
-  redraw() {
-    this.#originalLanguage = this.#translator.getActiveLanguage();
-    this.#originalTheme = localStorage.getItem("theme");
+  saveSettings(lang, theme) {
+    this.#translator.translate(lang);
+
+    if (theme) {
+      localStorage.setItem("theme", theme);
+      document.documentElement.classList = [theme];
+    } else {
+      localStorage.removeItem("theme");
+      document.documentElement.classList = [
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light",
+      ];
+    }
+
+    this.updateActiveLanguageButton();
+  }
+
+  render() {
+    this.#originalLanguageCode = this.#translator.getActiveLanguage();
+    this.#originalThemeCode = localStorage.getItem("theme");
+
+    if (!this.#originalThemeCode)
+      this.#originalThemeCode = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches
+        ? "dark"
+        : "light";
 
     this.#languages.forEach((language) => {
       language.addEventListener("click", () => {
-        this.setActiveLangBanner(
-          language,
-          this.getBannerFromSectionDiv(language),
-        );
+        this.activateLanguage(language);
         this.refreshApplyButtons();
       });
 
-      if (language.dataset.lang !== this.#originalLanguage) return;
+      let banner = this.getBannerFromSectionDiv(language);
+      banner.classList = ["bg-green-300 dark:bg-green-700"];
 
-      let activeLangBanner = this.getBannerFromSectionDiv(language);
-
-      activeLangBanner.classList.remove("invisible");
+      if (language.dataset.lang !== this.#originalLanguageCode)
+        this.getBannerFromSectionDiv(language).classList.add("invisible");
+      else this.#originalLanguage = language;
     });
 
     this.#themes.forEach((theme) => {
       theme.addEventListener("click", () => {
-        this.setActiveThemeBanner(theme, this.getBannerFromSectionDiv(theme));
+        this.activateTheme(theme);
         this.refreshApplyButtons();
       });
 
-      if (theme.dataset.theme !== this.#originalTheme) return;
+      let banner = this.getBannerFromSectionDiv(theme);
+      banner.classList = ["bg-green-300 dark:bg-green-700"];
 
-      let activeThemeBanner = this.getBannerFromSectionDiv(theme);
-
-      activeThemeBanner.classList.remove("invisible");
+      if (theme.dataset.theme !== this.#originalThemeCode)
+        this.getBannerFromSectionDiv(theme).classList.add("invisible");
+      else this.#originalTheme = theme;
     });
+  }
+
+  activateLanguage(language) {
+    if (this.#selectionLanguage)
+      this.getBannerFromSectionDiv(this.#selectionLanguage).classList.add(
+        "invisible",
+      );
+
+    let banner = this.getBannerFromSectionDiv(language);
+    let originalBanner = this.getBannerFromSectionDiv(this.#originalLanguage);
+
+    if (language != this.#originalLanguage)
+      originalBanner.classList = ["bg-yellow-300 dark:bg-yellow-700"];
+
+    banner.classList = ["bg-green-300 dark:bg-green-700"];
+    this.#selectionLanguage = language;
+  }
+
+  activateTheme(theme) {
+    if (this.#selectionTheme)
+      this.getBannerFromSectionDiv(this.#selectionTheme).classList.add(
+        "invisible",
+      );
+
+    let banner = this.getBannerFromSectionDiv(theme);
+    let originalBanner = this.getBannerFromSectionDiv(this.#originalTheme);
+
+    if (theme != this.#originalTheme)
+      originalBanner.classList = ["bg-yellow-300 dark:bg-yellow-700"];
+
+    banner.classList = ["bg-green-300 dark:bg-green-700"];
+    this.#selectionTheme = theme;
   }
 
   refreshApplyButtons() {
@@ -83,137 +161,30 @@ class Configurator {
     }
   }
 
-  getBannerFromLanguage(lang) {
-    for (const langDiv of this.#languages) {
-      if (langDiv.dataset.lang === lang)
-        return this.getBannerFromSectionDiv(langDiv);
-    }
-  }
-
-  getBannerFromTheme(theme) {
-    for (const themeDiv of this.#themes) {
-      if (themeDiv.dataset.theme === theme)
-        return this.getBannerFromSectionDiv(themeDiv);
-    }
-  }
-
   getBannerFromSectionDiv(div) {
     return div.children[div.children.length - 1];
-  }
-
-  setActiveThemeBanner(theme, banner) {
-    if (this.#selectionTheme) {
-      if (this.#selectionTheme === theme) return;
-
-      let activeBanner = this.getBannerFromSectionDiv(this.#selectionTheme);
-
-      if (this.#selectionTheme.dataset.theme === this.#originalTheme) {
-        activeBanner.classList.replace("bg-green-300", "bg-yellow-300");
-        activeBanner.classList.replace(
-          "dark:bg-green-700",
-          "dark:bg-yellow-700",
-        );
-      } else {
-        activeBanner.classList.add("invisible");
-      }
-
-      if (theme.dataset.theme === this.#originalTheme) {
-        banner.classList.replace("bg-yellow-300", "bg-green-300");
-        banner.classList.replace("dark:bg-yellow-700", "dark:bg-green-700");
-      } else {
-        banner.classList.remove("invisible");
-      }
-
-      this.#applyButton.classList.add("hidden");
-      this.#applyChangesButton.classList.remove("hidden");
-
-      this.#selectionTheme = theme;
-
-      return;
-    }
-
-    if (this.#originalTheme === theme.dataset.theme) return;
-
-    let activeBanner = this.getBannerFromTheme(this.#originalTheme);
-    this.#selectionTheme = theme;
-
-    activeBanner.classList.replace("bg-green-300", "bg-yellow-300");
-    activeBanner.classList.replace("dark:bg-green-700", "dark:bg-yellow-700");
-    banner.classList.remove("invisible");
   }
 
   areChangesPending() {
     return (
       (this.#selectionLanguage &&
-        this.#selectionLanguage.dataset.lang !== this.#originalLanguage) ||
+        this.#selectionLanguage.dataset.lang !== this.#originalLanguageCode) ||
       (this.#selectionTheme &&
-        this.#selectionTheme.dataset.theme !== this.#originalTheme)
+        this.#selectionTheme.dataset.theme !== this.#originalThemeCode)
     );
   }
 
-  setActiveLangBanner(lang, banner) {
-    if (this.#selectionLanguage) {
-      if (this.#selectionLanguage === lang) return;
+  updateActiveLanguageButton() {
+    let langCode = this.#translator.getActiveLanguage();
 
-      let activeBanner = this.getBannerFromSectionDiv(this.#selectionLanguage);
-
-      if (this.#selectionLanguage.dataset.lang === this.#originalLanguage) {
-        activeBanner.classList.replace("bg-green-300", "bg-yellow-300");
-        activeBanner.classList.replace(
-          "dark:bg-green-700",
-          "dark:bg-yellow-700",
-        );
-      } else {
-        activeBanner.classList.add("invisible");
-      }
-
-      if (lang.dataset.lang === this.#originalLanguage) {
-        banner.classList.replace("bg-yellow-300", "bg-green-300");
-        banner.classList.replace("dark:bg-yellow-700", "dark:bg-green-700");
-      } else {
-        banner.classList.remove("invisible");
-      }
-
-      this.#applyButton.classList.add("hidden");
-      this.#applyChangesButton.classList.remove("hidden");
-
-      this.#selectionLanguage = lang;
-
-      return;
-    }
-
-    if (this.#originalLanguage === lang.dataset.lang) return;
-
-    let activeBanner = this.getBannerFromLanguage(this.#originalLanguage);
-    this.#selectionLanguage = lang;
-
-    activeBanner.classList.replace("bg-green-300", "bg-yellow-300");
-    activeBanner.classList.replace("dark:bg-green-700", "dark:bg-yellow-700");
-    banner.classList.remove("invisible");
-  }
-
-  changeLanguageActive(language) {
-    let activeBanner = language.children[language.children.length - 1];
-    let checkMark = activeBanner.children[0];
-
-    activeBanner.classList.add("bg-green-300", "dark:bg-green-700");
-    checkMark.classList.replace("filter-success", "filter-background");
-  }
-
-  changeLanguageInactive(language) {
-    let activeBanner = language.children[language.children.length - 1];
-    let checkMark = activeBanner.children[0];
-
-    activeBanner.classList = [];
-    checkMark.classList.replace("filter-background", "filter-success");
-  }
-
-  getActiveLanguageSvg(langCode) {
     for (const language of this.#languages) {
       if (language.dataset.lang === langCode) {
-        let svg = language.getElementsByTagName("svg")[0];
+        let flag = language.getElementsByTagName("svg")[0];
+        let flagCopy = flag.cloneNode(true);
+        this.#activeLanguagebutton.textContent = "";
 
-        return svg;
+        flagCopy.classList.replace("h-16", "h-4");
+        this.#activeLanguagebutton.appendChild(flagCopy);
       }
     }
   }
@@ -221,7 +192,7 @@ class Configurator {
   show() {
     if (this.#isActive) return;
 
-    this.redraw();
+    this.render();
     this.#configurator.classList.remove("invisible");
 
     this.#isActive = true;

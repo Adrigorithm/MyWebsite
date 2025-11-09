@@ -18,7 +18,6 @@ function load() {
   setupClickIndicator();
   setupTranslator();
   setupConfigurator();
-
   setupActiveLanguageButton();
 }
 
@@ -61,12 +60,5 @@ function setupConfigurator() {
 }
 
 function setupActiveLanguageButton() {
-  let button = document.getElementById("activeLanguage");
-  button.textContent = "";
-  let flag = configurator.getActiveLanguageSvg(translator.getActiveLanguage());
-  let flagCopy = flag.cloneNode(true);
-
-  flagCopy.classList.replace("h-16", "h-4");
-
-  button.appendChild(flagCopy);
+  configurator.updateActiveLanguageButton();
 }

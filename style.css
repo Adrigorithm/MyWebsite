@@ -385,62 +385,62 @@
     transition-duration: 1000ms;
   }
   .dark\:border-gray-800 {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       border-color: var(--color-gray-800);
     }
   }
   .dark\:border-lilac {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       border-color: var(--color-lilac);
     }
   }
   .dark\:bg-gray-700 {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       background-color: var(--color-gray-700);
     }
   }
   .dark\:bg-gray-800 {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       background-color: var(--color-gray-800);
     }
   }
   .dark\:bg-green-700 {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       background-color: var(--color-green-700);
     }
   }
   .dark\:bg-yellow-700 {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       background-color: var(--color-yellow-700);
     }
   }
   .dark\:fill-gray-800 {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       fill: var(--color-gray-800);
     }
   }
   .dark\:fill-green-300 {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       fill: var(--color-green-300);
     }
   }
   .dark\:fill-lilac {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       fill: var(--color-lilac);
     }
   }
   .dark\:fill-red-300 {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       fill: var(--color-red-300);
     }
   }
   .dark\:stroke-lilac {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       stroke: var(--color-lilac);
     }
   }
   .dark\:text-lilac {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       color: var(--color-lilac);
     }
   }
@@ -454,19 +454,19 @@
 }
 .filter-accent {
   filter: brightness(0) saturate(100%) invert(15%) sepia(39%) saturate(4685%) hue-rotate(257deg) brightness(92%) contrast(137%);
-  @media (prefers-color-scheme: dark) {
+  &:where(.dark, .dark *) {
     filter: brightness(0) saturate(100%) invert(66%) sepia(55%) saturate(2136%) hue-rotate(208deg) brightness(101%) contrast(101%);
   }
 }
 .filter-success {
   filter: brightness(0) saturate(100%) invert(30%) sepia(90%) saturate(895%) hue-rotate(111deg) brightness(95%) contrast(103%);
-  @media (prefers-color-scheme: dark) {
+  &:where(.dark, .dark *) {
     filter: brightness(0) saturate(100%) invert(88%) sepia(11%) saturate(1628%) hue-rotate(81deg) brightness(98%) contrast(94%);
   }
 }
 .filter-background {
   filter: brightness(0) saturate(100%) invert(68%) sepia(8%) saturate(441%) hue-rotate(179deg) brightness(93%) contrast(95%);
-  @media (prefers-color-scheme: dark) {
+  &:where(.dark, .dark *) {
     filter: brightness(0) saturate(100%) invert(22%) sepia(8%) saturate(1758%) hue-rotate(178deg) brightness(96%) contrast(88%);
   }
 }
