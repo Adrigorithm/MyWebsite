@@ -24,15 +24,17 @@ class ToastSpawner {
     paragraph.appendChild(text);
     paragraph.classList.add("p-1.5", "relative");
     toast.appendChild(paragraph);
-    toast.classList.add(
-      "mb-3",
-      "right-0",
-      "fixed",
-      "duration-500",
-      "transition-margin-right",
-    );
+    toast.classList.add("mb-3", "right-0", "fixed");
 
-    toast.style.bottom = `${this.#footerHeight}px`;
+    let previousToast = this.#toasts[this.#toasts.length - 1];
+
+    if (previousToast) {
+      let previousToastHeight = previousToast.clientHeight;
+      let previousToastBottom = previousToast.style.bottom;
+      toast.style.bottom = `${previousToastHeight + parseInt(previousToastBottom.slice(0, -2)) + 12}px`;
+    } else {
+      toast.style.bottom = `${this.#footerHeight}px`;
+    }
 
     switch (logLevel) {
       case LogLevel.Success:
@@ -46,9 +48,18 @@ class ToastSpawner {
     document.body.prepend(toast);
     this.#toasts.push(toast);
 
-    setTimeout(() => {
-      let toastWidth = toast.clientWidth;
+    let toastWidth = toast.clientWidth;
+    toast.style.marginRight = `-${toastWidth}px`;
 
+    console.info(
+      "I made a toast for you nyu ^.^:",
+      toast.getBoundingClientRect(),
+    );
+
+    toast.style.transition = "margin-right 300ms ease-in";
+    toast.style.marginRight = 0;
+
+    setTimeout(() => {
       toast.style.marginRight = `-${toastWidth}px`;
     }, 3000);
   }
