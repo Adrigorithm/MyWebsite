@@ -3,6 +3,16 @@ import { Language } from "./enums.js";
 class Translator {
   #translations = new Map();
 
+  initialTranslate() {
+    const language = localStorage.getItem("lang");
+
+    if (!language || language === Language.English) return;
+
+    if (!this.#translations.has(language)) this.loadTranslations(language);
+
+    this.translateDocument(language);
+  }
+
   translate(language) {
     let storedLanguage = localStorage.getItem("lang") ?? Language.English;
 
@@ -10,15 +20,19 @@ class Translator {
 
     if (!this.#translations.has(language)) this.loadTranslations(language);
 
+    localStorage.lang = language;
+
     this.translateDocument(language);
   }
 
   translateDocument(language) {
-    let translatableElements = document.getElementsByClassName("translatable");
+    let translatableElements = document.querySelectorAll("[data-translatable]");
 
     for (let i = 0; i < translatableElements.length; i++) {
       let translatableElement = translatableElements[i];
-      translatableElement.textContent = this.#translations.get(language)[i];
+      translatableElement.textContent = this.#translations
+        .get(language)
+        .get(translatableElement.dataset.translatable);
     }
   }
 
@@ -31,37 +45,30 @@ class Translator {
       case Language.English:
       default:
         this.#translations.set(Language.English, this.getEnglishTranslations());
-        localStorage.lang = Language.English;
 
         return;
       case Language.Dutch:
         this.#translations.set(Language.Dutch, this.getDutchTranslations());
-        localStorage.lang = Language.Dutch;
 
         return;
       case Language.French:
         this.#translations.set(Language.French, this.getFrenchTranslations());
-        localStorage.lang = Language.French;
 
         return;
       case Language.German:
         this.#translations.set(Language.German, this.getGermanTranslations());
-        localStorage.lang = Language.German;
 
         return;
       case Language.Polish:
         this.#translations.set(Language.Polish, this.getPolishTranslations());
-        localStorage.lang = Language.Polish;
 
         return;
       case Language.Catalan:
         this.#translations.set(Language.Catalan, this.getCatalanTranslations());
-        localStorage.lang = Language.Catalan;
 
         return;
       case Language.Chinese:
         this.#translations.set(Language.Chinese, this.getChineseTranslations());
-        localStorage.lang = Language.Chinese;
 
         return;
       case Language.Japanese:
@@ -69,7 +76,6 @@ class Translator {
           Language.Japanese,
           this.getJapaneseranslations(),
         );
-        localStorage.lang = Language.Japanese;
 
         return;
       case Language.Norwegian:
@@ -77,7 +83,6 @@ class Translator {
           Language.Norwegian,
           this.getNorwegianTranslations(),
         );
-        localStorage.lang = Language.Norwegian;
 
         return;
     }
@@ -88,11 +93,21 @@ class Translator {
   }
 
   getEnglishTranslations() {
-    return ["Hi"];
+    let map = new Map()
+      .set("tab", "Adri's cat tree")
+      .set("about", "About")
+      .set("projects", "Projects");
+
+    return map;
   }
 
   getDutchTranslations() {
-    return ["Hi"];
+    let map = new Map()
+      .set("tab", "Adri's kattenboom")
+      .set("about", "Over")
+      .set("projects", "Projecten");
+
+    return map;
   }
 
   getFrenchTranslations() {

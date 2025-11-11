@@ -15,11 +15,12 @@ let configurator = undefined;
 let activeLanguageButton = undefined;
 let toastSpawner = undefined;
 
+setupTranslator();
+
 function load() {
   setupRouter();
   setupAssetsLoader();
   setupClickIndicator();
-  setupTranslator();
   setupConfigurator();
   setupActiveLanguageButton();
   setupToastSpawner();
@@ -52,6 +53,8 @@ function setupClickIndicator() {
 
 function setupTranslator() {
   translator = new Translator();
+
+  translator.initialTranslate();
 }
 
 function setupConfigurator() {
