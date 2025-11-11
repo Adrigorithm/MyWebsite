@@ -255,8 +255,13 @@
             </nav>
 
             <div
+                id="overlay"
+                class="fixed top-0 h-dvh w-dvw opacity-75 bg-gray-300 dark:bg-gray-800 hidden justify-center items-center z-80"
+            ></div>
+
+            <div
                 id="configurator"
-                class="shadow-xl fixed border border-gray-300 dark:border-gray-800 left-1/2 top-1/2 -translate-1/2 hidden"
+                class="shadow-xl fixed border border-gray-300 dark:border-gray-800 left-1/2 top-1/2 -translate-1/2 hidden z-90"
             >
                 <section class="flex bg-gray-300 dark:bg-gray-800 p-1.5">
                     <h2 class="grow">Configurator</h2>
@@ -1192,7 +1197,7 @@
 
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-7 fill-gray-300 dark:fill-gray-800 transition-fill fixed invisible duration-1000 z-40 pointer-events-none"
+            class="h-7 fill-gray-300 dark:fill-gray-800 transition-fill fixed invisible duration-1000 z-100 pointer-events-none"
             viewBox="0 0 798 787"
             id="clickIndicator"
         >

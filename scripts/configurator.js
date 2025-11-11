@@ -16,6 +16,7 @@ class Configurator {
   #applyChangesButton; // Button to change changed settings
   #activeLanguagebutton; // Button to display current display language
   #toastSpawner; // Used to spawn 'saved' messages
+  #overlay;
 
   constructor(configurator, activateOnClickElements, translator) {
     this.#configurator = configurator;
@@ -37,6 +38,7 @@ class Configurator {
     this.#applyChangesButton =
       this.#configurator.querySelector("#applyChanges");
     this.#activeLanguagebutton = document.getElementById("activeLanguage");
+    this.#overlay = document.getElementById("overlay");
     let closeButtons = this.#configurator.getElementsByClassName("closeConfig");
     let defaultsButton = this.#configurator.querySelector("#defaults");
 
@@ -212,6 +214,7 @@ class Configurator {
   show() {
     if (this.#isActive) return;
 
+    this.#overlay.classList.replace("hidden", "flex");
     this.render();
     this.#configurator.classList.remove("hidden");
 
@@ -220,6 +223,7 @@ class Configurator {
 
   close() {
     this.#configurator.classList.add("hidden");
+    this.#overlay.classList.replace("flex", "hidden");
 
     this.#isActive = false;
   }

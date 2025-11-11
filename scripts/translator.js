@@ -93,21 +93,17 @@ class Translator {
   }
 
   getEnglishTranslations() {
-    let map = new Map()
+    return new Map()
       .set("tab", "Adri's cat tree")
       .set("about", "About")
       .set("projects", "Projects");
-
-    return map;
   }
 
   getDutchTranslations() {
-    let map = new Map()
+    return new Map()
       .set("tab", "Adri's kattenboom")
       .set("about", "Over")
       .set("projects", "Projecten");
-
-    return map;
   }
 
   getFrenchTranslations() {
