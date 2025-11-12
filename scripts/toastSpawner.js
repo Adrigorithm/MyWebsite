@@ -24,7 +24,7 @@ class ToastSpawner {
     paragraph.appendChild(text);
     paragraph.classList.add("p-1.5", "relative");
     toast.appendChild(paragraph);
-    toast.classList.add("mb-3", "right-0", "fixed");
+    toast.classList.add("mb-3", "right-0", "fixed", "z-91");
 
     let previousToast = this.#toasts[this.#toasts.length - 1];
 
