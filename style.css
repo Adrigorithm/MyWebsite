@@ -259,6 +259,9 @@
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
+  .h-10 {
+    height: calc(var(--spacing) * 10);
+  }
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
@@ -273,6 +276,9 @@
   }
   .w-dvw {
     width: 100dvw;
+  }
+  .w-full {
+    width: 100%;
   }
   .grow {
     flex-grow: 1;
@@ -367,6 +373,9 @@
   }
   .px-1\.5 {
     padding-inline: calc(var(--spacing) * 1.5);
+  }
+  .py-1\.5 {
+    padding-block: calc(var(--spacing) * 1.5);
   }
   .pr-8 {
     padding-right: calc(var(--spacing) * 8);
