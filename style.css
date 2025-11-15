@@ -18,6 +18,8 @@
     --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-gray-800: oklch(27.8% 0.033 256.848);
     --spacing: 0.25rem;
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
     --font-weight-bold: 700;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --default-transition-duration: 150ms;
@@ -214,6 +216,9 @@
   .left-1\/2 {
     left: calc(1/2 * 100%);
   }
+  .z-1 {
+    z-index: 1;
+  }
   .z-10 {
     z-index: 10;
   }
@@ -237,6 +242,9 @@
   }
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
+  }
+  .block {
+    display: block;
   }
   .contents {
     display: contents;
@@ -312,6 +320,9 @@
   .gap-1\.5 {
     gap: calc(var(--spacing) * 1.5);
   }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -325,6 +336,9 @@
   }
   .border-gray-300 {
     border-color: var(--color-gray-300);
+  }
+  .bg-cosmic {
+    background-color: var(--color-cosmic);
   }
   .bg-gray-300 {
     background-color: var(--color-gray-300);
@@ -362,6 +376,9 @@
   .stroke-\[1rem\] {
     stroke-width: 1rem;
   }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
+  }
   .p-1\.5 {
     padding: calc(var(--spacing) * 1.5);
   }
@@ -383,12 +400,19 @@
   .font-display {
     font-family: var(--font-display);
   }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
   .text-cosmic {
     color: var(--color-cosmic);
+  }
+  .text-gray-300 {
+    color: var(--color-gray-300);
   }
   .text-gray-800 {
     color: var(--color-gray-800);
@@ -420,6 +444,11 @@
     --tw-ease: var(--ease-in);
     transition-timing-function: var(--ease-in);
   }
+  .md\:flex-row {
+    @media (width >= 48rem) {
+      flex-direction: row;
+    }
+  }
   .dark\:border-gray-800 {
     &:where(.dark, .dark *) {
       border-color: var(--color-gray-800);
@@ -443,6 +472,11 @@
   .dark\:bg-green-700 {
     &:where(.dark, .dark *) {
       background-color: var(--color-green-700);
+    }
+  }
+  .dark\:bg-lilac {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-lilac);
     }
   }
   .dark\:bg-yellow-700 {
@@ -478,6 +512,11 @@
   .dark\:text-gray-300 {
     &:where(.dark, .dark *) {
       color: var(--color-gray-300);
+    }
+  }
+  .dark\:text-gray-800 {
+    &:where(.dark, .dark *) {
+      color: var(--color-gray-800);
     }
   }
   .dark\:text-lilac {

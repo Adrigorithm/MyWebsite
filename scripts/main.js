@@ -26,12 +26,13 @@ function load() {
   setupToastSpawner();
 
   applyDependencies();
+  applyDynamicText();
 }
 
 function setupRouter() {
   let navbar = document.getElementById("nav-main");
   let navControls = document.getElementsByClassName("navControl");
-  let contents = document.querySelectorAll("main section");
+  let contents = document.getElementsByClassName("page");
 
   router = new Router(navbar, navControls, contents);
 
@@ -80,4 +81,17 @@ function setupToastSpawner() {
 
 function applyDependencies() {
   configurator.setToastSpawner(toastSpawner);
+}
+
+function applyDynamicText() {
+  let textNodes = document.getElementsByClassName("age");
+
+  for (const node of textNodes) node.textContent = getAge();
+}
+
+function getAge() {
+  let birth = Temporal.PlainDate.from("1998-12-04");
+  let now = Temporal.Now.plainDateISO();
+
+  return birth.until(now, { largestUnit: "years" }).years;
 }

@@ -27,7 +27,10 @@
         <header
             class="flex bg-gray-300 dark:bg-gray-800 top-0 sticky z-20 px-1.5"
         >
-            <button class="navControl py-1.5">
+            <button
+                aria-label="open navigation panel"
+                class="navControl py-1.5"
+            >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="fill-cosmic dark:fill-lilac h-4"
@@ -61,7 +64,10 @@
                 </svg>
             </button>
 
-            <button class="hidden navControl py-1.5">
+            <button
+                aria-label="close navigation panel"
+                class="hidden navControl py-1.5"
+            >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="fill-cosmic dark:fill-lilac h-4"
@@ -196,14 +202,14 @@
 
         <main class="grow relative">
             <nav
-                class="bg-gray-300 dark:bg-gray-800 text-cosmic dark:text-lilac opacity-80 duration-200 invisible z-10 h-full absolute"
+                class="bg-gray-300 dark:bg-gray-800 text-cosmic dark:text-lilac fill-cosmic dark:fill-lilac opacity-80 duration-200 invisible z-10 h-full absolute"
             >
-                <ul id="nav-main" class="flex flex-col px-1.5 sticky">
-                    <li class="border-cosmic dark:border-lilac text-center">
-                        <a href="#" class="pr-8 flex justify-center">
+                <ul id="nav-main" class="flex flex-col sticky">
+                    <li class="p-1">
+                        <a href="#" class="flex justify-center">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                class="h-6 fill-cosmic dark:fill-lilac"
+                                class="h-6"
                                 viewBox="0 0 22 18"
                             >
                                 <path
@@ -243,15 +249,19 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="text-center border-cosmic dark:border-lilac">
-                        <a href="#about" class="pr-8" data-translatable="about">
+                    <li class="text-center p-1">
+                        <a
+                            class="block"
+                            href="#about"
+                            data-translatable="about"
+                        >
                             About
                         </a>
                     </li>
-                    <li class="text-center border-cosmic dark:border-lilac">
+                    <li class="text-center p-1">
                         <a
+                            class="block"
                             href="#projects"
-                            class="pr-8"
                             data-translatable="projects"
                         >
                             Projects
@@ -271,7 +281,12 @@
             >
                 <section class="flex bg-gray-300 dark:bg-gray-800 p-1.5">
                     <h2 class="grow">Configurator</h2>
-                    <button class="filter-accent closeConfig">❌</button>
+                    <button
+                        aria-label="close navigation panel"
+                        class="filter-accent closeConfig"
+                    >
+                        ❌
+                    </button>
                 </section>
 
                 <section id="themeConfig" class="p-1.5">
@@ -281,7 +296,7 @@
                         id="themes"
                         class="flex gap-1.5 flex-wrap justify-center"
                     >
-                        <div data-theme="light" class="flex flex-col">
+                        <button data-theme="light" class="flex flex-col">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 class="fill-cosmic bg-gray-300 p-1.5 h-16"
@@ -362,9 +377,9 @@
                             <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
-                        </div>
+                        </button>
 
-                        <div data-theme="dark" class="flex flex-col">
+                        <button data-theme="dark" class="flex flex-col">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 class="fill-lilac bg-gray-800 p-1.5 h-16"
@@ -411,7 +426,7 @@
                             <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
-                        </div>
+                        </button>
                     </div>
                 </section>
 
@@ -422,7 +437,7 @@
                         id="languages"
                         class="flex gap-1.5 flex-wrap justify-center"
                     >
-                        <div data-lang="gb" class="flex flex-col">
+                        <button data-lang="gb" class="flex flex-col">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 480"
@@ -449,9 +464,9 @@
                             <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
-                        </div>
+                        </button>
 
-                        <div data-lang="nl" class="flex flex-col">
+                        <button data-lang="nl" class="flex flex-col">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 480"
@@ -465,9 +480,9 @@
                             <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
-                        </div>
+                        </button>
 
-                        <div data-lang="fr" class="flex flex-col">
+                        <button data-lang="fr" class="flex flex-col">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 480"
@@ -484,9 +499,9 @@
                             <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
-                        </div>
+                        </button>
 
-                        <div data-lang="de" class="flex flex-col">
+                        <button data-lang="de" class="flex flex-col">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 480"
@@ -500,9 +515,9 @@
                             <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
-                        </div>
+                        </button>
 
-                        <div data-lang="pl" class="flex flex-col">
+                        <button data-lang="pl" class="flex flex-col">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 480"
@@ -515,9 +530,9 @@
                             <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
-                        </div>
+                        </button>
 
-                        <div data-lang="ca" class="flex flex-col">
+                        <button data-lang="ca" class="flex flex-col">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 480"
@@ -535,9 +550,9 @@
                             <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
-                        </div>
+                        </button>
 
-                        <div data-lang="cn" class="flex flex-col">
+                        <button data-lang="cn" class="flex flex-col">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 480"
@@ -586,9 +601,9 @@
                             <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
-                        </div>
+                        </button>
 
-                        <div data-lang="jp" class="flex flex-col">
+                        <button data-lang="jp" class="flex flex-col">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 480"
@@ -625,9 +640,9 @@
                             <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
-                        </div>
+                        </button>
 
-                        <div data-lang="no" class="flex flex-col">
+                        <button data-lang="no" class="flex flex-col">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 480"
@@ -643,12 +658,13 @@
                             <div class="invisible">
                                 <p class="filter-background">✔️</p>
                             </div>
-                        </div>
+                        </button>
                     </div>
                 </section>
 
                 <section class="flex p-1.5 gap-1 justify-end">
                     <button
+                        aria-label="restore default settings"
                         id="defaults"
                         class="bg-gray-300 dark:bg-gray-800 p-1.5"
                     >
@@ -759,6 +775,7 @@
                         </svg>
                     </button>
                     <button
+                        aria-label="apply changed settings"
                         id="applyChanges"
                         class="bg-gray-300 dark:bg-gray-800 p-1.5 hidden"
                     >
@@ -821,6 +838,7 @@
                         </svg>
                     </button>
                     <button
+                        aria-label="close config menu"
                         class="bg-gray-300 dark:bg-gray-800 p-1.5 closeConfig"
                     >
                         <svg
@@ -875,15 +893,35 @@
                 </section>
             </div>
 
-            <section class="hidden p-3">
+            <section class="page hidden p-3">
+                <div class="flex flex-col md:flex-row">
+                    <div class="flex justify-center items-center gap-1.5">
+                        <img
+                            class="rounded-full absolute"
+                            src="images/avatar.avif"
+                            alt="me"
+                        />
+                        <img
+                            class="z-1"
+                            src="images/cat_ears.png"
+                            alt="cat ears"
+                        />
+                    </div>
+                    <div>
+                        <h1 class="text-3xl">Hi :3</h1>
+                        <p>
+                            I am a <span class="age"></span> year old Dutch
+                            software engineer from Belgium. I like cats.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="page hidden p-3">
                 <h1>UNDER CONSTRUCTION</h1>
             </section>
 
-            <section id="about" class="hidden p-3">
-                <h1>UNDER CONSTRUCTION</h1>
-            </section>
-
-            <section id="projects" class="hidden p-3">
+            <section id="projects" class="page hidden p-3">
                 <h1>UNDER CONSTRUCTION</h1>
             </section>
         </main>
@@ -895,7 +933,10 @@
                 <ul class="flex justify-around items-center">
                     <ul class="flex gap-1.5">
                         <li>
-                            <button class="openConfig py-1.5">
+                            <button
+                                aria-label="open config menu"
+                                class="openConfig py-1.5"
+                            >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     class="fill-cosmic dark:fill-lilac h-4"
@@ -986,6 +1027,7 @@
                         </li>
                         <li>
                             <button
+                                aria-label="open language settings"
                                 id="activeLanguage"
                                 class="openConfig py-1.5"
                             ></button>
@@ -994,7 +1036,7 @@
                     <h2>© Adrigorithm 2025</h2>
                     <ul class="flex gap-1.5">
                         <li>
-                            <a href="mailto:adri@a3w.cat">
+                            <a href="mailto:adri@a3aan.cat">
                                 <svg
                                     xmlns="http://www.w3.org`/2000/svg"
                                     viewBox="0 0 428 342"
