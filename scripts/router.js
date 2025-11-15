@@ -40,16 +40,6 @@ class Router {
       this.#navbarControls[1].classList.add("hidden");
     });
 
-    for (const li of this.#navbar.children) {
-      let button = li.getElementsByTagName("button")[0];
-
-      if (button) {
-        button.addEventListener("click", () => {
-          location.hash = button.value;
-        });
-      }
-    }
-
     window.addEventListener("hashchange", (e) => {
       this.navigate(
         e.oldURL.substring(e.oldURL.lastIndexOf("/") + 2),
@@ -74,14 +64,14 @@ class Router {
 
   updateStyles(oldId, newId) {
     for (const li of this.#navbar.children) {
-      let button = li.getElementsByTagName("button")[0];
-      let buttonValue = button?.value;
+      let a = li.getElementsByTagName("a")[0];
+      let aHash = a.hash.substring(1);
 
-      if (buttonValue == newId) {
-        button.classList.add("font-bold");
+      if (aHash == newId) {
+        a.classList.add("font-bold");
         li.classList.add("border-r");
-      } else if (buttonValue == oldId) {
-        button.classList.remove("font-bold");
+      } else if (aHash == oldId) {
+        a.classList.remove("font-bold");
         li.classList.remove("border-r");
       }
     }
