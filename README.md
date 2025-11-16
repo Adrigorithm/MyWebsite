@@ -1,6 +1,5 @@
 # My personal website 
-New versions will always be hosted on https://a3aan.cat/.
-GitHub pages may run an earlier version.
+New versions will always be hosted on https://a3aan.cat/. GitHub pages may run an earlier version.
 
 ## Focus
 - W3C compliance
@@ -21,8 +20,12 @@ GitHub pages may run an earlier version.
 
 ## FAQ
 - **I want to help!**
+
 That's nice of you. If you have feedback or suggestions create an issue for it. I will not accept undiscussed pull requests.
 - **Why?**
+
 Why not?
 - **Your website looks bad.**
+
 So do you, though I would never admit that out loud (wait, I just did didn't I?).
+
