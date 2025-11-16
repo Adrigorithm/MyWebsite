@@ -10,6 +10,7 @@ New versions will always be hosted on https://a3aan.cat/. GitHub pages may run a
 
 ## Major versions
 ~~- [x] Version 1~~
+
 ~~- [x] Version 2~~
 - [ ] Version 3 (In progress)
 
@@ -28,4 +29,5 @@ Why not?
 - **Your website looks bad.**
 
 So do you, though I would never admit that out loud (wait, I just did didn't I?).
+
 
