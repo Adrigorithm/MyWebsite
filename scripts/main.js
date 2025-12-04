@@ -4,6 +4,8 @@ import { Configurator } from "./configurator.js";
 import { Router } from "./router.js";
 import { ToastSpawner } from "./toastSpawner.js";
 import { Translator } from "./translator.js";
+import {AutoTyper} from "./autoTyper";
+import {AutoTyperConfiguration} from "./autoTyperConfiguration";
 
 document.addEventListener("DOMContentLoaded", load);
 
@@ -13,6 +15,7 @@ let clickIndicator = undefined;
 let translator = undefined;
 let configurator = undefined;
 let activeLanguageButton = undefined;
+let autoTyper = undefined;
 let toastSpawner = undefined;
 
 setupTranslator();
@@ -23,6 +26,7 @@ function load() {
   setupClickIndicator();
   setupConfigurator();
   setupActiveLanguageButton();
+  setupAutoTyper();
   setupToastSpawner();
 
   applyDependencies();
@@ -73,6 +77,33 @@ function setupActiveLanguageButton() {
   activeLanguageButton = document.getElementById("activeLanguage");
   configurator.setActiveLanguageButton(activeLanguageButton);
   configurator.updateActiveLanguageButton();
+}
+
+function setupAutoTyper() {
+    let elements = document.getElementsByClassName("autoTyper");
+
+    autoTyper = new AutoTyper(
+        [
+            new AutoTyperConfiguration([
+                    "first thing",
+                    "second",
+                    "last thing"
+                ],
+                250,
+                750,
+                getAutoTyperElement(elements, "IDs")
+            )
+        ]
+    );
+}
+
+function getAutoTyperElement(elements, dataName) {
+    for (const element of elements) {
+        if (element.dataset.name === dataName)
+            return element;
+    }
+
+    return null;
 }
 
 function setupToastSpawner() {

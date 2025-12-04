@@ -1,0 +1,40 @@
+class AutoTyper {
+    #configurations = [];
+    #isActive = true;
+
+    constructor(autoTyperConfigurations) {
+        this.#configurations = autoTyperConfigurations;
+    }
+
+    // Async to allow the use of this.sleep()
+    async execute(configuration) {
+        while (this.#isActive) {
+            configuration.textNode.innerHTML = configuration.getActiveSubString();
+
+            configuration.next();
+
+            await this.sleep(configuration.delay_min + Math.floor(Math.random() * configuration.delay_max));
+        }
+    }
+
+    stopAll() {
+        this.#isActive = false;
+    }
+
+    // Should only be used once this.executeAll() has been called at least once.
+    startAll() {
+        this.#isActive = true;
+    }
+
+    executeAll() {
+        for (let configuration in this.#configurations) {
+            void this.execute(configuration);
+        }
+    }
+
+    sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+}
+
+export { AutoTyper };

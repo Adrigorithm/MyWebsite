@@ -282,6 +282,9 @@
   .w-dvw {
     width: 100dvw;
   }
+  .shrink-0 {
+    flex-shrink: 0;
+  }
   .grow {
     flex-grow: 1;
   }
@@ -316,6 +319,9 @@
   }
   .gap-1\.5 {
     gap: calc(var(--spacing) * 1.5);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -434,6 +440,16 @@
   .md\:flex-row {
     @media (width >= 48rem) {
       flex-direction: row;
+    }
+  }
+  .md\:gap-0 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 0);
+    }
+  }
+  .md\:gap-4 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 4);
     }
   }
   .dark\:border-gray-800 {
