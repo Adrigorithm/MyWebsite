@@ -4,8 +4,8 @@ import { Configurator } from "./configurator.js";
 import { Router } from "./router.js";
 import { ToastSpawner } from "./toastSpawner.js";
 import { Translator } from "./translator.js";
-import {AutoTyper} from "./autoTyper";
-import {AutoTyperConfiguration} from "./autoTyperConfiguration";
+import {AutoTyper} from "./autoTyper.js";
+import {AutoTyperConfiguration} from "./autoTyperConfiguration.js";
 
 document.addEventListener("DOMContentLoaded", load);
 
@@ -95,6 +95,8 @@ function setupAutoTyper() {
             )
         ]
     );
+
+    autoTyper.executeAll();
 }
 
 function getAutoTyperElement(elements, dataName) {

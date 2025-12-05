@@ -27,7 +27,7 @@ class AutoTyper {
     }
 
     executeAll() {
-        for (let configuration in this.#configurations) {
+        for (let configuration of this.#configurations) {
             void this.execute(configuration);
         }
     }
