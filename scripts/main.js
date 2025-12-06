@@ -96,6 +96,7 @@ function setupAutoTyper() {
         ]
     );
 
+    autoTyper.preload();
     autoTyper.executeAll();
 }
 

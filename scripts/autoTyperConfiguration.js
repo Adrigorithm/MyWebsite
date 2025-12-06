@@ -34,6 +34,10 @@ class AutoTyperConfiguration {
         }
     }
 
+    enableInvert() {
+        this.letterIndex = this.words[this.currentWordIndex].length;
+    }
+
     nextWord() {
         this.currentWordIndex += 1;
 

@@ -17,6 +17,11 @@ class AutoTyper {
         }
     }
 
+    // Call before this.executeAll() to indicate the first word is displayed initially (like in html)
+    preload() {
+        this.#configurations.at(0).enableInvert();
+    }
+
     stopAll() {
         this.#isActive = false;
     }
