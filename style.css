@@ -384,6 +384,12 @@
   .py-1\.5 {
     padding-block: calc(var(--spacing) * 1.5);
   }
+  .pr-1 {
+    padding-right: calc(var(--spacing) * 1);
+  }
+  .pl-1 {
+    padding-left: calc(var(--spacing) * 1);
+  }
   .text-center {
     text-align: center;
   }
@@ -538,6 +544,19 @@
   filter: brightness(0) saturate(100%) invert(68%) sepia(8%) saturate(441%) hue-rotate(179deg) brightness(93%) contrast(95%);
   &:where(.dark, .dark *) {
     filter: brightness(0) saturate(100%) invert(22%) sepia(8%) saturate(1758%) hue-rotate(178deg) brightness(96%) contrast(88%);
+  }
+}
+.animation-fade {
+  animation-duration: 1.5s;
+  animation-name: fade;
+  animation-iteration-count: infinite;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 @property --tw-translate-x {

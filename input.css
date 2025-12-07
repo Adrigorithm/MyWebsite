@@ -46,3 +46,18 @@
             saturate(1758%) hue-rotate(178deg) brightness(96%) contrast(88%);
     }
 }
+
+.animation-fade {
+    animation-duration: 1.5s;
+    animation-name: fade;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
