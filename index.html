@@ -200,9 +200,9 @@
             </div>
         </header>
 
-        <main class="grow relative">
+        <main class="grow relative flex justify-center">
             <nav
-                class="bg-gray-300 dark:bg-gray-800 text-cosmic dark:text-lilac fill-cosmic dark:fill-lilac opacity-80 duration-200 invisible z-10 h-full absolute"
+                class="bg-gray-300 dark:bg-gray-800 text-cosmic dark:text-lilac fill-cosmic dark:fill-lilac opacity-80 duration-200 invisible z-10 h-full absolute left-0"
             >
                 <ul id="nav-main" class="flex flex-col sticky">
                     <li class="p-1">
@@ -894,7 +894,7 @@
             </div>
 
             <section class="page hidden p-3">
-                <div class="flex flex-col md:flex-row justify-center md:gap-4">
+                <section class="flex flex-col md:flex-row justify-center items-center md:gap-4">
                     <div class="flex justify-center items-center shrink-0">
                         <img
                             class="rounded-full absolute"
@@ -908,12 +908,37 @@
                         />
                     </div>
                     <div>
-                        <h1 class="text-3xl">Hi :3</h1>
+                        <h1 class="text-3xl font-bold">Hi :3</h1>
                         <p>
-                            I am a <span class="age"></span> year old Dutch <span class="autoTyper bg-gray-300 dark:bg-gray-800 pl-1" data-name="IDs">thing</span><span class="animation-fade">|</span> from Belgium. I like cats.
+                            I am a <span class="age"></span> year old Dutch <span class="bg-gray-300 dark:bg-gray-800 px-1"><span class="autoTyper" data-name="IDs">thing</span><span class="animation-fade">|</span></span> from Belgium. I like cats.
                         </p>
                     </div>
-                </div>
+                </section>
+                <section class="flex justify-center gap-12 mt-2 sm:mb-0">
+                    <div class="flex flex-col w-1/2 sm:w-1/3 lg:w-1/4">
+                        <h3 class="border-b-2 border-cosmic dark:border-b-lilac border-solid text-xl font-bold text-center">Interests</h3>
+                        <ul>
+                            <li>Problem Solving</li>
+                            <li>Green Tech</li>
+                            <li>Cats</li>
+                            <li>Cyber Security</li>
+                            <li>Neuroscience</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-col w-1/2 sm:w-1/3 lg:w-1/4">
+                        <h3 class="border-b-2 border-cosmic dark:border-b-lilac border-solid text-xl font-bold text-center">Bores</h3>
+                        <ul>
+                            <li>Politics</li>
+                            <li>Influencers</li>
+                            <li>AI Slop</li>
+                            <li>Cryptocurrency</li>
+                            <li>Tech Gigantism</li>
+                        </ul>
+                    </div>
+                </section>
+
+
             </section>
 
             <section id="about" class="page hidden p-3">
