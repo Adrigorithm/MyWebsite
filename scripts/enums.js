@@ -1,8 +1,8 @@
 const Language = {
-  English: "gb",
-  Dutch: "nl",
-  French: "fr",
-  German: "de",
+  English: "en-GB",
+  Dutch: "nl-BE",
+  French: "fr-FR",
+  German: "de-DE",
   Polish: "pl",
   Catalan: "ca",
   Chinese: "cn",

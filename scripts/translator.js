@@ -23,6 +23,8 @@ class Translator {
     localStorage.lang = language;
 
     this.translateDocument(language);
+
+    document.documentElement.lang = language;
   }
 
   translateDocument(language) {

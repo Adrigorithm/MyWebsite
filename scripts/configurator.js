@@ -3,7 +3,7 @@ import { Language, LogLevel } from "./enums.js";
 class Configurator {
   #configurator; // The entire config window
   #languages; // List of all language settings <div>s
-  #originalLanguageCode; // "gb", "nl", ...
+  #originalLanguageCode; // "en-GB", "nl-BE", ...
   #originalLanguage; // Language setting <div>
   #selectionLanguage; // Language setting <div>
   #themes; // List of all theme settings <div>s
