@@ -293,9 +293,6 @@
   .w-11\/12 {
     width: calc(11/12 * 100%);
   }
-  .w-100 {
-    width: calc(var(--spacing) * 100);
-  }
   .w-dvw {
     width: 100dvw;
   }
@@ -507,11 +504,6 @@
   .lg\:w-1\/4 {
     @media (width >= 64rem) {
       width: calc(1/4 * 100%);
-    }
-  }
-  .lg\:w-3\/4 {
-    @media (width >= 64rem) {
-      width: calc(3/4 * 100%);
     }
   }
   .xl\:w-2\/3 {

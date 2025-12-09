@@ -92,6 +92,7 @@ function setupAutoTyper() {
                 ],
                 100,
                 300,
+                50,
                 getAutoTyperElement(elements, "IDs")
             )
         ]

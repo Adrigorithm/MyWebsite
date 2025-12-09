@@ -1,16 +1,18 @@
 class AutoTyperConfiguration {
     words = [];
-    delay_min = 250; // ms
-    delay_max = 750; // ms
+    delayMin = 250; // ms
+    delayMax = 750; // ms
+    invertDelay = 100; // ms
     currentWordIndex = 0;
     letterIndex = 0;
     invertMode = false;
     textNode;
 
-    constructor(words, delay_min, delay_max, textNode) {
+    constructor(words, delayMin, delayMax, invertDelay, textNode) {
         this.words = words;
-        this.delay_min = delay_min;
-        this.delay_max = delay_max;
+        this.delayMin = delayMin;
+        this.delayMax = delayMax;
+        this.invertDelay = invertDelay;
         this.textNode = textNode;
     }
 

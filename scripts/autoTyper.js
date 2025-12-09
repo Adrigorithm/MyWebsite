@@ -13,7 +13,10 @@ class AutoTyper {
 
             configuration.next();
 
-            await this.sleep(configuration.delay_min + Math.floor(Math.random() * configuration.delay_max));
+            if (configuration.invertMode)
+                await this.sleep(configuration.invertDelay);
+            else
+                await this.sleep(configuration.delayMin + Math.floor(Math.random() * configuration.delayMax));
         }
     }
 

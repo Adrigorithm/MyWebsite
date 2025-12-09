@@ -67,7 +67,7 @@ class Router {
       "bg-cosmic",
       "dark:bg-lilac",
       "fill-gray-300",
-      "fill:text-gray-800",
+      "dark:fill-gray-800",
     ];
     let classListText = [
       "bg-cosmic",
