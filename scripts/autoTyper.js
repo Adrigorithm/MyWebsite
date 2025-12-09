@@ -9,29 +9,19 @@ class AutoTyper {
     // Async to allow the use of this.sleep()
     async execute(configuration) {
         while (this.#isActive) {
-            configuration.textNode.innerHTML = configuration.getActiveSubString();
+            if (configuration.invertMode) {
+                let delay = configuration.isLetterIndexWordLength()
+                    ? 1000
+                    : configuration.invertDelay;
 
-            configuration.next();
-
-            if (configuration.invertMode)
-                await this.sleep(configuration.invertDelay);
+                await this.sleep(delay);
+            }
             else
                 await this.sleep(configuration.delayMin + Math.floor(Math.random() * configuration.delayMax));
+
+            configuration.next();
+            configuration.textNode.innerHTML = configuration.getActiveSubString();
         }
-    }
-
-    // Call before this.executeAll() to indicate the first word is displayed initially (like in html)
-    preload() {
-        this.#configurations.at(0).enableInvert();
-    }
-
-    stopAll() {
-        this.#isActive = false;
-    }
-
-    // Should only be used once this.executeAll() has been called at least once.
-    startAll() {
-        this.#isActive = true;
     }
 
     executeAll() {

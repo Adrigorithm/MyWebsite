@@ -6,7 +6,7 @@ class AutoTyperConfiguration {
     currentWordIndex = 0;
     letterIndex = 0;
     invertMode = false;
-    textNode;
+    textNode = undefined;
 
     constructor(words, delayMin, delayMax, invertDelay, textNode) {
         this.words = words;
@@ -14,14 +14,23 @@ class AutoTyperConfiguration {
         this.delayMax = delayMax;
         this.invertDelay = invertDelay;
         this.textNode = textNode;
+
+        // In case a word is preloaded (displayed in HTML file) (this should ALWAYS be the first word in this.words), the AutoTyper is initially inverted.
+        if (textNode.innerHTML.length > 0) {
+            this.letterIndex = words[this.currentWordIndex].length;
+            this.invertMode = true;
+        }
+    }
+
+    isLetterIndexWordLength() {
+        return this.words[this.currentWordIndex].length === this.letterIndex;
     }
 
     next() {
         if (this.invertMode) {
             this.letterIndex -= 1;
 
-            if (this.letterIndex === 0) {
-                this.letterIndex = 0;
+            if (this.letterIndex < 0) {
                 this.invertMode = false;
                 this.nextWord();
             }
@@ -29,8 +38,7 @@ class AutoTyperConfiguration {
             this.letterIndex += 1;
             let currentWord = this.words[this.currentWordIndex];
 
-            if (this.letterIndex > currentWord.length) {
-                this.letterIndex -= 2;
+            if (this.letterIndex === currentWord.length) {
                 this.invertMode = true;
             }
         }
