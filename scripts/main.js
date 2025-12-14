@@ -6,6 +6,7 @@ import {ToastSpawner} from "./toastSpawner.js";
 import {Translator} from "./translator.js";
 import {AutoTyper} from "./autoTyper.js";
 import {AutoTyperConfiguration} from "./autoTyperConfiguration.js";
+import {Slider} from "./slider.js";
 
 document.addEventListener("DOMContentLoaded", load);
 
@@ -17,6 +18,7 @@ let configurator = undefined;
 let activeLanguageButton = undefined;
 let autoTyper = undefined;
 let toastSpawner = undefined;
+let slidersServices = undefined;
 
 setupTranslator();
 
@@ -28,6 +30,7 @@ function load() {
     setupActiveLanguageButton();
     setupAutoTyper();
     setupToastSpawner();
+    setupSliders()
 
     applyDependencies();
     applyDynamicText();
@@ -112,6 +115,20 @@ function getAutoTyperElement(elements, dataName) {
 
 function setupToastSpawner() {
     toastSpawner = new ToastSpawner();
+}
+
+function setupSliders() {
+    const sliders = document.getElementsByClassName("slide-container");
+
+    for (let i = 0; i < sliders.length; i++) {
+        const slider = new Slider(sliders.item(i));
+
+        slider.setup();
+
+        slidersServices.push(
+            new Slider(slider)
+        );
+    }
 }
 
 function applyDependencies() {

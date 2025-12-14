@@ -106,3 +106,5 @@ class Slider {
         this.#busy = false;
     }
 }
+
+export { Slider };
