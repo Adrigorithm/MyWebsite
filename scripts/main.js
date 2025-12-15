@@ -18,7 +18,7 @@ let configurator = undefined;
 let activeLanguageButton = undefined;
 let autoTyper = undefined;
 let toastSpawner = undefined;
-let slidersServices = undefined;
+let slidersServices = [];
 
 setupTranslator();
 
