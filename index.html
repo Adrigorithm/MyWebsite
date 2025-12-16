@@ -1151,17 +1151,15 @@
     </section>
 
     <section id="about" class="page hidden w-full">
-        <div class="h-full flex flex-col md:flex-row">
-            <nav class="flex md:flex-col justify-between gap-6 items-center p-1 md:p-2 border-b-2 md:border-b-0 md:border-r-2 border-solid">
-                <button class="text-4xl filter-accent md:hidden">🡰</button>
-                <button class="text-4xl filter-accent hidden md:block">🡱</button>
-                <p class="text-oriented md:-tracking-[.3em]">Open Source</p>
-                <p class="text-oriented md:-tracking-[.3em] hidden">Corporate</p>
-                <button class="text-4xl filter-accent md:hidden">🡲</button>
-                <button class="text-4xl filter-accent hidden md:block">🡳</button>
+        <div class="h-full flex flex-col">
+            <nav class="flex justify-between p-1 items-center border-b-2 border-solid">
+                <button class="text-4xl filter-accent">🡰</button>
+                <p>Open Source</p>
+                <p class="hidden">Corporate</p>
+                <button class="text-4xl filter-accent">🡲</button>
             </nav>
-            <div class="grow slider overflow-x-hidden flex justify-center">
-                <div class="slide-container w-11/12 flex h-96">
+            <div class="grow slider overflow-x-hidden flex items-center justify-center">
+                <div class="slide-container w-11/12 flex h-full">
                     <div class="w-full h-full shrink-0 bg-[url(images/adri_templater_dark.svg)] dark:bg-[url(images/adri_templater_light.svg)] bg-contain bg-center bg-no-repeat flex flex-col justify-between pt-2 text-gray-000 dark:text-gray-300">
                         <div class="text-center">
                             <h3>AdriTemplater</h3>
@@ -1184,7 +1182,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center border-t-2 border-t-cosmic dark:border-t-lilac border-solid">
+            <div class="flex justify-around border-t-2 border-t-cosmic dark:border-t-lilac border-solid">
                 <button class="text-4xl filter-accent">🡰</button>
                 <ul class="flex items-center px-6">
                     <li>
