@@ -12,7 +12,7 @@ class Router {
   }
 
   setup() {
-    this.closeNavbar();
+    this.closeNavbar(false);
 
     let headerHeight = document.getElementsByTagName("header")[0].clientHeight;
     this.#navbar.style.top = `${headerHeight}px`;
@@ -34,13 +34,11 @@ class Router {
     });
 
     this.#navbarControls[1].addEventListener("click", () => {
-      this.closeNavbar();
-
-      this.#navbarControls[0].classList.remove("hidden");
-      this.#navbarControls[1].classList.add("hidden");
+      this.closeNavbar(true);
     });
 
     window.addEventListener("hashchange", (e) => {
+      this.closeNavbar(true);
       this.navigate(
         e.oldURL.substring(e.oldURL.lastIndexOf("/") + 2),
         e.newURL.substring(e.newURL.lastIndexOf("/") + 2),
@@ -48,9 +46,15 @@ class Router {
     });
   }
 
-  closeNavbar() {
+  closeNavbar(updateStyles) {
     let navbarNav = this.#navbar.parentElement;
     navbarNav.style.marginLeft = `-${navbarNav.clientWidth}px`;
+
+    if (!updateStyles)
+        return;
+
+    this.#navbarControls[0].classList.remove("hidden");
+    this.#navbarControls[1].classList.add("hidden");
   }
 
   openNavbar() {
