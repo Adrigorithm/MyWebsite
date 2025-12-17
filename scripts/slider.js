@@ -27,9 +27,9 @@ class Slider {
             const moveDistance = e.pageX - this.#mouseDownCoordinate;
 
             if (moveDistance < -100)
-                this.previous();
-            else if (moveDistance > 100)
                 this.next();
+            else if (moveDistance > 100)
+                this.previous();
         })
 
         for (const slide of this.#slider.children)
