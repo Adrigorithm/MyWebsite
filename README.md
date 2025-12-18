@@ -16,7 +16,7 @@ New versions will always be hosted on https://a3aan.cat/. GitHub pages may run a
 
 ## Tech Stack
 - HTML
-- CSS (TailwindCSS 4)
+- CSS
 - JavaScript
 
 ## FAQ
@@ -30,4 +30,10 @@ Why not?
 
 So do you, though I would never admit that out loud (wait, I just did didn't I?).
 
+## Credits
+The following tools were used in the creation of this project (I am likely forgetting some):
+- [Excalidraw](https://excalidraw.com/) for creating vector images for flowcharts
+- [TailwindCSS](https://tailwindcss.com/) because vanilla CSS is mid
+- [Mozilla documentation](https://developer.mozilla.org/en-US/) for the best web development documentation
+- [CSS filter generator](https://angel-rs.github.io/css-color-filter-generator/) to generate filters to obtain a specific colour
 
