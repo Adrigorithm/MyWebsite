@@ -1,6 +1,19 @@
 // Project tasks configuration. See https://zed.dev/docs/tasks for documentation.
 [
   {
+    "label": "Open browser",
+    "command": "firefox",
+    "args": ["localhost:8000"],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "never",
+    "reveal_target": "dock",
+    "hide": "always",
+    "shell": "system",
+    "show_summary": true,
+    "show_command": true,
+  },
+  {
     "label": "Web server",
     "command": "python",
     "args": ["-m", "http.server", "8000"],
@@ -11,7 +24,7 @@
     "hide": "never",
     "shell": "system",
     "show_summary": true,
-    "show_command": true
+    "show_command": true,
   },
   {
     "label": "Build CSS",
@@ -22,7 +35,7 @@
       "./input.css",
       "-o",
       "./style.css",
-      "--watch"
+      "--watch",
     ],
     "use_new_terminal": true,
     "allow_concurrent_runs": false,
@@ -31,6 +44,6 @@
     "hide": "never",
     "shell": "system",
     "show_summary": true,
-    "show_command": true
-  }
+    "show_command": true,
+  },
 ]
