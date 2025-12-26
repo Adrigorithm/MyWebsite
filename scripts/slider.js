@@ -1,110 +1,109 @@
 class Slider {
-    #slider = undefined;
-    #mouseDownCoordinate = null;
-    #activeSlideIndex = 0;
-    #busy = false;
+  #slider = undefined;
+  #mouseDownCoordinate = null;
+  #activeSlideIndex = 0;
+  #busy = false;
 
-    constructor(slider) {
-        this.#slider = slider;
+  constructor(slider) {
+    this.#slider = slider;
+  }
+
+  setup() {
+    if (this.#slider.children.length < 2) return;
+
+    this.#slider.addEventListener("mousedown", (e) => {
+      this.#mouseDownCoordinate = e.pageX;
+    });
+
+    document.addEventListener("mouseup", () => {
+      this.#mouseDownCoordinate = null;
+    });
+
+    this.#slider.addEventListener("mouseup", (e) => {
+      if (!this.#mouseDownCoordinate) return;
+
+      const moveDistance = e.pageX - this.#mouseDownCoordinate;
+
+      if (moveDistance < -100) this.next();
+      else if (moveDistance > 100) this.previous();
+    });
+
+    for (const slide of this.#slider.children)
+      slide.addEventListener("click", () => {
+        if (!this.#busy) this.moveTo(slide);
+      });
+  }
+
+  moveTo(slide) {
+    for (let i = 0; i < this.#slider.children.length; i++) {
+      const sliderSlide = this.#slider.children.item(i);
+
+      if (sliderSlide !== slide) continue;
+
+      if (this.#activeSlideIndex === i) break;
+
+      this.#activeSlideIndex = i;
+
+      void this.animate(i);
+
+      break;
     }
+  }
 
-    setup() {
-        if (this.#slider.children.length < 2)
-            return;
+  next() {
+    let newActiveSlideIndex = this.#activeSlideIndex + 1;
 
-        this.#slider.addEventListener("mousedown", (e) => {
-            this.#mouseDownCoordinate = e.pageX;
-        })
+    if (newActiveSlideIndex === this.#slider.children.length) {
+      this.#activeSlideIndex = 0;
 
-        document.addEventListener("mouseup", () => {
-            this.#mouseDownCoordinate = null;
-        })
+      void this.animate(0);
+    } else {
+      this.#activeSlideIndex = newActiveSlideIndex;
 
-        this.#slider.addEventListener("mouseup", (e) => {
-            if (!this.#mouseDownCoordinate)
-                return;
-
-            const moveDistance = e.pageX - this.#mouseDownCoordinate;
-
-            if (moveDistance < -100)
-                this.next();
-            else if (moveDistance > 100)
-                this.previous();
-        })
-
-        for (const slide of this.#slider.children)
-            slide.addEventListener("click", () => {
-                if (!this.#busy)
-                    this.moveTo(slide);
-            });
+      void this.animate(newActiveSlideIndex);
     }
+  }
 
-    moveTo(slide) {
-        for (let i = 0; i < this.#slider.children.length; i++) {
-            const sliderSlide = this.#slider.children.item(i);
+  previous() {
+    let newActiveSlideIndex = this.#activeSlideIndex - 1;
 
-            if (sliderSlide !== slide)
-                continue;
+    if (newActiveSlideIndex < 0) {
+      const lastSlideIndex = this.#slider.children.length - 1;
+      this.#activeSlideIndex = lastSlideIndex;
 
-            if (this.#activeSlideIndex === i)
-                break;
+      void this.animate(lastSlideIndex);
+    } else {
+      this.#activeSlideIndex = newActiveSlideIndex;
 
-            this.#activeSlideIndex = i;
-
-            void this.animate(i);
-
-            break;
-        }
+      void this.animate(newActiveSlideIndex);
     }
+  }
 
-    next() {
-        let newActiveSlideIndex = this.#activeSlideIndex + 1;
+  async animate(activeSlideIndex) {
+    this.#busy = true;
 
-        if (newActiveSlideIndex === this.#slider.children.length) {
-            this.#activeSlideIndex = 0;
+    let currentMargin = this.#slider.firstElementChild.style.marginLeft;
+    let newMargin = `-${100 * activeSlideIndex}%`;
 
-            void this.animate(0);
+    let keyframes = [
+      { marginLeft: this.#slider.firstElementChild.style.marginLeft },
+      { marginLeft: newMargin },
+    ];
 
-        } else {
-            this.#activeSlideIndex = newActiveSlideIndex;
+    let timing = {
+      duration: 500,
+      fill: "forwards",
+    };
 
-            void this.animate(newActiveSlideIndex);
-        }
-    }
+    const animation = this.#slider.firstElementChild.animate(keyframes, timing);
 
-    previous() {
-        let newActiveSlideIndex = this.#activeSlideIndex - 1;
+    await animation.finished;
 
-        if (newActiveSlideIndex < 0) {
-            const lastSlideIndex = this.#slider.children.length - 1;
-            this.#activeSlideIndex = lastSlideIndex
+    animation.commitStyles();
+    animation.cancel();
 
-            void this.animate(lastSlideIndex);
-        } else {
-            this.#activeSlideIndex = newActiveSlideIndex;
-
-            void this.animate(newActiveSlideIndex);
-        }
-    }
-
-    async animate(activeSlideIndex) {
-        this.#busy = true;
-
-        let animation = this.#slider.firstElementChild.animate(
-            [
-                { marginLeft: this.#slider.firstElementChild.style.marginLeft },
-                { marginLeft: `-${100 * activeSlideIndex}%`}
-            ],
-            500
-        );
-
-        await animation.finished;
-
-        animation.commitStyles();
-        animation.cancel();
-
-        this.#busy = false;
-    }
+    this.#busy = false;
+  }
 }
 
 export { Slider };
