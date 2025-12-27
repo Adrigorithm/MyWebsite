@@ -79,6 +79,8 @@ class Slider {
     }
   }
 
+  setActiveIndicator() {}
+
   async animate(activeSlideIndex) {
     this.#busy = true;
 
