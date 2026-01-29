@@ -253,6 +253,9 @@
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
   }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
+  }
   .block {
     display: block;
   }
@@ -291,6 +294,12 @@
   }
   .h-full {
     height: 100%;
+  }
+  .max-h-full {
+    max-height: 100%;
+  }
+  .max-h-screen {
+    max-height: 100vh;
   }
   .min-h-dvh {
     min-height: 100dvh;
@@ -403,11 +412,20 @@
   .bg-\[url\(images\/adri_templater_dark\.svg\)\] {
     background-image: url(images/adri_templater_dark.svg);
   }
+  .bg-\[url\(images\/website_dev\.webm\)\] {
+    background-image: url(images/website_dev.webm);
+  }
+  .bg-\[url\(images\/website_dev\.webp\)\] {
+    background-image: url(images/website_dev.webp);
+  }
   .bg-contain {
     background-size: contain;
   }
   .bg-center {
     background-position: center;
+  }
+  .bg-top {
+    background-position: top;
   }
   .bg-no-repeat {
     background-repeat: no-repeat;

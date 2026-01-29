@@ -111,7 +111,6 @@ class Slider {
   async animate(activeSlideIndex) {
     this.#busy = true;
 
-    let currentMargin = this.#slider.firstElementChild.style.marginLeft;
     let newMargin = `-${100 * activeSlideIndex}%`;
 
     let keyframes = [
