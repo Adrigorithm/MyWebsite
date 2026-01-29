@@ -1,11 +1,18 @@
 class Slider {
   #slider = undefined;
+  #previousButton = undefined;
+  #nextButton = undefined;
+  #slideIndicator = undefined;
+  #activeSlideIndicator = 0;
   #mouseDownCoordinate = null;
   #activeSlideIndex = 0;
   #busy = false;
 
-  constructor(slider) {
+  constructor(slider, previousButton, nextButton, slideIndicator) {
     this.#slider = slider;
+    this.#previousButton = previousButton;
+    this.#nextButton = nextButton;
+    this.#slideIndicator = slideIndicator;
   }
 
   setup() {
@@ -26,6 +33,14 @@ class Slider {
 
       if (moveDistance < -100) this.next();
       else if (moveDistance > 100) this.previous();
+    });
+
+    this.#previousButton.addEventListener("click", () => {
+      this.previous();
+    });
+
+    this.#nextButton.addEventListener("click", () => {
+      this.next();
     });
 
     for (const slide of this.#slider.children)
@@ -79,7 +94,19 @@ class Slider {
     }
   }
 
-  setActiveIndicator() {}
+  setActiveIndicator() {
+    if (this.#activeSlideIndex === this.#activeSlideIndicator) return;
+
+    this.#slideIndicator.children[this.#activeSlideIndex].getElementsByTagName(
+      "svg",
+    )[0].classList = "h-8 fill-cosmic dark:fill-lilac";
+    this.#slideIndicator.children[
+      this.#activeSlideIndicator
+    ].getElementsByTagName("svg")[0].classList =
+      "h-6 fill-gray-300 dark:fill-gray-800";
+
+    this.#activeSlideIndicator = this.#activeSlideIndex;
+  }
 
   async animate(activeSlideIndex) {
     this.#busy = true;
@@ -103,6 +130,8 @@ class Slider {
 
     animation.commitStyles();
     animation.cancel();
+
+    this.setActiveIndicator();
 
     this.#busy = false;
   }

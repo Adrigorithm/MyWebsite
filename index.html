@@ -1210,18 +1210,13 @@
 
             <section id="projects" class="page hidden w-full">
                 <div class="h-full flex flex-col">
-                    <nav
-                        class="flex justify-between p-1 items-center border-b-2 border-solid"
-                    >
-                        <button class="text-4xl filter-accent">🡰</button>
-                        <p>Open Source</p>
-                        <p class="hidden">Corporate</p>
-                        <button class="text-4xl filter-accent">🡲</button>
-                    </nav>
                     <div
-                        class="grow slider overflow-x-hidden flex items-center justify-center py-4"
+                        class="grow overflow-x-hidden flex items-center justify-center py-4"
                     >
-                        <div class="slide-container w-11/12 flex h-full">
+                        <div
+                            class="slider w-11/12 flex h-full"
+                            data-slider="slider-0"
+                        >
                             <div
                                 class="w-full h-full shrink-0 bg-[url(images/adri_templater_dark.svg)] dark:bg-[url(images/adri_templater_light.svg)] bg-contain bg-center bg-no-repeat flex flex-col justify-between text-gray-000 dark:text-gray-300"
                             >
@@ -1257,8 +1252,16 @@
                     <div
                         class="flex justify-around border-t-2 border-t-cosmic dark:border-t-lilac border-solid"
                     >
-                        <button class="text-4xl filter-accent">🡰</button>
-                        <ul class="flex items-center px-6">
+                        <button
+                            id="slider-0-previous"
+                            class="text-4xl filter-accent"
+                        >
+                            🡰
+                        </button>
+                        <ul
+                            id="slider-0-indicator"
+                            class="flex items-center px-6"
+                        >
                             <li>
                                 <svg
                                     class="h-8 fill-cosmic dark:fill-lilac"
@@ -1332,7 +1335,12 @@
                                 </svg>
                             </li>
                         </ul>
-                        <button class="text-4xl filter-accent">🡲</button>
+                        <button
+                            id="slider-0-next"
+                            class="text-4xl filter-accent"
+                        >
+                            🡲
+                        </button>
                     </div>
                 </div>
             </section>
