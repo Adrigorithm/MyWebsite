@@ -53,14 +53,6 @@
     animation-iteration-count: infinite;
 }
 
-.text-oriented {
-    text-orientation: upright;
-
-    @variant md {
-        writing-mode: vertical-lr;
-    }
-}
-
 @keyframes fade {
     from {
         opacity: 0;
