@@ -33,10 +33,34 @@ class SectionSwitcher {
     this.centerSwitcher();
   }
 
-  switch(button) {
-    this.animate(false);
+  getIndexOfHTMLCollection(element, collection) {
+    let counter = 0;
 
-    if (this.#sectionActive > -1) button.classList.add("border-b-2");
+    for (const element0 of collection) {
+      if (element === element0) return counter;
+
+      counter++;
+    }
+
+    return -1;
+  }
+
+  switch(button) {
+    let activeSection = this.#sectionActive;
+
+    void this.animate(false, button);
+
+    if (this.#sectionActive > -1) {
+      this.#buttons.item(activeSection).classList.remove("border-b-2");
+      this.#sections.item(activeSection).classList.add("opacity-0", "hidden");
+    }
+
+    console.log(`After antimation method call: ${this.#sectionActive}`);
+
+    this.#sections
+      .item(this.#sectionActive)
+      .classList.remove("opacity-0", "hidden");
+    button.classList.add("border-b-2");
   }
 
   reset() {
@@ -54,7 +78,7 @@ class SectionSwitcher {
     this.#switcher.style.marginTop = `${this.calculateSwitcherMargin()}px`;
   }
 
-  async animate(inversed) {
+  async animate(inversed, button) {
     this.#busy = true;
 
     let oldMargin = this.#switcher.style.marginTop;
@@ -74,6 +98,8 @@ class SectionSwitcher {
     animation.commitStyles();
     animation.cancel();
 
+    this.#sectionActive = this.getIndexOfHTMLCollection(button, this.#buttons);
+    console.log(`After animation: ${this.#sectionActive}`);
     this.#busy = false;
   }
 }
