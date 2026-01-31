@@ -397,6 +397,9 @@
   .border-t-cosmic {
     border-top-color: var(--color-cosmic);
   }
+  .border-b-cosmic {
+    border-bottom-color: var(--color-cosmic);
+  }
   .bg-cosmic {
     background-color: var(--color-cosmic);
   }

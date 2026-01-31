@@ -7,6 +7,7 @@ import { Translator } from "./translator.js";
 import { AutoTyper } from "./autoTyper.js";
 import { AutoTyperConfiguration } from "./autoTyperConfiguration.js";
 import { Slider } from "./slider.js";
+import { SectionSwitcher } from "./sectionSwitcher.js";
 
 document.addEventListener("DOMContentLoaded", load);
 
@@ -18,6 +19,7 @@ let configurator = undefined;
 let activeLanguageButton = undefined;
 let autoTyper = undefined;
 let toastSpawner = undefined;
+let sectionSwitcher = undefined;
 let slidersServices = [];
 
 setupTranslator();
@@ -30,6 +32,7 @@ function load() {
   setupActiveLanguageButton();
   setupAutoTyper();
   setupToastSpawner();
+  setupSectionSwitcher();
   setupSliders();
 
   applyDependencies();
@@ -108,6 +111,14 @@ function getAutoTyperElement(elements, dataName) {
 
 function setupToastSpawner() {
   toastSpawner = new ToastSpawner();
+}
+
+function setupSectionSwitcher() {
+  let aboutPage = document.getElementById("about");
+  let switcher = aboutPage.getElementsByTagName("nav")[0];
+  let sections = aboutPage.getElementsByTagName("section");
+
+  sectionSwitcher = new SectionSwitcher(switcher, sections, []);
 }
 
 function setupSliders() {

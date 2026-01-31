@@ -16,20 +16,16 @@ class SectionSwitcher {
   }
 
   setup() {
-    let counter = 0;
-
     for (const button of this.#buttons) {
       button.addEventListener("click", () => {
         if (this.#busy) return;
 
-        this.switch(counter);
+        this.switch(button);
       });
-
-      counter++;
     }
 
     window.addEventListener("resize", () => {
-      if (this.#sectionActive == -1) return;
+      if (this.#sectionActive >= 0) return;
 
       this.centerSwitcher();
     });
@@ -37,8 +33,10 @@ class SectionSwitcher {
     this.centerSwitcher();
   }
 
-  switch(id) {
+  switch(button) {
     this.animate(false);
+
+    if (this.#sectionActive > -1) button.classList.add("border-b-2");
   }
 
   reset() {
