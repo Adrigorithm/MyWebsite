@@ -16,11 +16,13 @@ class SectionSwitcher {
   }
 
   setup() {
-    for (const button of this.#buttons) {
+    for (let i = 0; i < this.#buttons.length; i++) {
+      const button = this.#buttons.item(i);
+
       button.addEventListener("click", () => {
         if (this.#busy) return;
 
-        this.switch(button);
+        this.switch(i);
       });
     }
 
@@ -33,34 +35,12 @@ class SectionSwitcher {
     this.centerSwitcher();
   }
 
-  getIndexOfHTMLCollection(element, collection) {
-    let counter = 0;
-
-    for (const element0 of collection) {
-      if (element === element0) return counter;
-
-      counter++;
-    }
-
-    return -1;
-  }
-
-  switch(button) {
+  switch(buttonIndex) {
     let activeSection = this.#sectionActive;
 
-    void this.animate(false, button);
-
-    if (this.#sectionActive > -1) {
-      this.#buttons.item(activeSection).classList.remove("border-b-2");
-      this.#sections.item(activeSection).classList.add("opacity-0", "hidden");
-    }
-
-    console.log(`After antimation method call: ${this.#sectionActive}`);
-
-    this.#sections
-      .item(this.#sectionActive)
-      .classList.remove("opacity-0", "hidden");
-    button.classList.add("border-b-2");
+    void this.animateSwitcher(false, buttonIndex, () => {
+      void this.animateSection(activeSection, this.#sectionActive);
+    });
   }
 
   reset() {
@@ -78,11 +58,47 @@ class SectionSwitcher {
     this.#switcher.style.marginTop = `${this.calculateSwitcherMargin()}px`;
   }
 
-  async animate(inversed, button) {
+  async animateSection(oldSectionId, newSectionId) {
+    let keyframes = undefined;
+    let timing = {
+      duration: 1000,
+      fill: "forwards",
+    };
+
+    if (oldSectionId > -1) {
+      this.#buttons.item(oldSectionId).classList.remove("border-b-2");
+
+      let oldSection = this.#sections.item(oldSectionId);
+      keyframes = [{ opacity: 1 }, { opacity: 0 }];
+      const animation = oldSection.animate(keyframes, timing);
+
+      await animation.finished;
+
+      animation.commitStyles();
+      animation.cancel();
+
+      oldSection.classList.add("hidden");
+    }
+
+    let newSection = this.#sections.item(newSectionId);
+
+    this.#buttons.item(newSectionId).classList.add("border-b-2");
+    newSection.classList.remove("hidden");
+
+    keyframes = [{ opacity: 0 }, { opacity: 1 }];
+    const animation = newSection.animate(keyframes, timing);
+
+    await animation.finished;
+
+    animation.commitStyles();
+    animation.cancel();
+  }
+
+  async animateSwitcher(inverted, buttonIndex, callback) {
     this.#busy = true;
 
     let oldMargin = this.#switcher.style.marginTop;
-    let newMargin = inversed ? this.calculateSwitcherMargin() : 0;
+    let newMargin = inverted ? this.calculateSwitcherMargin() : 0;
 
     let keyframes = [{ marginTop: oldMargin }, { marginTop: newMargin }];
 
@@ -98,9 +114,11 @@ class SectionSwitcher {
     animation.commitStyles();
     animation.cancel();
 
-    this.#sectionActive = this.getIndexOfHTMLCollection(button, this.#buttons);
-    console.log(`After animation: ${this.#sectionActive}`);
+    this.#sectionActive = buttonIndex;
+
     this.#busy = false;
+
+    callback();
   }
 }
 
