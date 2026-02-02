@@ -242,7 +242,7 @@ class Translator {
       .set("humans", "Mensen")
       .set(
         "humansText",
-        "We zijn zonder twijfel het slechtste wat ooit voor deze planeet is gebeurd. Daarom doe ik mijn best om mijn negatieve impact te minimaliseren en <b>jij</b> kunt (en zou) dat ook moeten doen.",
+        "We zijn zonder twijfel het slechtste wat ooit met deze planeet is gebeurd. Daarom doe ik mijn best om mijn negatieve impact te minimaliseren en <b>jij</b> kunt (en zou) dat ook moeten doen.",
       )
       .set("transport", "Vervoer")
       .set(
@@ -257,12 +257,12 @@ class Translator {
       .set("karate", "Karate")
       .set(
         "karateText",
-        "Vrijwel de enige sport die ik beoefen (ik geef soms ook les). Ik ben momenteel <b>zwarte band</b> gekleed. (wist je dat er 8 graden (dan-graden) zijn na de zwarte band?)",
+        "Vrijwel de enige sport die ik beoefen (ik geef soms ook les). Ik ben momenteel <b>zwarte band</b>. (wist je dat er 8 graden (dan-graden) zijn na de zwarte band?)",
       )
       .set("fitness", "Fitness?")
       .set(
         "fitnessText",
-        "Brr nee. Ik krijg geen primitieve opwinding van het showen voor andere mensen. Bovendien is de stank van zweet en overmatig gebruik van deodorant weerzinwekkend voor mijn zintuigen. Ik doe een beetje training thuis en probeer elke dag wat stappen te zetten.",
+        "Ieuw nee. Ik krijg geen primitieve opwinding van het flexen voor andere mensen. Bovendien is de stank van zweet en overmatig gebruik van deodorant weerzinwekkend voor mijn zintuigen. Ik doe een beetje training thuis en probeer elke dag wat stappen te zetten.",
       )
       .set("machine", '"De computer/laptop"')
       .set(
@@ -277,17 +277,17 @@ class Translator {
       .set("cats", "Katten")
       .set(
         "catsText",
-        "Ik hou van alle <b>felinen</b>, zowel kleine, normale als grote. Mijn favoriete kleur voor een huiskat is volledig zwart. In het ongelukkige geval dat je me ontmoet en je hebt een kat, zal het me waarschijnlijk als favoriete mens kiezen :3. Ps, leuk kattenfeit: De Bombay is een volledig zwarte kat die meestal wordt vergezeld door oranje ogen, miauw miauw.",
+        "Ik hou van alle <b>katachtigen</b>, zowel kleine, normale als grote. Mijn favoriete kleur voor een huiskat is volledig zwart. In het ongelukkige geval dat je me ontmoet en je hebt een kat, zal het me waarschijnlijk als favoriete mens kiezen :3. Ps, leuk kattenfeit: De Bombay is een volledig zwarte kat die meestal wordt vergezeld door oranje ogen, miauw miauw.",
       )
       .set("onlyCats", "Alleen katten?")
       .set(
         "onlyCatsText",
-        "Nou... in zekere zin. Ik heb niets tegen honden, maar ik zal ze nooit als huisdieren beschouwen, omdat ik twee <b>traumatische gebeurtenissen met honden</b> heb meegemaakt (sorry). Ik zou misschien mijn perceptie van honden willen veranderen. Ik hou echter ook van vossen, wolven, rood panda's, wasberen, otters, raven en kraaien, maar die zouden niet als huisdieren moeten worden gehouden.",
+        "Nou... in zekere zin. Ik heb niets tegen honden, maar ik zal ze nooit als huisdieren beschouwen omdat ik twee <b>traumatische gebeurtenissen met honden</b> heb meegemaakt (sorry). Ik zou misschien mijn perceptie van honden willen veranderen. Ik hou echter van vossen, wolven, rode panda's, wasberen, otters, raven en kraaien, maar die zouden niet als huisdieren moeten worden gehouden.",
       )
       .set("inShort", "Kortom")
       .set(
         "inShortText",
-        "Ik hou ervan om te ontdekken en te ervaren wat voor mij nog onbekende <b>culturen, vegetatie (of landen als geheel)</b> zijn. Ik probeer mijn reizen <b>actief en omringd door de natuur te maken met af en toe een stadsreis</b>. Ik heb een zwak voor <b>Noordse landen</b> en ik geef er de voorkeur aan om niet naar warme landen te gaan.",
+        "Ik hou ervan om te ontdekken en te ervaren wat voor mij nog onbekende <b>culturen, vegetatie (of landen als geheel)</b> zijn. Ik probeer mijn reizen <b>actief en omringd door de natuur te maken met af en toe een citytrip</b>. Ik heb een zwak voor <b>Noordse landen</b> en ik geef er de voorkeur aan om niet naar warme landen te gaan.",
       )
       .set("destinations", "Bestemmingen")
       .set(
@@ -297,16 +297,16 @@ class Translator {
       .set("inGeneral", "In het algemeen")
       .set(
         "inGeneralText",
-        "Ik denk dat alle software <b>gratis</b> moet zijn. Bedrijven die bereid zijn om er geld aan te verdienen, zouden dit niet mogen doen door de toegang tot functies of het product zelf te beperken, vooral omdat het gebruik van AI de meeste nieuwe projecten in onveilige AI-slop verandert. In plaats daarvan zouden bedrijven die op deze manier geld willen verdienen, dit op een of meer van de volgende manieren moeten doen:",
+        "Ik denk dat alle software <b>gratis</b> moet zijn. Bedrijven die er geld mee willen verdienen zouden dit niet mogen doen door de toegang tot functies of het product zelf te beperken. Zeker nu het gebruik van AI de meeste nieuwe projecten in onveilige AI-slop verandert. In plaats daarvan zouden bedrijven die op deze manier geld willen verdienen, dit op een of meer van de volgende manieren moeten doen:",
       )
       .set(
         "inGeneralText0",
-        "<li>SaaS (hostingkosten)</li><li>Ondersteuning</li><li>Personalisatie die <b>alleen</b> uiterlijk beïnvloedt (kleurthema's/font/...)</li>",
+        "<li>SaaS (hostingkosten)</li><li>Ondersteuning</li><li>Personalisatie die <b>alleen</b> uiterlijk beïnvloedt (kleurthema's/lettertypes/...)</li>",
       )
       .set("openSource", "Open source")
       .set(
         "openSourceText",
-        "Software die ik gebruik en maak (en soms aan bijdraag) is bijna uitsluitend open source. Ik probeer meer mensen te <b>OSS te laten gebruiken en FOSS als geheel te waarderen</b>. Enkele voorbeelden zijn Zed in plaats van Jetbrains, LibreOffice in plaats van MS Office, Matrix in plaats van Teams... de lijst gaat maar door. Ik heb een paar mensen in de wereld van FOSS aan de universiteit gebracht en zelfs mijn moeder gebruikt nu GNU/Linux!",
+        "Software die ik gebruik en maak (en soms aan bijdraag) is bijna uitsluitend open source. Ik probeer meer mensen <b>OSS te laten gebruiken en FOSS als geheel te waarderen</b>. Enkele voorbeelden zijn Zed in plaats van Jetbrains, LibreOffice in plaats van MS Office, Matrix in plaats van Teams... de lijst gaat maar door. Ik heb een paar mensen van de universiteit in de wereld van FOSS gebracht en zelfs mijn moeder gebruikt nu GNU/Linux!",
       )
       .set(
         "adriTemplater",
