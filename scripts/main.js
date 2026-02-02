@@ -111,7 +111,7 @@ function getAutoTyperElement(elements, dataName) {
 }
 
 function setupToastSpawner() {
-  toastSpawner = new ToastSpawner();
+  toastSpawner = new ToastSpawner(translator);
 }
 
 function setupSectionSwitcher() {

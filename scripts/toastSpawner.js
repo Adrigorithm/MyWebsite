@@ -3,10 +3,12 @@ import { ExpiringArray } from "./expiringArray.js";
 
 class ToastSpawner {
   #toasts;
+  #translator;
   #footerHeight;
 
-  constructor() {
+  constructor(translator) {
     this.#toasts = new ExpiringArray(4000);
+    this.#translator = translator;
 
     this.initialise();
   }
@@ -16,10 +18,14 @@ class ToastSpawner {
       document.getElementsByTagName("footer")[0].clientHeight;
   }
 
-  spawn(message, logLevel) {
+  spawn(messageId, logLevel) {
     let toast = document.createElement("div");
     let paragraph = document.createElement("p");
-    let text = document.createTextNode(message);
+    let string = this.#translator.translateWord(
+      messageId,
+      this.#translator.getActiveLanguage(),
+    );
+    let text = document.createTextNode(string);
 
     paragraph.appendChild(text);
     paragraph.classList.add("p-1.5", "relative");

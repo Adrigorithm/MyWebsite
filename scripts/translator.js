@@ -92,6 +92,8 @@ class Translator {
 
   getEnglishTranslations() {
     return new Map()
+      .set("settingsUpdated", "Settings updated!")
+      .set("settingsReverted", "Reverted setting changes!")
       .set("tab", "Adri's cat tree")
       .set("about", "About")
       .set("projects", "Projects")
@@ -203,6 +205,8 @@ class Translator {
 
   getDutchTranslations() {
     return new Map()
+      .set("settingsUpdated", "Instellingen bijgewerkt!")
+      .set("settingsReverted", "Instellingenwijzigingen teruggedraaid!")
       .set("tab", "Adri's kattentoren")
       .set("about", "Over")
       .set("projects", "Projecten")
@@ -317,6 +321,8 @@ class Translator {
 
   getFrenchTranslations() {
     return new Map()
+      .set("settingsUpdated", "Paramètres mis à jour!")
+      .set("settingsReverted", "Modifications des paramètres annulées!")
       .set("tab", "L'arbre à chats d'Adri")
       .set("about", "À propos")
       .set("projects", "Projets")
@@ -428,6 +434,8 @@ class Translator {
 
   getGermanTranslations() {
     return new Map()
+      .set("settingsUpdated", "Einstellungen aktualisiert!")
+      .set("settingsReverted", "Einstellungsänderungen rückgängig gemacht!")
       .set("tab", "Adris Katzenbaum")
       .set("about", "Über")
       .set("projects", "Projekte")
@@ -542,6 +550,8 @@ class Translator {
 
   getCatalanTranslations() {
     return new Map()
+      .set("settingsUpdated", "Configuració actualitzada!")
+      .set("settingsReverted", "Canvis de configuració revertits!")
       .set("tab", "L'arbre per a gats d'Adri")
       .set("about", "Sobre")
       .set("projects", "Projectes")

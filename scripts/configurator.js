@@ -56,14 +56,14 @@ class Configurator {
 
       this.resetApplyButtons();
       this.render();
-      this.#toastSpawner.spawn("Settings updated!", LogLevel.Success);
+      this.#toastSpawner.spawn("settingsUpdated", LogLevel.Success);
     });
 
     defaultsButton.addEventListener("click", () => {
       this.saveSettings(Language.English, null);
       this.resetApplyButtons();
       this.render();
-      this.#toastSpawner.spawn("Reverted setting changes!", LogLevel.Success);
+      this.#toastSpawner.spawn("settingsReverted", LogLevel.Success);
     });
   }
 
