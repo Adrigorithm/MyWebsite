@@ -13,6 +13,24 @@ class Translator {
     this.translateDocument(language);
   }
 
+  translateWord(wordId, language) {
+    if (!this.#translations.has(language)) this.loadTranslations(language);
+
+    return this.#translations[language][wordId];
+  }
+
+  translateAllWords(wordIds, language) {
+    wordsTranslated = [];
+
+    if (!this.#translations.has(language)) this.loadTranslations(language);
+
+    wordIds.forEach((id) => {
+      wordsTranslated.push(this.#translations[language][id]);
+    });
+
+    return wordsTranslated;
+  }
+
   translate(language) {
     let storedLanguage = localStorage.getItem("lang") ?? Language.English;
 
@@ -32,7 +50,7 @@ class Translator {
 
     for (let i = 0; i < translatableElements.length; i++) {
       let translatableElement = translatableElements[i];
-      translatableElement.textContent = this.#translations
+      translatableElement.innerHTML = this.#translations
         .get(language)
         .get(translatableElement.dataset.translatable);
     }
@@ -98,7 +116,39 @@ class Translator {
     return new Map()
       .set("tab", "Adri's cat tree")
       .set("about", "About")
-      .set("projects", "Projects");
+      .set("projects", "Projects")
+      .set("configurator", "Configurator")
+      .set("theme", "Theme")
+      .set("language", "Language")
+      .set("hi", "Hi :3")
+      .set("iAmA", "I am a")
+      .set("yearOldDutch", "-year-old Dutch")
+      .set("softwareEngineer", "Software Engineer")
+      .set("catCuddler", "Cat Cuddler")
+      .set("cloudEngineer", "Cloud Engineer")
+      .set("pentester", "Pentester")
+      .set("belgiumCats", " from Belgium. I like cats.")
+      .set()
+      .set()
+      .set()
+      .set()
+      .set()
+      .set()
+      .set()
+      .set()
+      .set()
+      .set()
+      .set()
+      .set()
+      .set()
+      .set()
+      .set()
+      .set()
+      .set()
+      .set()
+      .set()
+      .set()
+      .set();
   }
 
   getDutchTranslations() {

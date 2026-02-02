@@ -90,7 +90,8 @@ function setupAutoTyper() {
 
   autoTyper = new AutoTyper([
     new AutoTyperConfiguration(
-      ["Software Engineer", "Cat Cuddler", "Cloud Engineer", "Pentester"],
+      ["softwareEngineer", "catCuddler", "cloudEngineer", "pentester"],
+      translator,
       100,
       300,
       50,

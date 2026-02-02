@@ -1,63 +1,89 @@
 class AutoTyperConfiguration {
-    words = [];
-    delayMin = 250; // ms
-    delayMax = 750; // ms
-    invertDelay = 100; // ms
-    currentWordIndex = 0;
-    letterIndex = 0;
-    invertMode = false;
-    textNode = undefined;
+  wordIds = [];
+  wordsTranslated = [];
+  translator = null;
+  currentLang = null;
+  delayMin = 250; // ms
+  delayMax = 750; // ms
+  invertDelay = 100; // ms
+  currentWordIndex = 0;
+  letterIndex = 0;
+  invertMode = false;
+  textNode = undefined;
 
-    constructor(words, delayMin, delayMax, invertDelay, textNode) {
-        this.words = words;
-        this.delayMin = delayMin;
-        this.delayMax = delayMax;
-        this.invertDelay = invertDelay;
-        this.textNode = textNode;
+  constructor(words, translator, delayMin, delayMax, invertDelay, textNode) {
+    this.wordIds = words;
+    this.translator = translator;
+    this.delayMin = delayMin;
+    this.delayMax = delayMax;
+    this.invertDelay = invertDelay;
+    this.textNode = textNode;
 
-        // In case a word is preloaded (displayed in HTML file) (this should ALWAYS be the first word in this.words), the AutoTyper is initially inverted.
-        if (textNode.innerHTML.length > 0) {
-            this.letterIndex = words[this.currentWordIndex].length;
-            this.invertMode = true;
-        }
+    this.translateWords();
+
+    // In case a word is preloaded (displayed in HTML file) (this should ALWAYS be the first word in this.wordsTranslated), the AutoTyper is initially inverted.
+    if (textNode.innerHTML.length > 0) {
+      this.letterIndex = this.wordsTranslated[this.currentWordIndex].length;
+      this.invertMode = true;
+    }
+  }
+
+  isLetterIndexWordLength() {
+    return (
+      this.wordsTranslated[this.currentWordIndex].length === this.letterIndex
+    );
+  }
+
+  next() {
+    if (this.invertMode) {
+      this.letterIndex -= 1;
+
+      if (this.letterIndex < 0) {
+        this.invertMode = false;
+        this.nextWord();
+      }
+    } else {
+      this.letterIndex += 1;
+      let currentWord = this.wordsTranslated[this.currentWordIndex];
+
+      if (this.letterIndex === currentWord.length) {
+        this.invertMode = true;
+      }
     }
 
-    isLetterIndexWordLength() {
-        return this.words[this.currentWordIndex].length === this.letterIndex;
-    }
+    this.translateWords();
+  }
 
-    next() {
-        if (this.invertMode) {
-            this.letterIndex -= 1;
+  translateWords() {
+    let newLang = translator.getActiveLanguage();
 
-            if (this.letterIndex < 0) {
-                this.invertMode = false;
-                this.nextWord();
-            }
-        } else {
-            this.letterIndex += 1;
-            let currentWord = this.words[this.currentWordIndex];
+    if (newLang === this.currentLang) return;
 
-            if (this.letterIndex === currentWord.length) {
-                this.invertMode = true;
-            }
-        }
-    }
+    this.currentLang = newLang;
 
-    enableInvert() {
-        this.letterIndex = this.words[this.currentWordIndex].length;
-    }
+    this.wordsTranslated = this.translator.translateAllWords(
+      this.wordIds,
+      newLang,
+    );
+  }
 
-    nextWord() {
-        this.currentWordIndex += 1;
+  enableInvert() {
+    this.letterIndex = this.wordsTranslated[this.currentWordIndex].length;
+  }
 
-        if (this.currentWordIndex >= this.words.length)
-            this.currentWordIndex = 0;
-    }
+  nextWord() {
+    this.currentWordIndex += 1;
 
-    getActiveSubString() {
-        return this.words[this.currentWordIndex].substring(0, this.letterIndex);
-    }
+    if (this.currentWordIndex >= this.wordsTranslated.length)
+      this.currentWordIndex = 0;
+  }
+
+  getActiveSubString() {
+    return this.wordsTranslated[this.currentWordIndex].substring(
+      0,
+      this.letterIndex,
+    );
+  }
 }
 
 export { AutoTyperConfiguration };
