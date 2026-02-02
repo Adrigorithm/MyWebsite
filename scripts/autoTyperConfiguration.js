@@ -55,7 +55,7 @@ class AutoTyperConfiguration {
   }
 
   translateWords() {
-    let newLang = translator.getActiveLanguage();
+    let newLang = this.translator.getActiveLanguage();
 
     if (newLang === this.currentLang) return;
 
