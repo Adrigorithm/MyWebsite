@@ -101,7 +101,7 @@ class SectionSwitcher {
       let keyframes = [{ marginTop: oldMargin }, { marginTop: newMargin }];
 
       let timing = {
-        duration: 100,
+        duration: 300,
         fill: "forwards",
       };
 
