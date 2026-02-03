@@ -25,14 +25,6 @@ class SectionSwitcher {
         this.switch(i);
       });
     }
-
-    window.addEventListener("resize", () => {
-      if (this.#sectionActive >= 0) return;
-
-      this.centerSwitcher();
-    });
-
-    this.centerSwitcher();
   }
 
   switch(buttonIndex) {
@@ -43,19 +35,11 @@ class SectionSwitcher {
     });
   }
 
-  reset() {
-    this.centerSwitcher();
-  }
-
   calculateSwitcherMargin() {
     let parentHeight = this.#switcher.parentElement.clientHeight;
     let switcherHeight = this.#switcher.clientHeight;
 
     return parentHeight / 2 - switcherHeight / 2;
-  }
-
-  centerSwitcher() {
-    this.#switcher.style.marginTop = `${this.calculateSwitcherMargin()}px`;
   }
 
   async animateSection(oldSectionId, newSectionId) {
