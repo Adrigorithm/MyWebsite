@@ -79,10 +79,6 @@ class Translator {
         this.#translations.set(Language.German, this.getGermanTranslations());
 
         return;
-      case Language.Catalan:
-        this.#translations.set(Language.Catalan, this.getCatalanTranslations());
-
-        return;
     }
   }
 
@@ -200,7 +196,8 @@ class Translator {
       .set(
         "websiteText",
         "A website using HTML, CSS and JS. Absolutely no framework bloat. TailwindCSS for style compilation.",
-      );
+      )
+      .set("someFriends", "Some friends");
   }
 
   getDutchTranslations() {
@@ -316,7 +313,8 @@ class Translator {
       .set(
         "websiteText",
         "Een website die HTML, CSS en JS gebruikt. Absoluut geen framework-bloating. TailwindCSS voor stijlcompilatie.",
-      );
+      )
+      .set("someFriends", "Enkele vrienden");
   }
 
   getFrenchTranslations() {
@@ -429,7 +427,8 @@ class Translator {
       .set(
         "websiteText",
         "Un site web utilisant HTML, CSS et JS. Absolument aucun poids de framework. TailwindCSS pour la compilation de styles.",
-      );
+      )
+      .set("someFriends", "Quelques amis");
   }
 
   getGermanTranslations() {
@@ -545,120 +544,8 @@ class Translator {
       .set(
         "websiteText",
         "Eine Website, die HTML, CSS und JS verwendet. Absolut keine Framework-Überladung. TailwindCSS für Stilkompilierung.",
-      );
-  }
-
-  getCatalanTranslations() {
-    return new Map()
-      .set("settingsUpdated", "Configuració actualitzada!")
-      .set("settingsReverted", "Canvis de configuració revertits!")
-      .set("tab", "L'arbre per a gats d'Adri")
-      .set("about", "Sobre")
-      .set("projects", "Projectes")
-      .set("configurator", "Configurador")
-      .set("theme", "Tema")
-      .set("language", "Idioma")
-      .set("hi", "Hola :3")
-      .set("iAmA", "Sóc un ")
-      .set("yearOldDutch", "-anys neerlandès")
-      .set("softwareEngineer", "Enginyer de software")
-      .set("catCuddler", "Acollidor de gats")
-      .set("cloudEngineer", "Enginyer de núvols")
-      .set("pentester", "Pentester")
-      .set("belgiumCats", " de Bèlgica. M'agraden els gats.")
-      .set("interests", "Interessos")
-      .set("problemSolving", "Resoldre problemes")
-      .set("greenTech", "Tecnologia verda")
-      .set("cats", "Gats")
-      .set("cybersecurity", "Ciberseguretat")
-      .set("neuroscience", "Neurosciencies")
-      .set("bores", "Avorriments")
-      .set("politics", "Política")
-      .set("influencers", "Influencers")
-      .set("aISlop", "AI Slop")
-      .set("cryptocurrency", "Criptomoneda")
-      .set("techGigantism", "Giantisme tecnològic")
-      .set("environment", "Medi ambient")
-      .set("sport", "Esport")
-      .set("computer", "Ordinador")
-      .set("petsCats", "Animals de companyia (gats)")
-      .set("travel", "Viatges")
-      .set("software", "Programari")
-      .set("humans", "Humans")
-      .set(
-        "humansText",
-        "Nosaltres som sens dubte la pitjor cosa que mai ha passat a aquest planeta. Per tant, intento fer el meu millor per minimitzar l'impacte negatiu que caus i <b>tu</b> pots (i has de) fer-ho també.",
       )
-      .set("transport", "Transport")
-      .set(
-        "transportText",
-        "Els cotxes són probablement la pitjor forma de transport. O vaig a peu o amb bicicleta si triga com a màxim 1 hora; en cas contrari, utilitzo el transport públic. Utilitzar un cotxe hauria de ser un <b>darrer recurs</b>.",
-      )
-      .set("products", "Productes")
-      .set(
-        "productsText",
-        'En comprar alguna cosa, el preu és important, però no ha de prevaler sobre <b>durabilitat, qualitat i sostenibilitat</b>. A menys que les alternatives als "malos productes" siguin significativament més cares (2x o més), tendeixo a escollir els productes més ecològics.',
-      )
-      .set("karate", "Karate")
-      .set(
-        "karateText",
-        "Pràcticament l'únic esport que practico (a vegades també ensenyo). Actualment estic graduat com a <b>cinturó negre</b>. (sabies que hi ha 8 graus (grups dan) després del cinturó negre?)",
-      )
-      .set("fitness", "Fitness?")
-      .set(
-        "fitnessText",
-        "Uix, no. No sento cap emoció primordial en mostrar-me davant d'altres persones. A més, l'olor de suor i l'excés de desodorant és abominable per als meus sentits. Faig una mica d'exercici a casa i faig un esforç per fer alguns passos cada dia.",
-      )
-      .set("machine", '"L\'ordinador/laptop"')
-      .set(
-        "machineText",
-        "No hi ha moltes marques que recomano. Les marques més populars són les més barates, però també són les pitjors en quant a reparabilitat, ampliabilitat, personalització i, de vegades, fins i tot durabilitat. Els ordinadors que compro i m'agraden són totalment <b>personalitzats</b>, construïts per mi o una empresa certificada. Una marca oficial que m'agrada molt és <b>Framework</b> (realment hauries de donar-li una ullada). A més, també m'agraden els mini-PCs, simplement perquè així puc triar (i substituir) el teclat, la pantalla i potser fins i tot una bateria.",
-      )
-      .set("oS", "Sistema operatiu")
-      .set(
-        "oSText",
-        "M'agrada <b>GNU/Linux</b>. No vull que Windows saibp què faig al meu dispositiu, ni vull vendre la meva ànima a Apple i utilitzar un sistema operatiu mediocre (MacOS) que viola completament per a què va ser construït (Unix). Generalment intento comprar la meva màquina sense un sistema operatiu instal·lat, però sovint no és possible, en aquest cas ho esborraria i instal·laria una distribució Linux tan aviat com arribi a la meva residència.",
-      )
-      .set("cats", "Gats")
-      .set(
-        "catsText",
-        "M'agraden tots els <b>felines</b>, tant petits, normals com grans. El meu color preferit per a un gat de casa és el negre total. En el desafortunat esdeveniment que em trobessis i tinguessis un gat, probablement m'escollirà com a humà preferit :3. Ps. fet divertit sobre els gats: el Bombay és un gat de color negre totalment, normalment acompanyat d'ulls taronjats, miau miau.",
-      )
-      .set("onlyCats", "Només gats?")
-      .set(
-        "onlyCatsText",
-        "Bé... en un sentit. No m'agraden els gossos, però mai els consideraré animals de companyia perquè he viscut dues <b>experiències traumàtiques amb gossos</b> (ho sento). Potser m'agradaria canviar la meva percepció dels gossos, encara que m'agraden els foxos, llops, pandas vermells, esquirols, llúdrigues, corbs i cendres, però no haurien d'estar com a animals de companyia.",
-      )
-      .set("inShort", "En resum")
-      .set(
-        "inShortText",
-        "M'agrada descobrir i experimentar <b>cultures, vegetació (o països en conjunt)</b> que m'eren desconegudes fins ara. Intento fer els meus viatges <b>actius i envoltats de natura amb un viatge a la ciutat</b> de tant en tant. Tinc una debilitat per als <b>països nòrdics</b> i prefereixo no viatjar a països càlids.",
-      )
-      .set("destinations", "Destinacions")
-      .set(
-        "destinationsText",
-        "M'encanta Suècia, Noruega, Finlàndia i Dinamarca. M'agradaria anar al Japó, Corea del Sud, Tailàndia i Canadà, i potser a Austràlia/NZ (quan allí és hivern).",
-      )
-      .set("inGeneral", "En general")
-      .set(
-        "inGeneralText",
-        "Crec que el programari hauria de ser <b>gratuït</b>. Les empreses que volen fer diners amb ell no haurien de fer-ho restringint l'accés a funcions o al producte mateix, especialment ara que l'ús d'IA està convertint molts projectes nous en AI slop insegur. En lloc d'això, les empreses que volen fer diners d'aquesta manera haurien de fer-ho d'una o més de les següents maneres:",
-      )
-      .set(
-        "inGeneralText0",
-        "<li>SaaS (costos d'allotjament)</li><li>Suport</li><li>Personalització que afecta <b>només</b> l'aparença (temes de colors/font/...)</li>",
-      )
-      .set("openSource", "Codi obert")
-      .set(
-        "openSourceText",
-        "El programari que utilitzo i creo (i de vegades al qual contribueixo) és gairebé exclusivament codi obert. Intento que més persones <b>utilitzin OSS i apreciïn FOSS</b> en conjunt. Alguns exemples són Zed en lloc de Jetbrains, LibreOffice en lloc de MS Office, Matrix en lloc de Teams... la llista continua. He introduït algunes persones al món de FOSS a la universitat i fins i tot la meva mare ara fa servir GNU/Linux!",
-      )
-      .set("adriTemplater", "Un motor de plantilles senzill escrit en Python")
-      .set("adribot", "Un bot de Discord escrit en C#")
-      .set(
-        "websiteText",
-        "Una pàgina web que utilitza HTML, CSS i JS. Absolutament sense càrrega de framework. TailwindCSS per a la compilació d'estils.",
-      );
+      .set("someFriends", "Einige Freunde");
   }
 }
 

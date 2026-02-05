@@ -3,7 +3,6 @@ const Language = {
   Dutch: "nl-BE",
   French: "fr-FR",
   German: "de-DE",
-  Catalan: "ca",
 };
 
 const LogLevel = {
