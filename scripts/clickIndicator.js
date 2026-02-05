@@ -13,8 +13,8 @@ class ClickIndicator {
   initialise() {
     document.body.addEventListener("click", (e) => {
       let indicatorCopy = this.#indicator.cloneNode(true);
-      let topOffset = e.pageY - this.#indicator.clientHeight / 2;
-      let leftOffset = e.pageX - this.#indicator.clientWidth / 2;
+      let topOffset = e.clientY - this.#indicator.clientHeight / 2;
+      let leftOffset = e.clientX - this.#indicator.clientWidth / 2;
 
       indicatorCopy.style.top = `${topOffset}px`;
       indicatorCopy.style.left = `${leftOffset}px`;
