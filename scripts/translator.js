@@ -202,7 +202,8 @@ class Translator {
       .set(
         "couldBeYou",
         "This could be you (or I just forgot you), in any case, if you want to be on here, contact me using any method in the website footer.",
-      );
+      )
+      .set("utils", "Utilities");
   }
 
   getDutchTranslations() {
@@ -324,7 +325,8 @@ class Translator {
       .set(
         "couldBeYou",
         "Dit zou jij kunnen zijn (of ik ben je gewoon vergeten), maar als je hier wilt staan, neem dan contact met me op via een van de methoden die je onderaan de website vindt.",
-      );
+      )
+      .set("utils", "Nuttigheden");
   }
 
   getFrenchTranslations() {
@@ -443,7 +445,8 @@ class Translator {
       .set(
         "couldBeYou",
         "Cela pourrait être vous (ou peut-être que je vous ai simplement oublié), dans tous les cas, si vous souhaitez figurer ici, contactez-moi en utilisant l'une des méthodes indiquées en bas de page du site web.",
-      );
+      )
+      .set("utils", "Utilitaires");
   }
 
   getGermanTranslations() {
@@ -565,7 +568,8 @@ class Translator {
       .set(
         "couldBeYou",
         "Das könnten Sie sein (oder ich habe Sie einfach vergessen). Wenn Sie hier aufgeführt werden möchten, kontaktieren Sie mich bitte über eine der in der Fußzeile der Website angegebenen Methoden.",
-      );
+      )
+      .set("utils", "Nützliches");
   }
 }
 

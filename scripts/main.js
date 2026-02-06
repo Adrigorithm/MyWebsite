@@ -8,6 +8,7 @@ import { AutoTyper } from "./autoTyper.js";
 import { AutoTyperConfiguration } from "./autoTyperConfiguration.js";
 import { Slider } from "./slider.js";
 import { SectionSwitcher } from "./sectionSwitcher.js";
+import { Rng } from "./rng.js";
 
 document.addEventListener("DOMContentLoaded", load);
 
@@ -21,6 +22,7 @@ let autoTyper = undefined;
 let toastSpawner = undefined;
 let sectionSwitcher = undefined;
 let slidersServices = [];
+let rng = undefined;
 
 setupTranslator();
 
@@ -34,6 +36,7 @@ function load() {
   setupToastSpawner();
   setupSectionSwitcher();
   setupSliders();
+  setupRng();
 
   applyDependencies();
   applyDynamicText();
@@ -139,6 +142,18 @@ function setupSliders() {
 
     slidersServices.push(new Slider(slider));
   }
+}
+
+function setupRng() {
+  let rngElement = document.getElementById("rng");
+
+  rng = new Rng(
+    rngElement.querySelector("#rngLowerBound"),
+    rngElement.querySelector("#rngUpperBound"),
+    rngElement.querySelector("#rngGenerate"),
+    rngElement.querySelector("#rngErrors"),
+    rngElement.querySelector("#rngNumber"),
+  );
 }
 
 function applyDependencies() {

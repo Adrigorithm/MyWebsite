@@ -528,6 +528,15 @@
                             Projects
                         </a>
                     </li>
+                    <li class="text-center p-1">
+                        <a
+                            class="block"
+                            href="#utils"
+                            data-translatable="utils"
+                        >
+                            Utilities
+                        </a>
+                    </li>
                 </ul>
             </nav>
 
@@ -1345,10 +1354,9 @@
                                     data-translatable="couldBeYou"
                                     class="dark:text-gray-300 text-gray-800"
                                 >
-                                    "This could be you (or I just forgot you),
-                                    in any case, if you want to be on here,
-                                    contact me using any method in the website
-                                    footer."
+                                    This could be you (or I just forgot you), in
+                                    any case, if you want to be on here, contact
+                                    me using any method in the website footer.
                                 </p>
                             </div>
                             <a href="mailto:adrigorithm@proton.me"
@@ -1955,6 +1963,74 @@
                             </svg>
                         </button>
                     </div>
+                </div>
+            </section>
+
+            <section id="utils" class="page hidden w-full">
+                <div class="flex flex-col sm:flex-row justify-center m-2">
+                    <section
+                        id="rng"
+                        class="shadow-xl flex flex-col p-2 sm:max-w-1/2 lg:max-w-1/3 gap-1"
+                    >
+                        <h2 class="text-center" data-translatable="rng">
+                            Random number generator
+                        </h2>
+
+                        <p
+                            data-translatable="rngText"
+                            class="font-bold dark:text-gray-300 text-gray-800"
+                        >
+                            Generates a number between two integers (respecting
+                            JavaScript limits).
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row sm:gap-3">
+                            <label
+                                data-translatable="lowerBound"
+                                for="lowerBound"
+                                class="dark:text-gray-300 text-gray-800"
+                                >Lower bound (inclusive)</label
+                            >
+                            <input
+                                id="rngLowerBound"
+                                class="border px-1.5"
+                                name="lowerBound"
+                                value="1"
+                            />
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row sm:gap-3">
+                            <label
+                                data-translatable="upperBound"
+                                for="upperBound"
+                                class="dark:text-gray-300 text-gray-800"
+                                >Upper bound (inclusive)</label
+                            >
+                            <input
+                                id="rngUpperBound"
+                                class="border px-1.5"
+                                name="upperBound"
+                                value="10"
+                            />
+                        </div>
+
+                        <div id="rngErrors" class="text-center"></div>
+
+                        <button
+                            id="rngGenerate"
+                            class="underline"
+                            data-translatable="generate"
+                        >
+                            Generate!
+                        </button>
+
+                        <p
+                            id="rngNumber"
+                            class="dark:text-gray-300 text-gray-800 text-center text-4xl"
+                        >
+                            :3
+                        </p>
+                    </section>
                 </div>
             </section>
         </main>
