@@ -1,5 +1,5 @@
 # My personal website 
-New versions will always be hosted on https://a3aan.cat/. GitHub pages may run an earlier version.
+New versions will always be hosted on https://itsadri.com/.
 
 ## Focus
 - W3C compliance
@@ -12,7 +12,7 @@ New versions will always be hosted on https://a3aan.cat/. GitHub pages may run a
 ~~- [x] Version 1~~
 
 ~~- [x] Version 2~~
-- [ ] Version 3 (In progress)
+- [x] Version 3 (Done, but still refining and adding nice thingies)
 
 ## Tech Stack
 - HTML
@@ -36,4 +36,5 @@ The following tools were used in the creation of this project (I am likely forge
 - [TailwindCSS](https://tailwindcss.com/) because vanilla CSS is mid
 - [Mozilla documentation](https://developer.mozilla.org/en-US/) for the best web development documentation
 - [CSS filter generator](https://angel-rs.github.io/css-color-filter-generator/) to generate filters to obtain a specific colour
+
 
