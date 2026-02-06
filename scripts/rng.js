@@ -5,6 +5,7 @@ class Rng {
   #upperBoundValue = 0;
   #errorOutput = undefined;
   #generatedNumberField = undefined;
+  #translator = null;
   #errors = [];
 
   constructor(
@@ -13,11 +14,13 @@ class Rng {
     generateButton,
     errorOutput,
     generatedNumberField,
+    translator,
   ) {
     this.#lowerBound = lowerBound;
     this.#upperBound = upperBound;
     this.#errorOutput = errorOutput;
     this.#generatedNumberField = generatedNumberField;
+    this.#translator = translator;
 
     generateButton.addEventListener("click", () => {
       generateButton.disabled = true;
@@ -57,7 +60,13 @@ class Rng {
 
   isGeneratable() {
     if (this.#lowerBoundValue >= this.#upperBoundValue) {
-      this.addError("Lower number must be smaller than upper number");
+      this.addError(
+        "lower<Upper",
+        this.#translator.translateWord(
+          "lower<Upper",
+          this.#translator.getActiveLanguage(),
+        ),
+      );
 
       return false;
     }
@@ -79,7 +88,11 @@ class Rng {
       this.#lowerBoundValue < Number.MIN_SAFE_INTEGER
     ) {
       this.addError(
-        `Lower value must be a number bigger or equal to <b>${Number.MIN_SAFE_INTEGER}</b>`,
+        "lower>Limit",
+        this.#translator.translateWord(
+          "lower>Limit",
+          this.#translator.getActiveLanguage(),
+        ),
       );
 
       return false;
@@ -102,7 +115,11 @@ class Rng {
       this.#upperBoundValue > Number.MAX_SAFE_INTEGER
     ) {
       this.addError(
-        `Upper value must be a number smaller or equal to <b>${Number.MAX_SAFE_INTEGER}</b>`,
+        "bigger<Limit",
+        this.#translator.translateWord(
+          "bigger<Limit",
+          this.#translator.getActiveLanguage(),
+        ),
       );
 
       return false;
@@ -111,8 +128,9 @@ class Rng {
     return true;
   }
 
-  addError(error) {
+  addError(id, error) {
     let p = document.createElement("p");
+    p.dataset.translatable = id;
     p.innerHTML = error;
     p.style.color = "red";
 

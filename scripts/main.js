@@ -153,6 +153,7 @@ function setupRng() {
     rngElement.querySelector("#rngGenerate"),
     rngElement.querySelector("#rngErrors"),
     rngElement.querySelector("#rngNumber"),
+    translator,
   );
 }
 

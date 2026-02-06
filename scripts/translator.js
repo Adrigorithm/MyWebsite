@@ -203,7 +203,21 @@ class Translator {
         "couldBeYou",
         "This could be you (or I just forgot you), in any case, if you want to be on here, contact me using any method in the website footer.",
       )
-      .set("utils", "Utilities");
+      .set("utils", "Utilities")
+      .set("rng", "Random number generator")
+      .set("rngText", "Generates a number between two integers.")
+      .set("lowerBound", "Lower bound (inclusive)")
+      .set("upperBound", "Upper bound (inclusive)")
+      .set("generate", "Generate!")
+      .set("lower<Upper", "Lower number must be smaller than upper number")
+      .set(
+        "lower>Limit",
+        `Lower value must be a number bigger or equal to <b>${Number.MIN_SAFE_INTEGER}</b>`,
+      )
+      .set(
+        "bigger<Limit",
+        `Upper value must be a number smaller or equal to <b>${Number.MAX_SAFE_INTEGER}</b>`,
+      );
   }
 
   getDutchTranslations() {
@@ -326,7 +340,21 @@ class Translator {
         "couldBeYou",
         "Dit zou jij kunnen zijn (of ik ben je gewoon vergeten), maar als je hier wilt staan, neem dan contact met me op via een van de methoden die je onderaan de website vindt.",
       )
-      .set("utils", "Nuttigheden");
+      .set("utils", "Nuttigheden")
+      .set("rng", "Willekeurige getallengenerator")
+      .set("rngText", "Genereert een getal tussen twee gehele getallen.")
+      .set("lowerBound", "Ondergrens (inclusief)")
+      .set("upperBound", "Bovengrens (inclusief)")
+      .set("generate", "Genereer!")
+      .set("lower<Upper", "Lagere nummer moet kleiner zijn dan hogere nummer")
+      .set(
+        "lower>Limit",
+        `Lagere waarde moet een getal zijn dat groter of gelijk is aan <b>${Number.MIN_SAFE_INTEGER}</b>`,
+      )
+      .set(
+        "bigger<Limit",
+        `Hogere waarde moet een getal zijn dat kleiner of gelijk is aan <b>${Number.MAX_SAFE_INTEGER}</b>`,
+      );
   }
 
   getFrenchTranslations() {
@@ -446,7 +474,24 @@ class Translator {
         "couldBeYou",
         "Cela pourrait être vous (ou peut-être que je vous ai simplement oublié), dans tous les cas, si vous souhaitez figurer ici, contactez-moi en utilisant l'une des méthodes indiquées en bas de page du site web.",
       )
-      .set("utils", "Utilitaires");
+      .set("utils", "Utilitaires")
+      .set("rng", "Générateur de nombres aléatoires")
+      .set("rngText", "Génère un nombre entre deux entiers.")
+      .set("lowerBound", "Borne inférieure (inclusive)")
+      .set("upperBound", "Borne supérieure (inclusive)")
+      .set("generate", "Générez!")
+      .set(
+        "lower<Upper",
+        "Le nombre inférieur doit être plus petit que le nombre supérieur",
+      )
+      .set(
+        "lower>Limit",
+        `La valeur inférieure doit être un nombre supérieur ou égal à <b>${Number.MIN_SAFE_INTEGER}</b>`,
+      )
+      .set(
+        "bigger<Limit",
+        `La valeur supérieure doit être un nombre inférieur ou égal à <b>${Number.MAX_SAFE_INTEGER}</b>`,
+      );
   }
 
   getGermanTranslations() {
@@ -569,7 +614,24 @@ class Translator {
         "couldBeYou",
         "Das könnten Sie sein (oder ich habe Sie einfach vergessen). Wenn Sie hier aufgeführt werden möchten, kontaktieren Sie mich bitte über eine der in der Fußzeile der Website angegebenen Methoden.",
       )
-      .set("utils", "Nützliches");
+      .set("utils", "Nützliches")
+      .set("rng", "Zufallszahlengenerator")
+      .set("rngText", "Generiert eine Zahl zwischen zwei Ganzzahlen.")
+      .set("lowerBound", "Untere Grenze (einschließlich)")
+      .set("upperBound", "Obere Grenze (einschließlich)")
+      .set("generate", "Generieren!")
+      .set(
+        "lower<Upper",
+        "Die untere Zahl muss kleiner sein als die obere Zahl",
+      )
+      .set(
+        "lower>Limit",
+        `Der untere Wert muss eine Zahl sein, die größer oder gleich <b>${Number.MIN_SAFE_INTEGER}</b> ist`,
+      )
+      .set(
+        "bigger<Limit",
+        `Der obere Wert muss eine Zahl sein, die kleiner oder gleich <b>${Number.MAX_SAFE_INTEGER}</b> ist`,
+      );
   }
 }
 
