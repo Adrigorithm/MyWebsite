@@ -217,7 +217,8 @@ class Translator {
       .set(
         "bigger<Limit",
         `Upper value must be a number smaller or equal to <b>${Number.MAX_SAFE_INTEGER}</b>`,
-      );
+      )
+      .set("blackBeauty", "My queen of darkness");
   }
 
   getDutchTranslations() {
@@ -354,7 +355,8 @@ class Translator {
       .set(
         "bigger<Limit",
         `Hogere waarde moet een getal zijn dat kleiner of gelijk is aan <b>${Number.MAX_SAFE_INTEGER}</b>`,
-      );
+      )
+      .set("blackBeauty", "Mijn koningin van de duisternis");
   }
 
   getFrenchTranslations() {
@@ -491,7 +493,8 @@ class Translator {
       .set(
         "bigger<Limit",
         `La valeur supérieure doit être un nombre inférieur ou égal à <b>${Number.MAX_SAFE_INTEGER}</b>`,
-      );
+      )
+      .set("blackBeauty", "Ma reine des ténèbres");
   }
 
   getGermanTranslations() {
@@ -631,7 +634,8 @@ class Translator {
       .set(
         "bigger<Limit",
         `Der obere Wert muss eine Zahl sein, die kleiner oder gleich <b>${Number.MAX_SAFE_INTEGER}</b> ist`,
-      );
+      )
+      .set("blackBeauty", "Meine Königin der Dunkelheit");
   }
 }
 
