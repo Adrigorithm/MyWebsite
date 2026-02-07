@@ -18,15 +18,15 @@ class Slider {
   setup() {
     if (this.#slider.children.length < 2) return;
 
-    this.#slider.addEventListener("mousedown", (e) => {
+    this.#slider.addEventListener("pointerdown", (e) => {
       this.#mouseDownCoordinate = e.pageX;
     });
 
-    document.addEventListener("mouseup", () => {
+    document.addEventListener("pointerup", () => {
       this.#mouseDownCoordinate = null;
     });
 
-    this.#slider.addEventListener("mouseup", (e) => {
+    this.#slider.addEventListener("pointerup", (e) => {
       if (!this.#mouseDownCoordinate) return;
 
       const moveDistance = e.pageX - this.#mouseDownCoordinate;
