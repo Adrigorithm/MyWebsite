@@ -579,29 +579,9 @@
     --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .shadow-md {
-    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
   .shadow-xl {
     --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .inset-shadow-sm {
-    --tw-inset-shadow: inset 0 2px 4px var(--tw-inset-shadow-color, rgb(0 0 0 / 0.05));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-cosmic {
-    --tw-shadow-color: oklch(0.3086 0.2195 292.24);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-shadow-color: color-mix(in oklab, var(--color-cosmic) var(--tw-shadow-alpha), transparent);
-    }
-  }
-  .inset-shadow-cosmic {
-    --tw-inset-shadow-color: oklch(0.3086 0.2195 292.24);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-inset-shadow-color: color-mix(in oklab, var(--color-cosmic) var(--tw-inset-shadow-alpha), transparent);
-    }
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
@@ -805,22 +785,6 @@
       color: var(--color-lilac);
     }
   }
-  .dark\:shadow-lilac {
-    &:where(.dark, .dark *) {
-      --tw-shadow-color: oklch(0.75 0.2393 292.24);
-      @supports (color: color-mix(in lab, red, red)) {
-        --tw-shadow-color: color-mix(in oklab, var(--color-lilac) var(--tw-shadow-alpha), transparent);
-      }
-    }
-  }
-  .dark\:inset-shadow-lilac {
-    &:where(.dark, .dark *) {
-      --tw-inset-shadow-color: oklch(0.75 0.2393 292.24);
-      @supports (color: color-mix(in lab, red, red)) {
-        --tw-inset-shadow-color: color-mix(in oklab, var(--color-lilac) var(--tw-inset-shadow-alpha), transparent);
-      }
-    }
-  }
 }
 @font-face {
   font-family: Inter;
@@ -846,6 +810,9 @@
   &:where(.dark, .dark *) {
     filter: brightness(0) saturate(100%) invert(22%) sepia(8%) saturate(1758%) hue-rotate(178deg) brightness(96%) contrast(88%);
   }
+}
+.glow {
+  box-shadow: 0 0 0.25rem 0.25rem;
 }
 .animation-fade {
   animation-duration: 1.5s;
