@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.mkShell {
-  nativeBuildInputs = with pkgs.buildPackages; [ nodejs_25 python315 nixd nil ];
+  nativeBuildInputs = with pkgs.buildPackages; [ nodejs python3 nixd nil ];
 
   shellHook = 
   ''
