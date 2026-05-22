@@ -449,6 +449,12 @@
   .bg-yellow-300 {
     background-color: var(--color-yellow-300);
   }
+  .bg-\[url\(images\/adribot_portrait\.avif\)\] {
+    background-image: url(images/adribot_portrait.avif);
+  }
+  .bg-\[url\(images\/templater_portrait\.avif\)\] {
+    background-image: url(images/templater_portrait.avif);
+  }
   .bg-\[url\(images\/website_portrait\.avif\)\] {
     background-image: url(images/website_portrait.avif);
   }
@@ -658,6 +664,16 @@
       gap: calc(var(--spacing) * 4);
     }
   }
+  .md\:bg-\[url\(images\/adribot\.avif\)\] {
+    @media (width >= 48rem) {
+      background-image: url(images/adribot.avif);
+    }
+  }
+  .md\:bg-\[url\(images\/templater\.avif\)\] {
+    @media (width >= 48rem) {
+      background-image: url(images/templater.avif);
+    }
+  }
   .md\:bg-\[url\(images\/website\.avif\)\] {
     @media (width >= 48rem) {
       background-image: url(images/website.avif);
@@ -733,6 +749,16 @@
       background-color: var(--color-yellow-700);
     }
   }
+  .dark\:bg-\[url\(images\/adribot_portrait_dark\.avif\)\] {
+    &:where(.dark, .dark *) {
+      background-image: url(images/adribot_portrait_dark.avif);
+    }
+  }
+  .dark\:bg-\[url\(images\/templater_portrait_dark\.avif\)\] {
+    &:where(.dark, .dark *) {
+      background-image: url(images/templater_portrait_dark.avif);
+    }
+  }
   .dark\:bg-\[url\(images\/website_portrait_dark\.avif\)\] {
     &:where(.dark, .dark *) {
       background-image: url(images/website_portrait_dark.avif);
@@ -776,6 +802,20 @@
   .dark\:text-lilac {
     &:where(.dark, .dark *) {
       color: var(--color-lilac);
+    }
+  }
+  .dark\:md\:bg-\[url\(images\/adribot_dark\.avif\)\] {
+    &:where(.dark, .dark *) {
+      @media (width >= 48rem) {
+        background-image: url(images/adribot_dark.avif);
+      }
+    }
+  }
+  .dark\:md\:bg-\[url\(images\/templater_dark\.avif\)\] {
+    &:where(.dark, .dark *) {
+      @media (width >= 48rem) {
+        background-image: url(images/templater_dark.avif);
+      }
     }
   }
   .dark\:md\:bg-\[url\(images\/website_dark\.avif\)\] {
