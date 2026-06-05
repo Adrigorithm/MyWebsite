@@ -7,7 +7,8 @@ INPUT_FILE_NAME = "index.html"
 INPUT_FILE_NAME_TEMP = "index-temp.html"
 OUTPUT_FILE_NAME = "index-output.html"
 CSS_FILE_MATCH = 'rel="stylesheet"'
-CSS_FILE_NAME = f"style-{uuid4().int}.css"
+CSS_FILE_NAME = "style.css"
+CSS_FILE_NAME_TEMP = f"style-{uuid4().int}.css"
 
 html_input_file = open(INPUT_FILE_NAME)
 html_output_file = open(OUTPUT_FILE_NAME, "w")
@@ -16,8 +17,6 @@ done = False
 sed = False
 in_match = False
 match_length = 0
-position = 0
-uid_old = ""
 
 for char in html_input_file.read():
     if done:
@@ -25,9 +24,6 @@ for char in html_input_file.read():
         continue
 
     if sed:
-        if char.isnumeric():
-            uid_old.join(char)
-
         if char == os.linesep:
             done = True
 
@@ -35,7 +31,7 @@ for char in html_input_file.read():
 
     if match_length == len(CSS_FILE_MATCH):
         html_output_file.write(
-            f'{CSS_FILE_MATCH} href="{CSS_FILE_NAME}" />{os.linesep}'
+            f'{CSS_FILE_MATCH} href="{CSS_FILE_NAME_TEMP}" />{os.linesep}'
         )
         sed = True
         continue
@@ -50,14 +46,9 @@ for char in html_input_file.read():
 html_input_file.close()
 html_output_file.close()
 
-old_css_file = f"style-{uid_old}.css"
-
-if len(uid_old) == 0 or not os.path.exists(old_css_file):
-    old_css_file = "style.css"
-
 os.rename(INPUT_FILE_NAME, INPUT_FILE_NAME_TEMP)
 os.rename(OUTPUT_FILE_NAME, INPUT_FILE_NAME)
-copyfile(old_css_file, CSS_FILE_NAME)
+copyfile(CSS_FILE_NAME, CSS_FILE_NAME_TEMP)
 
 with ZipFile("archive.zip", "w") as z:
     z.write("android-chrome-192x192.png")
@@ -76,7 +67,7 @@ with ZipFile("archive.zip", "w") as z:
     z.write(INPUT_FILE_NAME)
     z.write("inter_var.woff2")
     z.write("site.webmanifest")
-    z.write(CSS_FILE_NAME)
+    z.write(CSS_FILE_NAME_TEMP)
 
 os.rename(INPUT_FILE_NAME_TEMP, INPUT_FILE_NAME)
-os.remove(CSS_FILE_NAME)
+os.remove(CSS_FILE_NAME_TEMP)
