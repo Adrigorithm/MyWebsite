@@ -34,15 +34,17 @@ for char in html_input_file.read():
         continue
 
     if match_length == len(CSS_FILE_MATCH):
-        html_output_file.write(f' href="{CSS_FILE_NAME}" />{os.linesep}')
+        html_output_file.write(
+            f'{CSS_FILE_MATCH} href="{CSS_FILE_NAME}" />{os.linesep}'
+        )
         sed = True
         continue
 
     if char == CSS_FILE_MATCH[match_length]:
         match_length += 1
-        html_output_file.write(char)
         continue
 
+    html_output_file.write(char)
     match_length = 0
 
 html_input_file.close()
@@ -58,16 +60,23 @@ os.rename(OUTPUT_FILE_NAME, INPUT_FILE_NAME)
 copyfile(old_css_file, CSS_FILE_NAME)
 
 with ZipFile("archive.zip", "w") as z:
-    z.write("android-chrome-*")
+    z.write("android-chrome-192x192.png")
+    z.write("android-chrome-512x512.png")
     z.write("apple-touch-icon.png")
-    z.write("favicon*")
-    z.write("images/")
+    z.write("favicon.ico")
+    z.write("favicon-16x16.png")
+    z.write("favicon-32x32.png")
+
+    for f in os.listdir("images"):
+        z.write(f"images/{f}")
+
+    for f in os.listdir("scripts"):
+        z.write(f"scripts/{f}")
+
     z.write(INPUT_FILE_NAME)
     z.write("inter_var.woff2")
-    z.write("scripts/")
     z.write("site.webmanifest")
     z.write(CSS_FILE_NAME)
-    z.write("videos/")
 
 os.rename(INPUT_FILE_NAME_TEMP, INPUT_FILE_NAME)
 os.remove(CSS_FILE_NAME)
