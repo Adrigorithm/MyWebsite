@@ -169,7 +169,7 @@ function applyDynamicText() {
 
 function getAge() {
   let now = new Date();
-  let birth = new Date("04-12-1998");
+  let birth = new Date(1998, 11, 4);
   let age = now.getFullYear() - birth.getFullYear();
 
   if (
