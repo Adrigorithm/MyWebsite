@@ -19,6 +19,10 @@ New versions will always be hosted on https://itsadri.com/.
 - CSS
 - JavaScript
 
+## Todo
+- Enable translations for alts and similar ARIA stuff
+- Create form
+
 ## FAQ
 - **I want to help!**
 

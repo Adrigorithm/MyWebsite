@@ -218,7 +218,9 @@ class Translator {
         "bigger<Limit",
         `Upper value must be a number smaller or equal to <b>${Number.MAX_SAFE_INTEGER}</b>`,
       )
-      .set("blackBeauty", "My queen of darkness");
+      .set("blackBeauty", "My queen of darkness")
+      .set("emojiful", "Emojiful datapack generator")
+      .set("emojifulText", "Transforms discord's frontend HTML into \"Emojiful\" datapacks.");
   }
 
   getDutchTranslations() {
@@ -356,7 +358,9 @@ class Translator {
         "bigger<Limit",
         `Hogere waarde moet een getal zijn dat kleiner of gelijk is aan <b>${Number.MAX_SAFE_INTEGER}</b>`,
       )
-      .set("blackBeauty", "Mijn koningin van de duisternis");
+      .set("blackBeauty", "Mijn koningin van de duisternis")
+      .set("emojiful", "Emojiful-datapakketgenerator")
+      .set("emojifulText", "Zet de HTML van de Discord-frontend om in \"Emojiful\"-datapakketten");
   }
 
   getFrenchTranslations() {
@@ -494,7 +498,9 @@ class Translator {
         "bigger<Limit",
         `La valeur supérieure doit être un nombre inférieur ou égal à <b>${Number.MAX_SAFE_INTEGER}</b>`,
       )
-      .set("blackBeauty", "Ma reine des ténèbres");
+      .set("blackBeauty", "Ma reine des ténèbres")
+      .set("emojiful", "Générateur de packs de données Emojiful")
+      .set("emojifulText", "Transforme le code HTML de l'interface utilisateur de Discord en datapacks \"Emojiful\".");
   }
 
   getGermanTranslations() {
@@ -635,7 +641,9 @@ class Translator {
         "bigger<Limit",
         `Der obere Wert muss eine Zahl sein, die kleiner oder gleich <b>${Number.MAX_SAFE_INTEGER}</b> ist`,
       )
-      .set("blackBeauty", "Meine Königin der Dunkelheit");
+      .set("blackBeauty", "Meine Königin der Dunkelheit")
+      .set("emojiful", "Emojiful-Datenpaket-Generator")
+      .set("emojifulText", "Wandelt den HTML-Code des Discord-Frontends in \"Emojiful\"-Datapacks um.");
   }
 }
 

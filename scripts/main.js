@@ -9,6 +9,7 @@ import { AutoTyperConfiguration } from "./autoTyperConfiguration.js";
 import { Slider } from "./slider.js";
 import { SectionSwitcher } from "./sectionSwitcher.js";
 import { Rng } from "./rng.js";
+import { Emojiful } from "./emojiful.js";
 
 document.addEventListener("DOMContentLoaded", load);
 
@@ -23,6 +24,7 @@ let toastSpawner = undefined;
 let sectionSwitcher = undefined;
 let slidersServices = [];
 let rng = undefined;
+let emojiful = undefined;
 
 setupTranslator();
 
@@ -155,6 +157,16 @@ function setupRng() {
     rngElement.querySelector("#rngNumber"),
     translator,
   );
+}
+
+function setupEmojiful() {
+  let emojifulElement = document.getElementById("emojiful");
+
+  emojiful = new Emojiful(
+    rngElement.querySelector("#emojifulContainer"),
+    rngElement.querySelector("#emojifulGenerate"),
+    rngElement.querySelector("#emojifulErrors"),
+    translator);
 }
 
 function applyDependencies() {
