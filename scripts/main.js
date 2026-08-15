@@ -39,6 +39,7 @@ function load() {
   setupSectionSwitcher();
   setupSliders();
   setupRng();
+  setupEmojiful();
 
   applyDependencies();
   applyDynamicText();
@@ -163,9 +164,11 @@ function setupEmojiful() {
   let emojifulElement = document.getElementById("emojiful");
 
   emojiful = new Emojiful(
-    rngElement.querySelector("#emojifulContainer"),
-    rngElement.querySelector("#emojifulGenerate"),
-    rngElement.querySelector("#emojifulErrors"),
+    emojifulElement.querySelector("#emojifulContainer"),
+    emojifulElement.querySelector("#emojifulGenerate"),
+    emojifulElement.querySelector("#emojifulErrors"),
+    document.getElementById("emojiful-datapack-generator"),
+    document.getElementById("overlay"),
     translator);
 }
 
