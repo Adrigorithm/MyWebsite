@@ -565,7 +565,13 @@
                     <h3 data-translatable="emojis" class="mb-2.5 font-bold">
                         Emojis
                     </h3>
-node
+
+                    <input type="text" placeholder="category"/>
+                    <select>
+                        <option selected value="recipe">modern (1.21+)</option>
+                        <option value="recipes">legacy</option>
+                    </select>
+
                     <div
                         class="flex gap-1.5 flex-wrap justify-center emojis"
                     >
@@ -576,7 +582,6 @@ node
                 <section class="flex p-1.5 gap-1 justify-end">
                     <button
                         aria-label="select all"
-                        id="selectAll"
                         class="bg-gray-300 dark:bg-gray-800 p-0.5"
                     >
                         <svg
@@ -591,7 +596,6 @@ node
                     </button>
                     <button
                         aria-label="deselect all"
-                        id="deselectAll"
                         class="bg-gray-300 dark:bg-gray-800 p-0.5"
                     >
                         <svg
@@ -604,7 +608,7 @@ node
                             />
                         </svg>
                     </button>
-                    <button id="apply" class="bg-gray-300 dark:bg-gray-800 p-0.5">
+                    <button class="bg-gray-300 dark:bg-gray-800 p-0.5">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             class="fill-green-700 dark:fill-green-300 h-7"
@@ -1996,7 +2000,7 @@ node
                                 id="emojifulContainer"
                                 class="border px-1.5"
                                 name="emojifulContainer"
-                                value="10"
+                                value="<html />"
                             />
                         </div>
 
