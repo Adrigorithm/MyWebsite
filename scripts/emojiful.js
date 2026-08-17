@@ -1,4 +1,4 @@
-import { downloadZip } from "./client-zip";
+import { downloadZip } from "./client-zip.js";
 
 class Emojiful {
   #emojifulContainer = undefined;
@@ -36,7 +36,7 @@ class Emojiful {
     });
 
     emojifulDatapackGenerator.children[2].children[2].addEventListener("click", () => {
-      const category = this.#emojifulDatapackGenerator.children[1].children[1].value;
+      const category = this.#emojifulDatapackGenerator.children[1].children[1].value || "category";
       const recipeDir = this.#emojifulDatapackGenerator.children[1].children[2].value;
 
       this.zipActiveEmoji(recipeDir, category);
@@ -107,7 +107,7 @@ class Emojiful {
       emojiFiles.push(this.generateEmojiJsonFile(recipeDir, category, emoji));
     })
 
-    const response = downloadZip([this.generatePackMcmetaFile()], emojiFiles);
+    const response = downloadZip([this.generatePackMcmetaFile(), ...emojiFiles]);
     const blob = await response.blob();
     const url = URL.createObjectURL(blob);
 
@@ -137,7 +137,7 @@ class Emojiful {
     return {
       category: category,
       name: img.alt,
-      url: img.src,
+      url: img.src.substring(0, img.src.indexOf("?")),
       type: "emojiful:emoji_recipe"
     };
   }
@@ -156,7 +156,7 @@ class Emojiful {
 
     let img = document.createElement("img");
     img.src = imageElement.src;
-    img.alt = imageElement.alt.substring(1, img.alt.length - 1);
+    img.alt = imageElement.alt.substring(1, imageElement.alt.length - 1);
 
     let span = document.createElement("span");
 
