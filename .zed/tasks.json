@@ -54,7 +54,7 @@
       "scripts/",
       "site.webmanifest",
       "style.css",
-      "videos/",
+      "hinge/",
     ],
     "allow_concurrent_runs": false,
     "reveal": "never",

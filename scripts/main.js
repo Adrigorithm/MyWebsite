@@ -36,7 +36,10 @@ function load() {
   setupActiveLanguageButton();
   setupAutoTyper();
   setupToastSpawner();
-  setupSectionSwitcher();
+
+  if (router)
+    setupSectionSwitcher();
+
   setupSliders();
   setupRng();
   setupEmojiful();
@@ -47,6 +50,10 @@ function load() {
 
 function setupRouter() {
   let navbar = document.getElementById("nav-main");
+
+  if (!navbar)
+    return;
+
   let navControls = document.getElementsByClassName("navControl");
   let contents = document.getElementsByClassName("page");
 
@@ -58,6 +65,9 @@ function setupRouter() {
 
 function setupAssetsLoader() {
   let images = document.querySelectorAll("img[data-image]");
+
+  if (images.length === 0)
+    return;
 
   assetsLoader = new AssetLoader(images);
 }
@@ -93,6 +103,9 @@ function setupActiveLanguageButton() {
 
 function setupAutoTyper() {
   let elements = document.getElementsByClassName("autoTyper");
+
+  if (elements.length === 0)
+    return;
 
   autoTyper = new AutoTyper([
     new AutoTyperConfiguration(
@@ -150,6 +163,9 @@ function setupSliders() {
 function setupRng() {
   let rngElement = document.getElementById("rng");
 
+  if (!rngElement)
+    return;
+
   rng = new Rng(
     rngElement.querySelector("#rngLowerBound"),
     rngElement.querySelector("#rngUpperBound"),
@@ -162,6 +178,9 @@ function setupRng() {
 
 function setupEmojiful() {
   let emojifulElement = document.getElementById("emojiful");
+
+  if (!emojifulElement)
+    return;
 
   emojiful = new Emojiful(
     emojifulElement.querySelector("#emojifulContainer"),
@@ -178,6 +197,9 @@ function applyDependencies() {
 
 function applyDynamicText() {
   let textNodes = document.getElementsByClassName("age");
+
+  if (textNodes.length === 0)
+    return;
 
   for (const node of textNodes) node.textContent = getAge();
 }
