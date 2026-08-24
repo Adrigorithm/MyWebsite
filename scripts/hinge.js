@@ -53,9 +53,35 @@ class Hinge {
     }
   }
 
+  getDateDataErrors() {
+    let errors = [];
+
+    if (!this.#dateData.What.event)
+      errors.push(this.generateErrorElement("missingDateEvent", "- You should pick something in \"What?\" section. Pick the last one if you prefer to be surprised :3."));
+
+    if (!this.#dateData.When.date || new Date() >= new Date(this.#dateData.When.date))
+      errors.push(this.generateErrorElement("invalidDateDate", "- Time traveling is not my strong suit unfortunately."));
+
+    if (!this.#dateData.Where.location?.trim())
+      errors.push(this.generateErrorElement("missingDateLocation", "- The nothingness? I do not know where that is. Pick a place in the observable universe :3."));
+
+    return errors;
+  }
+
+  generateErrorElement(translationKey, defaultText) {
+    let span = document.createElement("span");
+    span.dataset.translatable = translationKey;
+    span.style.color = "red";
+
+    let spanText = document.createTextNode(defaultText);
+    span.appendChild(spanText);
+
+    return span;
+  }
+
   setDateData() {
     this.#dateData.What = {
-      event: this.#activeWhatButton.dataset.event,
+      event: this.#activeWhatButton?.dataset?.event,
       message: document.getElementById("note-what").value
     }
     this.#dateData.Where = {
@@ -108,8 +134,15 @@ class Hinge {
 
   generateCode() {
     this.setDateData();
-    this.#code.textContent = btoa(JSON.stringify(this.#dateData));
+    this.#code.replaceChildren();
 
+    let errors = this.getDateDataErrors();
+
+
+    if (errors.length === 0)
+      this.#code.textContent = btoa(JSON.stringify(this.#dateData));
+    else
+      this.#code.append(... errors);
   }
 
   navigate(toId) {

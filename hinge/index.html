@@ -717,9 +717,7 @@
                         </li>
                         <li>
                             What you send here is only ever
-                            <b>seen by me and you</b>, it will also be removed
-                            from the server after our date (or when it is no
-                            longer needed)
+                            <b>seen you</b> (and me when you share the code at the end).
                         </li>
                         <li>
                             Be honest, I only included options I would say yes
@@ -782,7 +780,7 @@
                             </button>
                         </div>
                         <div class="flex justify-center gap-2 m-2 items-center">
-                            <label for="note-what">Extra note:</label>
+                            <label for="note-what">Extra note (optional):</label>
                             <input class="dark:text-gray-300 text-gray-800 border border-cosmic dark:border-lilac p-1" id="note-what" />
                         </div>
                     </div>
@@ -799,40 +797,36 @@
                             </div>
                         </div>
                         <div class="flex justify-center gap-2 m-2 items-center">
-                            <label for="note-where">Extra note:</label>
+                            <label for="note-where">Extra note (optional):</label>
                             <input class="dark:text-gray-300 text-gray-800 border border-cosmic dark:border-lilac p-1" id="note-where" />
                         </div>
                     </div>
                     <div class="hidden">
                         <h2 class="m-4 text-center">When?</h2>
-                        <div class="flex flex-col md:flex-row gap-2 justify-center items-center">
-                            <input type="date" id="date-when"/>
-                            <div class="flex flex-col md:border-l-2 pl-2 border-cosmic dark:border-lilac border-solid">
+                        <div class="flex flex-col">
+                            <div class="flex justify-around md:justify-center">
+                                <input type="date" id="date-when"/>
                                 <select class="border border-cosmic dark:border-lilac p-1" id="time-when">
                                     <option value="noon">Noon</option>
                                     <option value="afternoon">Afternoon</option>
                                     <option selected value="evening">Evening</option>
                                 </select>
-                                <p class="dark:text-gray-300 text-gray-800">I usually comply with date requests (noon-evening) in the weekend :). On weekdays, evenings <b>may</b> work, depending on distance.</p>
                             </div>
+                            <p class="dark:text-gray-300 text-gray-800">I usually comply with date requests (noon-evening) in the weekend :). On weekdays, evenings <b>may</b> work, depending on distance.</p>
                         </div>
                         <div class="flex justify-center gap-2 m-2 items-center">
-                            <label for="note-when">Extra note:</label>
+                            <label for="note-when">Extra note (optional):</label>
                             <input class="dark:text-gray-300 text-gray-800 border border-cosmic dark:border-lilac p-1" id="note-when" />
                         </div>
                     </div>
                     <div class="hidden">
                         <h2 class="m-4 text-center">Yay :)</h2>
                         <div class="flex flex-col">
-                            <div class="flex flex-col">
+                            <div class="flex flex-col text-center">
                                 <p class="dark:text-gray-300 text-gray-800">Send me the code below through Hinge or somewhere else (see bottom right corner :) ).</p>
-                                <p class="text-2xl font-bold m-6 wrap-anywhere" id="code"></p>
+                                <p class="text-2xl font-bold m-6 wrap-anywhere flex flex-col" id="code"></p>
                                 <p class="dark:text-gray-300 text-gray-800">I will review it ASAP. When approved, I shall send you specific location and time ^.^ .</p>
                             </div>
-                        </div>
-                        <div class="flex justify-center gap-2 m-2 items-center">
-                            <label for="note-what">Extra note:</label>
-                            <input class="dark:text-gray-300 text-gray-800 border border-cosmic dark:border-lilac p-1" id="note-where" />
                         </div>
                     </div>
                     <div class="flex justify-around">

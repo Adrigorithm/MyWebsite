@@ -268,9 +268,6 @@
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
-  .mt-6 {
-    margin-top: calc(var(--spacing) * 6);
-  }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
@@ -665,16 +662,15 @@
     .md\:flex-row {
       flex-direction: row;
     }
+    .md\:justify-center {
+      justify-content: center;
+    }
     .md\:gap-4 {
       gap: calc(var(--spacing) * 4);
     }
     .md\:border-t-0 {
       border-top-style: var(--tw-border-style);
       border-top-width: 0px;
-    }
-    .md\:border-r-2 {
-      border-right-style: var(--tw-border-style);
-      border-right-width: 2px;
     }
     .md\:border-l-2 {
       border-left-style: var(--tw-border-style);
