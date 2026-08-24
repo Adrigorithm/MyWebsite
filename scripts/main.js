@@ -10,6 +10,7 @@ import { Slider } from "./slider.js";
 import { SectionSwitcher } from "./sectionSwitcher.js";
 import { Rng } from "./rng.js";
 import { Emojiful } from "./emojiful.js";
+import { Hinge } from "./hinge.js";
 
 document.addEventListener("DOMContentLoaded", load);
 
@@ -25,6 +26,7 @@ let sectionSwitcher = undefined;
 let slidersServices = [];
 let rng = undefined;
 let emojiful = undefined;
+let hinge = undefined;
 
 setupTranslator();
 
@@ -43,6 +45,7 @@ function load() {
   setupSliders();
   setupRng();
   setupEmojiful();
+  setupHinge();
 
   applyDependencies();
   applyDynamicText();
@@ -189,6 +192,15 @@ function setupEmojiful() {
     document.getElementById("emojiful-datapack-generator"),
     document.getElementById("overlay"),
     translator);
+}
+
+function setupHinge() {
+  const hingeContainer = document.getElementById("hinge-container");
+
+  if (!hingeContainer)
+    return;
+
+  hinge = new Hinge(hingeContainer);
 }
 
 function applyDependencies() {
