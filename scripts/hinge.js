@@ -2,12 +2,20 @@ class Hinge {
   #hingeContainer = undefined;
   #hingeContents = [];
   #navigationBar = undefined;
+  #activeWhatButton = null;
 
   #activeContentId = 0;
+  #dateData = {
+    What: null,
+    Where: null,
+    When: null
+  };
+  #code = undefined;
 
   constructor(hingeContainer) {
     this.#hingeContainer = hingeContainer;
     this.#navigationBar = this.getLastChild(hingeContainer).children[1];
+    this.#code = document.getElementById("code");
 
     let counter = 0;
 
@@ -19,6 +27,7 @@ class Hinge {
       counter++;
     }
 
+    this.setupContents();
     this.setupPreviousButton();
     this.setupNextButton();
     this.setupNavigationBar();
@@ -30,6 +39,34 @@ class Hinge {
 
   getFirstChild(element) {
     return element.children[0];
+  }
+
+  setupContents() {
+    for (const button of this.#hingeContents[0].getElementsByTagName("button")) {
+      button.addEventListener("click", () => {
+        if (this.#activeWhatButton)
+          this.getLastChild(this.#activeWhatButton).classList = ["invisible"];
+
+        this.getLastChild(button).classList = ["bg-green-300 dark:bg-green-700"];
+        this.#activeWhatButton = button;
+      });
+    }
+  }
+
+  setDateData() {
+    this.#dateData.What = {
+      event: this.#activeWhatButton.dataset.event,
+      message: document.getElementById("note-what").value
+    }
+    this.#dateData.Where = {
+      location: document.getElementById("where").value,
+      message: document.getElementById("note-where").value
+    }
+    this.#dateData.When = {
+      date: document.getElementById("date-when").value,
+      time: document.getElementById("time-when").value,
+      message: document.getElementById("note-when").value
+    }
   }
 
   setupPreviousButton() {
@@ -69,9 +106,18 @@ class Hinge {
     }
   }
 
+  generateCode() {
+    this.setDateData();
+    this.#code.textContent = btoa(JSON.stringify(this.#dateData));
+
+  }
+
   navigate(toId) {
     if (this.#activeContentId === toId)
       return;
+
+    if (toId === this.#hingeContents.length - 1)
+      this.generateCode();
 
     this.#hingeContents[this.#activeContentId].classList.add("hidden");
     this.#hingeContents[toId].classList.remove("hidden");

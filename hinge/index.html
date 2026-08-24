@@ -786,10 +786,55 @@
                             <input class="dark:text-gray-300 text-gray-800 border border-cosmic dark:border-lilac p-1" id="note-what" />
                         </div>
                     </div>
-                    <div class="hidden">Answer 0</div>
-                    <div class="hidden">Answer 1</div>
-                    <div class="hidden">Answer 2</div>
-                    <div class="hidden">Answer 3</div>
+                    <div class="hidden">
+                        <h2 class="m-4 text-center">Where?</h2>
+                        <div class="flex flex-col md:flex-row gap-2 justify-center items-center">
+                            <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed?bbox=5.2811622619628915%2C50.905414393965664%2C5.394458770751953%2C50.95621007161211&amp;layer=mapnik&amp;marker=50.93081916704262%2C5.337810516357422" style="border: 1px solid black"></iframe>
+                            <div class="flex flex-col">
+                                <p class="dark:text-gray-300 text-gray-800">Ideally pick a location that is not too far for either of us. Cities are usually a good idea due to accessibility and abundance of facilities. Pinned on the map here is <b>Hasselt</b>. While I do not limit myself to it, it is still my closest city.</p>
+                                <div class="flex gap-2 mt-2 items-center">
+                                    <label for="where">Location:</label>
+                                    <input placeholder="Hasselt" class="dark:text-gray-300 text-gray-800 border border-cosmic dark:border-lilac p-1" id="where" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center gap-2 m-2 items-center">
+                            <label for="note-where">Extra note:</label>
+                            <input class="dark:text-gray-300 text-gray-800 border border-cosmic dark:border-lilac p-1" id="note-where" />
+                        </div>
+                    </div>
+                    <div class="hidden">
+                        <h2 class="m-4 text-center">When?</h2>
+                        <div class="flex flex-col md:flex-row gap-2 justify-center items-center">
+                            <input type="date" id="date-when"/>
+                            <div class="flex flex-col md:border-l-2 pl-2 border-cosmic dark:border-lilac border-solid">
+                                <select class="border border-cosmic dark:border-lilac p-1" id="time-when">
+                                    <option value="noon">Noon</option>
+                                    <option value="afternoon">Afternoon</option>
+                                    <option selected value="evening">Evening</option>
+                                </select>
+                                <p class="dark:text-gray-300 text-gray-800">I usually comply with date requests (noon-evening) in the weekend :). On weekdays, evenings <b>may</b> work, depending on distance.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-center gap-2 m-2 items-center">
+                            <label for="note-when">Extra note:</label>
+                            <input class="dark:text-gray-300 text-gray-800 border border-cosmic dark:border-lilac p-1" id="note-when" />
+                        </div>
+                    </div>
+                    <div class="hidden">
+                        <h2 class="m-4 text-center">Yay :)</h2>
+                        <div class="flex flex-col">
+                            <div class="flex flex-col">
+                                <p class="dark:text-gray-300 text-gray-800">Send me the code below through Hinge or somewhere else (see bottom right corner :) ).</p>
+                                <p class="text-2xl font-bold m-6 wrap-anywhere" id="code"></p>
+                                <p class="dark:text-gray-300 text-gray-800">I will review it ASAP. When approved, I shall send you specific location and time ^.^ .</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-center gap-2 m-2 items-center">
+                            <label for="note-what">Extra note:</label>
+                            <input class="dark:text-gray-300 text-gray-800 border border-cosmic dark:border-lilac p-1" id="note-where" />
+                        </div>
+                    </div>
                     <div class="flex justify-around">
                         <button
                             class="text-4xl filter-accent"
@@ -807,7 +852,6 @@
 
                         <div class="flex text-xl">
                             <button class="text-3xl">💜</button>
-                            <button>💜</button>
                             <button>💜</button>
                             <button>💜</button>
                             <button>💜</button>
