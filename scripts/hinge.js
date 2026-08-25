@@ -1,3 +1,5 @@
+import { LogLevel } from "./enums.js";
+
 class Hinge {
   #hingeContainer = undefined;
   #hingeContents = [];
@@ -7,6 +9,7 @@ class Hinge {
   #summaryWhere = undefined;
   #summaryWhen = undefined;
   #translationService = null;
+  #toastSpawner = null;
 
   #activeContentId = 0;
   #dateData = {
@@ -16,8 +19,9 @@ class Hinge {
   };
   #code = undefined;
 
-  constructor(hingeContainer, translationService) {
+  constructor(hingeContainer, translationService, toastSpawner) {
     this.#translationService = translationService;
+    this.#toastSpawner = toastSpawner;
     this.#hingeContainer = hingeContainer;
     this.#navigationBar = this.getLastChild(hingeContainer).children[1];
     this.#code = document.getElementById("code");
@@ -64,12 +68,11 @@ class Hinge {
   validateAndAdjustDateData() {
     let errors = [];
 
-    if (!this.#dateData.What.event.trim()) {
+    if (this.#dateData.What.event === "&nbsp;") {
       errors.push(this.generateErrorElement("missingDateEvent"));
-      this.#dateData.What.event = "";
     }
 
-    if (!this.#dateData.When.date.trim()) {
+    if (this.#dateData.When.date === "&nbsp;") {
       errors.push(this.generateErrorElement("missingDateDate"));
     } else {
       let parsedDate = new Date(this.#dateData.When.date);
@@ -79,7 +82,7 @@ class Hinge {
         errors.push(this.generateErrorElement("invalidDateDate"));
     }
 
-    if (!this.#dateData.Where.location.trim()) {
+    if (this.#dateData.Where.location === "&nbsp;") {
       errors.push(this.generateErrorElement("missingDateLocation"));
     }
 
@@ -104,17 +107,17 @@ class Hinge {
 
   setDateData() {
     this.#dateData.What = {
-      event: this.#activeWhatButton?.dataset?.event || " ",
-      message: document.getElementById("note-what").value || " "
+      event: this.#activeWhatButton?.dataset?.event || "&nbsp;",
+      message: document.getElementById("note-what").value.trim() || "&nbsp;"
     }
     this.#dateData.Where = {
-      location: document.getElementById("where").value || " ",
-      message: document.getElementById("note-where").value || " "
+      location: document.getElementById("where").value.trim() || "&nbsp;",
+      message: document.getElementById("note-where").value.trim() || "&nbsp;"
     }
     this.#dateData.When = {
-      date: document.getElementById("date-when").value || " ",
+      date: document.getElementById("date-when").value || "&nbsp;",
       time: document.getElementById("time-when").value,
-      message: document.getElementById("note-when").value || " "
+      message: document.getElementById("note-when").value.trim() || "&nbsp;"
     }
   }
 
@@ -168,6 +171,7 @@ class Hinge {
     this.#code.replaceChildren();
 
     let errors = this.validateAndAdjustDateData();
+    let success = false;
 
     if (errors.length !== 0) {
       let counter = 0;
@@ -182,10 +186,16 @@ class Hinge {
       }
     }
     else {
+      success = true;
       this.generateCode();
     }
 
     this.fillSummary();
+
+    if (success)
+      this.#toastSpawner.spawn("hingeDateSuccess", LogLevel.Success);
+    else
+      this.#toastSpawner.spawn("hingeDateFailure", LogLevel.Failure);
   }
 
   fillSummary() {
@@ -204,7 +214,7 @@ class Hinge {
 
   generateP(text) {
     let p = document.createElement("p");
-    p.appendChild(document.createTextNode(text));
+    p.innerHTML = text;
 
     return p;
   }
@@ -218,7 +228,7 @@ class Hinge {
       this.#translationService.getActiveLanguage(),
     );
 
-    element.textContent = string;
+    element.innerHTML = string ?? "&nbsp;";
 
     return element;
   }

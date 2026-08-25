@@ -47,6 +47,10 @@ class ToastSpawner {
         paragraph.classList.add("bg-green-300", "dark:bg-green-700");
         paragraph.classList.add("text-gray-800", "dark:text-gray-300");
         break;
+      case LogLevel.Failure:
+        paragraph.classList.add("bg-red-300", "dark:bg-red-700");
+        paragraph.classList.add("text-gray-800", "dark:text-gray-300");
+        break;
       default:
         return;
     }

@@ -249,7 +249,9 @@ class Translator {
       .set("resto", "food")
       .set("park", "park/nature")
       .set("museum", "cultural/artistic")
-      .set("mystery", "mystery");
+      .set("mystery", "mystery")
+      .set("hingeDateSuccess", "Code generated :)")
+      .set("hingeDateFailure", "Oh no! You did an oopsie :3");
   }
 
   getDutchTranslations() {
@@ -418,7 +420,9 @@ class Translator {
       .set("resto", "eten")
       .set("park", "park/natuur")
       .set("museum", "cultureel/kunst")
-      .set("mystery", "mysterie");
+      .set("mystery", "mysterie")
+      .set("hingeDateSuccess", "Code gegenereerd :)")
+      .set("hingeDateFailure", "Oh nee! Je deed een oepsie :3");
   }
 
   getFrenchTranslations() {
@@ -587,7 +591,9 @@ class Translator {
       .set("resto", "repas")
       .set("park", "parc/nature")
       .set("museum", "culturel/art")
-      .set("mystery", "mystère");
+      .set("mystery", "mystère")
+      .set("hingeDateSuccess", "Code généré :)")
+      .set("hingeDateFailure", "Oh non ! Tu as fait un petit bazar :3");
   }
 
   getGermanTranslations() {
@@ -759,7 +765,9 @@ class Translator {
       .set("resto", "Essen")
       .set("park", "Park/Natur")
       .set("museum", "Kultur/Kunst")
-      .set("mystery", "Mysterium");
+      .set("mystery", "Mysterium")
+      .set("hingeDateSuccess", "Code generiert :)")
+      .set("hingeDateFailure", "Oh nein! Du hast ein Oops gemacht :3");
   }
 }
 

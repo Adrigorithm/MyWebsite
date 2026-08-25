@@ -7,6 +7,7 @@ const Language = {
 
 const LogLevel = {
   Success: 1,
+  Failure: 2
 };
 
 export { Language, LogLevel };

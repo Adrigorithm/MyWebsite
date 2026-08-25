@@ -200,7 +200,7 @@ function setupHinge() {
   if (!hingeContainer)
     return;
 
-  hinge = new Hinge(hingeContainer, translator);
+  hinge = new Hinge(hingeContainer, translator, toastSpawner);
 }
 
 function applyDependencies() {
