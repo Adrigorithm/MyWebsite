@@ -63,30 +63,34 @@ class Hinge {
     let errors = [];
 
     if (!this.#dateData.What.event) {
-      errors.push(this.generateErrorElement("missingDateEvent", "- Pick the last one if you prefer to be surprised :3."));
+      errors.push(this.generateErrorElement("missingDateEvent", "Pick the last \"What\" if you prefer to be surprised :3."));
       this.#dateData.What.event = "<empty>";
     }
 
     if (!this.#dateData.When.date) {
-      errors.push(this.generateErrorElement("missingDateDate", "- I have yet to master telepathy, in the meantime, set a date :3"));
-      this.#dateData.What.event = "<empty>";
-    } else if (new Date() >= new Date(this.#dateData.When.date)) {
-      errors.push(this.generateErrorElement("invalidDateDate", "- Time traveling is not my strong suit unfortunately."));
+      errors.push(this.generateErrorElement("missingDateDate", "I have yet to master telepathy, in the meantime, set a date :3"));
+      this.#dateData.When.date = "<empty>";
+    } else {
+      let parsedDate = new Date(this.#dateData.When.date);
+      this.#dateData.When.date = parsedDate.toLocaleDateString();
+
+      if (new Date() >= parsedDate)
+        errors.push(this.generateErrorElement("invalidDateDate", "Time traveling is not my strong suit unfortunately."));
     }
 
     if (!this.#dateData.Where.location?.trim()) {
-      errors.push(this.generateErrorElement("missingDateLocation", "- The nothingness? Pick a place in the observable universe :3."));
-      this.#dateData.What.event = "<empty>";
+      errors.push(this.generateErrorElement("missingDateLocation", "The nothingness? Pick a place in the observable universe :3."));
+      this.#dateData.Where.location = "<empty>";
     }
 
     if (!this.#dateData.What.message.trim())
       this.#dateData.What.message = "<empty>";
 
     if (!this.#dateData.Where.message.trim())
-      this.#dateData.What.message = "<empty>";
+      this.#dateData.Where.message = "<empty>";
 
     if (!this.#dateData.When.message.trim())
-      this.#dateData.What.message = "<empty>";
+      this.#dateData.When.message = "<empty>";
 
     return errors;
   }
@@ -155,6 +159,13 @@ class Hinge {
     }
   }
 
+  getErrorBorder() {
+    let border = document.createElement("hr");
+    border.classList = ["dark:border-gray-300 border-gray-800"];
+
+    return border;
+  }
+
   setupSummary() {
     this.setDateData();
 
@@ -162,10 +173,21 @@ class Hinge {
 
     let errors = this.validateAndAdjustDateData();
 
-    if (errors.length !== 0)
-      this.#code.append(...errors);
-    else
+    if (errors.length !== 0) {
+      let counter = 0;
+
+      for (const error of errors) {
+        this.#code.appendChild(error);
+
+        if (counter < errors.length - 1)
+          this.#code.appendChild(this.getErrorBorder());
+
+        counter++;
+      }
+    }
+    else {
       this.generateCode();
+    }
 
     this.fillSummary();
   }
@@ -175,11 +197,11 @@ class Hinge {
     this.#summaryWhat.children[1].textContent = this.#dateData.What.message;
 
     this.#summaryWhere.children[0].textContent = this.#dateData.Where.location;
-    this.#summaryWhere.children[1].textContent = this.#dateData.What.message;
+    this.#summaryWhere.children[1].textContent = this.#dateData.Where.message;
 
-    this.#summaryWhen.children[0].textContent = this.#dateData.What.date;
-    this.#summaryWhen.children[1].textContent = this.#dateData.What.time;
-    this.#summaryWhen.children[2].textContent = this.#dateData.What.message;
+    this.#summaryWhen.children[0].textContent = this.#dateData.When.date;
+    this.#summaryWhen.children[1].textContent = this.#dateData.When.time;
+    this.#summaryWhen.children[2].textContent = this.#dateData.When.message;
   }
 
   generateCode() {
