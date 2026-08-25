@@ -6,6 +6,7 @@ class Hinge {
   #summaryWhat = undefined;
   #summaryWhere = undefined;
   #summaryWhen = undefined;
+  #translationService = null;
 
   #activeContentId = 0;
   #dateData = {
@@ -15,7 +16,8 @@ class Hinge {
   };
   #code = undefined;
 
-  constructor(hingeContainer) {
+  constructor(hingeContainer, translationService) {
+    this.#translationService = translationService;
     this.#hingeContainer = hingeContainer;
     this.#navigationBar = this.getLastChild(hingeContainer).children[1];
     this.#code = document.getElementById("code");
@@ -62,45 +64,39 @@ class Hinge {
   validateAndAdjustDateData() {
     let errors = [];
 
-    if (!this.#dateData.What.event) {
-      errors.push(this.generateErrorElement("missingDateEvent", "Pick the last \"What\" if you prefer to be surprised :3."));
-      this.#dateData.What.event = "<empty>";
+    if (!this.#dateData.What.event.trim()) {
+      errors.push(this.generateErrorElement("missingDateEvent"));
+      this.#dateData.What.event = "";
     }
 
-    if (!this.#dateData.When.date) {
-      errors.push(this.generateErrorElement("missingDateDate", "I have yet to master telepathy, in the meantime, set a date :3"));
-      this.#dateData.When.date = "<empty>";
+    if (!this.#dateData.When.date.trim()) {
+      errors.push(this.generateErrorElement("missingDateDate"));
     } else {
       let parsedDate = new Date(this.#dateData.When.date);
       this.#dateData.When.date = parsedDate.toLocaleDateString();
 
       if (new Date() >= parsedDate)
-        errors.push(this.generateErrorElement("invalidDateDate", "Time traveling is not my strong suit unfortunately."));
+        errors.push(this.generateErrorElement("invalidDateDate"));
     }
 
-    if (!this.#dateData.Where.location?.trim()) {
-      errors.push(this.generateErrorElement("missingDateLocation", "The nothingness? Pick a place in the observable universe :3."));
-      this.#dateData.Where.location = "<empty>";
+    if (!this.#dateData.Where.location.trim()) {
+      errors.push(this.generateErrorElement("missingDateLocation"));
     }
-
-    if (!this.#dateData.What.message.trim())
-      this.#dateData.What.message = "<empty>";
-
-    if (!this.#dateData.Where.message.trim())
-      this.#dateData.Where.message = "<empty>";
-
-    if (!this.#dateData.When.message.trim())
-      this.#dateData.When.message = "<empty>";
 
     return errors;
   }
 
-  generateErrorElement(translationKey, defaultText) {
+  generateErrorElement(translationKey) {
     let span = document.createElement("span");
     span.dataset.translatable = translationKey;
     span.style.color = "red";
 
-    let spanText = document.createTextNode(defaultText);
+    let string = this.#translationService.translateWord(
+      translationKey,
+      this.#translationService.getActiveLanguage(),
+    );
+
+    let spanText = document.createTextNode(string);
     span.appendChild(spanText);
 
     return span;
@@ -108,17 +104,17 @@ class Hinge {
 
   setDateData() {
     this.#dateData.What = {
-      event: this.#activeWhatButton?.dataset?.event,
-      message: document.getElementById("note-what").value
+      event: this.#activeWhatButton?.dataset?.event || " ",
+      message: document.getElementById("note-what").value || " "
     }
     this.#dateData.Where = {
-      location: document.getElementById("where").value,
-      message: document.getElementById("note-where").value
+      location: document.getElementById("where").value || " ",
+      message: document.getElementById("note-where").value || " "
     }
     this.#dateData.When = {
-      date: document.getElementById("date-when").value,
+      date: document.getElementById("date-when").value || " ",
       time: document.getElementById("time-when").value,
-      message: document.getElementById("note-when").value
+      message: document.getElementById("note-when").value || " "
     }
   }
 
@@ -193,19 +189,38 @@ class Hinge {
   }
 
   fillSummary() {
-    this.#summaryWhat.children[0].textContent = this.#dateData.What.event;
-    this.#summaryWhat.children[1].textContent = this.#dateData.What.message;
+    this.#summaryWhat.replaceChildren();
+    this.#summaryWhere.replaceChildren();
+    this.#summaryWhen.replaceChildren();
 
-    this.#summaryWhere.children[0].textContent = this.#dateData.Where.location;
-    this.#summaryWhere.children[1].textContent = this.#dateData.Where.message;
-
-    this.#summaryWhen.children[0].textContent = this.#dateData.When.date;
-    this.#summaryWhen.children[1].textContent = this.#dateData.When.time;
-    this.#summaryWhen.children[2].textContent = this.#dateData.When.message;
+    this.#summaryWhat.append(this.generateDateDataElement(this.#dateData.What.event), this.generateP(this.#dateData.What.message));
+    this.#summaryWhere.append(this.generateP(this.#dateData.Where.location), this.generateP(this.#dateData.Where.message));
+    this.#summaryWhen.append(this.generateP(this.#dateData.When.date), this.generateDateDataElement(this.#dateData.When.time), this.generateP(this.#dateData.When.message));
   }
 
   generateCode() {
     this.#code.textContent = btoa(JSON.stringify(this.#dateData));
+  }
+
+  generateP(text) {
+    let p = document.createElement("p");
+    p.appendChild(document.createTextNode(text));
+
+    return p;
+  }
+
+  generateDateDataElement(key) {
+    let element = document.createElement("p");
+    element.dataset.translatable = key
+
+    let string = this.#translationService.translateWord(
+      key,
+      this.#translationService.getActiveLanguage(),
+    );
+
+    element.textContent = string;
+
+    return element;
   }
 
   navigate(toId) {

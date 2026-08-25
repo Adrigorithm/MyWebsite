@@ -711,23 +711,23 @@
                     <ul
                         class="dark:text-gray-300 text-gray-800 p-2 md:pl-6 list-disc border-t-2 md:border-t-0 md:border-l-2 border-cosmic dark:border-lilac border-solid"
                     >
-                        <li>
+                        <li data-translatable="hingeNotice">
                             Please do <b>not</b> share this site, it is for your
                             eyes only :)
                         </li>
-                        <li>
+                        <li data-translatable="hingeNotice0">
                             What you send here is only ever
                             <b>seen you</b> (and me when you share the code at the end).
                         </li>
-                        <li>
-                            Be honest, I only included options I would say yes
+                        <li data-translatable="hingeNotice1">
+                            I only included options I would say yes
                             to, so no wrong answers are possible ^.^
                         </li>
                     </ul>
                 </section>
                 <section id="hinge-container" class="flex flex-col">
                     <div>
-                        <h2 class="m-4 text-center">What?</h2>
+                        <h2 data-translatable="what" class="m-4 text-center">What</h2>
                         <div class="flex flex-wrap gap-2 justify-center">
                             <button data-event="cafe" class="flex flex-col">
                                 <img src="/images/drink.webp" alt="cafe" />
@@ -780,89 +780,85 @@
                             </button>
                         </div>
                         <div class="flex justify-center gap-2 m-2 items-center">
-                            <label for="note-what">Extra note (optional):</label>
+                            <label data-translatable="extraNote" for="note-what">Extra note (optional):</label>
                             <input class="dark:text-gray-300 text-gray-800 border border-cosmic dark:border-lilac p-1" id="note-what" />
                         </div>
                     </div>
                     <div class="hidden">
-                        <h2 class="m-4 text-center">Where?</h2>
+                        <h2 data-translatable="where" class="m-4 text-center">Where</h2>
                         <div class="flex flex-col md:flex-row gap-2 justify-center items-center">
                             <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed?bbox=5.2811622619628915%2C50.905414393965664%2C5.394458770751953%2C50.95621007161211&amp;layer=mapnik&amp;marker=50.93081916704262%2C5.337810516357422" style="border: 1px solid black"></iframe>
                             <div class="flex flex-col">
-                                <p class="dark:text-gray-300 text-gray-800">Ideally pick a location that is not too far for either of us. Cities are usually a good idea due to accessibility and abundance of facilities. Pinned on the map here is <b>Hasselt</b>. While I do not limit myself to it, it is still my closest city.</p>
+                                <p data-translatable="whereInstruction" class="dark:text-gray-300 text-gray-800">Ideally pick a location that is not too far for either of us. Cities are usually a good idea due to accessibility and abundance of facilities. Pinned on the map here is <b>Hasselt</b>. While I do not limit myself to it, it is still my closest city.</p>
                                 <div class="flex gap-2 mt-2 items-center">
-                                    <label for="where">Location:</label>
-                                    <input placeholder="city" class="dark:text-gray-300 text-gray-800 border border-cosmic dark:border-lilac p-1" id="where" />
+                                    <label data-translatable="location" for="where">Location:</label>
+                                    <input placeholder="Aoshima" class="dark:text-gray-300 text-gray-800 border border-cosmic dark:border-lilac p-1" id="where" />
                                 </div>
                             </div>
                         </div>
                         <div class="flex justify-center gap-2 m-2 items-center">
-                            <label for="note-where">Extra note (optional):</label>
+                            <label data-translatable="extraNote" for="note-where">Extra note (optional):</label>
                             <input class="dark:text-gray-300 text-gray-800 border border-cosmic dark:border-lilac p-1" id="note-where" />
                         </div>
                     </div>
                     <div class="hidden">
-                        <h2 class="m-4 text-center">When?</h2>
+                        <h2 data-translatable="when" class="m-4 text-center">When</h2>
                         <div class="flex flex-col">
                             <div class="flex justify-around md:justify-center">
                                 <input type="date" id="date-when"/>
                                 <select class="border border-cosmic dark:border-lilac p-1" id="time-when">
-                                    <option value="noon">Noon</option>
-                                    <option value="afternoon">Afternoon</option>
-                                    <option selected value="evening">Evening</option>
+                                    <option data-translatable="noon" value="noon">Noon</option>
+                                    <option data-translatable="afternoon" value="afternoon">Afternoon</option>
+                                    <option data-translatable="evening" selected value="evening">Evening</option>
                                 </select>
                             </div>
-                            <p class="dark:text-gray-300 text-gray-800">I usually comply with date requests (noon-evening) in the weekend :). On weekdays, evenings <b>may</b> work, depending on distance.</p>
+                            <p data-translatable="whenInstruction" class="dark:text-gray-300 text-gray-800">I usually comply with date requests (noon-evening) in the weekend :). On weekdays, evenings <b>may</b> work, depending on distance.</p>
                         </div>
                         <div class="flex justify-center gap-2 m-2 items-center">
-                            <label for="note-when">Extra note (optional):</label>
+                            <label data-translatable="extraNote" for="note-when">Extra note (optional):</label>
                             <input class="dark:text-gray-300 text-gray-800 border border-cosmic dark:border-lilac p-1" id="note-when" />
                         </div>
                     </div>
                     <div class="hidden">
-                        <h2 class="m-4 text-center">Yay :)</h2>
+                        <h2 data-translatable="done" class="m-4 text-center">All done :)</h2>
                         <div class="flex flex-col md:flex-row items-center gap-2">
                             <div class="flex flex-col text-center flex-1">
-                                <p class="dark:text-gray-300 text-gray-800">Send me the code below through Hinge or somewhere else (see bottom right corner :) ).</p>
+                                <p data-translatable="hingeReview" class="dark:text-gray-300 text-gray-800">Send me the code below through Hinge or somewhere else (see bottom right corner :) ).</p>
                                 <p class="text-2xl font-bold m-6 wrap-anywhere flex flex-col" id="code"></p>
-                                <p class="dark:text-gray-300 text-gray-800">I will review it ASAP. When approved, I shall send you specific location and time ^.^ .</p>
+                                <p data-translatable="hingeReview0" class="dark:text-gray-300 text-gray-800">I will review it ASAP. When approved, I shall send you specific location and time ^.^ .</p>
                             </div>
                             <div class="flex flex-col flex-1">
-                                <h3 class="font-bold text-2xl">What</h3>
+                                <h3 data-translatable="what" class="font-bold text-2xl">What</h3>
                                 <div class="flex gap-4">
                                     <div class="flex flex-col">
-                                        <p>Event:</p>
-                                        <p>Note:</p>
+                                        <p data-translatable="event">Event:</p>
+                                        <p data-translatable="extraNote0">Note:</p>
                                     </div>
                                     <div id="summary-what" class="flex flex-col dark:text-gray-300 text-gray-800">
-                                        <p>&lt;empty&gt;</p>
-                                        <p>&lt;empty&gt;</p>
+
                                     </div>
                                 </div>
 
-                                <h3 class="font-bold text-2xl">Where</h3>
+                                <h3 data-translatable="where" class="font-bold text-2xl">Where</h3>
                                 <div class="flex gap-4">
                                     <div class="flex flex-col">
-                                        <p>Location:</p>
-                                        <p>Note:</p>
+                                        <p data-translatable="location">Location:</p>
+                                        <p data-translatable="extraNote0">Note:</p>
                                     </div>
                                     <div id="summary-where" class="flex flex-col dark:text-gray-300 text-gray-800">
-                                        <p>&lt;empty&gt;</p>
-                                        <p>&lt;empty&gt;</p>
+
                                     </div>
                                 </div>
 
-                                <h3 class="font-bold text-2xl">When</h3>
+                                <h3 data-translatable="when" class="font-bold text-2xl">When</h3>
                                 <div class="flex gap-4">
                                     <div class="flex flex-col">
-                                        <p>Date:</p>
-                                        <p>Time:</p>
-                                        <p>Note:</p>
+                                        <p data-translatable="date">Date:</p>
+                                        <p data-translatable="time">Time:</p>
+                                        <p data-translatable="extraNote0">Note:</p>
                                     </div>
                                     <div id="summary-when" class="flex flex-col dark:text-gray-300 text-gray-800">
-                                        <p>&lt;empty&gt;</p>
-                                        <p>&lt;empty&gt;</p>
-                                        <p>&lt;empty&gt;</p>
+
                                     </div>
                                 </div>
                             </div>
