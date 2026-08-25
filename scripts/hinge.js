@@ -3,6 +3,9 @@ class Hinge {
   #hingeContents = [];
   #navigationBar = undefined;
   #activeWhatButton = null;
+  #summaryWhat = undefined;
+  #summaryWhere = undefined;
+  #summaryWhen = undefined;
 
   #activeContentId = 0;
   #dateData = {
@@ -16,6 +19,9 @@ class Hinge {
     this.#hingeContainer = hingeContainer;
     this.#navigationBar = this.getLastChild(hingeContainer).children[1];
     this.#code = document.getElementById("code");
+    this.#summaryWhat = document.getElementById("summary-what");
+    this.#summaryWhere = document.getElementById("summary-where");
+    this.#summaryWhen = document.getElementById("summary-when");
 
     let counter = 0;
 
@@ -53,17 +59,34 @@ class Hinge {
     }
   }
 
-  getDateDataErrors() {
+  validateAndAdjustDateData() {
     let errors = [];
 
-    if (!this.#dateData.What.event)
-      errors.push(this.generateErrorElement("missingDateEvent", "- You should pick something in \"What?\" section. Pick the last one if you prefer to be surprised :3."));
+    if (!this.#dateData.What.event) {
+      errors.push(this.generateErrorElement("missingDateEvent", "- Pick the last one if you prefer to be surprised :3."));
+      this.#dateData.What.event = "<empty>";
+    }
 
-    if (!this.#dateData.When.date || new Date() >= new Date(this.#dateData.When.date))
+    if (!this.#dateData.When.date) {
+      errors.push(this.generateErrorElement("missingDateDate", "- I have yet to master telepathy, in the meantime, set a date :3"));
+      this.#dateData.What.event = "<empty>";
+    } else if (new Date() >= new Date(this.#dateData.When.date)) {
       errors.push(this.generateErrorElement("invalidDateDate", "- Time traveling is not my strong suit unfortunately."));
+    }
 
-    if (!this.#dateData.Where.location?.trim())
-      errors.push(this.generateErrorElement("missingDateLocation", "- The nothingness? I do not know where that is. Pick a place in the observable universe :3."));
+    if (!this.#dateData.Where.location?.trim()) {
+      errors.push(this.generateErrorElement("missingDateLocation", "- The nothingness? Pick a place in the observable universe :3."));
+      this.#dateData.What.event = "<empty>";
+    }
+
+    if (!this.#dateData.What.message.trim())
+      this.#dateData.What.message = "<empty>";
+
+    if (!this.#dateData.Where.message.trim())
+      this.#dateData.What.message = "<empty>";
+
+    if (!this.#dateData.When.message.trim())
+      this.#dateData.What.message = "<empty>";
 
     return errors;
   }
@@ -132,17 +155,35 @@ class Hinge {
     }
   }
 
-  generateCode() {
+  setupSummary() {
     this.setDateData();
+
     this.#code.replaceChildren();
 
-    let errors = this.getDateDataErrors();
+    let errors = this.validateAndAdjustDateData();
 
-
-    if (errors.length === 0)
-      this.#code.textContent = btoa(JSON.stringify(this.#dateData));
+    if (errors.length !== 0)
+      this.#code.append(...errors);
     else
-      this.#code.append(... errors);
+      this.generateCode();
+
+    this.fillSummary();
+  }
+
+  fillSummary() {
+    this.#summaryWhat.children[0].textContent = this.#dateData.What.event;
+    this.#summaryWhat.children[1].textContent = this.#dateData.What.message;
+
+    this.#summaryWhere.children[0].textContent = this.#dateData.Where.location;
+    this.#summaryWhere.children[1].textContent = this.#dateData.What.message;
+
+    this.#summaryWhen.children[0].textContent = this.#dateData.What.date;
+    this.#summaryWhen.children[1].textContent = this.#dateData.What.time;
+    this.#summaryWhen.children[2].textContent = this.#dateData.What.message;
+  }
+
+  generateCode() {
+    this.#code.textContent = btoa(JSON.stringify(this.#dateData));
   }
 
   navigate(toId) {
@@ -150,7 +191,7 @@ class Hinge {
       return;
 
     if (toId === this.#hingeContents.length - 1)
-      this.generateCode();
+      this.setupSummary();
 
     this.#hingeContents[this.#activeContentId].classList.add("hidden");
     this.#hingeContents[toId].classList.remove("hidden");

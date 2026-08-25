@@ -792,7 +792,7 @@
                                 <p class="dark:text-gray-300 text-gray-800">Ideally pick a location that is not too far for either of us. Cities are usually a good idea due to accessibility and abundance of facilities. Pinned on the map here is <b>Hasselt</b>. While I do not limit myself to it, it is still my closest city.</p>
                                 <div class="flex gap-2 mt-2 items-center">
                                     <label for="where">Location:</label>
-                                    <input placeholder="Hasselt" class="dark:text-gray-300 text-gray-800 border border-cosmic dark:border-lilac p-1" id="where" />
+                                    <input placeholder="city" class="dark:text-gray-300 text-gray-800 border border-cosmic dark:border-lilac p-1" id="where" />
                                 </div>
                             </div>
                         </div>
@@ -821,11 +821,50 @@
                     </div>
                     <div class="hidden">
                         <h2 class="m-4 text-center">Yay :)</h2>
-                        <div class="flex flex-col">
+                        <div class="flex flex-col md:flex-row">
                             <div class="flex flex-col text-center">
                                 <p class="dark:text-gray-300 text-gray-800">Send me the code below through Hinge or somewhere else (see bottom right corner :) ).</p>
                                 <p class="text-2xl font-bold m-6 wrap-anywhere flex flex-col" id="code"></p>
                                 <p class="dark:text-gray-300 text-gray-800">I will review it ASAP. When approved, I shall send you specific location and time ^.^ .</p>
+                            </div>
+                            <div class="flex flex-col">
+                                <h3>What</h3>
+                                <div class="flex">
+                                    <div class="flex flex-col">
+                                        <p>Event:</p>
+                                        <p>Note:</p>
+                                    </div>
+                                    <div id="summary-what" class="flex flex-col">
+                                        <p>&lt;empty&gt;</p>
+                                        <p>&lt;empty&gt;</p>
+                                    </div>
+                                </div>
+
+                                <h3>Where</h3>
+                                <div class="flex">
+                                    <div class="flex flex-col">
+                                        <p>Location:</p>
+                                        <p>Note:</p>
+                                    </div>
+                                    <div id="summary-where" class="flex flex-col">
+                                        <p>&lt;empty&gt;</p>
+                                        <p>&lt;empty&gt;</p>
+                                    </div>
+                                </div>
+
+                                <h3>When</h3>
+                                <div class="flex">
+                                    <div class="flex flex-col">
+                                        <p>Date:</p>
+                                        <p>Time:</p>
+                                        <p>Note:</p>
+                                    </div>
+                                    <div id="summary-when" class="flex flex-col">
+                                        <p>&lt;empty&gt;</p>
+                                        <p>&lt;empty&gt;</p>
+                                        <p>&lt;empty&gt;</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
