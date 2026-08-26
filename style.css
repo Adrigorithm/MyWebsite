@@ -371,6 +371,18 @@
     --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .list-inside {
+    list-style-position: inside;
+  }
+  .list-\[\'💜\'\] {
+    list-style-type: '💜';
+  }
+  .list-\[upper-latin\] {
+    list-style-type: upper-latin;
+  }
+  .list-\[💜\] {
+    list-style-type: 💜;
+  }
   .list-disc {
     list-style-type: disc;
   }

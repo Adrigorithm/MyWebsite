@@ -550,7 +550,7 @@
                 class="shadow-xl fixed border border-gray-300 dark:border-gray-800 left-1/2 top-1/2 -translate-1/2 z-90 hidden"
             >
                 <section class="flex bg-gray-300 dark:bg-gray-800 p-1.5">
-                    <h2 data-translatable="configurator" class="grow">
+                    <h2 data-translatable="emojiful" class="grow">
                         Emojiful datapack generator
                     </h2>
                     <button
@@ -566,14 +566,15 @@
                         Emojis
                     </h3>
 
-                    <input type="text" placeholder="category"/>
+                    <label for="category" data-translatable="category">Category:</label>
+                    <input class="border-cosmic dark:border-lilac border" type="text" />
                     <select>
-                        <option selected value="recipe">modern (1.21+)</option>
-                        <option value="recipes">legacy</option>
+                        <option selected value="recipe">Emojiful 1.21+</option>
+                        <option value="recipes">Emojiful 0-1.20</option>
                     </select>
 
                     <div
-                        class="flex gap-1.5 flex-wrap justify-center emojis"
+                        class="flex gap-1.5 flex-wrap justify-center emojis mt-2"
                     >
                         <!-- // Generated emojis come here -->
                     </div>
@@ -1960,38 +1961,57 @@
                             alt="emojiful tutorial"
                         />
 
-                        <p>
+                        <p data-translatable="emojifulInstruction0" class="dark:text-gray-300 text-gray-800">
                             You need to enable dev tools to get extract the
                             emojis. To enable them do one of the following:
                         </p>
-                        <ul>
-                            <li>
-                                Use desktop client and follow
-                                <a
-                                    href="https://github.com/BrunoS3D/discord-enable-devtools"
-                                    >this guide</a
-                                >
-                            </li>
-                            <li>Use Discord through your browser</li>
-                            <li>Use Discord Canary or PTB</li>
-                        </ul>
-                        <p>
+                        <div class="flex flex-col dark:text-gray-300 text-gray-800">
+                            <div class="flex gap-2">
+                                <p class="text-cosmic dark:text-lilac">A.</p>
+                                <p data-translatable="emojifulInstruction1">
+                                    Use desktop client and follow
+                                    <a
+                                        href="https://github.com/BrunoS3D/discord-enable-devtools"
+                                        class="underline font-bold"
+                                        >this guide</a
+                                    >
+                                </p>
+                            </div>
+                            <div class="flex gap-2">
+                                <p class="text-cosmic dark:text-lilac">B.</p>
+                                <p data-translatable="emojifulInstruction2">Use Discord through your <b>browser</b></p>
+                            </div>
+                            <div class="flex gap-2">
+                                <p class="text-cosmic dark:text-lilac">C.</p>
+                                <p data-translatable="emojifulInstruction3">Use Discord <b>Canary</b> or <b>PTB</b></p>
+                            </div>
+                        </div>
+
+                        <p class="dark:text-gray-300 text-gray-800" data-translatable="emojifulInstruction4">
                             Now to get the emojis (basically what the image
                             shows you):
                         </p>
-                        <ul>
-                            <li>Open dev tools with <b>ctrl+shift+i</b></li>
-                            <li>
-                                With your emoji menu open, play with the element
+
+                        <div class="flex flex-col dark:text-gray-300 text-gray-800">
+                            <div class="flex gap-2">
+                                <p>💜</p>
+                                <p data-translatable="emojifulInstruction5">Open dev tools with <b>ctrl+shift+i</b></p>
+                            </div>
+                            <div class="flex gap-2">
+                                <p>💜</p>
+                                <p data-translatable="emojifulInstruction6">With your emoji menu open, play with the element
                                 picker (top left button) tool until the emoji
-                                section you want to download is selected
-                            </li>
-                            <li></li>
-                        </ul>
+                                section you want to download is selected</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <p>💜</p>
+                                <p data-translatable="emojifulInstruction7">Copy that entire element. <b>RMB>Copy>Copy OuterHTML</b> and paste it in the textbox below.</p>
+                            </div>
+                        </div>
 
                         <div class="flex flex-col sm:flex-row sm:gap-3">
                             <label
-                                data-translatable="emojifulContainer"
+                                data-translatable="emojifulInstruction8"
                                 for="emojifulContainer"
                                 class="dark:text-gray-300 text-gray-800"
                                 >HTML code</label
@@ -2000,7 +2020,7 @@
                                 id="emojifulContainer"
                                 class="border px-1.5"
                                 name="emojifulContainer"
-                                value="<html />"
+                                placeholder="<html />"
                             />
                         </div>
 

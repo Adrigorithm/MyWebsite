@@ -251,7 +251,18 @@ class Translator {
       .set("museum", "cultural/artistic")
       .set("mystery", "mystery")
       .set("hingeDateSuccess", "Code generated :)")
-      .set("hingeDateFailure", "Oh no! You did an oopsie :3");
+      .set("hingeDateFailure", "Oh no! You did an oopsie :3")
+      .set("emojifulInstruction0", "You need to enable dev tools to get extract the emojis. To enable them do one of the following:")
+      .set("emojifulInstruction1", "Use desktop client and follow <a href=\"https://github.com/BrunoS3D/discord-enable-devtools\" class=\"underline font-bold\">this guide</a>")
+      .set("emojifulInstruction2", "Use Discord through your <b>browser</b>")
+      .set("emojifulInstruction3", "Use Discord <b>Canary</b> or <b>PTB</b>")
+      .set("emojifulInstruction4", "Now to get the emojis (basically what the image shows you):")
+      .set("emojifulInstruction5", "Open dev tools with <b>ctrl+shift+i</b>")
+      .set("emojifulInstruction6", "With your emoji menu open, play with the element picker (top left button) tool until the emoji section you want to download is selected")
+      .set("emojifulInstruction7", "Copy that entire element. <b>RMB>Copy>Copy OuterHTML</b> and paste it in the textbox below.")
+      .set("emojifulInstruction8", "HTML code")
+      .set("emojis", "Emojis")
+      .set("category", "Category");
   }
 
   getDutchTranslations() {
@@ -422,7 +433,18 @@ class Translator {
       .set("museum", "cultureel/kunst")
       .set("mystery", "mysterie")
       .set("hingeDateSuccess", "Code gegenereerd :)")
-      .set("hingeDateFailure", "Oh nee! Je deed een oepsie :3");
+      .set("hingeDateFailure", "Oh nee! Je deed een oepsie :3")
+      .set("emojifulInstruction0", "Je moet dev tools inschakelen om de emojis te extraheren. Om ze in te schakelen doe je een van het volgende:")
+      .set("emojifulInstruction1", "Gebruik de desktop client en volg <a href=\"https://github.com/BrunoS3D/discord-enable-devtools\" class=\"underline font-bold\">deze gids</a>")
+      .set("emojifulInstruction2", "Gebruik Discord via je <b>browser</b>")
+      .set("emojifulInstruction3", "Gebruik Discord <b>Canary</b> of <b>PTB</b>")
+      .set("emojifulInstruction4", "Nu om de emojis te krijgen (basisch wat de afbeelding je laat zien):")
+      .set("emojifulInstruction5", "Open dev tools met <b>ctrl+shift+i</b>")
+      .set("emojifulInstruction6", "Met je emoji-menu open, speel met de elementpicker (knop linksboven) tot het emoji-sectie dat je wilt downloaden geselecteerd is")
+      .set("emojifulInstruction7", "Kopieer dat volledige element. <b>RMB>Kopiëren>Copy OuterHTML</b> en plak het in het tekstvak hieronder.")
+      .set("emojifulInstruction8", "HTML-code")
+      .set("emojis", "Emojis")
+      .set("category", "Categorie");
   }
 
   getFrenchTranslations() {
@@ -593,7 +615,18 @@ class Translator {
       .set("museum", "culturel/art")
       .set("mystery", "mystère")
       .set("hingeDateSuccess", "Code généré :)")
-      .set("hingeDateFailure", "Oh non ! Tu as fait un petit bazar :3");
+      .set("hingeDateFailure", "Oh non ! Tu as fait un petit bazar :3")
+      .set("emojifulInstruction0", "Tu dois activer les outils de développement pour extraire les émojis. Pour les activer, fais l'une des choses suivantes :")
+      .set("emojifulInstruction1", "Utilise le client bureau et suis <a href=\"https://github.com/BrunoS3D/discord-enable-devtools\" class=\"underline font-bold\">ce guide</a>")
+      .set("emojifulInstruction2", "Utilise Discord via ton <b>navigateur</b>")
+      .set("emojifulInstruction3", "Utilise Discord <b>Canary</b> ou <b>PTB</b>")
+      .set("emojifulInstruction4", "Maintenant pour obtenir les émojis (basiquement ce que l'image te montre) :")
+      .set("emojifulInstruction5", "Ouvre les outils de développement avec <b>Ctrl+Shift+I</b>")
+      .set("emojifulInstruction6", "Avec ton menu émoji ouvert, joue avec l'outil sélecteur d'éléments (bouton en haut à gauche) jusqu'à ce que la section émoji que tu veux télécharger soit sélectionnée")
+      .set("emojifulInstruction7", "Copie cet élément entier. <b>Clic droit>Copy>Copy OuterHTML</b> et colle-le dans la zone de texte ci-dessous.")
+      .set("emojifulInstruction8", "Code HTML")
+      .set("emojis", "Emojis")
+      .set("category", "Catégorie");
   }
 
   getGermanTranslations() {
@@ -767,7 +800,18 @@ class Translator {
       .set("museum", "Kultur/Kunst")
       .set("mystery", "Mysterium")
       .set("hingeDateSuccess", "Code generiert :)")
-      .set("hingeDateFailure", "Oh nein! Du hast ein Oops gemacht :3");
+      .set("hingeDateFailure", "Oh nein! Du hast ein Oops gemacht :3")
+      .set("emojifulInstruction0", "Du musst Dev Tools aktivieren, um die Emojis zu extrahieren. Um sie zu aktivieren, tue eines der folgenden:")
+      .set("emojifulInstruction1", "Verwende den Desktop-Client und folge <a href=\"https://github.com/BrunoS3D/discord-enable-devtools\" class=\"underline font-bold\">dieser Anleitung</a>")
+      .set("emojifulInstruction2", "Verwende Discord über deinen <b>Browser</b>")
+      .set("emojifulInstruction3", "Verwende Discord <b>Canary</b> oder <b>PTB</b>")
+      .set("emojifulInstruction4", "Um nun die Emojis zu bekommen (im Grunde das, was das Bild dir zeigt):")
+      .set("emojifulInstruction5", "Öffne Dev Tools mit <b>Ctrl+Shift+I</b>")
+      .set("emojifulInstruction6", "Mit deinem Emoji-Menü offen, spiele mit dem Element Picker (obere linke Taste) Werkzeug herum, bis der Emoji-Abschnitt, den du herunterladen möchtest, ausgewählt ist")
+      .set("emojifulInstruction7", "Kopiere dieses gesamte Element. <b>RMT>Kopieren>Copy OuterHTML</b> und füge es im Textfeld unten ein.")
+      .set("emojifulInstruction8", "HTML-Code")
+      .set("emojis", "Emojis")
+      .set("category", "Kategorie");
   }
 }
 
