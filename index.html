@@ -547,7 +547,7 @@
 
             <div
                 id="emojiful-datapack-generator"
-                class="shadow-xl fixed border border-gray-300 dark:border-gray-800 left-1/2 top-1/2 -translate-1/2 z-90 hidden"
+                class="shadow-xl fixed border border-gray-300 dark:border-gray-800 left-1/2 top-1/2 -translate-1/2 z-90 hidden max-h-full overflow-scroll"
             >
                 <section class="flex bg-gray-300 dark:bg-gray-800 p-1.5">
                     <h2 data-translatable="emojiful" class="grow">
@@ -555,7 +555,7 @@
                     </h2>
                     <button
                         aria-label="close navigation panel"
-                        class="filter-accent closeConfig"
+                        class="filter-accent closeEmojiful"
                     >
                         ❌
                     </button>
@@ -567,7 +567,7 @@
                     </h3>
 
                     <label for="category" data-translatable="category">Category:</label>
-                    <input class="border-cosmic dark:border-lilac border" type="text" />
+                    <input id="category" class="border-cosmic dark:border-lilac border px-1.5" type="text" />
                     <select>
                         <option selected value="recipe">Emojiful 1.21+</option>
                         <option value="recipes">Emojiful 0-1.20</option>
@@ -622,7 +622,7 @@
                     </button>
                     <button
                         aria-label="close config menu"
-                        class="bg-gray-300 dark:bg-gray-800 closeConfig p-0.5"
+                        class="bg-gray-300 dark:bg-gray-800 closeEmojiful p-0.5"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -639,7 +639,7 @@
 
             <div
                 id="configurator"
-                class="shadow-xl fixed border border-gray-300 dark:border-gray-800 left-1/2 top-1/2 -translate-1/2 hidden z-90"
+                class="shadow-xl fixed border border-gray-300 dark:border-gray-800 left-1/2 top-1/2 -translate-1/2 hidden z-90 max-h-full overflow-scroll"
             >
                 <section class="flex bg-gray-300 dark:bg-gray-800 p-1.5">
                     <h2 data-translatable="configurator" class="grow">

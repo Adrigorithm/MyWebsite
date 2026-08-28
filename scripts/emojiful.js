@@ -36,16 +36,22 @@ class Emojiful {
     });
 
     emojifulDatapackGenerator.children[2].children[2].addEventListener("click", () => {
-      const category = this.#emojifulDatapackGenerator.children[1].children[1].value || "category";
-      const recipeDir = this.#emojifulDatapackGenerator.children[1].children[2].value;
+      const category = this.#emojifulDatapackGenerator.children[1].children[2].value || "category";
+      const recipeDir = this.#emojifulDatapackGenerator.children[1].children[3].value;
 
       this.zipActiveEmoji(recipeDir, category);
     });
 
-    emojifulDatapackGenerator.children[2].children[3].addEventListener("click", () => {
-      emojifulDatapackGenerator.classList.add("hidden");
-      overlay.classList.add("hidden");
-    });
+    for (const button of emojifulDatapackGenerator.getElementsByClassName("closeEmojiful")) {
+      button.addEventListener("click", () => {
+        this.close();
+      });
+    }
+  }
+
+  close() {
+    this.#emojifulDatapackGenerator.classList.add("hidden");
+    this.#overlay.classList.add("hidden");
   }
 
   processHtml(htmlString) {
@@ -53,6 +59,9 @@ class Emojiful {
     let emojisImg = html.querySelectorAll("button > img"); // There are guild icon images too so this is necessary
 
     for (const img of emojisImg) {
+      if (!img.alt)
+        continue;
+
       let button = this.generateEmojiHtml(img);
 
       button.addEventListener("click", () => {
@@ -133,6 +142,13 @@ class Emojiful {
     };
   }
 
+  generateEmojifulCompatibleUrl(url) {
+    let matches = url.match(/animated=([^&]+)/);
+    let isAnimated = matches && matches[matches.length - 1] === "true";
+
+    return url.replace(".webp", isAnimated ? ".gif" : ".png");
+  }
+
   generateEmojiJson(category, img) {
     return {
       category: category,
@@ -155,10 +171,11 @@ class Emojiful {
     button.classList.add("flex", "flex-col", "justify-between");
 
     let img = document.createElement("img");
-    img.src = imageElement.src;
+    img.src = this.generateEmojifulCompatibleUrl(imageElement.src);
     img.alt = imageElement.alt.substring(1, imageElement.alt.length - 1);
 
     let span = document.createElement("span");
+    span.classList = ["bg-green-300 dark:bg-green-700"];
 
     let spanSpan = document.createElement("span");
     spanSpan.classList.add("filter-background")
