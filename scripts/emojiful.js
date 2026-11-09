@@ -1,22 +1,14 @@
 import { downloadZip } from "./client-zip.js";
 
 class Emojiful {
-  #emojifulContainer = undefined;
-  #emojifulGenerate = undefined;
-  #emojifulErrors = undefined;
   #emojifulDatapackGenerator = undefined;
   #overlay = undefined;
-  #translator = null;
   #emojiDomList = undefined;
   #packMcmetaStr = '{"pack":{"pack_format":6,"description":"Emojiful emojis!"}}';
 
-  constructor(emojifulContainer, emojifulGenerate, emojifulErrors, emojifulDatapackGenerator, overlay, translator) {
-    this.#emojifulContainer = emojifulContainer;
-    this.#emojifulGenerate = emojifulGenerate;
-    this.#emojifulErrors = emojifulErrors;
+  constructor(emojifulContainer, emojifulGenerate, emojifulDatapackGenerator, overlay) {
     this.#emojifulDatapackGenerator = emojifulDatapackGenerator;
     this.#overlay = overlay;
-    this.#translator = translator;
     this.#emojiDomList = emojifulDatapackGenerator.getElementsByClassName("emojis")[0];
 
     emojifulGenerate.addEventListener("click", () => {
@@ -128,9 +120,48 @@ class Emojiful {
     URL.revokeObjectURL(url);
   }
 
+  ensureFileNameValid(fileName) {
+    let fileNameSanitised = "";
+
+    for (let i = 0; i < fileName.length; i++) {
+      const currentCharCode = fileName.charCodeAt(i);
+      let char = fileName[i];
+
+      // Most likely (small latin char)
+      if (currentCharCode > 96 && currentCharCode < 123) {
+        fileNameSanitised += char;
+        continue;
+      }
+
+      // capital latin char
+      if (currentCharCode > 64 && currentCharCode < 91) {
+        fileNameSanitised += char.toLowerCase();
+        continue;
+      }
+
+      // digit
+      if (currentCharCode > 47 && currentCharCode < 58) {
+        fileNameSanitised += char;
+        continue;
+      }
+
+      // . - _
+      if (currentCharCode == 46 || currentCharCode == 45 || currentCharCode == 95) {
+        fileNameSanitised += char;
+        continue;
+      }
+
+      // Least likely (unsupported char)
+      fileNameSanitised += '-';
+    }
+
+    return fileNameSanitised;
+  }
+
   generateEmojiJsonFile(recipeDir, category, img) {
+    "".toLowerCase()
     return {
-      name: `data/emojiful/${recipeDir}/${img.alt}.json`,
+      name: `data/emojiful/${recipeDir}/${this.ensureFileNameValid(img.alt)}.json`,
       input: JSON.stringify(this.generateEmojiJson(category, img))
     };
   }

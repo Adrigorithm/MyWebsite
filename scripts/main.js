@@ -188,10 +188,9 @@ function setupEmojiful() {
   emojiful = new Emojiful(
     emojifulElement.querySelector("#emojifulContainer"),
     emojifulElement.querySelector("#emojifulGenerate"),
-    emojifulElement.querySelector("#emojifulErrors"),
     document.getElementById("emojiful-datapack-generator"),
-    document.getElementById("overlay"),
-    translator);
+    document.getElementById("overlay")
+  );
 }
 
 function setupHinge() {
