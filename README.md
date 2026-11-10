@@ -21,7 +21,7 @@ New versions will always be hosted on https://itsadri.com/.
 
 ## Todo
 - Enable translations for alts and similar ARIA stuff
-- Create form
+- Add translations for `missing feature page`, `recipes`
 
 ## FAQ
 - **I want to help!**

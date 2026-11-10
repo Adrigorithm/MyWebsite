@@ -11,6 +11,7 @@ import { SectionSwitcher } from "./sectionSwitcher.js";
 import { Rng } from "./rng.js";
 import { Emojiful } from "./emojiful.js";
 import { Hinge } from "./hinge.js";
+import { RecipeController } from "./recipes.js";
 
 document.addEventListener("DOMContentLoaded", load);
 
@@ -27,6 +28,7 @@ let slidersServices = [];
 let rng = undefined;
 let emojiful = undefined;
 let hinge = undefined;
+let recipeController = undefined;
 
 setupTranslator();
 
@@ -46,6 +48,7 @@ function load() {
   setupRng();
   setupEmojiful();
   setupHinge();
+  setupRecipes();
 
   applyDependencies();
   applyDynamicText();
@@ -200,6 +203,10 @@ function setupHinge() {
     return;
 
   hinge = new Hinge(hingeContainer, translator, toastSpawner);
+}
+
+function setupRecipes() {
+  recipeController = new RecipeController();
 }
 
 function applyDependencies() {
