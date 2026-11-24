@@ -206,7 +206,10 @@ function setupHinge() {
 }
 
 function setupRecipes() {
-  recipeController = new RecipeController();
+  const recipeList = document.getElementById("recipes-list");
+  const recipes = document.getElementsByClassName("recipe");
+
+  recipeController = new RecipeController(recipeList, recipes);
 }
 
 function applyDependencies() {
