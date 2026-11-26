@@ -3,8 +3,9 @@ class RecipeController {
   #recipeListSearch = undefined;
   #recipeListEntries = [];
   #initialisationDone = false;
-  #recipeActive = 0;
+  #recipeActiveTranslatable = "recipe0Title";
   #recipes = [];
+  #translator = null;
 
   constructor(recipeList, recipes) {
     this.#recipeList = recipeList;
@@ -18,7 +19,7 @@ class RecipeController {
 
     for (const button of recipeList.children[1].children) {
       button.addEventListener("click", () => {
-        this.activateRecipe(button.textContent);
+        this.activateRecipe(button);
       })
       this.#recipeListEntries.push(button.textContent);
     }
@@ -26,10 +27,30 @@ class RecipeController {
     this.#initialisationDone = true;
   }
 
-  activateRecipe(recipeName) {
+  activateRecipe(button) {
+    let newRecipeTranslatable = button.dataset.translatable;
+
+    if (newRecipeTranslatable === this.#recipeActiveTranslatable)
+      return;
+
+    let newRecipe = null;
+    let oldRecipe = null;
+
     for (const recipe of this.#recipes) {
-      if (recipe.getElementsByTagName("h2")[0])
+      if (recipe.getElementsByTagName("h2")[0].dataset.translatable === newRecipeTranslatable) {
+        newRecipe = recipe;
+
+        continue;
+      }
+
+      if (recipe.getElementsByTagName("h2")[0].dataset.translatable === this.#recipeActiveTranslatable) {
+        oldRecipe = recipe;
+      }
     }
+
+    this.#recipeActiveTranslatable = newRecipeTranslatable;
+    oldRecipe.classList.add("hidden");
+    newRecipe.classList.remove("hidden");
   }
 
   buildRecipeList(filter) {
