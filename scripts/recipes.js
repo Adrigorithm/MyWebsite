@@ -1,11 +1,9 @@
 class RecipeController {
   #recipeList = undefined;
   #recipeListSearch = undefined;
-  #recipeListEntries = [];
   #initialisationDone = false;
   #recipeActiveTranslatable = "recipe0Title";
   #recipes = [];
-  #translator = null;
 
   constructor(recipeList, recipes) {
     this.#recipeList = recipeList;
@@ -21,7 +19,6 @@ class RecipeController {
       button.addEventListener("click", () => {
         this.activateRecipe(button);
       })
-      this.#recipeListEntries.push(button.textContent);
     }
 
     this.#initialisationDone = true;
@@ -48,30 +45,37 @@ class RecipeController {
       }
     }
 
-    this.#recipeActiveTranslatable = newRecipeTranslatable;
+    this.getActiveRecipeButton().classList.remove("font-bold", "text-xl");
     oldRecipe.classList.add("hidden");
+    button.classList.add("font-bold", "text-xl");
     newRecipe.classList.remove("hidden");
+
+    this.#recipeActiveTranslatable = newRecipeTranslatable;
   }
 
   buildRecipeList(filter) {
     filter = filter.trim().toLowerCase();
-    let listEntries = [];
 
-    for (const listEntry of this.#recipeListEntries) {
-      let listEntryLower = listEntry.toLowerCase();
-      let indexOfFilter = listEntryLower.indexOf(filter);
+    for (const button of this.#recipeList.children[1].children) {
+      const buttonText = button.innerText.toLowerCase();
+      const indexOfFilter = buttonText.indexOf(filter);
 
-      if (indexOfFilter === -1)
+      if (indexOfFilter === -1) {
+        button.classList.add("hidden");
         continue;
+      }
 
-      let button = document.createElement("button");
       let matchEnd = indexOfFilter + filter.length;
-      button.innerHTML = `${listEntry.substring(0, indexOfFilter)}<span class="font-bold">${listEntry.substring(indexOfFilter, matchEnd)}</span>${listEntry.substring(matchEnd)}`;
-      listEntries.push(button);
+      button.innerHTML = `${button.innerText.substring(0, indexOfFilter)}<span class="font-bold">${button.innerText.substring(indexOfFilter, matchEnd)}</span>${button.innerText.substring(matchEnd)}`;
+      button.classList.remove("hidden");
     }
+  }
 
-    this.#recipeList.children[1].replaceChildren();
-    this.#recipeList.children[1].append(...listEntries);
+  getActiveRecipeButton() {
+    for (const button of this.#recipeList.children[1].children) {
+      if (button.dataset.translatable === this.#recipeActiveTranslatable)
+        return button;
+    }
   }
 }
 
