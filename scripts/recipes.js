@@ -21,6 +21,57 @@ class RecipeController {
       })
     }
 
+    for (const recipe of recipes) {
+      const ingredientsContainer = recipe.getElementsByClassName("recipe-ingredients")[0];
+      const ingredientsContainerDivs = ingredientsContainer.getElementsByTagName("div");
+
+      ingredientsContainerDivs[0].getElementsByTagName("input")[0].addEventListener("change", (e) => {
+        let servings = Number.parseInt(e.target.value);
+
+        if (isNaN(servings) || servings < 1) {
+          e.target.value = e.target.placeholder;
+          servings = e.target.value;
+        }
+
+        for (let i = 1; i < ingredientsContainerDivs.length; i++) {
+          const ingredientComponents = ingredientsContainerDivs[i].querySelectorAll("p > span")
+          const amountSpan = ingredientComponents[0];
+          const unitSpan = ingredientComponents[1];
+          let amount = amountSpan.dataset.base * servings;
+
+          switch (unitSpan.innerText) {
+            case "g":
+              if (amount >= 1000) {
+                amount = (amount / 1000).toFixed(3);
+                unitSpan.innerText = "kg";
+              } else {
+                amount = amount.toFixed();
+              }
+
+              break;
+            case "kg":
+              if (amount >= 1000) {
+                amount = (amount / 1000).toFixed(3);
+              }
+              else {
+                amount = amount.toFixed();
+                unitSpan.innerText = "g";
+              }
+
+              break;
+            case "p":
+              amount = amount.toFixed();
+              break;
+            case "tsp":
+              amount = amount.toFixed(2);
+              break;
+          }
+
+          amountSpan.innerText = amount;
+        }
+      });
+    }
+
     this.#initialisationDone = true;
   }
 
