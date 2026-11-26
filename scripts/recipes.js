@@ -28,8 +28,11 @@ class RecipeController {
       ingredientsContainerDivs[0].getElementsByTagName("input")[0].addEventListener("change", (e) => {
         let servings = Number.parseInt(e.target.value);
 
-        if (isNaN(servings) || servings < 1) {
+        if (isNaN(servings)) {
           e.target.value = e.target.placeholder;
+          servings = e.target.value;
+        } else if (servings < e.target.min) {
+          e.target.value = e.target.min;
           servings = e.target.value;
         }
 
@@ -63,7 +66,8 @@ class RecipeController {
               amount = amount.toFixed();
               break;
             case "tsp":
-              amount = amount.toFixed(2);
+              amount = (amount * 4).toFixed() / 4;
+
               break;
           }
 
