@@ -179,6 +179,8 @@ const DutchTranslations = new Map()
   .set("category", "Categorie")
   .set("recipe0Title", "Chocolademoulleux")
   .set("recipe1Title", "Chocoladekoekjes")
-  .set("recipe2Title", "Speculooskoekjes");
+  .set("recipe2Title", "Speculooskoekjes")
+  .set("recipes", "Recepten")
+  .set("ovenSettings", "Oveninstellingen");
 
 export { DutchTranslations }

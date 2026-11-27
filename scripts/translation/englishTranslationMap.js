@@ -176,6 +176,8 @@ const EnglishTranslations = new Map()
   .set("category", "Category")
   .set("recipe0Title", "Chocolate moulleux")
   .set("recipe1Title", "Chocolate chip cookies")
-  .set("recipe2Title", "Speculoos biscuits");
+  .set("recipe2Title", "Speculoos biscuits")
+  .set("recipes", "Recipes")
+  .set("ovenSettings", "Oven settings");
 
 export { EnglishTranslations }

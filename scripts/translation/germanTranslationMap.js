@@ -182,6 +182,8 @@ const GermanTranslations = new Map()
   .set("category", "Kategorie")
   .set("recipe0Title", "Schokoladen-Mouilleux")
   .set("recipe1Title", "Schokoladenkekse")
-  .set("recipe2Title", "Spekulatius-Kekse");
+  .set("recipe2Title", "Spekulatius-Kekse")
+  .set("recipes", "Rezepte")
+  .set("ovenSettings", "Ofeneinstellungen");
 
 export { GermanTranslations }

@@ -179,6 +179,8 @@ const FrenchTranslations = new Map()
   .set("category", "Catégorie")
   .set("recipe0Title", "Moulléux au chocolat")
   .set("recipe1Title", "Cookies aux pépites de chocolat")
-  .set("recipe2Title", "Biscuits au spéculoos");
+  .set("recipe2Title", "Biscuits au spéculoos")
+  .set("recipes", "Recettes")
+  .set("ovenSettings", "Réglages du four");
 
 export { FrenchTranslations }
